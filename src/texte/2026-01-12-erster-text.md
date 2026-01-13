@@ -1,14 +1,57 @@
 ---
 layout: text
 tags: text
-title: "Erster Text"
+title: Erster Text
 date: 2026-01-12
-type: "Notiz"
-excerpt: "Ein erster Platzhalter, bis echte Texte entstehen."
+type: Gedicht
+excerpt: ""
 ---
+Kuss von Zoe
 
-Dies ist ein Beispieltext. Er zeigt, wie deine Gedichte und Essays hier erscheinen werden.
 
-Sobald du im CMS neue Texte schreibst, werden sie automatisch hier generiert.
 
-Einfach. Klar. Ohne Ablenkung.
+Deine Lippen treffen meine,
+
+wie ein Ozean aus Samt.
+
+Zittern in meinem Körper,
+
+ich weiche kurz zurück,
+
+will nur deinen Blick.
+
+
+
+Wieder Lippen, Zunge - intensiv.
+
+Was machst du mit mir?
+
+Wo kommst du plötzlich her?
+
+Kannst du wirklich sein?
+
+Bin ich wach,
+
+träume ich dich nur?
+
+Löst du dich gleich wieder auf?
+
+
+
+Ich halte dich fest -
+
+der Test, du bist noch hier.
+
+Ich drücke fester,
+
+noch immer da.
+
+
+
+Meine Lippen kribbeln,
+
+Wasser fließt,
+
+mein Herz,
+
+es pocht.
