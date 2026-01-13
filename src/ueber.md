@@ -5,7 +5,7 @@ title: Über mich
 
 <img src="/images/jochen1.jpeg" alt="Jochen Hornung" class="about-photo">
 
-Jochen Hornung. 42 Jahre. Berlin-Mitte.
+Jochen Hornung. 43 Jahre. Berlin-Mitte.
 
 Philosoph, Coach, Vater. Auf der Suche nach dem, was bleibt, wenn man den Lärm weglässt.
 
