@@ -1,0 +1,33 @@
+---
+layout: base
+title: Texte
+---
+<div class="content-page">
+    <a href="/" class="back-link">← Zurück</a>
+    
+    <h1 class="page-title">Texte</h1>
+    
+    <div class="text-content">
+        {% if collections.sortedTexte.length > 0 %}
+            <ul class="text-list">
+            {% for text in collections.sortedTexte %}
+                <li class="text-item">
+                    <h2><a href="{{ text.url }}">{{ text.data.title }}</a></h2>
+                    <div class="text-meta">
+                        {{ text.date | readableDate }}
+                        {% if text.data.type %}<span class="text-type">{{ text.data.type }}</span>{% endif %}
+                    </div>
+                    {% if text.data.excerpt %}
+                    <div class="text-excerpt">
+                        {{ text.data.excerpt }}
+                    </div>
+                    {% endif %}
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>Hier entstehen Gedichte und Essays über Menschlichkeit, Tiefe und das Leben zwischen den Zeilen.</p>
+            <p><em>Bald verfügbar.</em></p>
+        {% endif %}
+    </div>
+</div>

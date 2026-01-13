@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/images"
+public_folder: "/images"
+
+collections:
+  - name: "texte"
+    label: "Texte"
+    folder: "src/texte"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "text"}
+      - {label: "Tags", name: "tags", widget: "hidden", default: "text"}
+      - {label: "Titel", name: "title", widget: "string"}
+      - {label: "Datum", name: "date", widget: "datetime"}
+      - {label: "Typ", name: "type", widget: "select", options: ["Gedicht", "Essay", "Notiz"], default: "Essay"}
+      - {label: "Kurzbeschreibung (optional)", name: "excerpt", widget: "text", required: false}
+      - {label: "Text", name: "body", widget: "markdown"}
