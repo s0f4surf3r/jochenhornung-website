@@ -4,7 +4,7 @@ title: Über mich
 ---
 
 <!-- Platzhalter für Foto - hier dein Foto hochladen -->
-<!-- <img src="/images/jochen.jpg" alt="Jochen Hornung" class="about-photo"> -->
+<!-- <img src="/images/jochen1.jpg" alt="Jochen Hornung" class="about-photo"> -->
 
 Jochen Hornung. 42 Jahre. Berlin-Mitte.
 
