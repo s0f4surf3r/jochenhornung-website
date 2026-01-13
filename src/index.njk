@@ -3,18 +3,31 @@ layout: base.njk
 title: Raum für Menschlichkeit und Tiefe
 ---
 
-<main class="center-content">
-  <p style="font-size: 1.2rem; font-weight: 400; margin-bottom: 1rem; text-align: center;">Jochen Hornung</p>
+<div style="
+  background-image: url('/images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
+  position: relative;
+">
+  <!-- Deutlicher dunkler Overlay -->
+  <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.6);"></div>
+  
+  <div style="position: relative; z-index: 1; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+    <p style="font-size: 1.5rem; font-weight: 400; color: white; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Jochen Hornung</p>
+    <h1 style="font-size: 2.5rem; font-weight: 700; color: white; letter-spacing: 0.1em; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">RAUM FÜR MENSCHLICHKEIT UND TIEFE</h1>
+  </div>
 
-  <h1 class="main-title" style="margin-bottom: 2rem;">RAUM FÜR MENSCHLICHKEIT UND TIEFE</h1>
-
-  <img src="/images/hero.jpg" alt="Sternenhimmel über der Wüste" style="width: 100%; max-width: 300px; margin: 1rem auto 3rem; display: block; border-radius: 8px;">
-
-  <nav class="main-nav">
-    <a href="/texte/">Texte</a>
-    <a href="/coaching/">Coaching</a>
-    <a href="/produkte/">Produkte</a>
-    <a href="/kaktus/">Kaktus</a>
-    <a href="/ueber/">Über mich</a>
+  <nav style="position: relative; z-index: 1; display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
+    <a href="/texte/" style="color: white; text-decoration: none; font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Texte</a>
+    <a href="/coaching/" style="color: white; text-decoration: none; font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Coaching</a>
+    <a href="/produkte/" style="color: white; text-decoration: none; font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Produkte</a>
+    <a href="/kaktus/" style="color: white; text-decoration: none; font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Kaktus</a>
+    <a href="/ueber/" style="color: white; text-decoration: none; font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Über mich</a>
   </nav>
-</main>
+</div>
