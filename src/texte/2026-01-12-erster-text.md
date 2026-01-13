@@ -1,57 +1,33 @@
 ---
 layout: text
 tags: text
-title: Erster Text
+title: Kuss von Zoe
 date: 2026-01-12
 type: Gedicht
 excerpt: ""
 ---
-Kuss von Zoe
+**Kuss von Zoe**
 
-
-
-Deine Lippen treffen meine,
-
-wie ein Ozean aus Samt.
-
-Zittern in meinem Körper,
-
-ich weiche kurz zurück,
-
+Deine Lippen treffen meine,\
+wie ein Ozean aus Samt.\
+Zittern in meinem Körper,\
+ich weiche kurz zurück,\
 will nur deinen Blick.
 
-
-
-Wieder Lippen, Zunge - intensiv.
-
-Was machst du mit mir?
-
-Wo kommst du plötzlich her?
-
-Kannst du wirklich sein?
-
-Bin ich wach,
-
-träume ich dich nur?
-
+Wieder Lippen, Zunge - intensiv.\
+Was machst du mit mir?\
+Wo kommst du plötzlich her?\
+Kannst du wirklich sein?\
+Bin ich wach,\
+träume ich dich nur?\
 Löst du dich gleich wieder auf?
 
-
-
-Ich halte dich fest -
-
-der Test, du bist noch hier.
-
-Ich drücke fester,
-
+Ich halte dich fest -\
+der Test, du bist noch hier.\
+Ich drücke fester,\
 noch immer da.
 
-
-
-Meine Lippen kribbeln,
-
-Wasser fließt,
-
-mein Herz,
-
+Meine Lippen kribbeln,\
+Wasser fließt,\
+mein Herz,\
 es pocht.
