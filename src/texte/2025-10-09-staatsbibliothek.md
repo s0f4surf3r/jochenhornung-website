@@ -4,6 +4,10 @@ tags: text
 title: "Staatsbibliothek "
 date: 2025-10-09T12:17:00.000+02:00
 type: Gedicht
+excerpt: "Eine für mich fremde Person inspirierte mich an einem öffentlichen Ort
+  zu diesem Gedicht. Er hat mich tief berührt. Ich fragte ihn später ob ich ein
+  Foto von ihm machen darf und er willigte freundlich ein. Das hat mir sehr viel
+  bedeutet. "
 ---
 ## Staatsbibliothek
 
