@@ -19,7 +19,7 @@ Philosoph, Coach, Vater. Auf der Suche nach dem, was bleibt, wenn man den Lärm 
 
 ## Hintergrund
 
-Magister in Politikwissenschaft. Ausbildung in neurosystemischer Integration bei Verena König. Jahrelang in Strukturen gearbeitet, die Menschen zu Funktionen machen. Dagegen wehre ich mich.
+Magister in Politikwissenschaft, Vokswirtschaftslehre und Bildungswissenschaft. Ausbildung in neurosystemischer Integration bei Verena König. Jahrelang in Strukturen gearbeitet, die Menschen zu Funktionen machen. Dagegen wehre ich mich.
 
 ## Was mich antreibt
 
