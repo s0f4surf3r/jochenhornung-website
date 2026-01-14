@@ -7,8 +7,6 @@ type: Gedicht
 excerpt: "in Gedenken an die schönen Heiligabende bei meiner Oma Lilly und Opa
   Albert. RIP. "
 ---
-## Das grüne Sofa
-
 Unter’m Jahr blieb es versteckt – verborgen.  
 Hinter schweren, begen Wellen.  
 Blicke trafen es nicht oft.  
