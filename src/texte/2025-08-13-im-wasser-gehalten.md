@@ -4,6 +4,8 @@ tags: text
 title: Im Wasser gehalten
 date: 2025-08-13T12:12:00.000+02:00
 type: Gedicht
+excerpt: "Für Zoe, nach einem Besuch im Liquidrom. Zu einem Zeitpunkt großer
+  Verbundenheit und Verliebtheit. "
 ---
 ## Im Wasser gehalten
 
