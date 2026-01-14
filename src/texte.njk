@@ -60,7 +60,7 @@ title: Texte
 
         <div id="gedichte" class="category-content active">
             <ul class="text-list">
-            {% for text in collections.sortedTexte | reverse %}
+            {% for text in collections.sortedTexte %}
                 {% if text.data.type == "Gedicht" %}
                 <li class="text-item">
                     <h3><a href="{{ text.url }}">{{ text.data.title }}</a></h3>
@@ -80,7 +80,7 @@ title: Texte
 
         <div id="essays" class="category-content">
             <ul class="text-list">
-            {% for text in collections.sortedTexte | reverse %}
+            {% for text in collections.sortedTexte %}
                 {% if text.data.type == "Essay" %}
                 <li class="text-item">
                     <h3><a href="{{ text.url }}">{{ text.data.title }}</a></h3>
