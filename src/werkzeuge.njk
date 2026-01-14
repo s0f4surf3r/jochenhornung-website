@@ -38,6 +38,37 @@ title: Werkzeuge
         margin-top: 1rem;
         font-size: 0.9rem;
     }
+    
+    /* Lightbox */
+    .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.9);
+        z-index: 1000;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+    }
+    .lightbox.active {
+        display: flex;
+    }
+    .lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 4px;
+    }
+    .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+    }
 </style>
 
 <div class="content-page">
@@ -49,7 +80,7 @@ title: Werkzeuge
             <h3>OneYear Kalender</h3>
             <p>Entstanden aus der Frage meines Sohnes: „Wann ist bald?" Ein Jahreskalender, der Zeit wieder sichtbar macht. Für Kinder. Für Familien. Für alle, die das Ganze sehen wollen.</p>
             <div class="product-links">
-                <a href="/images/ScreenshotOneYear.jpeg" target="_blank" class="product-link">Einen Blick darauf werfen?</a>
+                <a href="#" onclick="document.getElementById('lightbox').classList.add('active'); return false;" class="product-link">Einen Blick darauf werfen?</a>
                 <a href="/docs/OneYear_Story3.pdf" target="_blank" class="product-link">Die Geschichte dahinter</a>
             </div>
             <p class="product-contact">Interesse? <a href="mailto:kontakt@jochenhornung.de">Schreib mir.</a></p>
@@ -69,4 +100,9 @@ title: Werkzeuge
             <p class="product-status">🚧 In Arbeit</p>
         </div>
     </div>
+</div>
+
+<div id="lightbox" class="lightbox" onclick="this.classList.remove('active')">
+    <span class="lightbox-close">×</span>
+    <img src="/images/ScreenshotOneYear.jpeg" alt="OneYear Kalender Screenshot">
 </div>
