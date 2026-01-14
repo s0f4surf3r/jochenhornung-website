@@ -1,9 +1,14 @@
 ---
-layout: page
+layout: base
 title: Über mich
 ---
 
-<img src="/images/jochen1.jpeg" alt="Jochen Hornung" class="about-photo">
+<div class="content-page">
+<a href="/" class="back-link">← Zurück</a>
+
+<div class="text-content">
+
+<img src="/images/jochen1.jpeg" alt="Jochen Hornung" style="max-width: 200px; border-radius: 8px; margin-bottom: 1.5rem;">
 
 Jochen Hornung. 43 Jahre. Berlin-Mitte.
 
@@ -20,3 +25,6 @@ Die Frage, wie wir Menschlichkeit bewahren in einer Zeit, die uns zu Maschinen m
 ## Kontakt
 
 kontakt@jochenhornung.de
+
+</div>
+</div>
