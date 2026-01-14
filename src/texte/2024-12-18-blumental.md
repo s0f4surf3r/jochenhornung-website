@@ -9,8 +9,6 @@ excerpt: "Ein Gedicht, eigentlich für mich selbst, aus einem Moment äußerster
   für mich selbst zu spüren, das ich bis dato nur für eine andere Person
   empfinden konnte – und dadurch emotional abhängig wurde. "
 ---
-## Blumental
-
 Hier sitze ich, wieder,  
 im Blumental.  
 Flashback: mit dir
