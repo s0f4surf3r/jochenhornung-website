@@ -4,7 +4,7 @@ tags: text
 title: Das grüne Sofa
 date: 2021-12-22T12:45:00.000+01:00
 type: Gedicht
-excerpt: "in Gedenken an die schönen Heiligabend bei meiner Oma Lilly und Opa
+excerpt: "in Gedenken an die schönen Heiligabende bei meiner Oma Lilly und Opa
   Albert. RIP. "
 ---
 ## Das grüne Sofa
