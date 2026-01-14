@@ -3,6 +3,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/admin");
+  eleventyConfig.addPassthroughCopy("src/docs");
+  eleventyConfig.addPassthroughCopy("src/audio");
   
   // Date filter
   eleventyConfig.addFilter("readableDate", (dateObj) => {
