@@ -9,8 +9,6 @@ excerpt: "Eine für mich fremde Person inspirierte mich an einem öffentlichen O
   Foto von ihm machen darf und er willigte freundlich ein. Das hat mir sehr viel
   bedeutet. "
 ---
-## Staatsbibliothek
-
 Now I am sitting here  
 in the Staatsbibliothek zu Berlin.  
 On a couch. Yellow.  
