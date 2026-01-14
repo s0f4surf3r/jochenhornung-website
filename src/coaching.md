@@ -1,27 +1,30 @@
 ---
 layout: base
-title: Werkzeuge
+title: Coaching
 ---
+
 <div class="content-page">
-    <a href="/" class="back-link">← Zurück</a>
-    
-    <div class="product-grid">
-        <div class="product-item">
-            <h3>Kalender</h3>
-            <p>Ein Werkzeug für die innere Arbeit. Nicht für Termine, sondern für Tiefe.</p>
-            <a href="#" class="product-link">Mehr erfahren</a>
-        </div>
-        
-        <div class="product-item">
-            <h3>AICO</h3>
-            <p>Personalisiertes Framework für konfrontative Selbstreflexion. Intensive Coaching-Arbeit strukturiert.</p>
-            <a href="#" class="product-link">Mehr erfahren</a>
-        </div>
-        
-        <div class="product-item">
-            <h3>Ist sie die Richtige?</h3>
-            <p>Tool für Beziehungsentscheidungen. Klarheit statt Illusion.</p>
-            <a href="#" class="product-link">Mehr erfahren</a>
-        </div>
-    </div>
+<a href="/" class="back-link">← Zurück</a>
+
+<div class="text-content">
+
+## Neurosystemische Integration
+
+Ich begleite Menschen, die spüren, dass ihre Themen tiefer liegen als das, was sich mit Tipps und Strategien lösen lässt.
+
+Mein Ansatz verbindet Körperarbeit, innere Systemarbeit und das Nervensystem. Nicht als Technik, sondern als Haltung.
+
+## Für wen
+
+Für Menschen mit ADHS, komplexen Prägungen, oder dem Gefühl, anders zu funktionieren als andere. Für alle, die Tiefe suchen statt schneller Lösungen.
+
+## Rahmen
+
+Einzelsitzungen, online oder in Berlin. Kein Coaching von der Stange, sondern echter Kontakt.
+
+## Kontakt
+
+kontakt@jochenhornung.de
+
+</div>
 </div>
