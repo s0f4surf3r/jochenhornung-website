@@ -2,14 +2,11 @@
 layout: base
 ---
 <div class="content-page">
-    <a href="/texte/" class="back-link">← Zurück zu Texte</a>
-    
     <div class="text-header">
-        <h1 class="text-title">{{ title }}</h1>
-        <div class="text-date">
-            {{ date | readableDate }}
-            {% if type %}<span class="text-type">{{ type }}</span>{% endif %}
+        <div class="text-meta">
+            {{ date | readableDate }}{% if type %} · {{ type }}{% endif %}
         </div>
+        <h1 class="text-title">{{ title }}</h1>
     </div>
     
     <div class="text-content">
