@@ -2,7 +2,7 @@
 layout: text
 tags: text
 title: Kuss von Zoe
-date: 2026-01-12
+date: 2025-05-22T00:00:00.000+02:00
 type: Gedicht
 excerpt: ""
 ---
