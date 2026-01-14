@@ -1,26 +1,27 @@
 ---
 layout: base
-title: Coaching
+title: Werkzeuge
 ---
-
 <div class="content-page">
-<a href="/" class="back-link">← Zurück</a>
-
-<div class="text-content">
-
-Neurosystemische Integration. Begleitung für Menschen, die sich selbst begegnen wollen.
-
-## Ansatz
-
-Ich arbeite mit Menschen, die bereit sind, tiefer zu schauen. Die nicht nach schnellen Lösungen suchen, sondern nach echtem Verständnis. Die spüren, dass Veränderung nicht im Kopf beginnt, sondern im Nervensystem.
-
-## Für wen
-
-Für Menschen, die das Maschinenwerden nicht länger aushalten. Die Tiefe suchen. Die bereit sind für echte Arbeit an sich selbst.
-
-## Kontakt
-
-kontakt@jochenhornung.de
-
-</div>
+    <a href="/" class="back-link">← Zurück</a>
+    
+    <div class="product-grid">
+        <div class="product-item">
+            <h3>Kalender</h3>
+            <p>Ein Werkzeug für die innere Arbeit. Nicht für Termine, sondern für Tiefe.</p>
+            <a href="#" class="product-link">Mehr erfahren</a>
+        </div>
+        
+        <div class="product-item">
+            <h3>AICO</h3>
+            <p>Personalisiertes Framework für konfrontative Selbstreflexion. Intensive Coaching-Arbeit strukturiert.</p>
+            <a href="#" class="product-link">Mehr erfahren</a>
+        </div>
+        
+        <div class="product-item">
+            <h3>Ist sie die Richtige?</h3>
+            <p>Tool für Beziehungsentscheidungen. Klarheit statt Illusion.</p>
+            <a href="#" class="product-link">Mehr erfahren</a>
+        </div>
+    </div>
 </div>
