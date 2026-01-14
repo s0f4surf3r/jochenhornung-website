@@ -7,8 +7,6 @@ type: Gedicht
 excerpt: "Für Zoe, nach einem Besuch im Liquidrom. Zu einem Zeitpunkt großer
   Verbundenheit und Verliebtheit. "
 ---
-## Im Wasser gehalten
-
 Im Wasser gebettet,  
 deine Hand, die mich führt —  
 nach links, nach rechts —  
