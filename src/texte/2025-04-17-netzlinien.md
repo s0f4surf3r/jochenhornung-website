@@ -5,7 +5,7 @@ title: Netzlinien
 date: 2025-04-17T12:50:00.000+02:00
 type: Gedicht
 excerpt: "Ein Gedicht für eine Frau, durch die ich herausgefunden habe, was ich
-  nicht möchte. "
+  nicht möchte. Ich danke ihr dafür. "
 ---
 ## Netzlinien
 
