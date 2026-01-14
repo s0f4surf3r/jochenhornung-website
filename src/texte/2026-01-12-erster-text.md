@@ -4,7 +4,8 @@ tags: text
 title: Kuss von Zoe
 date: 2025-05-22T00:00:00.000+02:00
 type: Gedicht
-excerpt: ""
+excerpt: "Geschrieben für meine neue große Liebe, als ich noch nicht wusste,
+  dass sie diese ist. "
 ---
 **Kuss von Zoe**
 
