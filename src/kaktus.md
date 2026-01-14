@@ -24,13 +24,3 @@ In Entwicklung. Technologie im Dienst der Menschlichkeit.
 
 </div>
 </div>
-```
-
-**Schritte:**
-1. GitHub → **src** → **kaktus.md** → Stift ✏️
-2. Alles ersetzen
-3. Commit
-
-Dann gib mir für Über mich:
-```
-https://raw.githubusercontent.com/s0f4surf3r/jochenhornung-website/main/src/ueber.md
