@@ -4,18 +4,22 @@ title: Texte
 ---
 <div class="content-page">
     <a href="/" class="back-link">← Zurück</a>
-    
+
     <h1 class="page-title">Texte</h1>
-    
+
     <div class="text-content">
-        {% if collections.sortedTexte.length > 0 %}
+        {% set gedichte = collections.sortedTexte | selectattr("data.type", "equalto", "Gedicht") %}
+        {% set essays = collections.sortedTexte | selectattr("data.type", "equalto", "Essay") %}
+
+        {% if gedichte | length > 0 %}
+        <section class="text-section">
+            <h2 class="section-title">Gedichte</h2>
             <ul class="text-list">
-            {% for text in collections.sortedTexte %}
+            {% for text in gedichte %}
                 <li class="text-item">
-                    <h2><a href="{{ text.url }}">{{ text.data.title }}</a></h2>
+                    <h3><a href="{{ text.url }}">{{ text.data.title }}</a></h3>
                     <div class="text-meta">
                         {{ text.date | readableDate }}
-                        {% if text.data.type %}<span class="text-type">{{ text.data.type }}</span>{% endif %}
                     </div>
                     {% if text.data.excerpt %}
                     <div class="text-excerpt">
@@ -25,7 +29,31 @@ title: Texte
                 </li>
             {% endfor %}
             </ul>
-        {% else %}
+        </section>
+        {% endif %}
+
+        {% if essays | length > 0 %}
+        <section class="text-section">
+            <h2 class="section-title">Essays</h2>
+            <ul class="text-list">
+            {% for text in essays %}
+                <li class="text-item">
+                    <h3><a href="{{ text.url }}">{{ text.data.title }}</a></h3>
+                    <div class="text-meta">
+                        {{ text.date | readableDate }}
+                    </div>
+                    {% if text.data.excerpt %}
+                    <div class="text-excerpt">
+                        {{ text.data.excerpt }}
+                    </div>
+                    {% endif %}
+                </li>
+            {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+
+        {% if collections.sortedTexte.length == 0 %}
             <p>Hier entstehen Gedichte und Essays über Menschlichkeit, Tiefe und das Leben zwischen den Zeilen.</p>
             <p><em>Bald verfügbar.</em></p>
         {% endif %}
