@@ -9,8 +9,6 @@ excerpt: "Dieses Gedicht ist entstanden um in tiefem Kontakt mit meiner
   die Arbeit schon getan, wurde mir klar, dass diese Arbeit niemals enden wird.
   "
 ---
-## Vater nochmal
-
 Dein Blick wie ein Dolch,  
 die Hände zur Faust.  
 Ich seh’ Angst und Wut, die dich beraubt.  
