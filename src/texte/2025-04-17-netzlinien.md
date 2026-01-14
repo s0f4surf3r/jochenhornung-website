@@ -7,8 +7,6 @@ type: Gedicht
 excerpt: "Ein Gedicht für eine Frau, durch die ich herausgefunden habe, was ich
   nicht möchte. Ich danke ihr dafür. "
 ---
-## Netzlinien
-
 Schwarzweiß dein Bild, mein Blick gespannt,  
 Hyperfokus – als wär die Welt gebannt.  
 Ein Grübchen, eine Linie fein,  
