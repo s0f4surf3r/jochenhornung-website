@@ -1,7 +1,12 @@
 ---
-layout: page
+layout: base
 title: Coaching
 ---
+
+<div class="content-page">
+<a href="/" class="back-link">← Zurück</a>
+
+<div class="text-content">
 
 Neurosystemische Integration. Begleitung für Menschen, die sich selbst begegnen wollen.
 
@@ -16,3 +21,6 @@ Für Menschen, die das Maschinenwerden nicht länger aushalten. Die Tiefe suchen
 ## Kontakt
 
 kontakt@jochenhornung.de
+
+</div>
+</div>
