@@ -60,7 +60,7 @@ title: Texte
 
         <div id="gedichte" class="category-content active">
             <ul class="text-list">
-            {% for text in collections.sortedTexte %}
+            {% for text in collections.sortedTexte | reverse %}
                 {% if text.data.type == "Gedicht" %}
                 <li class="text-item">
                     <h3><a href="{{ text.url }}">{{ text.data.title }}</a></h3>
@@ -80,7 +80,7 @@ title: Texte
 
         <div id="essays" class="category-content">
             <ul class="text-list">
-            {% for text in collections.sortedTexte %}
+            {% for text in collections.sortedTexte | reverse %}
                 {% if text.data.type == "Essay" %}
                 <li class="text-item">
                     <h3><a href="{{ text.url }}">{{ text.data.title }}</a></h3>
@@ -107,11 +107,9 @@ title: Texte
 
 <script>
 function showCategory(category) {
-    // Hide all content
     document.querySelectorAll('.category-content').forEach(el => el.classList.remove('active'));
     document.querySelectorAll('.category-tab').forEach(el => el.classList.remove('active'));
     
-    // Show selected
     document.getElementById(category).classList.add('active');
     event.target.classList.add('active');
 }
