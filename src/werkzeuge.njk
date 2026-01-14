@@ -2,23 +2,49 @@
 layout: base
 title: Werkzeuge
 ---
+<style>
+    .product-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    .product-logo {
+        max-width: 200px;
+        max-height: 100px;
+        margin-bottom: 1rem;
+        object-fit: contain;
+    }
+    .product-item h3 {
+        margin-bottom: 0.5rem;
+    }
+    .product-item p {
+        color: #666;
+        margin-bottom: 0.5rem;
+    }
+</style>
+
 <div class="content-page">
     <a href="/" class="back-link">← Zurück</a>
     
     <div class="product-grid">
         <div class="product-item">
-            <h3>Kalender</h3>
+            <img src="/images/oneyear_ios_glow_12dots.png" alt="OneYear Kalender" class="product-logo">
+            <h3>OneYear Kalender</h3>
             <p>Ein Werkzeug für die innere Arbeit. Nicht für Termine, sondern für Tiefe.</p>
             <a href="#" class="product-link">Mehr erfahren</a>
         </div>
         
         <div class="product-item">
+            <img src="/images/AICO_logo_webseite_1408x736.png" alt="AICO" class="product-logo">
             <h3>AICO</h3>
             <p>Personalisiertes Framework für konfrontative Selbstreflexion. Intensive Coaching-Arbeit strukturiert.</p>
             <a href="#" class="product-link">Mehr erfahren</a>
         </div>
         
         <div class="product-item">
+            <img src="/images/istsieesoderistsieesnicht_logo.svg" alt="Ist sie es oder ist sie es nicht?" class="product-logo">
             <h3>Ist sie die Richtige?</h3>
             <p>Tool für Beziehungsentscheidungen. Klarheit statt Illusion.</p>
             <a href="#" class="product-link">Mehr erfahren</a>
