@@ -8,19 +8,23 @@ title: Coaching
 
 <div class="text-content">
 
-## Neurosystemische Integration
+Ich kenne die dunklen Orte. Ich war selbst dort.
 
-Ich begleite Menschen, die spüren, dass ihre Themen tiefer liegen als das, was sich mit Tipps und Strategien lösen lässt.
+Heute begleite ich Menschen, die spüren, dass ihre Themen tiefer liegen. Die merken, dass Tipps und Strategien nicht reichen. Die bereit sind, hinzuschauen.
 
-Mein Ansatz verbindet Körperarbeit, innere Systemarbeit und das Nervensystem. Nicht als Technik, sondern als Haltung.
+## Mein Weg
 
-## Für wen
+Zertifizierter Coach für Neurosystemische Integration (Verena König, 2024). Aber das Zertifikat ist nicht der Punkt. Der Punkt ist: Ich habe meinen eigenen Weg durch Trauma, Sucht und Vaterwunde gemacht. Das gibt mir keine Antworten für dich. Aber es gibt mir die Fähigkeit, bei dir zu bleiben, wenn es dunkel wird.
 
-Für Menschen mit ADHS, komplexen Prägungen, oder dem Gefühl, anders zu funktionieren als andere. Für alle, die Tiefe suchen statt schneller Lösungen.
+## Männer
+
+Ein besonderer Fokus liegt auf der Arbeit mit Männern. Männer, die nicht mehr wissen, wer sie sein dürfen. Die den Zugang zu ihren Gefühlen verloren haben. Die sich nach echter Verbindung sehnen - zu sich selbst, zu einer Partnerin, zum Leben.
 
 ## Rahmen
 
-Einzelsitzungen, online oder in Berlin. Kein Coaching von der Stange, sondern echter Kontakt.
+Einzelbegleitung. Online oder in Berlin. Kein Schema, sondern echter Kontakt.
+
+Ich leite außerdem eine Selbsthilfegruppe im Heilehaus Berlin - ein Raum für Menschen, die ihre Wunde zeigen wollen und schon angefangen haben, Verantwortung für sich zu übernehmen.
 
 ## Kontakt
 
