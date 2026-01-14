@@ -2,6 +2,49 @@
 layout: base
 title: Texte
 ---
+<style>
+  .category-tabs {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+  }
+  
+  .category-tab {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: #666;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    font-family: inherit;
+  }
+  
+  .category-tab.active {
+    color: #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+    margin-bottom: -1.1rem;
+  }
+  
+  .category-content {
+    display: none;
+  }
+  
+  .category-content.active {
+    display: block;
+  }
+  
+  .text-item h3 a {
+    color: #1a1a1a;
+    text-decoration: none;
+  }
+  
+  .text-item h3 a:hover {
+    border-bottom: 1px solid #1a1a1a;
+  }
+</style>
+
 <div class="content-page">
     <a href="/" class="back-link">← Zurück</a>
 
@@ -10,8 +53,12 @@ title: Texte
     <div class="text-content">
         {% if collections.sortedTexte.length > 0 %}
         
-        <section class="text-section">
-            <h2 class="section-title">Gedichte</h2>
+        <div class="category-tabs">
+            <button class="category-tab active" onclick="showCategory('gedichte')">Gedichte</button>
+            <button class="category-tab" onclick="showCategory('essays')">Essays</button>
+        </div>
+
+        <div id="gedichte" class="category-content active">
             <ul class="text-list">
             {% for text in collections.sortedTexte %}
                 {% if text.data.type == "Gedicht" %}
@@ -29,10 +76,9 @@ title: Texte
                 {% endif %}
             {% endfor %}
             </ul>
-        </section>
+        </div>
 
-        <section class="text-section">
-            <h2 class="section-title">Essays</h2>
+        <div id="essays" class="category-content">
             <ul class="text-list">
             {% for text in collections.sortedTexte %}
                 {% if text.data.type == "Essay" %}
@@ -50,7 +96,7 @@ title: Texte
                 {% endif %}
             {% endfor %}
             </ul>
-        </section>
+        </div>
 
         {% else %}
             <p>Hier entstehen Gedichte und Essays über Menschlichkeit, Tiefe und das Leben zwischen den Zeilen.</p>
@@ -58,3 +104,15 @@ title: Texte
         {% endif %}
     </div>
 </div>
+
+<script>
+function showCategory(category) {
+    // Hide all content
+    document.querySelectorAll('.category-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.category-tab').forEach(el => el.classList.remove('active'));
+    
+    // Show selected
+    document.getElementById(category).classList.add('active');
+    event.target.classList.add('active');
+}
+</script>
