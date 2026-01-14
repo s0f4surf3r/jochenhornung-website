@@ -4,8 +4,10 @@ tags: text
 title: Blumental
 date: 2024-12-18T12:04:00.000+01:00
 type: Gedicht
-excerpt: EIn Gedicht für mich selbst, aus einem Moment äußerster innerer
-  Verwirrtheit heraus.
+excerpt: "Ein Gedicht, eigentlich für mich selbst, aus einem Moment äußerster
+  innerer Verwirrtheit heraus. Denn es war der tiefe wunsch, dieses Gefühl für
+  mich selbst zu spüren, das ich für dato nur für eine andere Person empfinden
+  konnte - und dadurch emotional abhängig wurde. "
 ---
 ## Blumental
 
