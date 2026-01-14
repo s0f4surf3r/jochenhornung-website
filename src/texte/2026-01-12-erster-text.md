@@ -7,8 +7,6 @@ type: Gedicht
 excerpt: "Geschrieben für meine neue große Liebe, als ich noch nicht wusste,
   dass sie diese ist. "
 ---
-**Kuss von Zoe**
-
 Deine Lippen treffen meine,\
 wie ein Ozean aus Samt.\
 Zittern in meinem Körper,\
