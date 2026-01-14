@@ -4,7 +4,8 @@ tags: text
 title: Netzlinien
 date: 2025-04-17T12:50:00.000+02:00
 type: Gedicht
-excerpt: ""
+excerpt: "Ein Gedicht für eine Frau, durch die ich herausgefunden habe, was ich
+  nicht möchte. "
 ---
 ## Netzlinien
 
