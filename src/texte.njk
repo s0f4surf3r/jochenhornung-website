@@ -8,14 +8,13 @@ title: Texte
     <h1 class="page-title">Texte</h1>
 
     <div class="text-content">
-        {% set gedichte = collections.sortedTexte | selectattr("data.type", "equalto", "Gedicht") %}
-        {% set essays = collections.sortedTexte | selectattr("data.type", "equalto", "Essay") %}
-
-        {% if gedichte | length > 0 %}
+        {% if collections.sortedTexte.length > 0 %}
+        
         <section class="text-section">
             <h2 class="section-title">Gedichte</h2>
             <ul class="text-list">
-            {% for text in gedichte %}
+            {% for text in collections.sortedTexte %}
+                {% if text.data.type == "Gedicht" %}
                 <li class="text-item">
                     <h3><a href="{{ text.url }}">{{ text.data.title }}</a></h3>
                     <div class="text-meta">
@@ -27,16 +26,16 @@ title: Texte
                     </div>
                     {% endif %}
                 </li>
+                {% endif %}
             {% endfor %}
             </ul>
         </section>
-        {% endif %}
 
-        {% if essays | length > 0 %}
         <section class="text-section">
             <h2 class="section-title">Essays</h2>
             <ul class="text-list">
-            {% for text in essays %}
+            {% for text in collections.sortedTexte %}
+                {% if text.data.type == "Essay" %}
                 <li class="text-item">
                     <h3><a href="{{ text.url }}">{{ text.data.title }}</a></h3>
                     <div class="text-meta">
@@ -48,12 +47,12 @@ title: Texte
                     </div>
                     {% endif %}
                 </li>
+                {% endif %}
             {% endfor %}
             </ul>
         </section>
-        {% endif %}
 
-        {% if collections.sortedTexte.length == 0 %}
+        {% else %}
             <p>Hier entstehen Gedichte und Essays über Menschlichkeit, Tiefe und das Leben zwischen den Zeilen.</p>
             <p><em>Bald verfügbar.</em></p>
         {% endif %}
