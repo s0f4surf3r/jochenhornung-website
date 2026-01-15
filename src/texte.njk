@@ -47,6 +47,12 @@ title: Texte
   .text-item h3 a:hover {
     text-decoration: underline;
   }
+  
+  .coming-soon {
+    color: #999;
+    font-style: italic;
+    margin-top: 2rem;
+  }
 </style>
 
 <div class="content-page">
@@ -81,6 +87,14 @@ title: Texte
         </div>
 
         <div id="essays" class="category-content">
+            {% set hasEssays = false %}
+            {% for text in collections.sortedTexte %}
+                {% if text.data.type == "Essay" %}
+                    {% set hasEssays = true %}
+                {% endif %}
+            {% endfor %}
+            
+            {% if hasEssays %}
             <ul class="text-list">
             {% for text in collections.sortedTexte %}
                 {% if text.data.type == "Essay" %}
@@ -98,6 +112,9 @@ title: Texte
                 {% endif %}
             {% endfor %}
             </ul>
+            {% else %}
+            <p class="coming-soon">Kommt bald ...</p>
+            {% endif %}
         </div>
 
         {% else %}
