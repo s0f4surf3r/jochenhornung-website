@@ -13,7 +13,7 @@ title: Über mich
 <img src="/images/jochen2.jpeg" alt="Jochen Hornung" style="flex: 1; max-width: 200px; min-width: 0; width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
 </div>
 
-Jochen Hornung. 43 Jahre. Berlin-Mitte.
+Jochen Hornung. <span id="age">43</span> Jahre. Berlin-Mitte.
 
 Philosoph, Coach, Vater. Auf der Suche nach dem, was bleibt, wenn man den Lärm weglässt.
 
@@ -31,3 +31,15 @@ kontakt@jochenhornung.de
 
 </div>
 </div>
+
+<script>
+// Dynamisches Alter berechnen (Geburtsdatum: 23. Mai 1982)
+const birthDate = new Date(1982, 4, 23); // Monat ist 0-basiert, also 4 = Mai
+const today = new Date();
+let age = today.getFullYear() - birthDate.getFullYear();
+const monthDiff = today.getMonth() - birthDate.getMonth();
+if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+}
+document.getElementById('age').textContent = age;
+</script>
