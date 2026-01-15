@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if title %}{{ title }} - {% endif %}Jochen Hornung</title>
-    <link rel="icon" type="image/png" href="/images/JH_Logo.png">
-    <link rel="apple-touch-icon" href="/images/JH_Logo.png">
+    
+    <!-- Favicons für alle Browser und Plattformen -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+    
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <style>
@@ -14,85 +20,83 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .site-header h1 {
             font-size: 1.8rem;
             font-weight: 400;
             margin-bottom: 0.3rem;
         }
-        
+
         .site-header h1 a {
             color: #1a1a1a;
             text-decoration: none;
         }
-        
-        .site-tagline {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 1rem;
-            font-family: Georgia, serif;
-            font-style: italic;
-        }
-        
-        .site-nav {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-        
-        .site-nav a {
-            color: #1a1a1a;
-            text-decoration: underline;
-        }
-        
-        .site-nav a.active {
-            color: #999;
-            text-decoration: none;
-        }
-        
-        .site-nav span {
-            color: #999;
-        }
-        
+
         /* Weniger Abstand oben bei Content-Seiten */
         .content-page {
             padding-top: 1rem;
         }
-        
+
         /* Georgia für Content */
         .content-page .text-content,
         .content-page .text-excerpt,
         .text-item h3 a {
             font-family: Georgia, serif;
         }
-        
-        .text-item h3 a {
+
+        .text-item h3 {
             color: #1a1a1a;
             text-decoration: none;
         }
-        
+
         .text-item h3 a:hover {
             text-decoration: underline;
+        }
+
+        .site-nav a {
+            color: #1a1a1a;
+            text-decoration: underline;
+        }
+
+        .site-nav a.active {
+            color: #999;
+            text-decoration: none;
+        }
+
+        .site-nav span {
+            color: #999;
+        }
+
+        /* Weniger Abstand oben bei Content-Seiten */
+        .content-page {
+            padding-top: 1rem;
+        }
+
+        /* Georgia für Content */
+        .content-page .text-content,
+        .content-page .text-excerpt,
+        .text-item h3 a {
+            font-family: Georgia, serif;
         }
     </style>
 </head>
 <body>
     {% if page.url != "/" %}
-    <header class="site-header">
-        <h1><a href="/">Jochen Hornung</a></h1>
-        <p class="site-tagline">Raum für Menschlichkeit und Tiefe</p>
-        <nav class="site-nav">
-            <a href="/texte/"{% if page.url.includes("/texte") %} class="active"{% endif %}>Texte</a>
-            <span>/</span>
-            <a href="/coaching/"{% if page.url.includes("/coaching") %} class="active"{% endif %}>Coaching</a>
-            <span>/</span>
-            <a href="/werkzeuge/"{% if page.url.includes("/werkzeuge") %} class="active"{% endif %}>Werkzeuge</a>
-            <span>/</span>
-            <a href="/kaktus/"{% if page.url.includes("/kaktus") %} class="active"{% endif %}>Kaktus</a>
-            <span>/</span>
-            <a href="/ueber/"{% if page.url.includes("/ueber") %} class="active"{% endif %}>Über mich</a>
-        </nav>
-    </header>
+        <header class="site-header">
+            <h1><a href="/">Jochen Hornung</a></h1>
+            <p class="site-tagline">Raum für Menschlichkeit und Tiefe</p>
+            <nav class="site-nav">
+                <a href="/texte/"{% if page.url.includes("/texte") %} class="active"{% endif %}>Texte</a>
+                <span>/</span>
+                <a href="/coaching/"{% if page.url.includes("/coaching") %} class="active"{% endif %}>Coaching</a>
+                <span>/</span>
+                <a href="/werkzeuge/"{% if page.url.includes("/werkzeuge") %} class="active"{% endif %}>Werkzeuge</a>
+                <span>/</span>
+                <a href="/kaktus/"{% if page.url.includes("/kaktus") %} class="active"{% endif %}>Kaktus</a>
+                <span>/</span>
+                <a href="/ueber/"{% if page.url.includes("/ueber") %} class="active"{% endif %}>Über mich</a>
+            </nav>
+        </header>
     {% endif %}
 
     {{ content | safe }}
