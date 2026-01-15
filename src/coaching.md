@@ -26,6 +26,10 @@ Einzelbegleitung. Online oder in Berlin. Kein Schema, sondern echter Kontakt.
 
 Ich leite außerdem eine Selbsthilfegruppe im Heilehaus Berlin - ein Raum für Menschen, die ihre Wunde zeigen wollen und schon angefangen haben, Verantwortung für sich zu übernehmen.
 
+## Honorar
+
+Das Honorar besprechen wir individuell - orientiert an dem, was dir zur Verfügung steht. Das Kennenlerngespräch ist kostenlos.
+
 ## Kontakt
 
 kontakt@jochenhornung.de
