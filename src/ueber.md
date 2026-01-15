@@ -8,9 +8,9 @@ title: Über mich
 
 <div class="text-content">
 
-<div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: nowrap;">
-<img src="/images/jochen1.jpeg" alt="Jochen Hornung" style="flex: 1; max-width: 200px; min-width: 0; width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
-<img src="/images/jochen2.jpeg" alt="Jochen Hornung" style="flex: 1; max-width: 200px; min-width: 0; width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
+<div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+<img src="/images/jochen1.jpeg" alt="Jochen Hornung" style="max-width: 200px; border-radius: 8px;">
+<img src="/images/jochen2.jpeg" alt="Jochen Hornung" style="max-width: 200px; border-radius: 8px;">
 </div>
 
 Jochen Hornung. 43 Jahre. Berlin-Mitte.
@@ -27,7 +27,7 @@ Die Frage, wie wir Menschlichkeit bewahren in einer Zeit, die uns zu Maschinen m
 
 ## Kontakt
 
-[jochen@jochenhornung.de](mailto:jochen@jochenhornung.de)
+kontakt@jochenhornung.de
 
 </div>
 </div>
