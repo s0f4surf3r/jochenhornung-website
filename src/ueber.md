@@ -27,7 +27,7 @@ Die Frage, wie wir Menschlichkeit bewahren in einer Zeit, die uns zu Maschinen m
 
 ## Kontakt
 
-kontakt@jochenhornung.de
+info@jochenhornung.de
 
 </div>
 </div>
