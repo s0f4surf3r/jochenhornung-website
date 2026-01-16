@@ -12,4 +12,4 @@ Schmidtstr. 11
 10179 Berlin
 
 **Kontakt:**  
-E-Mail: kontakt@jochenhornung.de
+E-Mail: info@jochenhornung.de
