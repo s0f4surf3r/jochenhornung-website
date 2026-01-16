@@ -32,7 +32,7 @@ Das Honorar besprechen wir individuell - orientiert an dem, was dir zur Verfügu
 
 ## Kontakt
 
-kontakt@jochenhornung.de
+info@jochenhornung.de
 
 </div>
 </div>
