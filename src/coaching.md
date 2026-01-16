@@ -6,6 +6,8 @@ title: Coaching
 <div class="content-page">
 <a href="/" class="back-link">← Zurück</a>
 
+<img src="/images/hero_coaching_seite.jpg" alt="Zwei Menschen unter dem Sternenhimmel" class="hero-image">
+
 <div class="text-content">
 
 Ich kenne die dunklen Orte. Ich war selbst dort.
