@@ -140,4 +140,4 @@ Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, um sie 
 
 ---
 
-**Bei Fragen zum Datenschutz kontaktieren Sie uns bitte unter:** kontakt@jochenhornung.de
+**Bei Fragen zum Datenschutz kontaktieren Sie uns bitte unter:** info@jochenhornung.de
