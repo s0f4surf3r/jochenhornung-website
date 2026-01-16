@@ -6,7 +6,7 @@ title: Coaching
 <div class="content-page">
 <a href="/" class="back-link">← Zurück</a>
 
-<img src="/images/hero_coaching_seite.jpg" alt="Zwei Menschen unter dem Sternenhimmel" class="hero-image">
+<img src="/images/hero_coaching_seite.jpg" alt="Zwei Menschen unter dem Sternenhimmel" style="width: 100%; max-height: 400px; object-fit: cover; margin-bottom: 2rem;">
 
 <div class="text-content">
 
