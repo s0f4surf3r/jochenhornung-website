@@ -18,5 +18,6 @@ collections:
       - {label: "Titel", name: "title", widget: "string"}
       - {label: "Datum", name: "date", widget: "datetime"}
       - {label: "Typ", name: "type", widget: "select", options: ["Gedicht", "Essay", "Notiz"], default: "Essay"}
+      - {label: "Hero Bild (optional)", name: "heroImage", widget: "image", required: false}
       - {label: "Kurzbeschreibung (optional)", name: "excerpt", widget: "text", required: false}
       - {label: "Text", name: "body", widget: "markdown"}
