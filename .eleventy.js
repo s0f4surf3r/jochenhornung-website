@@ -1,4 +1,16 @@
+const markdownIt = require("markdown-it");
+
 module.exports = function(eleventyConfig) {
+  // Markdown Configuration - macht einzelne Zeilenumbrüche zu <br> Tags
+  const markdownItOptions = {
+    html: true,
+    breaks: true,  // <-- Das ist der Schlüssel für deine Gedichte!
+    linkify: true
+  };
+  
+  const md = markdownIt(markdownItOptions);
+  eleventyConfig.setLibrary("md", md);
+
   // Copy static assets
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/images");
