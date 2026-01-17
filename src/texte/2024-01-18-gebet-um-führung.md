@@ -11,14 +11,6 @@ excerpt: >
 
   Ein nüchternes Gebet um Verbundenheit, Selbstwert und Verantwortung – ohne Erlösungsfantasie, aber mit der Bereitschaft zum eigenen Wandel.
 ---
-# Gebet um Führung
-
-*Kurzbeschreibung:*  
-Geschrieben während meiner Reha als stilles Gegenstück zur inneren und äußeren Diagnose.  
-Ein nüchternes Gebet um Verbundenheit, Selbstwert und Verantwortung – ohne Erlösungsfantasie, aber mit der Bereitschaft zum eigenen Wandel.
-
----
-
 Ich möchte verbunden sein  
 mit der Natur,  
 mir selbst  
