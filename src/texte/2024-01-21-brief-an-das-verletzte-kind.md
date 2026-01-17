@@ -4,7 +4,7 @@ tags: text
 title: Brief an das verletzte Kind
 date: 2024-01-21T12:12:00.000+01:00
 type: Gedicht
-heroImage: src/images/Brief an das verletzte Kind_kl.jpg
+heroImage: /images/Brief an das verletzte Kind_kl.jpg
 excerpt: >
   Dieses Gedicht entstand während meiner Reha als Akt der Selbstzuwendung.  
 
