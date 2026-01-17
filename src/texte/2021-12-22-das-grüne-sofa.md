@@ -4,7 +4,7 @@ tags: text
 title: Das grüne Sofa
 date: 2021-12-22T12:45:00.000+01:00
 type: Gedicht
-heroImage: /images/die-zerfressene-welt.jpg
+heroImage: ""
 excerpt: "In Gedenken an die schönen Heiligabende bei meiner Oma Lilly und Opa
   Albert. RIP. "
 ---
