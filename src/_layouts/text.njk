@@ -32,7 +32,15 @@ layout: base
         font-family: Georgia, serif;
         line-height: 1.5;
         max-width: 600px;
+    }
+    
+    /* Erstes P-Tag hat keinen margin-top! */
+    .text-content p:first-child {
         margin-top: 0;
+    }
+    
+    .text-content p {
+        margin-bottom: 1.5rem;
     }
     
     .text-back {
@@ -45,10 +53,6 @@ layout: base
     
     .text-back:hover {
         color: #1a1a1a;
-    }
-    
-    .text-content p {
-        margin-bottom: 1.5rem;
     }
 </style>
 
