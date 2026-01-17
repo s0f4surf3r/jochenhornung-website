@@ -2,16 +2,6 @@
 layout: base
 ---
 <style>
-    /* Hero Image */
-    .text-hero-image {
-        width: 100%;
-        max-width: 800px;
-        height: 350px;
-        object-fit: cover;
-        margin-bottom: 3rem;
-        opacity: 0.85;
-    }
-
     .text-meta {
         font-size: 0.8rem;
         color: #bbb;
@@ -50,6 +40,15 @@ layout: base
         margin-bottom: 1.5rem;
     }
     
+    /* Hero Image - als visueller Nachklang */
+    .text-hero-image {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        margin-top: 4rem;
+        opacity: 0.7;
+    }
+    
     .text-back {
         display: inline-block;
         margin-bottom: 2.5rem;
@@ -66,10 +65,6 @@ layout: base
 <div class="content-page">
     <a href="/texte/" class="text-back">← Zurück zu Texte</a>
     
-    {% if heroImage %}
-    <img src="{{ heroImage }}" alt="" class="text-hero-image">
-    {% endif %}
-    
     <div class="text-header">
         <div class="text-meta">
             {{ date | readableDate }}{% if type %} · {{ type }}{% endif %}
@@ -83,4 +78,8 @@ layout: base
     <div class="text-content">
         {{ content | safe }}
     </div>
+    
+    {% if heroImage %}
+    <img src="{{ heroImage }}" alt="" class="text-hero-image">
+    {% endif %}
 </div>
