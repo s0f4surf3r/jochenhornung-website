@@ -2,34 +2,46 @@
 layout: base
 ---
 <style>
+    /* Meta Info - fast unsichtbar */
     .text-meta {
-        font-size: 0.95rem;
-        color: #666;
-        margin-bottom: 0.5rem;
+        font-size: 0.8rem;
+        color: #aaa;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 4rem; /* Viel Abstand zum Titel */
     }
     
+    /* Titel - braucht Raum */
     .text-title {
         font-family: Georgia, serif;
-        font-size: 2.2rem;
+        font-size: 2.5rem;
         font-weight: 400;
-        margin-bottom: 2rem;
+        margin-bottom: 4rem; /* Viel Abstand zum Gedicht */
+        line-height: 1.2;
     }
     
+    /* Gedicht-Content - enger Zeilenabstand */
     .text-content {
         font-family: Georgia, serif;
-        line-height: 1.8;
+        line-height: 1.5; /* Viel enger für Gedichte! */
+        max-width: 600px; /* Gedichte brauchen schmale Spalten */
     }
     
     .text-back {
         display: inline-block;
-        margin-bottom: 2rem;
-        color: #666;
+        margin-bottom: 3rem;
+        color: #999;
         text-decoration: none;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
     
     .text-back:hover {
         color: #1a1a1a;
+    }
+    
+    /* Mehr Raum zwischen Strophen (doppelte Leerzeilen) */
+    .text-content p {
+        margin-bottom: 1.5rem;
     }
 </style>
 
