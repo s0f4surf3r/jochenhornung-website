@@ -13,11 +13,11 @@ module.exports = function(eleventyConfig) {
 
   // Copy static assets
   eleventyConfig.addPassthroughCopy("src/css");
-  eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy({"src/images": "images"});
   eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPassthroughCopy("src/docs");
   eleventyConfig.addPassthroughCopy("src/audio");
-  
+
   // Date filter
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return new Date(dateObj).toLocaleDateString('de-DE', {
@@ -26,7 +26,7 @@ module.exports = function(eleventyConfig) {
       day: 'numeric'
     });
   });
-  
+
   // Sort by date (newest first)
   eleventyConfig.addCollection("sortedTexte", function(collectionApi) {
     return collectionApi.getFilteredByTag("text").sort((a, b) => {
