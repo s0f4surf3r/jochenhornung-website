@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: s0f4surf3r/jochenhornung-website
   branch: main
 
 media_folder: "src/images"
