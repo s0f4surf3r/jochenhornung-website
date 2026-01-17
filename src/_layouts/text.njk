@@ -7,18 +7,10 @@ layout: base
         color: #bbb;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        margin-bottom: 3rem;
+        margin-bottom: 1.5rem; /* Kleiner, weil Kurzbeschreibung kommt */
     }
     
-    .text-title {
-        font-family: Georgia, serif;
-        font-size: 1.8rem;
-        font-weight: 400;
-        margin-bottom: 0.8rem; /* Noch näher! */
-        line-height: 1.3;
-    }
-    
-    /* Kurzbeschreibung - dezent zwischen Titel und Gedicht */
+    /* Kurzbeschreibung - zwischen Datum und Titel */
     .text-excerpt {
         font-family: Georgia, serif;
         font-size: 0.9rem;
@@ -27,6 +19,14 @@ layout: base
         margin-bottom: 2rem;
         line-height: 1.6;
         max-width: 600px;
+    }
+    
+    .text-title {
+        font-family: Georgia, serif;
+        font-size: 1.8rem;
+        font-weight: 400;
+        margin-bottom: 0.8rem; /* Eng am Gedicht */
+        line-height: 1.3;
     }
     
     .text-content {
@@ -59,10 +59,10 @@ layout: base
         <div class="text-meta">
             {{ date | readableDate }}{% if type %} · {{ type }}{% endif %}
         </div>
-        <h1 class="text-title">{{ title }}</h1>
         {% if excerpt %}
         <div class="text-excerpt">{{ excerpt }}</div>
         {% endif %}
+        <h1 class="text-title">{{ title }}</h1>
     </div>
     
     <div class="text-content">
@@ -71,17 +71,12 @@ layout: base
 </div>
 ```
 
-**Geändert:**
-- Titel → Gedicht: **0.8rem** (war 1.5rem) - sehr eng jetzt!
-- **Kurzbeschreibung eingefügt:** kursiv, grau, 0.9rem
-- Kurzbeschreibung → Gedicht: 2rem Abstand
-
 **Struktur jetzt:**
 ```
-Datum (weit oben)
-     ↓ 3rem
-Titel (eng am Gedicht)
-     ↓ 0.8rem
-Kurzbeschreibung (dezent, kursiv)
-     ↓ 2rem
+Datum
+  ↓ 1.5rem
+Kurzbeschreibung (Kontext in kursiv)
+  ↓ 2rem
+Titel
+  ↓ 0.8rem
 Gedicht
