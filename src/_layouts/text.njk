@@ -2,6 +2,16 @@
 layout: base
 ---
 <style>
+    /* Hero Image */
+    .text-hero-image {
+        width: 100%;
+        max-width: 800px;
+        height: 350px;
+        object-fit: cover;
+        margin-bottom: 3rem;
+        opacity: 0.85;
+    }
+
     .text-meta {
         font-size: 0.8rem;
         color: #bbb;
@@ -32,7 +42,7 @@ layout: base
         font-family: Georgia, serif;
         line-height: 1.5;
         max-width: 600px;
-        margin-top: -0.5rem; /* ZIEHT DEN TEXT HOCH! */
+        margin-top: -0.5rem;
     }
     
     .text-content p {
@@ -55,6 +65,10 @@ layout: base
 
 <div class="content-page">
     <a href="/texte/" class="text-back">← Zurück zu Texte</a>
+    
+    {% if heroImage %}
+    <img src="{{ heroImage }}" alt="" class="text-hero-image">
+    {% endif %}
     
     <div class="text-header">
         <div class="text-meta">
