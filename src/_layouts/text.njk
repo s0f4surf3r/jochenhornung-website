@@ -7,16 +7,15 @@ layout: base
         color: #bbb;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        margin-bottom: 1.5rem; /* Kleiner, weil Kurzbeschreibung kommt */
+        margin-bottom: 1.5rem;
     }
     
-    /* Kurzbeschreibung - zwischen Datum und Titel */
     .text-excerpt {
         font-family: Georgia, serif;
         font-size: 0.9rem;
         font-style: italic;
         color: #888;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem; /* Mehr Abstand zum Titel! */
         line-height: 1.6;
         max-width: 600px;
     }
@@ -25,7 +24,7 @@ layout: base
         font-family: Georgia, serif;
         font-size: 1.8rem;
         font-weight: 400;
-        margin-bottom: 0.8rem; /* Eng am Gedicht */
+        margin-bottom: 0.8rem; /* Bleibt eng am Gedicht */
         line-height: 1.3;
     }
     
@@ -71,12 +70,11 @@ layout: base
 </div>
 ```
 
-**Struktur jetzt:**
+**Abstände jetzt:**
 ```
 Datum
   ↓ 1.5rem
-Kurzbeschreibung (Kontext in kursiv)
-  ↓ 2rem
-Titel
-  ↓ 0.8rem
-Gedicht
+Kurzbeschreibung
+  ↓ 3rem (groß!)
+Titel + Gedicht (Einheit)
+  ↓ 0.8rem (klein!)
