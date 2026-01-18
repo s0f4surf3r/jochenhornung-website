@@ -100,6 +100,24 @@
         .text-item h3 a:hover {
             text-decoration: underline;
         }
+        
+        /* Footer spacing nur bei Content-Seiten */
+        .site-footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Auf Content-Seiten: Abstand oben */
+        .content-page ~ .site-footer {
+            margin-top: 4rem;
+        }
+        
+        .site-footer a {
+            color: #666;
+        }
     </style>
 </head>
 <body>
@@ -123,8 +141,8 @@
 
     {{ content | safe }}
 
-    <footer style="text-align: center; padding: 2rem 0; margin-top: 4rem; border-top: 1px solid #eee; font-size: 0.9rem; color: #666;">
-        © 2026 Jochen Hornung | <a href="/impressum" style="color: #666;">Impressum</a> | <a href="/datenschutz" style="color: #666;">Datenschutz</a>
+    <footer class="site-footer">
+        © 2026 Jochen Hornung | <a href="/impressum">Impressum</a> | <a href="/datenschutz">Datenschutz</a>
     </footer>
 </body>
 </html>
