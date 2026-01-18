@@ -17,14 +17,11 @@ title: Raum für Menschlichkeit und Tiefe
     position: relative;
   }
   
-  /* Auf schmalen Screens: Kaktus rechts sichtbar machen */
+  /* Auf schmalen Screens: Kaktus rechts sichtbar + mehr Platz unten */
   @media (max-width: 768px) {
     .hero {
       background-position: 65% center;
-    }
-    
-    .hero-nav {
-      gap: 0.6rem;
+      padding-bottom: 8rem;
     }
   }
   
@@ -64,7 +61,8 @@ title: Raum für Menschlichkeit und Tiefe
     position: relative;
     z-index: 1;
     display: flex;
-    gap: 2rem;
+    row-gap: 0.8rem;
+    column-gap: 2rem;
     flex-wrap: wrap;
     justify-content: center;
   }
