@@ -7,7 +7,7 @@ title: Raum für Menschlichkeit und Tiefe
   .hero {
     background-image: url('/images/hero.jpg');
     background-size: cover;
-    background-position: center left;
+    background-position: center center;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -15,6 +15,13 @@ title: Raum für Menschlichkeit und Tiefe
     align-items: center;
     padding: 4rem 1.5rem;
     position: relative;
+  }
+  
+  /* Auf schmalen Screens: Kaktus rechts sichtbar machen */
+  @media (max-width: 768px) {
+    .hero {
+      background-position: 65% center;
+    }
   }
   
   .hero-overlay {
