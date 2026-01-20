@@ -23,6 +23,13 @@
     <meta property="twitter:description" content="Raum für Menschlichkeit und Tiefe. Coaching, Texte und Gedanken von Jochen Hornung aus Berlin.">
     <meta property="twitter:image" content="https://jochenhornung.de/images/hero_for_SM_WA.jpg">
     
+    <!-- Theme Color für Safari - nur auf Startseite schwarz -->
+    {% if page.url == "/" %}
+    <meta name="theme-color" content="#1a1a1a">
+    {% else %}
+    <meta name="theme-color" content="#ffffff">
+    {% endif %}
+    
     <!-- Favicons für alle Browser und Plattformen -->
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
