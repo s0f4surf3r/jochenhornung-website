@@ -4,113 +4,127 @@ title: Raum für Menschlichkeit und Tiefe
 ---
 
 <style>
-  .hero {
-    background-image: url('/images/hero.jpg');
-    background-size: cover;
-    background-position: center center;
-    min-height: 100vh;
-    min-height: 100dvh; /* Für iOS Safari - dynamic viewport */
-    position: relative;
-    padding: 4rem 1.5rem;
-  }
-  
-  /* Auf schmalen Screens: Kaktus rechts sichtbar */
-  @media (max-width: 768px) {
     .hero {
-      background-position: 65% center;
+        background-image: url('/images/hero.jpg');
+        background-size: cover;
+        background-position: center center;
+        min-height: 100vh;
+        min-height: 100dvh; /* Für iOS Safari - dynamic viewport */
+        position: relative;
+        padding: 4rem 1.5rem;
+        /* iOS Safe Areas */
+        padding-top: calc(4rem + env(safe-area-inset-top));
+        padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+        padding-left: calc(1.5rem + env(safe-area-inset-left));
+        padding-right: calc(1.5rem + env(safe-area-inset-right));
     }
-  }
-  
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-  }
-  
-  .hero-content {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    text-align: center;
-    width: 90%;
-    max-width: 1200px;
-  }
-  
-  .hero-name {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: white;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-  }
-  
-  .hero-title {
-    font-size: clamp(2.1rem, 6vw, 2.5rem);
-    font-weight: 700;
-    color: white;
-    letter-spacing: 0.08em;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-  }
-  
-  .hero-nav {
-    position: absolute;
-    bottom: 30%;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    display: flex;
-    row-gap: 0.8rem;
-    column-gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
 
-  /* Auf Mobile: Menü weiter unten */
-  @media (max-width: 768px) {
+    /* Auf schmalen Screens: Kaktus rechts sichtbar */
+    @media (max-width: 768px) {
+        .hero {
+            background-position: 65% center;
+        }
+    }
+
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.6);
+    }
+
+    .hero-content {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        text-align: center;
+        width: 90%;
+        max-width: 1200px;
+    }
+
+    /* Mobile: Titel etwas höher */
+    @media (max-width: 768px) {
+        .hero-content {
+            top: 20%;
+        }
+    }
+
+    .hero-name {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: white;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+
+    .hero-title {
+        font-size: clamp(2.1rem, 6vw, 2.5rem);
+        font-weight: 700;
+        color: white;
+        letter-spacing: 0.08em;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+
     .hero-nav {
-      bottom: 20%;
+        position: absolute;
+        bottom: 22%;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        display: flex;
+        row-gap: 0.8rem;
+        column-gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-  }
-  
-  .hero-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-  }
 
-  /* Body dunkel nur auf Startseite - für iPhone Safe Areas */
-  body {
-    background: #1a1a1a;
-  }
+    /* Auf Mobile: Menü weiter unten + kleinerer gap */
+    @media (max-width: 768px) {
+        .hero-nav {
+            bottom: 18%;
+            column-gap: 1.2rem;
+            row-gap: 0.6rem;
+        }
+    }
 
-  /* Footer auch dunkler Hintergrund auf Startseite */
-  .site-footer {
-    background: #1a1a1a;
-    color: #999;
-    border-top: none;
-  }
+    .hero-nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
 
-  .site-footer a {
-    color: #999;
-  }
+    /* Body dunkel nur auf Startseite - für iPhone Safe Areas */
+    body {
+        background: #1a1a1a;
+    }
+
+    /* Footer auch dunkler Hintergrund auf Startseite */
+    .site-footer {
+        background: #1a1a1a;
+        color: #999;
+        border-top: none;
+    }
+
+    .site-footer a {
+        color: #999;
+    }
 </style>
 
 <div class="hero">
-  <div class="hero-overlay"></div>
-  
-  <div class="hero-content">
-    <p class="hero-name">Jochen Hornung</p>
-    <h1 class="hero-title">RAUM FÜR MENSCHLICHKEIT UND TIEFE</h1>
-  </div>
+    <div class="hero-overlay"></div>
 
-  <nav class="hero-nav">
-    <a href="/texte/">Texte</a>
-    <a href="/coaching/">Coaching</a>
-    <a href="/werkzeuge/">Werkzeuge</a>
-    <a href="/kaktus/">Kaktus</a>
-    <a href="/ueber/">Über mich</a>
-  </nav>
+    <div class="hero-content">
+        <p class="hero-name">Jochen Hornung</p>
+        <h1 class="hero-title">RAUM FÜR MENSCHLICHKEIT UND TIEFE</h1>
+    </div>
+
+    <nav class="hero-nav">
+        <a href="/texte/">Texte</a>
+        <a href="/coaching/">Coaching</a>
+        <a href="/werkzeuge/">Werkzeuge</a>
+        <a href="/kaktus/">Kaktus</a>
+        <a href="/ueber/">Über mich</a>
+    </nav>
 </div>
