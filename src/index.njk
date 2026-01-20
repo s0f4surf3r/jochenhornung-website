@@ -26,6 +26,14 @@ title: Raum für Menschlichkeit und Tiefe
         position: relative;
     }
 
+    /* Auf schmalen Screens: Kaktus rechts sichtbar */
+    @media (max-width: 768px) {
+        .hero {
+            background-position: 65% center;
+            padding-bottom: 8rem;
+        }
+    }
+
     .hero-overlay {
         position: absolute;
         inset: 0;
@@ -81,17 +89,6 @@ title: Raum für Menschlichkeit und Tiefe
     .site-footer {
         background: #ffffff;
         color: #666;
-    }
-
-    /* Mobile Anpassungen - alles in einem Block */
-    @media (max-width: 768px) {
-        .hero {
-            background-position: 65% center;
-            padding-bottom: 8rem;
-        }
-        .hero-nav {
-            margin-bottom: 6rem;
-        }
     }
 </style>
 
