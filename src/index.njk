@@ -9,9 +9,10 @@ title: Raum für Menschlichkeit und Tiefe
         display: none;
     }
 
-    /* HTML und Body für iOS Safari */
+    /* HTML und Body für iOS Safari Safe Area */
     html {
         background: #1a1a1a;
+        min-height: calc(100% + env(safe-area-inset-top));
     }
     
     body {
@@ -25,8 +26,6 @@ title: Raum für Menschlichkeit und Tiefe
         background-size: cover;
         background-position: center center;
         min-height: 100vh;
-        min-height: 100svh;
-        min-height: -webkit-fill-available;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
