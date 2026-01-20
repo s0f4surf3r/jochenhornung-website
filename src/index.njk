@@ -9,16 +9,12 @@ title: Raum für Menschlichkeit und Tiefe
         display: none;
     }
 
-    /* HTML und Body für iOS Safari Safe Area */
-    html {
-        background: #1a1a1a;
-        min-height: calc(100% + env(safe-area-inset-top));
-    }
-    
-    body {
+    /* HTML und Body für iOS Safari - BEIDE müssen die gleiche Farbe haben */
+    html, body {
         margin: 0;
         padding: 0;
         background: #1a1a1a;
+        min-height: 100%;
     }
 
     .hero {
@@ -26,12 +22,12 @@ title: Raum für Menschlichkeit und Tiefe
         background-size: cover;
         background-position: center center;
         min-height: 100vh;
+        min-height: 100dvh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
         padding: 4rem 1.5rem;
-        padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));
         position: relative;
     }
 
@@ -108,3 +104,15 @@ title: Raum für Menschlichkeit und Tiefe
         <a href="/ueber/">Über mich</a>
     </nav>
 </div>
+
+<script>
+    // iOS 26 Fix: Hero auf volle Fensterhöhe setzen
+    function setHeroHeight() {
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.minHeight = window.outerHeight + 'px';
+        }
+    }
+    setHeroHeight();
+    window.addEventListener('resize', setHeroHeight);
+</script>
