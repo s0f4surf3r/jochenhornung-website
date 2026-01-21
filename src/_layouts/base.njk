@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" style="background: {% if page.url == '/' %}#1a1a1a{% else %}#ffffff{% endif %}; {% if page.url == '/' %}height: 100%;{% endif %}">
+<html lang="de" style="{% if page.url == '/' %}height: 100%;{% endif %} background: {% if page.url == '/' %}#1a1a1a{% else %}#ffffff{% endif %};">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -38,10 +38,6 @@
             box-sizing: border-box;
         }
 
-        html {
-            {% if page.url != "/" %}height: 100%;{% endif %}
-        }
-
         body {
             margin: 0;
             padding: 0;
@@ -51,7 +47,6 @@
             {% else %}
             min-height: 100%;
             {% endif %}
-            overscroll-behavior-y: none;
             -webkit-text-size-adjust: 100%;
         }
 
