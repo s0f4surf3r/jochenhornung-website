@@ -4,24 +4,9 @@ title: Raum für Menschlichkeit und Tiefe
 ---
 
 <style>
-    /* Footer auf Startseite: weißer Hintergrund */
-    .site-footer {
-        background: #ffffff;
-        color: #666;
-    }
-
-    /* HTML und Body für iOS Safari */
-    html {
+    /* Startseite: dunkler Hintergrund */
+    html, body {
         background: #1a1a1a;
-        height: 100%;
-    }
-    
-    body {
-        margin: 0;
-        padding: 0;
-        background: #1a1a1a;
-        min-height: 100%;
-        overflow-x: hidden;
     }
 
     .hero {
@@ -35,12 +20,13 @@ title: Raum für Menschlichkeit und Tiefe
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        padding: 4rem 1.5rem;
-        padding-top: calc(4rem + env(safe-area-inset-top));
+        padding:
+            calc(4rem + env(safe-area-inset-top))
+            1.5rem
+            calc(2.5rem + env(safe-area-inset-bottom));
         position: relative;
     }
 
-    /* Auf schmalen Screens: Kaktus rechts sichtbar */
     @media (max-width: 768px) {
         .hero {
             background-position: 65% center;
@@ -87,12 +73,11 @@ title: Raum für Menschlichkeit und Tiefe
         column-gap: 2rem;
         flex-wrap: wrap;
         justify-content: center;
-        margin-bottom: 8rem;
     }
 
     @media (max-width: 768px) {
         .hero-nav {
-            margin-bottom: 8rem;
+            max-width: 340px;
         }
     }
 
@@ -120,15 +105,3 @@ title: Raum für Menschlichkeit und Tiefe
         <a href="/ueber/">Über mich</a>
     </nav>
 </div>
-
-<script>
-    // iOS 26 Fix: Hero auf volle Fensterhöhe setzen
-    function setHeroHeight() {
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            hero.style.minHeight = window.outerHeight + 'px';
-        }
-    }
-    setHeroHeight();
-    window.addEventListener('resize', setHeroHeight);
-</script>
