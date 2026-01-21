@@ -2,7 +2,10 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+
+    <!-- wichtig: viewport-fit=cover hast du schon, gut -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
     <title>{% if title %}{{ title }} - {% endif %}Jochen Hornung</title>
 
     <!-- SEO Meta Tags -->
@@ -35,6 +38,27 @@
 
     <!-- Styles ans Ende verschoben für bessere WhatsApp-Kompatibilität -->
     <style>
+        /* ===== Global Reset (neu) ===== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
+            overflow-x: hidden;
+            background: #1a1a1a; /* verhindert "grau neben notch" beim mini-scroll */
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* (optional) iOS overscroll optisch ruhiger */
+        body {
+            overscroll-behavior-y: none;
+        }
+
+        /* ===== Dein bestehendes Styling ===== */
         .site-header {
             padding: 3rem 2rem 1rem;
             max-width: 800px;
@@ -108,6 +132,7 @@
             border-top: 1px solid #eee;
             font-size: 0.9rem;
             color: #666;
+            background: #ffffff; /* falls body dunkel ist */
         }
 
         /* Auf Content-Seiten: Abstand oben */
