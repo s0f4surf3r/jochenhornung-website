@@ -29,6 +29,8 @@ title: Raum für Menschlichkeit und Tiefe
         justify-content: space-between;
         align-items: center;
         padding: 4rem 1.5rem;
+        padding-top: calc(4rem + env(safe-area-inset-top));
+        margin-top: calc(-1 * env(safe-area-inset-top));
         position: relative;
     }
 
@@ -123,13 +125,4 @@ title: Raum für Menschlichkeit und Tiefe
     }
     setHeroHeight();
     window.addEventListener('resize', setHeroHeight);
-    
-    // Seite nach oben scrollen - mehrfach versuchen für iOS Safari
-    window.scrollTo(0, 0);
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-    
-    setTimeout(function() {
-        window.scrollTo(0, 0);
-    }, 100);
 </script>
