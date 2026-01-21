@@ -4,18 +4,16 @@ title: Raum für Menschlichkeit und Tiefe
 ---
 
 <style>
-    html {
-        height: 100%;
+    html, body {
+        margin: 0;
+        padding: 0;
         background: #1a1a1a;
     }
 
-    body {
-        min-height: 100%;
-        margin: 0;
-        background: #1a1a1a url('/images/hero.jpg') center center / cover no-repeat fixed;
-    }
-
     .hero {
+        background-image: url('/images/hero.jpg');
+        background-size: cover;
+        background-position: center center;
         min-height: 100vh;
         min-height: 100dvh;
         display: flex;
@@ -28,15 +26,15 @@ title: Raum für Menschlichkeit und Tiefe
 
     @media (max-width: 768px) {
         .hero {
+            background-position: 65% center;
             padding-bottom: 4rem;
         }
     }
 
     .hero-overlay {
-        position: fixed;
+        position: absolute;
         inset: 0;
         background: rgba(0,0,0,0.6);
-        z-index: 0;
     }
 
     .hero-content {
