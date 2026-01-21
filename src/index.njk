@@ -4,126 +4,103 @@ title: Raum für Menschlichkeit und Tiefe
 ---
 
 <style>
-  /* Startseite: Body/HTML so vorbereiten, dass Safari UI "das Bild dahinter" sehen kann */
-  :root { --page-bg: transparent; }
-
-  html {
-    background: url('/images/hero.jpg') center center / cover no-repeat;
-    background-color: #1a1a1a;
-  }
-
-  /* Body transparent, damit html-background sichtbar bleibt (wichtig für Notch/URL-Bars) */
-  body.home {
-    background: transparent !important;
-  }
-
-  /* Overlay für Lesbarkeit */
-  body.home::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .hero {
-    position: relative;
-    z-index: 1;
-
-    /* Fullscreen */
-    min-height: 100svh;
-    min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    padding:
-      calc(4rem + env(safe-area-inset-top))
-      1.5rem
-      calc(2.5rem + env(safe-area-inset-bottom));
-  }
-
-  /* Mobile: Bildausschnitt rechts (Kaktus) */
-  @media (max-width: 768px) {
-    html { background-position: 65% center; }
-  }
-
-  .hero-content {
-    text-align: center;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .hero-name {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: white;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-  }
-
-  .hero-title {
-    font-size: clamp(2.1rem, 6vw, 2.5rem);
-    font-weight: 700;
-    color: white;
-    letter-spacing: 0.08em;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-  }
-
-  /* Menü */
-  .hero-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 0.8rem;
-    column-gap: 2rem;
-    margin: 0;
-  }
-
-  /* Desktop: eine Zeile */
-  @media (min-width: 769px) {
-    .hero-nav {
-      flex-wrap: nowrap;
-      white-space: nowrap;
+    html, body {
+        height: 100%;
+        overflow: hidden;
     }
-  }
 
-  /* Mobile: 3 + 2 */
-  @media (max-width: 768px) {
-    .hero-nav {
-      max-width: 360px;
-      column-gap: 1.2rem;
+    .hero {
+        background-image: url('/images/hero.jpg');
+        background-size: cover;
+        background-position: center center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4rem 1.5rem 3rem;
     }
+
+    @media (max-width: 768px) {
+        .hero {
+            background-position: 65% center;
+            padding-bottom: 6rem;
+        }
+    }
+
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.6);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-name {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: white;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+
+    .hero-title {
+        font-size: clamp(2.1rem, 6vw, 2.5rem);
+        font-weight: 700;
+        color: white;
+        letter-spacing: 0.08em;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+
+    .hero-nav {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        row-gap: 0.8rem;
+        column-gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+        .hero-nav {
+            max-width: 340px;
+        }
+    }
+
     .hero-nav a {
-      flex: 0 1 30%; /* ~3 pro Reihe; 2 in zweiter Reihe werden durch justify-content:center mittig */
-      text-align: center;
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     }
-  }
-
-  .hero-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-  }
 </style>
 
 <div class="hero">
-  <div class="hero-content">
-    <p class="hero-name">Jochen Hornung</p>
-    <h1 class="hero-title">RAUM FÜR MENSCHLICHKEIT UND TIEFE</h1>
-  </div>
+    <div class="hero-overlay"></div>
 
-  <nav class="hero-nav">
-    <a href="/texte/">Texte</a>
-    <a href="/coaching/">Coaching</a>
-    <a href="/werkzeuge/">Werkzeuge</a>
-    <a href="/kaktus/">Kaktus</a>
-    <a href="/ueber/">Über mich</a>
-  </nav>
+    <div class="hero-content">
+        <p class="hero-name">Jochen Hornung</p>
+        <h1 class="hero-title">RAUM FÜR MENSCHLICHKEIT UND TIEFE</h1>
+    </div>
+
+    <nav class="hero-nav">
+        <a href="/texte/">Texte</a>
+        <a href="/coaching/">Coaching</a>
+        <a href="/werkzeuge/">Werkzeuge</a>
+        <a href="/kaktus/">Kaktus</a>
+        <a href="/ueber/">Über mich</a>
+    </nav>
 </div>
