@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" style="background: {% if page.url == '/' %}#1a1a1a{% else %}#ffffff{% endif %};">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -23,7 +23,7 @@
     <meta property="twitter:description" content="Raum für Menschlichkeit und Tiefe. Coaching, Texte und Gedanken von Jochen Hornung aus Berlin.">
     <meta property="twitter:image" content="https://jochenhornung.de/images/hero_for_SM_WA.jpg">
 
-    <!-- Favicons für alle Browser und Plattformen -->
+    <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
@@ -34,26 +34,22 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <style>
-        /* ===== Global Reset ===== */
         *, *::before, *::after {
             box-sizing: border-box;
         }
 
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            min-height: 100%;
-            overflow-x: hidden;
-            background: #ffffff;
-            -webkit-text-size-adjust: 100%;
+        html {
+            height: 100%;
         }
 
         body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
             overscroll-behavior-y: none;
+            -webkit-text-size-adjust: 100%;
         }
 
-        /* ===== Site Header ===== */
         .site-header {
             padding: 3rem 2rem 1rem;
             max-width: 800px;
@@ -99,7 +95,6 @@
             color: #999;
         }
 
-        /* ===== Content Pages ===== */
         .content-page {
             padding-top: 1rem;
         }
@@ -119,7 +114,6 @@
             text-decoration: underline;
         }
 
-        /* ===== Footer ===== */
         .site-footer {
             text-align: center;
             padding: 2rem 0;
@@ -138,7 +132,7 @@
         }
     </style>
 </head>
-<body>
+<body style="background: {% if page.url == '/' %}#1a1a1a{% else %}#ffffff{% endif %};">
     {% if page.url != "/" %}
     <header class="site-header">
         <h1><a href="/">Jochen Hornung</a></h1>
