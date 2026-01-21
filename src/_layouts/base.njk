@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" style="background: {% if page.url == '/' %}#1a1a1a{% else %}#ffffff{% endif %};">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -34,22 +34,27 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <style>
-        *, *::before, *::after {
-            box-sizing: border-box;
+        /* ===== Global Reset ===== */
+        *, *::before, *::after { box-sizing: border-box; }
+
+        :root{
+            /* Unterseiten = weiß, Startseite überschreibt in index.njk */
+            --page-bg: #ffffff;
         }
 
-        html {
-            height: 100%;
-        }
-
-        body {
+        html, body {
             margin: 0;
             padding: 0;
+            width: 100%;
             min-height: 100%;
-            overscroll-behavior-y: none;
+            overflow-x: hidden;
+            background: var(--page-bg);
             -webkit-text-size-adjust: 100%;
         }
 
+        body { overscroll-behavior-y: none; }
+
+        /* ===== Site Header (nur Unterseiten) ===== */
         .site-header {
             padding: 3rem 2rem 1rem;
             max-width: 800px;
@@ -91,13 +96,10 @@
             text-decoration: none;
         }
 
-        .site-nav span {
-            color: #999;
-        }
+        .site-nav span { color: #999; }
 
-        .content-page {
-            padding-top: 1rem;
-        }
+        /* ===== Content Pages ===== */
+        .content-page { padding-top: 1rem; }
 
         .content-page .text-content,
         .content-page .text-excerpt,
@@ -110,10 +112,9 @@
             text-decoration: none;
         }
 
-        .text-item h3 a:hover {
-            text-decoration: underline;
-        }
+        .text-item h3 a:hover { text-decoration: underline; }
 
+        /* ===== Footer (nur Unterseiten) ===== */
         .site-footer {
             text-align: center;
             padding: 2rem 0;
@@ -123,16 +124,13 @@
             background: #ffffff;
         }
 
-        .content-page ~ .site-footer {
-            margin-top: 4rem;
-        }
+        .content-page ~ .site-footer { margin-top: 4rem; }
 
-        .site-footer a {
-            color: #666;
-        }
+        .site-footer a { color: #666; }
     </style>
 </head>
-<body style="background: {% if page.url == '/' %}#1a1a1a{% else %}#ffffff{% endif %};">
+
+<body class="{% if page.url == '/' %}home{% else %}content{% endif %}">
     {% if page.url != "/" %}
     <header class="site-header">
         <h1><a href="/">Jochen Hornung</a></h1>
