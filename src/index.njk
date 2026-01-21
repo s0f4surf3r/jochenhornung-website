@@ -10,34 +10,28 @@ title: Raum für Menschlichkeit und Tiefe
         color: #666;
     }
 
-    /* HTML und Body für iOS Safari */
-    html {
-        background: #1a1a1a;
-        height: 100%;
-    }
-    
-    body {
-        margin: 0;
-        padding: 0;
-        background: #1a1a1a;
-        min-height: 100%;
-        overflow-x: hidden;
-    }
-
     .hero {
         background-image: url('/images/hero.jpg');
         background-size: cover;
         background-position: center center;
-        min-height: 100vh;
-        min-height: 100svh;
-        min-height: 100dvh;
+
+        /* KRITISCH: height statt min-height -> verhindert iOS "start scroll" durch overflow */
+        height: 100svh;
+        height: 100vh;
+
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        padding: 4rem 1.5rem;
-        padding-top: calc(4rem + env(safe-area-inset-top));
+
+        /* padding so, dass es nicht "oben drauf" overflowt */
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-top: calc(3rem + env(safe-area-inset-top));
+        padding-bottom: calc(2.5rem + env(safe-area-inset-bottom));
+
         position: relative;
+        overflow: hidden;
     }
 
     /* Auf schmalen Screens: Kaktus rechts sichtbar */
@@ -87,13 +81,9 @@ title: Raum für Menschlichkeit und Tiefe
         column-gap: 2rem;
         flex-wrap: wrap;
         justify-content: center;
-        margin-bottom: 8rem;
-    }
 
-    @media (max-width: 768px) {
-        .hero-nav {
-            margin-bottom: 8rem;
-        }
+        /* KRITISCH: kein margin-bottom, sonst overflow -> start scroll */
+        margin-bottom: 0;
     }
 
     .hero-nav a {
@@ -122,13 +112,22 @@ title: Raum für Menschlichkeit und Tiefe
 </div>
 
 <script>
-    // iOS 26 Fix: Hero auf volle Fensterhöhe setzen
+    // iOS Safari: nutze visualViewport statt outerHeight
     function setHeroHeight() {
         const hero = document.querySelector('.hero');
-        if (hero) {
-            hero.style.minHeight = window.outerHeight + 'px';
-        }
+        if (!hero) return;
+
+        const h = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+        hero.style.height = h + 'px';
     }
+
     setHeroHeight();
     window.addEventListener('resize', setHeroHeight);
+    window.addEventListener('orientationchange', setHeroHeight);
+
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', setHeroHeight);
+        // optional: manche iOS-Versionen ändern Höhe beim Scrollen der URL-Bar
+        window.visualViewport.addEventListener('scroll', setHeroHeight);
+    }
 </script>
