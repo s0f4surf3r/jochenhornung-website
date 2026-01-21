@@ -5,31 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>{% if title %}{{ title }} - {% endif %}Jochen Hornung</title>
 
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Raum für Menschlichkeit und Tiefe. Coaching, Texte und Gedanken von Jochen Hornung aus Berlin.">
     <meta name="author" content="Jochen Hornung">
 
+    <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jochenhornung.de{{ page.url }}">
     <meta property="og:title" content="{% if title %}{{ title }} - {% endif %}Jochen Hornung">
     <meta property="og:description" content="Raum für Menschlichkeit und Tiefe. Coaching, Texte und Gedanken von Jochen Hornung aus Berlin.">
     <meta property="og:image" content="https://jochenhornung.de/images/hero_for_SM_WA.jpg">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://jochenhornung.de{{ page.url }}">
+    <meta name="twitter:title" content="{% if title %}{{ title }} - {% endif %}Jochen Hornung">
+    <meta property="twitter:description" content="Raum für Menschlichkeit und Tiefe. Coaching, Texte und Gedanken von Jochen Hornung aus Berlin.">
+    <meta property="twitter:image" content="https://jochenhornung.de/images/hero_for_SM_WA.jpg">
+
+    <!-- Favicons für alle Browser und Plattformen -->
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="/images/site.webmanifest">
 
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
+    <!-- Styles ans Ende verschoben für bessere WhatsApp-Kompatibilität -->
     <style>
-        /* Layout-Logik für Header und Footer */
         .site-header {
-            padding: calc(3rem + env(safe-area-inset-top)) 2rem 1rem;
+            padding: 3rem 2rem 1rem;
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .site-header h1 { font-size: 1.8rem; font-weight: 400; margin-bottom: 0.3rem; }
-        .site-header h1 a { color: #1a1a1a; text-decoration: none; }
+        .site-header h1 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 0.3rem;
+        }
+
+        .site-header h1 a {
+            color: #1a1a1a;
+            text-decoration: none;
+        }
 
         .site-tagline {
             font-size: 1rem;
@@ -39,26 +60,64 @@
             font-style: italic;
         }
 
-        .site-nav { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-        .site-nav a { color: #1a1a1a; text-decoration: underline; }
-        .site-nav a.active { color: #999; text-decoration: none; }
-        .site-nav span { color: #999; }
+        .site-nav {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
 
+        .site-nav a {
+            color: #1a1a1a;
+            text-decoration: underline;
+        }
+
+        .site-nav a.active {
+            color: #999;
+            text-decoration: none;
+        }
+
+        .site-nav span {
+            color: #999;
+        }
+
+        /* Weniger Abstand oben bei Content-Seiten */
+        .content-page {
+            padding-top: 1rem;
+        }
+
+        /* Georgia für Content */
+        .content-page .text-content,
+        .content-page .text-excerpt,
+        .text-item h3 a {
+            font-family: Georgia, serif;
+        }
+
+        .text-item h3 a {
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .text-item h3 a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer spacing nur bei Content-Seiten */
         .site-footer {
             text-align: center;
             padding: 2rem 0;
-            padding-bottom: calc(2rem + env(safe-area-inset-bottom));
             border-top: 1px solid #eee;
             font-size: 0.9rem;
             color: #666;
-            background: #ffffff;
         }
 
-        .site-footer a { color: #666; }
+        /* Auf Content-Seiten: Abstand oben */
+        .content-page ~ .site-footer {
+            margin-top: 4rem;
+        }
 
-        /* Content Page Styles */
-        .content-page { padding-top: 1rem; }
-        .content-page .text-content { font-family: Georgia, serif; }
+        .site-footer a {
+            color: #666;
+        }
     </style>
 </head>
 <body>
