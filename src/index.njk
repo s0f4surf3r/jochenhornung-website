@@ -10,46 +10,56 @@ title: Raum für Menschlichkeit und Tiefe
         color: #666;
     }
 
-    .hero {
+    /* ========== FIX: Hero-Hintergrund hinter Safari UI ========== */
+
+    .hero-bg {
+        position: fixed;
+        inset: 0;
         background-image: url('/images/hero.jpg');
         background-size: cover;
         background-position: center center;
+        z-index: -2;
+    }
 
-        /* KRITISCH: height statt min-height -> verhindert iOS "start scroll" durch overflow */
-        height: 100svh;
-        height: 100vh;
+    /* Dark Overlay wie vorher */
+    .hero-bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.6);
+    }
+
+    /* ============================================================ */
+
+    .hero {
+        /* WICHTIG: kein eigenes background-image mehr */
+
+        min-height: 100svh;
+        min-height: 100vh;
 
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
 
-        /* padding so, dass es nicht "oben drauf" overflowt */
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-        padding-top: calc(3rem + env(safe-area-inset-top));
+        padding-top: calc(4rem + env(safe-area-inset-top));
         padding-bottom: calc(2.5rem + env(safe-area-inset-bottom));
 
         position: relative;
-        overflow: hidden;
     }
 
     /* Auf schmalen Screens: Kaktus rechts sichtbar */
     @media (max-width: 768px) {
-        .hero {
+        .hero-bg {
             background-position: 65% center;
         }
     }
 
-    .hero-overlay {
-        position: absolute;
-        inset: 0;
-        background: rgba(0,0,0,0.6);
-    }
-
     .hero-content {
         position: relative;
-        z-index: 1;
+        z-index: 2;
         text-align: center;
         flex: 1;
         display: flex;
@@ -75,14 +85,14 @@ title: Raum für Menschlichkeit und Tiefe
 
     .hero-nav {
         position: relative;
-        z-index: 1;
+        z-index: 2;
         display: flex;
         row-gap: 0.8rem;
         column-gap: 2rem;
         flex-wrap: wrap;
         justify-content: center;
 
-        /* KRITISCH: kein margin-bottom, sonst overflow -> start scroll */
+        /* WICHTIG: kein margin-bottom -> verhindert Initial-Scroll */
         margin-bottom: 0;
     }
 
@@ -94,8 +104,10 @@ title: Raum für Menschlichkeit und Tiefe
     }
 </style>
 
+<!-- Hintergrund hinter Notch / Safari UI -->
+<div class="hero-bg" aria-hidden="true"></div>
+
 <div class="hero">
-    <div class="hero-overlay"></div>
 
     <div class="hero-content">
         <p class="hero-name">Jochen Hornung</p>
@@ -109,25 +121,5 @@ title: Raum für Menschlichkeit und Tiefe
         <a href="/kaktus/">Kaktus</a>
         <a href="/ueber/">Über mich</a>
     </nav>
+
 </div>
-
-<script>
-    // iOS Safari: nutze visualViewport statt outerHeight
-    function setHeroHeight() {
-        const hero = document.querySelector('.hero');
-        if (!hero) return;
-
-        const h = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-        hero.style.height = h + 'px';
-    }
-
-    setHeroHeight();
-    window.addEventListener('resize', setHeroHeight);
-    window.addEventListener('orientationchange', setHeroHeight);
-
-    if (window.visualViewport) {
-        window.visualViewport.addEventListener('resize', setHeroHeight);
-        // optional: manche iOS-Versionen ändern Höhe beim Scrollen der URL-Bar
-        window.visualViewport.addEventListener('scroll', setHeroHeight);
-    }
-</script>
