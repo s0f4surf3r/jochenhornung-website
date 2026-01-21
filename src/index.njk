@@ -14,20 +14,29 @@ title: Raum für Menschlichkeit und Tiefe
         background-image: url('/images/hero.jpg');
         background-size: cover;
         background-position: center center;
+        
+        /* Hero geht HINTER Notch und URL-Leiste */
         min-height: 100vh;
-        min-height: 100dvh;
+        min-height: calc(100vh + env(safe-area-inset-top) + env(safe-area-inset-bottom));
+        
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        padding: 3rem 1.5rem 2rem;
+        
+        /* Content-Padding damit es sichtbar bleibt */
+        padding-top: calc(3rem + env(safe-area-inset-top));
+        padding-left: calc(1.5rem + env(safe-area-inset-left));
+        padding-right: calc(1.5rem + env(safe-area-inset-right));
+        padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+        
         position: relative;
     }
 
     @media (max-width: 768px) {
         .hero {
             background-position: 65% center;
-            padding-bottom: 4rem;
+            padding-bottom: calc(4rem + env(safe-area-inset-bottom));
         }
     }
 
