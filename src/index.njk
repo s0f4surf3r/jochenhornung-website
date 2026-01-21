@@ -17,6 +17,25 @@ title: Raum für Menschlichkeit und Tiefe
   position: relative;
 }
 
+.hero nav {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 340px;
+}
+
+.hero nav a,
+.hero nav span {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
 @media (max-width: 768px) {
   .hero {
     background-position: 70% center;
@@ -27,6 +46,10 @@ title: Raum für Menschlichkeit und Tiefe
   .hero {
     min-height: 100vh;
     padding-bottom: 4rem;
+  }
+  
+  .hero nav {
+    max-width: none;
   }
 }
 </style>
@@ -39,15 +62,15 @@ title: Raum für Menschlichkeit und Tiefe
     <h1 style="font-size: clamp(2.1rem, 6vw, 2.5rem); font-weight: 700; color: white; letter-spacing: 0.08em; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">RAUM FÜR MENSCHLICHKEIT UND TIEFE</h1>
   </div>
   
-  <nav style="position: relative; z-index: 1; display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; align-items: center;">
-    <a href="/texte/" style="color: white; text-decoration: none; font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Texte</a>
-    <span style="color: white; font-size: 1.1rem;">/</span>
-    <a href="/coaching/" style="color: white; text-decoration: none; font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Coaching</a>
-    <span style="color: white; font-size: 1.1rem;">/</span>
-    <a href="/werkzeuge/" style="color: white; text-decoration: none; font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Werkzeuge</a>
-    <span style="color: white; font-size: 1.1rem;">/</span>
-    <a href="/kaktus/" style="color: white; text-decoration: none; font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Kaktus</a>
-    <span style="color: white; font-size: 1.1rem;">/</span>
-    <a href="/ueber/" style="color: white; text-decoration: none; font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Über mich</a>
+  <nav>
+    <a href="/texte/">Texte</a>
+    <span>/</span>
+    <a href="/coaching/">Coaching</a>
+    <span>/</span>
+    <a href="/werkzeuge/">Werkzeuge</a>
+    <span>/</span>
+    <a href="/kaktus/">Kaktus</a>
+    <span>/</span>
+    <a href="/ueber/">Über mich</a>
   </nav>
 </div>
