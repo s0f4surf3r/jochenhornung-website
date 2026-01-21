@@ -4,7 +4,7 @@ title: Raum für Menschlichkeit und Tiefe
 ---
 
 <style>
-    /* Startseite: dunkler Hintergrund */
+    /* Startseite: dunkler Hintergrund (damit oben/unten nie weiß durchscheint) */
     html, body {
         background: #1a1a1a;
     }
@@ -13,18 +13,34 @@ title: Raum für Menschlichkeit und Tiefe
         background-image: url('/images/hero.jpg');
         background-size: cover;
         background-position: center center;
-        min-height: 100vh;
-        min-height: 100svh;
-        min-height: 100dvh;
+
+        /*
+          Overscan:
+          - 100svh = sichtbarer Viewport (stabiler als vh)
+          - + safe-area-top = Notch-Zone
+          - + 24px = kleiner Puffer für Safari UI/Render-Zickigkeit
+          Das ist die "Hero länger"-Variante ohne wildes vh-Geschwurbel.
+        */
+        min-height: calc(100svh + env(safe-area-inset-top) + 24px);
+
+        /* Fallbacks */
+        min-height: calc(100vh + env(safe-area-inset-top) + 24px);
+
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+
+        /* Padding bleibt wie bei dir, safe-area sauber drin */
         padding:
             calc(4rem + env(safe-area-inset-top))
             1.5rem
             calc(2.5rem + env(safe-area-inset-bottom));
+
         position: relative;
+
+        /* Schutz gegen Mini-Glitches/1px lines */
+        overflow: hidden;
     }
 
     @media (max-width: 768px) {
@@ -73,6 +89,9 @@ title: Raum für Menschlichkeit und Tiefe
         column-gap: 2rem;
         flex-wrap: wrap;
         justify-content: center;
+
+        /* WICHTIG: keine großen margins nach unten, sonst wieder Scroll-Random */
+        margin: 0;
     }
 
     @media (max-width: 768px) {
