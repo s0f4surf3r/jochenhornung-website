@@ -4,62 +4,58 @@ title: Raum für Menschlichkeit und Tiefe
 ---
 
 <style>
-    /* Startseite: Footer bleibt weiß (wie bei dir), aber liegt über dem Background */
+    /* Footer auf Startseite: weißer Hintergrund */
     .site-footer {
         background: #ffffff;
         color: #666;
-        position: relative;
-        z-index: 1;
     }
 
-    /* ===== Background-Layer: NICHT negativ! ===== */
-    .hero-bg {
-        position: fixed;
-        inset: 0;
+    /* HTML und Body für iOS Safari */
+    html {
+        background: #1a1a1a;
+        height: 100%;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        background: #1a1a1a;
+        min-height: 100%;
+        overflow-x: hidden;
+    }
+
+    .hero {
         background-image: url('/images/hero.jpg');
         background-size: cover;
         background-position: center center;
-        z-index: 0;               /* wichtig */
-        pointer-events: none;
+        min-height: 100vh;
+        min-height: 100svh;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4rem 1.5rem;
+        padding-top: calc(4rem + env(safe-area-inset-top));
+        position: relative;
     }
 
-    .hero-bg::after {
-        content: "";
+    /* Auf schmalen Screens: Kaktus rechts sichtbar */
+    @media (max-width: 768px) {
+        .hero {
+            background-position: 65% center;
+        }
+    }
+
+    .hero-overlay {
         position: absolute;
         inset: 0;
         background: rgba(0,0,0,0.6);
     }
 
-    /* Mobile: Kaktus rechts sichtbarer */
-    @media (max-width: 768px) {
-        .hero-bg {
-            background-position: 65% center;
-        }
-    }
-
-    /* ===== Hero-Layout ===== */
-    .hero {
-        /* damit der Inhalt über dem Background liegt */
+    .hero-content {
         position: relative;
         z-index: 1;
-
-        /* wirklich fullscreen */
-        height: 100svh;
-        height: 100vh;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-
-        /* padding ohne overflow-explosions */
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-        padding-top: calc(3rem + env(safe-area-inset-top));
-        padding-bottom: calc(2.5rem + env(safe-area-inset-bottom));
-    }
-
-    .hero-content {
         text-align: center;
         flex: 1;
         display: flex;
@@ -84,12 +80,20 @@ title: Raum für Menschlichkeit und Tiefe
     }
 
     .hero-nav {
+        position: relative;
+        z-index: 1;
         display: flex;
         row-gap: 0.8rem;
         column-gap: 2rem;
         flex-wrap: wrap;
         justify-content: center;
-        margin: 0; /* wichtig: keine 8rem mehr */
+        margin-bottom: 8rem;
+    }
+
+    @media (max-width: 768px) {
+        .hero-nav {
+            margin-bottom: 8rem;
+        }
     }
 
     .hero-nav a {
@@ -100,10 +104,9 @@ title: Raum für Menschlichkeit und Tiefe
     }
 </style>
 
-<!-- fixed Hintergrund (liegt über body-bg, aber unter Inhalt) -->
-<div class="hero-bg" aria-hidden="true"></div>
-
 <div class="hero">
+    <div class="hero-overlay"></div>
+
     <div class="hero-content">
         <p class="hero-name">Jochen Hornung</p>
         <h1 class="hero-title">RAUM FÜR MENSCHLICHKEIT UND TIEFE</h1>
@@ -117,3 +120,15 @@ title: Raum für Menschlichkeit und Tiefe
         <a href="/ueber/">Über mich</a>
     </nav>
 </div>
+
+<script>
+    // iOS 26 Fix: Hero auf volle Fensterhöhe setzen
+    function setHeroHeight() {
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.minHeight = window.outerHeight + 'px';
+        }
+    }
+    setHeroHeight();
+    window.addEventListener('resize', setHeroHeight);
+</script>
