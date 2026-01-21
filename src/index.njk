@@ -4,11 +4,6 @@ title: Raum für Menschlichkeit und Tiefe
 ---
 
 <style>
-    /* Startseite: dunkler Hintergrund */
-    html, body {
-        background: #1a1a1a;
-    }
-
     .hero {
         background-image: url('/images/hero.jpg');
         background-size: cover;
@@ -105,3 +100,15 @@ title: Raum für Menschlichkeit und Tiefe
         <a href="/ueber/">Über mich</a>
     </nav>
 </div>
+
+<script>
+    // iOS Safari: Hero auf volle Bildschirmhöhe setzen
+    function setHeroHeight() {
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.minHeight = window.outerHeight + 'px';
+        }
+    }
+    setHeroHeight();
+    window.addEventListener('resize', setHeroHeight);
+</script>
