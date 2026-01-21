@@ -17,17 +17,17 @@ title: Raum für Menschlichkeit und Tiefe
         background-size: cover;
         background-position: center center;
         
-        /* Hero füllt exakt den Screen */
         height: 100vh;
         height: 100dvh;
         
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
+        gap: 2rem;
         
-        /* Content-Padding mit Safe Areas */
-        padding-top: max(3rem, env(safe-area-inset-top));
+        /* Desktop: Wenig Abstand oben */
+        padding-top: max(1.5rem, env(safe-area-inset-top));
         padding-left: max(1.5rem, env(safe-area-inset-left));
         padding-right: max(1.5rem, env(safe-area-inset-right));
         padding-bottom: max(2rem, env(safe-area-inset-bottom));
@@ -38,7 +38,8 @@ title: Raum für Menschlichkeit und Tiefe
     @media (max-width: 768px) {
         .hero {
             background-position: 65% center;
-            padding-bottom: max(4rem, env(safe-area-inset-bottom));
+            justify-content: space-between;
+            gap: 0;
         }
     }
 
@@ -52,10 +53,6 @@ title: Raum für Menschlichkeit und Tiefe
         position: relative;
         z-index: 1;
         text-align: center;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
     }
 
     .hero-name {
