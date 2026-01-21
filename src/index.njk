@@ -4,24 +4,25 @@ title: Raum für Menschlichkeit und Tiefe
 ---
 
 <style>
-    /* Footer auf Startseite: weißer Hintergrund */
+    /* Startseite: Footer bleibt weiß (wie bei dir), aber liegt über dem Background */
     .site-footer {
         background: #ffffff;
         color: #666;
+        position: relative;
+        z-index: 1;
     }
 
-    /* ========== FIX: Hero-Hintergrund hinter Safari UI ========== */
-
+    /* ===== Background-Layer: NICHT negativ! ===== */
     .hero-bg {
         position: fixed;
         inset: 0;
         background-image: url('/images/hero.jpg');
         background-size: cover;
         background-position: center center;
-        z-index: -2;
+        z-index: 0;               /* wichtig */
+        pointer-events: none;
     }
 
-    /* Dark Overlay wie vorher */
     .hero-bg::after {
         content: "";
         position: absolute;
@@ -29,37 +30,36 @@ title: Raum für Menschlichkeit und Tiefe
         background: rgba(0,0,0,0.6);
     }
 
-    /* ============================================================ */
-
-    .hero {
-        /* WICHTIG: kein eigenes background-image mehr */
-
-        min-height: 100svh;
-        min-height: 100vh;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-        padding-top: calc(4rem + env(safe-area-inset-top));
-        padding-bottom: calc(2.5rem + env(safe-area-inset-bottom));
-
-        position: relative;
-    }
-
-    /* Auf schmalen Screens: Kaktus rechts sichtbar */
+    /* Mobile: Kaktus rechts sichtbarer */
     @media (max-width: 768px) {
         .hero-bg {
             background-position: 65% center;
         }
     }
 
-    .hero-content {
+    /* ===== Hero-Layout ===== */
+    .hero {
+        /* damit der Inhalt über dem Background liegt */
         position: relative;
-        z-index: 2;
+        z-index: 1;
+
+        /* wirklich fullscreen */
+        height: 100svh;
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        /* padding ohne overflow-explosions */
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-top: calc(3rem + env(safe-area-inset-top));
+        padding-bottom: calc(2.5rem + env(safe-area-inset-bottom));
+    }
+
+    .hero-content {
         text-align: center;
         flex: 1;
         display: flex;
@@ -84,16 +84,12 @@ title: Raum für Menschlichkeit und Tiefe
     }
 
     .hero-nav {
-        position: relative;
-        z-index: 2;
         display: flex;
         row-gap: 0.8rem;
         column-gap: 2rem;
         flex-wrap: wrap;
         justify-content: center;
-
-        /* WICHTIG: kein margin-bottom -> verhindert Initial-Scroll */
-        margin-bottom: 0;
+        margin: 0; /* wichtig: keine 8rem mehr */
     }
 
     .hero-nav a {
@@ -104,11 +100,10 @@ title: Raum für Menschlichkeit und Tiefe
     }
 </style>
 
-<!-- Hintergrund hinter Notch / Safari UI -->
+<!-- fixed Hintergrund (liegt über body-bg, aber unter Inhalt) -->
 <div class="hero-bg" aria-hidden="true"></div>
 
 <div class="hero">
-
     <div class="hero-content">
         <p class="hero-name">Jochen Hornung</p>
         <h1 class="hero-title">RAUM FÜR MENSCHLICHKEIT UND TIEFE</h1>
@@ -121,5 +116,4 @@ title: Raum für Menschlichkeit und Tiefe
         <a href="/kaktus/">Kaktus</a>
         <a href="/ueber/">Über mich</a>
     </nav>
-
 </div>
