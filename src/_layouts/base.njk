@@ -2,10 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-
-    <!-- wichtig: viewport-fit=cover hast du schon, gut -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
     <title>{% if title %}{{ title }} - {% endif %}Jochen Hornung</title>
 
     <!-- SEO Meta Tags -->
@@ -36,9 +33,8 @@
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-    <!-- Styles ans Ende verschoben für bessere WhatsApp-Kompatibilität -->
     <style>
-        /* ===== Global Reset (neu) ===== */
+        /* ===== Global Reset ===== */
         *, *::before, *::after {
             box-sizing: border-box;
         }
@@ -49,16 +45,15 @@
             width: 100%;
             min-height: 100%;
             overflow-x: hidden;
-            background: #1a1a1a; /* verhindert "grau neben notch" beim mini-scroll */
+            background: #ffffff;
             -webkit-text-size-adjust: 100%;
         }
 
-        /* (optional) iOS overscroll optisch ruhiger */
         body {
             overscroll-behavior-y: none;
         }
 
-        /* ===== Dein bestehendes Styling ===== */
+        /* ===== Site Header ===== */
         .site-header {
             padding: 3rem 2rem 1rem;
             max-width: 800px;
@@ -104,12 +99,11 @@
             color: #999;
         }
 
-        /* Weniger Abstand oben bei Content-Seiten */
+        /* ===== Content Pages ===== */
         .content-page {
             padding-top: 1rem;
         }
 
-        /* Georgia für Content */
         .content-page .text-content,
         .content-page .text-excerpt,
         .text-item h3 a {
@@ -125,17 +119,16 @@
             text-decoration: underline;
         }
 
-        /* Footer spacing nur bei Content-Seiten */
+        /* ===== Footer ===== */
         .site-footer {
             text-align: center;
             padding: 2rem 0;
             border-top: 1px solid #eee;
             font-size: 0.9rem;
             color: #666;
-            background: #ffffff; /* falls body dunkel ist */
+            background: #ffffff;
         }
 
-        /* Auf Content-Seiten: Abstand oben */
         .content-page ~ .site-footer {
             margin-top: 4rem;
         }
@@ -166,8 +159,10 @@
 
     {{ content | safe }}
 
+    {% if page.url != "/" %}
     <footer class="site-footer">
         © 2026 Jochen Hornung | <a href="/impressum">Impressum</a> | <a href="/datenschutz">Datenschutz</a>
     </footer>
+    {% endif %}
 </body>
 </html>
