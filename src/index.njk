@@ -3,98 +3,30 @@ layout: base.njk
 title: Raum für Menschlichkeit und Tiefe
 ---
 
-<style>
-    .hero {
-        background-image: url('/images/hero.jpg');
-        background-size: cover;
-        background-position: center center;
-        min-height: 100vh;
-        min-height: 100dvh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        padding: 3rem 1.5rem 10rem;
-        position: relative;
-    }
-
-    @media (max-width: 768px) {
-        .hero {
-            background-position: 65% center;
-            padding-bottom: 4rem;
-        }
-    }
-
-    .hero-overlay {
-        position: absolute;
-        inset: 0;
-        background: rgba(0,0,0,0.6);
-    }
-
-    .hero-content {
-        position: relative;
-        z-index: 1;
-        text-align: center;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-top: -3rem;
-    }
-
-    .hero-name {
-        font-size: 1.5rem;
-        font-weight: 400;
-        color: white;
-        margin-bottom: 1rem;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-    }
-
-    .hero-title {
-        font-size: clamp(2.1rem, 6vw, 2.5rem);
-        font-weight: 700;
-        color: white;
-        letter-spacing: 0.08em;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-    }
-
-    .hero-nav {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        row-gap: 0.8rem;
-        column-gap: 2rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    @media (max-width: 768px) {
-        .hero-nav {
-            max-width: 340px;
-        }
-    }
-
-    .hero-nav a {
-        color: white;
-        text-decoration: none;
-        font-size: 1.1rem;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-    }
-</style>
-
-<div class="hero">
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-        <p class="hero-name">Jochen Hornung</p>
-        <h1 class="hero-title">RAUM FÜR MENSCHLICHKEIT UND TIEFE</h1>
-    </div>
-
-    <nav class="hero-nav">
-        <a href="/texte/">Texte</a>
-        <a href="/coaching/">Coaching</a>
-        <a href="/werkzeuge/">Werkzeuge</a>
-        <a href="/kaktus/">Kaktus</a>
-        <a href="/ueber/">Über mich</a>
-    </nav>
+<div style="
+  background-image: url('/images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
+  position: relative;
+">
+  <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.6);"></div>
+  
+  <div style="position: relative; z-index: 1; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center; max-width: 1000px; padding: 0 1rem;">
+    <p style="font-size: 1.5rem; font-weight: 400; color: white; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Jochen Hornung</p>
+    <h1 style="font-size: clamp(2.1rem, 6vw, 2.5rem); font-weight: 700; color: white; letter-spacing: 0.08em; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">RAUM FÜR MENSCHLICHKEIT UND TIEFE</h1>
+  </div>
+  
+  <nav style="position: relative; z-index: 1; display: flex; row-gap: 0.8rem; column-gap: 2rem; flex-wrap: wrap; justify-content: center;">
+    <a href="/texte/" style="color: white; text-decoration: none; font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Texte</a>
+    <a href="/coaching/" style="color: white; text-decoration: none; font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Coaching</a>
+    <a href="/werkzeuge/" style="color: white; text-decoration: none; font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Werkzeuge</a>
+    <a href="/kaktus/" style="color: white; text-decoration: none; font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Kaktus</a>
+    <a href="/ueber/" style="color: white; text-decoration: none; font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Über mich</a>
+  </nav>
 </div>
