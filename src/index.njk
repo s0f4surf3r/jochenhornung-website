@@ -4,14 +4,7 @@ title: Raum für Menschlichkeit und Tiefe
 ---
 
 <style>
-@media (min-width: 769px) {
-  .hero {
-    padding: 4rem 2rem 4rem !important;
-  }
-}
-</style>
-
-<div class="hero" style="
+.hero {
   background-image: url('/images/hero.jpg');
   background-size: cover;
   background-position: center;
@@ -22,7 +15,16 @@ title: Raum für Menschlichkeit und Tiefe
   align-items: center;
   padding: 4rem 2rem 10rem;
   position: relative;
-">
+}
+
+@media (min-width: 769px) {
+  .hero {
+    padding-bottom: 4rem;
+  }
+}
+</style>
+
+<div class="hero">
   <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.6);"></div>
   
   <div style="position: relative; z-index: 1; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center; max-width: 1000px; padding: 0 1rem; margin-top: -3rem;">
