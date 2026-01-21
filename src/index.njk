@@ -8,23 +8,22 @@ title: Raum für Menschlichkeit und Tiefe
         background-image: url('/images/hero.jpg');
         background-size: cover;
         background-position: center center;
-        min-height: 100vh;
-        min-height: 100svh;
-        min-height: 100dvh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        padding:
-            calc(4rem + env(safe-area-inset-top))
-            1.5rem
-            calc(2.5rem + env(safe-area-inset-bottom));
-        position: relative;
+        padding: 4rem 1.5rem 3rem;
     }
 
     @media (max-width: 768px) {
         .hero {
             background-position: 65% center;
+            padding-bottom: 6rem;
         }
     }
 
@@ -100,15 +99,3 @@ title: Raum für Menschlichkeit und Tiefe
         <a href="/ueber/">Über mich</a>
     </nav>
 </div>
-
-<script>
-    // iOS Safari: Hero auf volle Bildschirmhöhe setzen
-    function setHeroHeight() {
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            hero.style.minHeight = window.outerHeight + 'px';
-        }
-    }
-    setHeroHeight();
-    window.addEventListener('resize', setHeroHeight);
-</script>
