@@ -124,6 +124,12 @@ title: Raum für Menschlichkeit und Tiefe
     setHeroHeight();
     window.addEventListener('resize', setHeroHeight);
     
-    // Seite ganz nach oben scrollen beim Laden
+    // Seite nach oben scrollen - mehrfach versuchen für iOS Safari
     window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    
+    setTimeout(function() {
+        window.scrollTo(0, 0);
+    }, 100);
 </script>
