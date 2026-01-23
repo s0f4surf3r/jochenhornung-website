@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="de" style="{% if page.url == '/' %}height: 100%;{% endif %} background: {% if page.url == '/' %}#1a1a1a{% else %}#ffffff{% endif %};">
+<html lang="de" style="background: {% if page.url == '/' %}#1a1a1a{% else %}#ffffff{% endif %};">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="{% if page.url == '/' %}#1a1a1a{% else %}#ffffff{% endif %}">
     <title>{% if title %}{{ title }} - {% endif %}Jochen Hornung</title>
 
     <!-- SEO Meta Tags -->
@@ -41,12 +42,7 @@
         body {
             margin: 0;
             padding: 0;
-            {% if page.url == "/" %}
-            height: 100%;
-            overflow: hidden;
-            {% else %}
             min-height: 100%;
-            {% endif %}
             -webkit-text-size-adjust: 100%;
         }
 
@@ -153,8 +149,10 @@
 
     {{ content | safe }}
 
+    {% if page.url != "/" %}
     <footer class="site-footer">
         © 2026 Jochen Hornung | <a href="/impressum">Impressum</a> | <a href="/datenschutz">Datenschutz</a>
     </footer>
+    {% endif %}
 </body>
 </html>
