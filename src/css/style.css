@@ -97,7 +97,15 @@ body {
 
 /* Text list */
 .text-list {
-    list-style: none;
+ 
+    
+    .text-content img {
+            max-width: 800px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 2rem auto;
+    }list-style: none;
 }
 
 .text-item {
