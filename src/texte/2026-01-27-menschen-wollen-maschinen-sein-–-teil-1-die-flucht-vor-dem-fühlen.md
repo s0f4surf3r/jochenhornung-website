@@ -12,12 +12,14 @@ excerpt: 'Perfektionismus steigt um 33%, Burnout verzehnfacht sich, wir
   über die Wurzeln unserer Maschinenwerdung – und warum selbst Weltstars wie
   Robbie Williams trotz 80.000 Fans dachten: "Gleich fliegen sie mich auf."'
 ---
-**Wortanzahl:** ~2020 Wörter\
-**Lesezeit:** ~9 Minuten
+# Menschen wollen Maschinen sein – Teil 1
 
-- - -
+**Wortanzahl:** ~2020 Wörter
+**Lesezeit:** ~9 Minuten
 
-![](/images/mm01-hero.png.jpg)
+**Kurzbeschreibung:** Perfektionismus steigt um 33%, Burnout verzehnfacht sich, wir optimieren uns selbst in den Kollaps. Aber warum? Weil wir uns schämen – für unsere Fehlbarkeit, unsere Körper, unser Menschsein. Schule und Arbeit haben uns trainiert, Maschinen zu werden. Und jetzt, wo echte Maschinen kommen, die alles besser können, steht die Frage im Raum: Was bleibt von uns übrig? Teil 1 über die Wurzeln unserer Maschinenwerdung – und warum selbst Weltstars wie Robbie Williams trotz 80.000 Fans dachten: „Gleich fliegen sie mich auf."
+
+![Mensch und Maschine – visuelle Metapher für Selbstoptimierung und Identitätsverlust.](/images/mm01-hero.png.jpg)
 
 ## Die Beobachtung
 
@@ -31,21 +33,19 @@ Doch selbst wenn jemand aus echtem Selbstwert handelt - die herrschende Kultur m
 
 Oder das Gym. Ein Maschinenraum voller Maschinen, die an Maschinen trainieren. Alle mit Kopfhörern, niemand schaut sich in die Augen. Kein Hallo, kein Tschüss - und wenn doch, sind alle überrascht. Wir haben es geschafft, fast alles Menschliche aus diesem Ort zu entfernen. Sogar den Schweiß - der wird akribisch mit Desinfektionstüchern weggewischt, sofort, als wäre er eine Fehlfunktion, ein Leck im System. Natürlich ist es gut, den Körper zu pflegen. Aber wir warten ihn wie ein Gerät, wir fühlen ihn nicht als Heimat. Das Ziel ist nicht Vitalität. Das Ziel ist, auszusehen wie die Renderings auf Instagram. Wir externalisieren unseren Selbstwert und verlieren uns dabei.
 
-Die Frage ist nicht mehr "Wie fühle ich mich?", sondern "Wie funktioniere ich?" Wie weit bin ich weg von der perfekten Maschine? Was kann ich noch optimieren? Wie komme ich am schnellsten zu Geld? Der globale Markt für Selbstoptimierungs-Apps und Produktivitäts-Tools wird 2025 auf über 13 Milliarden Dollar geschätzt. Wir bezahlen dafür, effizienter zu werden.
+Die Frage ist nicht mehr „Wie fühle ich mich?", sondern „Wie funktioniere ich?" Wie weit bin ich weg von der perfekten Maschine? Was kann ich noch optimieren? Wie komme ich am schnellsten zu Geld? Der globale Markt für Selbstoptimierungs-Apps und Produktivitäts-Tools wird 2025 auf über 13 Milliarden Dollar geschätzt. Wir bezahlen dafür, effizienter zu werden.
 
-Was ich erst jetzt verstanden habe: Das ist keine individuelle Macke. Es ist ein Muster. Ein kollektives Ausweichen. Die Psychologie nennt es chronische Schamdissoziation - nach außen funktioniert ein perfektes Selbst, innen herrscht emotionale Taubheit. Menschen beschreiben es als "wie in Watte gepackt" oder "innerlich tot, aber äußerlich perfekt". 
+Was ich erst jetzt verstanden habe: Das ist keine individuelle Macke. Es ist ein Muster. Ein kollektives Ausweichen. Die Psychologie nennt es chronische Schamdissoziation - nach außen funktioniert ein perfektes Selbst, innen herrscht emotionale Taubheit. Menschen beschreiben es als „wie in Watte gepackt" oder „innerlich tot, aber äußerlich perfekt".
 
-Wir werden zu dem, was wir anstreben: funktionale Zombies. David Chalmers nannte das den "philosophischen Zombie": Ein Wesen, das sich exakt wie ein Mensch verhält, lacht und arbeitet, aber kein Bewusstsein hat. Keine innere Erlebniswelt. Nur Funktion. Das ist das logische Ende unseres Strebens nach Fehlerlosigkeit: perfekt von außen, leer von innen. Maschinen mit menschlicher Hülle.
+Wir werden zu dem, was wir anstreben: funktionale Zombies. David Chalmers nannte das den „philosophischen Zombie": Ein Wesen, das sich exakt wie ein Mensch verhält, lacht und arbeitet, aber kein Bewusstsein hat. Keine innere Erlebniswelt. Nur Funktion. Das ist das logische Ende unseres Strebens nach Fehlerlosigkeit: perfekt von außen, leer von innen. Maschinen mit menschlicher Hülle.
 
 Das klingt abstrakt. Aber es ist bitter konkret. Und es ist kein Zufall. Es ist ein Schutzmechanismus.
-
-- - -
 
 ## Die Systeme
 
 Dieser Schutzmechanismus hatte Helfer. Systeme, die uns gelehrt haben, Maschinen zu sein.
 
-Unsere Schulen - die Regelschulen jedenfalls - sind Orte, an denen uns der Körper abtrainiert wird. Stillsitzen, wenn alles rennen will. Schweigen, wenn alles schreien will. Sechs Stunden lang bewegungslos auf einem Stuhl, während der Körper schreit: "Ich bin lebendig!" Was gelehrt wird: Fakten auswendig lernen, nach Norm funktionieren, Leistung nach Output messen. Was nicht gelehrt wird: Fühlen. Spüren. Intuition. Beziehung. Die systematische Dissoziation vom eigenen Körper beginnt hier. Mit sechs Jahren.
+Unsere Schulen - die Regelschulen jedenfalls - sind Orte, an denen uns der Körper abtrainiert wird. Stillsitzen, wenn alles rennen will. Schweigen, wenn alles schreien will. Sechs Stunden lang bewegungslos auf einem Stuhl, während der Körper schreit: „Ich bin lebendig!" Was gelehrt wird: Fakten auswendig lernen, nach Norm funktionieren, Leistung nach Output messen. Was nicht gelehrt wird: Fühlen. Spüren. Intuition. Beziehung. Die systematische Dissoziation vom eigenen Körper beginnt hier. Mit sechs Jahren.
 
 Und jetzt die bittere Pointe: Fast alles, was diese Schulen uns beibringen, kann KI bereits besser. Die Schule hat uns für eine Welt vorbereitet, die gerade verschwindet.
 
@@ -61,11 +61,11 @@ Die Liste ist erschreckend kurz. Erschreckend, wenn man darüber nachdenkt, wie 
 
 Hier ist die bittere Ironie: Wir haben seit der Industrialisierung - über 250 Jahre - trainiert, schlechte Maschinen zu sein. Wir haben das Menschliche verdrängt, so gut es ging. Effizienz, Logik, Mustererkennung - das haben wir als erstrebenswert definiert. Und jetzt haben wir echte Maschinen gebaut, die genau das viel besser können.
 
-Wir sind obsolete Maschinen in menschlichen Körpern, bei denen kollektiv so langsam das Licht ausgeht. 
+Wir sind obsolete Maschinen in menschlichen Körpern, bei denen kollektiv so langsam das Licht ausgeht.
 
-Doch einer wehrt sich dagegen - und zwar massiv: Unser Körper selbst. 
+Doch einer wehrt sich dagegen - und zwar massiv: Unser Körper selbst.
 
-Autoimmunerkrankungen sind zwischen 2012 und 2022 um 22 Prozent gestiegen. Der Körper greift sich selbst an, weil er nicht mehr weiß, wer Freund und wer Feind ist. Burnout-bedingte Krankheitstage haben sich seit 2005 mehr als verzehnfacht. Depression und Angststörungen gehören zu den häufigsten psychischen Erkrankungen - die WHO bezeichnet sie als zweitgrößte Ursache für Behinderung weltweit. Chronische Erschöpfung, Long-COVID, Fibromyalgie - Krankheiten, bei denen das Nervensystem einfach kapituliert. Der Körper sagt: "Ich weigere mich." Er zwingt die Maschine zum Stillstand.
+Autoimmunerkrankungen sind zwischen 2012 und 2022 um 22 Prozent gestiegen. Der Körper greift sich selbst an, weil er nicht mehr weiß, wer Freund und wer Feind ist. Burnout-bedingte Krankheitstage haben sich seit 2005 mehr als verzehnfacht. Depression und Angststörungen gehören zu den häufigsten psychischen Erkrankungen - die WHO bezeichnet sie als zweitgrößte Ursache für Behinderung weltweit. Chronische Erschöpfung, Long-COVID, Fibromyalgie - Krankheiten, bei denen das Nervensystem einfach kapituliert. Der Körper sagt: „Ich weigere mich." Er zwingt die Maschine zum Stillstand.
 
 Was wie Depression, Burnout oder Apathie aussieht, ist oft gefrorene Scham. Der Körper rebelliert gegen das, was wir ihm angetan haben: die systematische Abspaltung vom Fühlen, die Unterwerfung unter die Maschinenlogik.
 
@@ -75,13 +75,11 @@ Aber warum? Warum wollen Menschen wie Maschinen sein? Was ist so unerträglich a
 
 Die Antwort ist einfach und erschütternd zugleich. Der Psychologe Prof. Ashok Riehm bringt es auf den Punkt: Wir flüchten in die Maschine, um nicht fühlen zu müssen. Der Grund ist Scham.
 
-- - -
-
 ## Die Wurzel
 
-Scham ist nicht einfach ein unangenehmes Gefühl. Scham ist die Überzeugung: Ich bin falsch, wie ich bin. Nicht "Ich habe einen Fehler gemacht" – sondern "Ich BIN der Fehler."
+Scham ist nicht einfach ein unangenehmes Gefühl. Scham ist die Überzeugung: Ich bin falsch, wie ich bin. Nicht „Ich habe einen Fehler gemacht" – sondern „Ich BIN der Fehler."
 
-Es beginnt früh. Ein Kind kommt zur Welt und ist lebendig. Es schreit, wenn es Hunger hat. Es weint, wenn es Nähe braucht. Es zeigt seine Gefühle und Bedürfnisse roh, bedürftig, chaotisch, ungefiltert. Und wenn die Antwort darauf nicht Befriedigung ist, sondern Ablehnung – "Sei still", "Stell dich nicht so an", "Du bist zu viel" – dann lernt das Kind keine Selbstwirksamkeit, welche das Fundament von Selbstwert darstellt. Es lernt vielmehr: Ich werde nicht geliebt, wie ich bin.
+Es beginnt früh. Ein Kind kommt zur Welt und ist lebendig. Es schreit, wenn es Hunger hat. Es weint, wenn es Nähe braucht. Es zeigt seine Gefühle und Bedürfnisse roh, bedürftig, chaotisch, ungefiltert. Und wenn die Antwort darauf nicht Befriedigung ist, sondern Ablehnung – „Sei still", „Stell dich nicht so an", „Du bist zu viel" – dann lernt das Kind keine Selbstwirksamkeit, welche das Fundament von Selbstwert darstellt. Es lernt vielmehr: Ich werde nicht geliebt, wie ich bin.
 
 Eltern, die selbst in ihren eigenen Egos und ungeheilten Wunden feststecken, sind oft nur noch damit beschäftigt, die Gefühle ihrer Kinder auszuhalten und zu regulieren – Wut, Ungeduld, Albernheit, Ängste. Und wenn diese Kinder dann noch neurodivergent sind – was in den letzten Jahren deutlich häufiger diagnostiziert wird, teils durch besseres Erkennen, teils möglicherweise durch veränderte Lebensumstände – dann ist Land unter.
 
@@ -89,9 +87,9 @@ Diese Eltern können den wahren Kern, den Geist ihrer Kinder nicht sehen. Sie k�
 
 Das Kind schließt alles ein, was nicht sein darf: die Wut, die Traurigkeit, die Angst, das Bedürfnis. Es packt diese Gefühle tief in den Körper. Dort, wo niemand sie sieht. Und genau da liegt die Wunde – eingewickelt in Scham.
 
-Das Kind kann nicht denken: "Die Erwachsenen sind überfordert." Es denkt: "Ich bin falsch." Und um zu überleben, schneidet es sich vom Fühlenden ab. Der Körper wird zum Feind – weil er der Träger der Scham ist, weil er sichtbar macht, was verborgen bleiben muss. Sichtbarkeit wird Gefahr. Verletzlichkeit wird Schwäche.
+Das Kind kann nicht denken: „Die Erwachsenen sind überfordert." Es denkt: „Ich bin falsch." Und um zu überleben, schneidet es sich vom Fühlenden ab. Der Körper wird zum Feind – weil er der Träger der Scham ist, weil er sichtbar macht, was verborgen bleiben muss. Sichtbarkeit wird Gefahr. Verletzlichkeit wird Schwäche.
 
-Prof. Ashok Riehm, Psychologe und Traumaforscher, bringt es auf den Punkt: "Ich bin nicht beschämt worden, ich bin Scham geworden." Das Kind verschmilzt mit der Scham. Es wird zu dem, was ihm angetan wurde.
+Prof. Ashok Riehm, Psychologe und Traumaforscher, bringt es auf den Punkt: „Ich bin nicht beschämt worden, ich bin Scham geworden." Das Kind verschmilzt mit der Scham. Es wird zu dem, was ihm angetan wurde.
 
 Und dann kommt die Maschine. Die Maschine verspricht Erlösung. Die Maschine hat keine Bedürfnisse. Die Maschine wird nicht zurückgewiesen. Die Maschine funktioniert – und wenn sie funktioniert, ist sie wertvoll. Wer Glück hat, wessen Nervensystem zufällig auf die Anforderungen passt, der wird von Leistung abhängig. Leistung gibt einen Wert zurück. Aber es ist geliehener Wert. Wert auf Kredit. Solange die Maschine läuft, fühlt sich das Kind – später der Erwachsene – wertvoll. Sobald sie stockt, bricht alles zusammen. Denn darunter ist nichts. Kein Fundament. Nur die alte Gewissheit: Ich bin falsch.
 
@@ -111,15 +109,13 @@ Der Körper wird Arbeitskraft. Messbar, austauschbar, optimierbar. Effizienz wir
 
 Die individuelle Scham und die kulturelle Abwertung des Körpers verstärken sich gegenseitig. Was als persönlicher Schutzmechanismus beginnt, wird zur gesellschaftlichen Norm. Wir alle lernen: Das Menschliche ist das Problem. Die Maschine ist die Lösung.
 
-Und genau hier geschieht der eigentliche Diebstahl. Wenn wir Lebendigkeit pathologisieren und Anpassung belohnen, rauben wir uns und unseren Kindern etwas Fundamentales: die Würde. Wir lesen Artikel 1 des Grundgesetzes: "Die Würde des Menschen ist unantastbar." Ein schöner Satz. Aber in einer Kultur der Maschinen ist er eine Illusion. Wir haben die Würde längst angetastet. Wir treten sie täglich mit Füßen, ohne es zu wollen. Wir entfremden uns vom Menschlichen, vom Spüren. Und um diesen Verlust nicht fühlen zu müssen, werden wir endgültig zu Maschinen. Denn Maschinen brauchen keine Würde. Objekte brauchen keine Würde. Sie brauchen nur Wartung.
-
-- - -
+Und genau hier geschieht der eigentliche Diebstahl. Wenn wir Lebendigkeit pathologisieren und Anpassung belohnen, rauben wir uns und unseren Kindern etwas Fundamentales: die Würde. Wir lesen Artikel 1 des Grundgesetzes: „Die Würde des Menschen ist unantastbar." Ein schöner Satz. Aber in einer Kultur der Maschinen ist er eine Illusion. Wir haben die Würde längst angetastet. Wir treten sie täglich mit Füßen, ohne es zu wollen. Wir entfremden uns vom Menschlichen, vom Spüren. Und um diesen Verlust nicht fühlen zu müssen, werden wir endgültig zu Maschinen. Denn Maschinen brauchen keine Würde. Objekte brauchen keine Würde. Sie brauchen nur Wartung.
 
 ## Die Tragik
 
 Du kannst dich optimieren, so viel du willst. Du kannst den perfekten Körper haben, die perfekte Karriere, das perfekte Leben. Du kannst alles richtig machen. Und trotzdem – das Gefühl bleibt. Ich bin falsch.
 
-Es ist das paradoxe Gesetz der Maschinenwerdung: Je perfekter du nach außen funktionierst, desto stärker wird die Angst innen. Das Hochstapler-Syndrom ist keine Bescheidenheit. Es ist die logische Konsequenz. Robbie Williams, einer der erfolgreichsten Entertainer der Welt, beschreibt es so: Selbst vor 80.000 Menschen dachte er: "Gleich fliege ich auf. Gleich merken sie, dass ich eigentlich gar nichts kann. Dass alles nur Bluff ist." Jahrzehnte Erfolg. Millionen Fans. Und doch die panische Angst: Wenn sie wüssten, wer ich wirklich bin, wäre alles vorbei.
+Es ist das paradoxe Gesetz der Maschinenwerdung: Je perfekter du nach außen funktionierst, desto stärker wird die Angst innen. Das Hochstapler-Syndrom ist keine Bescheidenheit. Es ist die logische Konsequenz. Robbie Williams, einer der erfolgreichsten Entertainer der Welt, beschreibt es so: Selbst vor 80.000 Menschen dachte er: „Gleich fliege ich auf. Gleich merken sie, dass ich eigentlich gar nichts kann. Dass alles nur Bluff ist." Jahrzehnte Erfolg. Millionen Fans. Und doch die panische Angst: Wenn sie wüssten, wer ich wirklich bin, wäre alles vorbei.
 
 Das ist kein Promi-Problem. Wir alle tun es. Wir suchen die Bestätigung für unser Maschinensein. Wir konsumieren sie. Wir wollen gelobt werden für unsere Klamotten, unseren Job, unseren Urlaub, unseren Körper. Wir posten es auf Instagram, wir tragen es zur Schau. Wir bauen einen simulierten Selbstwert, der nur existiert, solange jemand von außen klatscht. Wir externalisieren unser Ich. Wir lagern unseren Wert aus.
 
@@ -127,56 +123,48 @@ Aber der Applaus landet immer nur auf der Fassade. Er gilt der Maschine, nicht d
 
 Das erzeugt eine unerträgliche innere Reibung. Es zerreißt einen. Da ist eine Sehnsucht, die nicht gestillt wird, egal wie perfekt die Maschine läuft. Weil das, was wir wirklich brauchen, nicht durch Leistung zu bekommen ist. Die Maschine läuft heiß. Die Lüfter drehen auf Maximum. Wir haben uns perfektioniert – und uns dabei verloren.
 
-- - -
-
-**\[Ende Teil 1]**
-
 Die Maschine zu warten, wird uns nicht retten. Jetzt, wo echte Maschinen da sind, können wir die Frage nicht mehr verdrängen: Was bleibt übrig, wenn die Kopie obsolet wird? Wie wir unsere Würde zurückholen – und was KI damit zu tun hat – darum geht es in Teil 2.
-
-- - -
 
 **Transparenzhinweis**
 
 *Dieser Text ist ein Experiment in Koexistenz. Die Gedanken, der Schmerz und die These sind zu 100% menschlich. Formuliert und geschärft wurden sie im Dialog mit künstlicher Intelligenz. Ich nutze die Maschine, um das Menschliche klarer zu machen – genau darum wird es nächste Woche gehen.*
 
-- - -
-
 ## Quellen & Weiterführende Literatur
 
 ### Wissenschaftliche Studien
 
-**Curran, T., & Hill, A. P. (2019).** Perfectionism is increasing over time: A meta-analysis of birth cohort differences from 1989 to 2016. *Psychological Bulletin*, 145(4), 410-429.\
-DOI: 10.1037/bul0000138\
+**Curran, T., & Hill, A. P. (2019).** Perfectionism is increasing over time: A meta-analysis of birth cohort differences from 1989 to 2016. *Psychological Bulletin*, 145(4), 410-429.
+DOI: 10.1037/bul0000138
 PubMed: https://pubmed.ncbi.nlm.nih.gov/29283599/
 
-**Chalmers, David (1996).** *The Conscious Mind: In Search of a Fundamental Theory.* Oxford University Press.
+**Chalmers, David (1996).** *The Conscious Mind: In Search of a Fundamental Theory.* Oxford University Press.
 
-**Akmatov, M. K., Holstiege, J., Dammertz, L., Kohring, C., & Müller, D. (2024).** Entwicklung der Prävalenz diagnostizierter Autoimmunerkrankungen im Zeitraum 2012-2022. *Versorgungsatlas-Bericht Nr. 24/05.* Zentralinstitut für die kassenärztliche Versorgung.\
-DOI: 10.20364/VA-24.05\
+**Akmatov, M. K., Holstiege, J., Dammertz, L., Kohring, C., & Müller, D. (2024).** Entwicklung der Prävalenz diagnostizierter Autoimmunerkrankungen im Zeitraum 2012-2022. *Versorgungsatlas-Bericht Nr. 24/05.* Zentralinstitut für die kassenärztliche Versorgung.
+DOI: 10.20364/VA-24.05
 URL: https://doi.org/10.20364/VA-24.05
 
-**Wissenschaftliches Institut der AOK (WIdO).** Fehlzeiten-Report 2024. Burnout-bedingte Arbeitsunfähigkeitstage.\
-URL: https://www.wido.de/news-presse/pressemitteilungen/2024/fehlzeiten-report-2024/\
+**Wissenschaftliches Institut der AOK (WIdO).** Fehlzeiten-Report 2024. Burnout-bedingte Arbeitsunfähigkeitstage.
+URL: https://www.wido.de/news-presse/pressemitteilungen/2024/fehlzeiten-report-2024/
 Statista: https://de.statista.com/statistik/daten/studie/239872/umfrage/arbeitsunfaehigkeitsfaelle-aufgrund-von-burn-out-erkrankungen/
 
-**World Health Organization (WHO).** Mental Health and Substance Use - Depression and Anxiety Disorders.\
+**World Health Organization (WHO).** Mental Health and Substance Use - Depression and Anxiety Disorders.
 URL: https://www.who.int/news/item/02-09-2025-over-a-billion-people-living-with-mental-health-conditions-services-require-urgent-scale-up
 
-**Vereinigung der Deutschen Ästhetisch-Plastischen Chirurgen (VDÄPC).** Behandlungsstatistik 2022.\
+**Vereinigung der Deutschen Ästhetisch-Plastischen Chirurgen (VDÄPC).** Behandlungsstatistik 2022.
 URL: https://www.vdaepc.de/vdaepc-statistik-2022-zahlen-fakten-entwicklungen-in-der-aesthetisch-plastischen-chirurgie/
 
-**Business Research Insights.** Productivity Apps Market Size, Share 2025-2035.\
+**Business Research Insights.** Productivity Apps Market Size, Share 2025-2035.
 URL: https://www.businessresearchinsights.com/market-reports/productivity-apps-market-117791
 
 ### Psychologie & Trauma
 
-**Prof. Ashok Riehm** – Psychologe und Traumaforscher\
+**Prof. Ashok Riehm** – Psychologe und Traumaforscher
 YouTube-Vortrag: https://www.youtube.com/watch?v=gqxbXEuPO_8
 
 ### Kulturelle Referenzen
 
-**Robbie Williams Netflix Dokumentation (2023)** – "Robbie Williams" (4-teilige Serie)\
+**Robbie Williams Netflix Dokumentation (2023)** – „Robbie Williams" (4-teilige Serie)
 Artikel: https://www.aol.com/news/robbie-williams-felt-imposter-syndrome-212942153.html
 
-**Yahoo Entertainment Interview (Dezember 2023)** – "Robbie Williams has started to 'respect' himself as a performer"\
+**Yahoo Entertainment Interview (Dezember 2023)** – „Robbie Williams has started to 'respect' himself as a performer"
 URL: https://nz.news.yahoo.com/robbie-williams-started-respect-himself-070134460.html
