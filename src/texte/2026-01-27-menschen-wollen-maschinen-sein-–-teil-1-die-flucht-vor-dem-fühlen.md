@@ -133,8 +133,6 @@ Die Maschine zu warten, wird uns nicht retten. Jetzt, wo echte Maschinen da sind
 
 *Dieser Text ist ein Experiment in Koexistenz. Die Gedanken, der Schmerz und die These sind zu 100% menschlich. Formuliert und geschärft wurden sie im Dialog mit künstlicher Intelligenz. Ich nutze die Maschine, um das Menschliche klarer zu machen – genau darum wird es nächste Woche gehen.*
 
-## \---
-
 ## Quellen & Weiterführende Literatur
 
 ### Wissenschaftliche Studien
