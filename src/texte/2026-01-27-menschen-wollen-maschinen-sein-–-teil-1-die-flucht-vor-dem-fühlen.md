@@ -15,8 +15,6 @@ excerpt: 'Perfektionismus steigt um 33%, Burnout verzehnfacht sich, wir
 **Wortanzahl:** ~2020 Wörter
 **Lesezeit:** ~9 Minuten
 
-
-
 ![Mensch und Maschine – visuelle Metapher für Selbstoptimierung und Identitätsverlust.](/images/mm01-hero.png.jpg)
 
 ## Die Beobachtung
@@ -123,7 +121,7 @@ Es ist das paradoxe Gesetz der Maschinenwerdung: Je perfekter du nach außen fun
 
 Das ist kein Promi-Problem. Wir alle tun es. Wir suchen die Bestätigung für unser Maschinensein. Wir konsumieren sie. Wir wollen gelobt werden für unsere Klamotten, unseren Job, unseren Urlaub, unseren Körper. Wir posten es auf Instagram, wir tragen es zur Schau. Wir bauen einen simulierten Selbstwert, der nur existiert, solange jemand von außen klatscht. Wir externalisieren unser Ich. Wir lagern unseren Wert aus.
 
-Aber der Applaus landet immer nur auf der Fassade. Er gilt der Maschine, nicht dem Menschen darin. Und deshalb heilt er nichts. Tief drinnen wartet immer noch das verletzte Kind. Es hofft auf Rettung. Es hofft immer noch – selbst im Erwachsenenalter –, dass die Eltern (oder die Welt) einen endlich retten, endlich sehen, endlich lieben. Die grausame Ironie ist: Wir hoffen, für das geliebt zu werden, was wir wirklich sind. Aber wir zeigen der Welt nur das, was wir glauben, sein zu müssen. Wir haben uns so sehr angepasst, so perfekt funktioniert, dass wir gar nicht mehr wissen, wer wir eigentlich sind. Wir haben den Kontakt zu dem verloren, was da drinnen eigentlich schreit.
+Aber der Applaus landet immer nur auf der Fassade. Er gilt der Maschine, nicht dem Menschen darin. Und deshalb heilt er nicht. Tief drinnen wartet immer noch das verletzte Kind. Es hofft auf Rettung. Es hofft immer noch – selbst im Erwachsenenalter –, dass die Eltern (oder die Welt) einen endlich retten, endlich sehen, endlich lieben. Die grausame Ironie ist: Wir hoffen, für das geliebt zu werden, was wir wirklich sind. Aber wir zeigen der Welt nur das, was wir glauben, sein zu müssen. Wir haben uns so sehr angepasst, so perfekt funktioniert, dass wir gar nicht mehr wissen, wer wir eigentlich sind. Wir haben den Kontakt zu dem verloren, was da drinnen eigentlich schreit.
 
 Das erzeugt eine unerträgliche innere Reibung. Es zerreißt einen. Da ist eine Sehnsucht, die nicht gestillt wird, egal wie perfekt die Maschine läuft. Weil das, was wir wirklich brauchen, nicht durch Leistung zu bekommen ist. Die Maschine läuft heiß. Die Lüfter drehen auf Maximum. Wir haben uns perfektioniert – und uns dabei verloren.
 
