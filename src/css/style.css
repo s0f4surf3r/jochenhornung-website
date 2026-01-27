@@ -131,6 +131,9 @@ body {
     font-size: 1.3rem;
     font-weight: 400;
     margin-bottom: 0.5rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .text-item h2 a {
