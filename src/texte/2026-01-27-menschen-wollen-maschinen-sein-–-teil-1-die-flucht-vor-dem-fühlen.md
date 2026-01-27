@@ -15,7 +15,7 @@ excerpt: 'Perfektionismus steigt um 33%, Burnout verzehnfacht sich, wir
 **Wortanzahl:** ~2020 Wörter
 **Lesezeit:** ~9 Minuten
 
-**Kurzbeschreibung:** Perfektionismus steigt um 33%, Burnout verzehnfacht sich, wir optimieren uns selbst in den Kollaps. Aber warum? Weil wir uns schämen – für unsere Fehlbarkeit, unsere Körper, unser Menschsein. Schule und Arbeit haben uns trainiert, Maschinen zu werden. Und jetzt, wo echte Maschinen kommen, die alles besser können, steht die Frage im Raum: Was bleibt von uns übrig? Teil 1 über die Wurzeln unserer Maschinenwerdung – und warum selbst Weltstars wie Robbie Williams trotz 80.000 Fans dachten: „Gleich fliegen sie mich auf."
+
 
 ![Mensch und Maschine – visuelle Metapher für Selbstoptimierung und Identitätsverlust.](/images/mm01-hero.png.jpg)
 
