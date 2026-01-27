@@ -1,7 +1,7 @@
 ---
 layout: text
 tags: text
-title: "Menschen wollen Maschinen sein – Teil 1: Die Flucht vor dem Fühlen"
+title: Menschen wollen Maschinen sein – Teil 1
 date: 2026-01-27T12:22:00.000+01:00
 type: Essay
 excerpt: 'Perfektionismus steigt um 33%, Burnout verzehnfacht sich, wir
