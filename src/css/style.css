@@ -95,6 +95,13 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* Links in text content */
+.text-content a {
+    color: #1a1a1a;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+}
+
 /* Images in text content */
 .text-content img:not(.about-photo) {
     max-width: 800px;
@@ -175,6 +182,7 @@ body {
     margin-bottom: 0;
     line-height: 1.3;
     word-wrap: break-word;
+    word-break: break-word;
     hyphens: auto;
     max-width: 800px;
     overflow-wrap: break-word;
