@@ -184,7 +184,7 @@ body {
     word-wrap: break-word;
     word-break: break-word;
     hyphens: auto;
-    max-width: 100%;
+    max-width: 800px;
     width: 100%;
     overflow-wrap: break-word;
     white-space: normal;
