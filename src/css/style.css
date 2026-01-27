@@ -187,7 +187,7 @@ body {
     word-wrap: break-word;
     word-break: break-word;
     hyphens: auto;
-    max-width: 800px;
+    max-width: 100%;
     overflow-wrap: break-word;
     white-space: normal;
     display: block;
@@ -196,6 +196,7 @@ body {
 /* Gedichte brauchen engeren Zeilenabstand */
 .text-content {
     line-height: 1.9;
+    max-width: none !important;
 }
 
 /* About photo */
