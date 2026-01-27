@@ -127,6 +127,8 @@ Aber der Applaus landet immer nur auf der Fassade. Er gilt der Maschine, nicht d
 
 Das erzeugt eine unerträgliche innere Reibung. Es zerreißt einen. Da ist eine Sehnsucht, die nicht gestillt wird, egal wie perfekt die Maschine läuft. Weil das, was wir wirklich brauchen, nicht durch Leistung zu bekommen ist. Die Maschine läuft heiß. Die Lüfter drehen auf Maximum. Wir haben uns perfektioniert – und uns dabei verloren.
 
+![An der Schwelle zwischen System und Menschsein.](/images/mm01-uebergang.jpg)
+
 Die Maschine zu warten, wird uns nicht retten. Jetzt, wo echte Maschinen da sind, können wir die Frage nicht mehr verdrängen: Was bleibt übrig, wenn die Kopie obsolet wird? Wie wir unsere Würde zurückholen – und was KI damit zu tun hat – darum geht es in Teil 2.
 
 **Transparenzhinweis**
