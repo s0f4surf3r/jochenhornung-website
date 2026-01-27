@@ -43,6 +43,8 @@ Das klingt abstrakt. Aber es ist bitter konkret. Und es ist kein Zufall. Es ist 
 
 ## Die Systeme
 
+![Institutionen als Produktionssysteme für funktionierende Menschen.](/images/mm01-systeme.jpg)
+
 Dieser Schutzmechanismus hatte Helfer. Systeme, die uns gelehrt haben, Maschinen zu sein.
 
 Unsere Schulen - die Regelschulen jedenfalls - sind Orte, an denen uns der Körper abtrainiert wird. Stillsitzen, wenn alles rennen will. Schweigen, wenn alles schreien will. Sechs Stunden lang bewegungslos auf einem Stuhl, während der Körper schreit: „Ich bin lebendig!" Was gelehrt wird: Fakten auswendig lernen, nach Norm funktionieren, Leistung nach Output messen. Was nicht gelehrt wird: Fühlen. Spüren. Intuition. Beziehung. Die systematische Dissoziation vom eigenen Körper beginnt hier. Mit sechs Jahren.
