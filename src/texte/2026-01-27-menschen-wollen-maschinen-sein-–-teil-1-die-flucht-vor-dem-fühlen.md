@@ -83,6 +83,8 @@ Die Antwort ist einfach und erschütternd zugleich. Der Psychologe Prof. Ashok R
 
 Scham ist nicht einfach ein unangenehmes Gefühl. Scham ist die Überzeugung: Ich bin falsch, wie ich bin. Nicht „Ich habe einen Fehler gemacht" – sondern „Ich BIN der Fehler."
 
+![Innere Scham als unsichtbarer Raum sozialer Enge.](/images/mm01-scham.jpg)
+
 Es beginnt früh. Ein Kind kommt zur Welt und ist lebendig. Es schreit, wenn es Hunger hat. Es weint, wenn es Nähe braucht. Es zeigt seine Gefühle und Bedürfnisse roh, bedürftig, chaotisch, ungefiltert. Und wenn die Antwort darauf nicht Befriedigung ist, sondern Ablehnung – „Sei still", „Stell dich nicht so an", „Du bist zu viel" – dann lernt das Kind keine Selbstwirksamkeit, welche das Fundament von Selbstwert darstellt. Es lernt vielmehr: Ich werde nicht geliebt, wie ich bin.
 
 Eltern, die selbst in ihren eigenen Egos und ungeheilten Wunden feststecken, sind oft nur noch damit beschäftigt, die Gefühle ihrer Kinder auszuhalten und zu regulieren – Wut, Ungeduld, Albernheit, Ängste. Und wenn diese Kinder dann noch neurodivergent sind – was in den letzten Jahren deutlich häufiger diagnostiziert wird, teils durch besseres Erkennen, teils möglicherweise durch veränderte Lebensumstände – dann ist Land unter.
