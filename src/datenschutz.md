@@ -3,10 +3,6 @@ layout: page.njk
 title: Datenschutzerklärung
 ---
 
-# Datenschutzerklärung
-
-**WICHTIGER HINWEIS:** Diese Datenschutzerklärung wurde mit bestem Wissen erstellt, erhebt jedoch keinen Anspruch auf Vollständigkeit oder Rechtssicherheit. Sie sollte von einem Fachanwalt für IT-Recht oder Datenschutzbeauftragten geprüft werden.
-
 ## 1. Verantwortlicher
 
 Verantwortlich für die Datenverarbeitung auf dieser Website ist:
