@@ -57,6 +57,8 @@ Was bleibt? Was kann KI nicht?
 
 Das, wo biologische Resonanz zählt. Wo ein Nervensystem ein anderes beruhigt. Wo Präsenz nicht simuliert werden kann.
 
+![Menschliche Resonanz zwischen zwei Personen](/images/mm01-resonanz.jpg)
+
 Osteopathie. Massage. Breathwork. Hebammen. Sterbebegleitung. Trauma-Therapie - wo das Nervensystem des Therapeuten das des Klienten co-reguliert. Echtes Coaching, keine Tipps, sondern Beziehung. Improvisierte Musik. Tanz. Mediation, wo menschliche Präsenz Konflikte löst. Das ist der gemeinsame Nenner: Es geht um Körper, die andere Körper spüren. Um Nervensysteme, die sich gegenseitig regulieren. Das kann keine KI. Das ist der einzige Ort, wo wir unersetzbar sind.
 
 Die Liste ist erschreckend kurz. Erschreckend, wenn man darüber nachdenkt, wie viele Menschen in den nächsten 10 Jahren ihren Job verlieren werden. Wie viele dieser Menschen sind gut im Fühlen? Und wie viele brauchen wir überhaupt für diese Berufe?
