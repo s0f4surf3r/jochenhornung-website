@@ -12,8 +12,6 @@ excerpt: 'Perfektionismus steigt um 33%, Burnout verzehnfacht sich, wir
   über die Wurzeln unserer Maschinenwerdung – und warum selbst Weltstars wie
   Robbie Williams trotz 80.000 Fans dachten: "Gleich fliegen sie mich auf."'
 ---
-# Menschen wollen Maschinen sein – Teil 1
-
 **Wortanzahl:** ~2020 Wörter
 **Lesezeit:** ~9 Minuten
 
