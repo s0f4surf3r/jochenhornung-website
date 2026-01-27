@@ -2,15 +2,12 @@
 layout: base
 title: Über mich
 ---
-
 <div class="content-page">
 <a href="/" class="back-link">← Zurück</a>
-
 <div class="text-content">
-
-<div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: nowrap;">
-<img src="/images/jochen1.jpeg" alt="Jochen Hornung" style="flex: 1; max-width: 200px; min-width: 0; width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
-<img src="/images/jochen2.jpeg" alt="Jochen Hornung" style="flex: 1; max-width: 200px; min-width: 0; width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
+<div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+<img src="/images/jochen1.jpeg" alt="Jochen Hornung" style="width: 200px; height: auto; border-radius: 8px; object-fit: cover;">
+<img src="/images/jochen2.jpeg" alt="Jochen Hornung" style="width: 200px; height: auto; border-radius: 8px; object-fit: cover;">
 </div>
 
 Jochen Hornung. <span id="age">43</span> Jahre. Berlin-Mitte.
