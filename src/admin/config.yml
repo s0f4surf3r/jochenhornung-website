@@ -2,6 +2,9 @@ backend:
   name: github
   repo: s0f4surf3r/jochenhornung-website
   branch: main
+  # FIX: Diese beiden Zeilen lösen das "Not Found" Problem
+  base_url: https://api.netlify.com
+  site_domain: poetic-lollipop-029be3.netlify.app
 
 media_folder: "src/images"
 public_folder: "/images"
