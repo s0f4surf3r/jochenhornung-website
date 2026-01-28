@@ -79,8 +79,6 @@ Die Antwort ist einfach und erschütternd zugleich. Der Psychologe Prof. Ashok R
 
 Scham ist nicht einfach ein unangenehmes Gefühl. Scham ist die Überzeugung: Ich bin falsch, wie ich bin. Nicht „Ich habe einen Fehler gemacht" – sondern „Ich BIN der Fehler."
 
-![Innere Scham als unsichtbarer Raum sozialer Enge.](/images/mm01-scham.jpg)
-
 Es beginnt früh. Ein Kind kommt zur Welt und ist lebendig. Es schreit, wenn es Hunger hat. Es weint, wenn es Nähe braucht. Es zeigt seine Gefühle und Bedürfnisse roh, bedürftig, chaotisch, ungefiltert. Und wenn die Antwort darauf nicht Befriedigung ist, sondern Ablehnung – „Sei still", „Stell dich nicht so an", „Du bist zu viel" – dann lernt das Kind keine Selbstwirksamkeit, welche das Fundament von Selbstwert darstellt. Es lernt vielmehr: Ich werde nicht geliebt, wie ich bin.
 
 Eltern, die selbst in ihren eigenen Egos und ungeheilten Wunden feststecken, sind oft nur noch damit beschäftigt, die Gefühle ihrer Kinder auszuhalten und zu regulieren – Wut, Ungeduld, Albernheit, Ängste. Und wenn diese Kinder dann noch neurodivergent sind – was in den letzten Jahren deutlich häufiger diagnostiziert wird, teils durch besseres Erkennen, teils möglicherweise durch veränderte Lebensumstände – dann ist Land unter.
@@ -88,6 +86,8 @@ Eltern, die selbst in ihren eigenen Egos und ungeheilten Wunden feststecken, sin
 Diese Eltern können den wahren Kern, den Geist ihrer Kinder nicht sehen. Sie können ihn nicht spiegeln, bevor das Kind sich seiner selbst bewusst wird. Stattdessen projizieren sie ihre eigenen Wunden auf das Kind, Tag ein, Tag aus. Und das Kind beginnt, seine Persönlichkeit nicht aus sich heraus zu entwickeln, sondern durch Anpassung. Es scannt die Erwartungen, die Wünsche, die unausgesprochenen Regeln seiner Eltern. Es baut sich um diese herum auf. Es führt weg vom eigenen Kern. Und dieser Vorgang selbst erzeugt eine tiefe Scham: Die Scham, nicht man selbst sein zu dürfen. Denn das Kind weiß genau – würde es sein wahres Selbst zeigen, würde es seinen Eltern nicht mehr genügen. Aber das kann es sich nicht leisten. Es ist abhängig. Also spaltet es sich ab.
 
 Das Kind schließt alles ein, was nicht sein darf: die Wut, die Traurigkeit, die Angst, das Bedürfnis. Es packt diese Gefühle tief in den Körper. Dort, wo niemand sie sieht. Und genau da liegt die Wunde – eingewickelt in Scham.
+
+![](/images/mm01-scham.jpg)
 
 Das Kind kann nicht denken: „Die Erwachsenen sind überfordert." Es denkt: „Ich bin falsch." Und um zu überleben, schneidet es sich vom Fühlenden ab. Der Körper wird zum Feind – weil er der Träger der Scham ist, weil er sichtbar macht, was verborgen bleiben muss. Sichtbarkeit wird Gefahr. Verletzlichkeit wird Schwäche.
 
