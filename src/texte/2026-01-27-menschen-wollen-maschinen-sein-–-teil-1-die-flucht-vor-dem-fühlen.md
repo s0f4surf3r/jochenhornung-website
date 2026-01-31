@@ -21,9 +21,9 @@ excerpt: 'Perfektionismus steigt um 33%, Burnout verzehnfacht sich, wir
 
 Mir ist etwas klar geworden, das ich nicht mehr ungesehen machen kann: Die meisten Menschen um mich herum versuchen, Maschinen zu sein. Es gibt Ausnahmen, aber sie sind selten. Und ich gehöre dazu - ich wollte das auch. Ich will es immer noch, an manchen Tagen.
 
-Das ist keine Metapher. Ich meine das wörtlich. In der Art, wie Menschen über sich sprechen - als wären sie Systeme, die debuggt werden müssen. Pläne abarbeiten, eins nach dem anderen, einem Ziel hinterher: Perfektion. Und es wird schlimmer: Eine Studie von Curran und Hill aus 2019 zeigt, dass Perfektionismus bei jungen Menschen sich seit 1989 um 33% erhöht hat. Eine ganze Generation, die lernt, nur wertvoll zu sein, wenn sie makellos funktioniert.
+Das ist keine Metapher. Ich meine das wörtlich. In der Art, wie Menschen über sich sprechen - als wären sie Systeme, die debuggt werden müssen. Pläne abarbeiten, eins nach dem anderen, einem Ziel hinterher: Perfektion. Und es wird schlimmer: Eine Studie von Curran und Hill aus 2019 zeigt, dass sich Perfektionismus bei jungen Menschen seit 1989 um 33 % erhöht hat. Eine ganze Generation, die lernt, nur wertvoll zu sein, wenn sie makellos funktioniert.
 
-Man sieht es überall. Menschen bewegen sich weg vom Rohen, vom Fleischigen, vom Fühlenden. Hin zu sauber, perfekt, kontrolliert. Alles wird glatt gezogen. Makel werden am Körper entfernt. Körper wie Statuen, kein Haar an der falschen Stelle. Porenlose Haut. Gesichter ohne Geschichte - keine Lachfalten, keine Spuren von Trauer oder Alter. Ästhetische Operationen nehmen kontinuierlich zu – 2022 stiegen sie in Deutschland um 15% gegenüber dem Vorjahr, besonders stark bei unter 30-Jährigen. Manche machen es vielleicht aus Selbstliebe. Aber meistens ist es der Versuch, von außen zu kitten, was innen zerbrochen ist.
+Man sieht es überall. Menschen bewegen sich weg vom Rohen, vom Fleischigen, vom Fühlenden. Hin zu sauber, perfekt, kontrolliert. Alles wird glatt gezogen. Makel werden am Körper entfernt. Körper wie Statuen, kein Haar an der falschen Stelle. Porenlose Haut. Gesichter ohne Geschichte - keine Lachfalten, keine Spuren von Trauer oder Alter. Ästhetische Operationen nehmen kontinuierlich zu – 2022 stiegen sie in Deutschland um 15 % gegenüber dem Vorjahr, besonders stark bei unter 30-Jährigen. Manche machen es vielleicht aus Selbstliebe. Aber meistens ist es der Versuch, von außen zu kitten, was innen zerbrochen ist.
 
 Doch selbst wenn jemand aus echtem Selbstwert handelt - die herrschende Kultur macht es immer schwerer, den Unterschied zu erkennen. Morgenroutinen, die wie Algorithmen ablaufen. Acht Gläser Wasser, zehn Minuten Meditation, Makros tracken, Schritte zählen. Menschen zeigen ihre polierten Leben in perfektem Licht - aber nur den Teil, der funktioniert. Das Menschliche - das Rohe, das Unvorhersehbare, das Scheitern - kommt selten zum Vorschein. Und wenn doch, dann nur kalkuliert. Verletzlichkeit als Content. Tränen mit Filter.
 
@@ -91,7 +91,7 @@ Das Kind schließt alles ein, was nicht sein darf: die Wut, die Traurigkeit, die
 
 Das Kind kann nicht denken: „Die Erwachsenen sind überfordert." Es denkt: „Ich bin falsch." Und um zu überleben, schneidet es sich vom Fühlenden ab. Der Körper wird zum Feind – weil er der Träger der Scham ist, weil er sichtbar macht, was verborgen bleiben muss. Sichtbarkeit wird Gefahr. Verletzlichkeit wird Schwäche.
 
-Prof. Ashok Riehm, Psychologe und Traumaforscher, bringt es auf den Punkt: „Ich bin nicht beschämt worden, ich bin Scham geworden." Das Kind verschmilzt mit der Scham. Es wird zu dem, was ihm angetan wurde.
+Prof. Riehm geht noch tiefer: „Ich bin nicht beschämt worden, ich bin Scham geworden." Das Kind verschmilzt mit der Scham. Es wird zu dem, was ihm angetan wurde.
 
 Und dann kommt die Maschine. Die Maschine verspricht Erlösung. Die Maschine hat keine Bedürfnisse. Die Maschine wird nicht zurückgewiesen. Die Maschine funktioniert – und wenn sie funktioniert, ist sie wertvoll. Wer Glück hat, wessen Nervensystem zufällig auf die Anforderungen passt, der wird von Leistung abhängig. Leistung gibt einen Wert zurück. Aber es ist geliehener Wert. Wert auf Kredit. Solange die Maschine läuft, fühlt sich das Kind – später der Erwachsene – wertvoll. Sobald sie stockt, bricht alles zusammen. Denn darunter ist nichts. Kein Fundament. Nur die alte Gewissheit: Ich bin falsch.
 
@@ -131,7 +131,7 @@ Die Maschine zu warten, wird uns nicht retten. Jetzt, wo echte Maschinen da sind
 
 **Transparenzhinweis**
 
-*Dieser Text ist ein Experiment in Koexistenz. Die Gedanken, der Schmerz und die These sind zu 100% menschlich. Formuliert und geschärft wurden sie im Dialog mit künstlicher Intelligenz. Ich nutze die Maschine, um das Menschliche klarer zu machen – genau darum wird es nächste Woche gehen.*
+*Dieser Text ist ein Experiment in Koexistenz. Die Gedanken, der Schmerz und die These sind zu 100 % menschlich. Formuliert und geschärft wurden sie im Dialog mit künstlicher Intelligenz. Ich nutze die Maschine, um das Menschliche klarer zu machen – genau darum wird es nächste Woche gehen.*
 
 ## Quellen & Weiterführende Literatur
 
