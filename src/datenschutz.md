@@ -81,38 +81,46 @@ Diese Website verwendet nur technisch notwendige Cookies für die Authentifizier
 
 **Keine Tracking- oder Analyse-Cookies:** Wir verwenden keine Cookies zu Marketing- oder Analysezwecken.
 
-## 7. Verwendung von KI-generierten Bildern
+## 7. Zahlungsdienstleister (PayPal)
+
+Auf dieser Website besteht die Möglichkeit, über den Zahlungsdienst PayPal eine freiwillige Unterstützung zu leisten. Beim Klick auf den entsprechenden Link werden Sie auf die Website von PayPal (Europe) S.à r.l. et Cie, S.C.A., 22-24 Boulevard Royal, L-2449 Luxemburg, weitergeleitet.
+
+Es werden auf unserer Website selbst keine Daten an PayPal übermittelt. Erst nach Weiterleitung auf die PayPal-Website gelten die dortigen Datenschutzbestimmungen: https://www.paypal.com/de/webapps/mpp/ua/privacy-full
+
+**Rechtsgrundlage:** Art. 6 Abs. 1 lit. a DSGVO (Einwilligung durch aktiven Klick)
+
+## 8. Verwendung von KI-generierten Bildern
 
 Auf dieser Website werden teilweise Bilder verwendet, die mit KI-Tools (Google Gemini) erstellt wurden. Diese Bilder werden lokal auf unseren Servern gehostet. Es findet keine Datenübermittlung an Google beim Betrachten der Website statt.
 
 Die Erstellung der Bilder erfolgte durch die Nutzung von Google Gemini, wobei die Nutzungsbedingungen von Google beachtet wurden.
 
-## 8. Ihre Rechte als betroffene Person
+## 9. Ihre Rechte als betroffene Person
 
 Sie haben folgende Rechte:
 
-### 8.1 Auskunftsrecht (Art. 15 DSGVO)
+### 9.1 Auskunftsrecht (Art. 15 DSGVO)
 Sie haben das Recht, Auskunft über Ihre von uns verarbeiteten personenbezogenen Daten zu verlangen.
 
-### 8.2 Recht auf Berichtigung (Art. 16 DSGVO)
+### 9.2 Recht auf Berichtigung (Art. 16 DSGVO)
 Sie haben das Recht, die Berichtigung unrichtiger oder die Vervollständigung unvollständiger Daten zu verlangen.
 
-### 8.3 Recht auf Löschung (Art. 17 DSGVO)
+### 9.3 Recht auf Löschung (Art. 17 DSGVO)
 Sie haben das Recht auf Löschung Ihrer personenbezogenen Daten, sofern keine gesetzliche Aufbewahrungspflicht entgegensteht.
 
-### 8.4 Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)
+### 9.4 Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)
 Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer Daten zu verlangen.
 
-### 8.5 Recht auf Datenübertragbarkeit (Art. 20 DSGVO)
+### 9.5 Recht auf Datenübertragbarkeit (Art. 20 DSGVO)
 Sie haben das Recht, die Sie betreffenden personenbezogenen Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten.
 
-### 8.6 Widerspruchsrecht (Art. 21 DSGVO)
+### 9.6 Widerspruchsrecht (Art. 21 DSGVO)
 Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Sie betreffender personenbezogener Daten Widerspruch einzulegen.
 
-### 8.7 Widerruf einer Einwilligung (Art. 7 Abs. 3 DSGVO)
+### 9.7 Widerruf einer Einwilligung (Art. 7 Abs. 3 DSGVO)
 Sofern die Verarbeitung auf einer Einwilligung beruht, können Sie diese jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung bleibt davon unberührt.
 
-### 8.8 Beschwerderecht bei einer Aufsichtsbehörde (Art. 77 DSGVO)
+### 9.8 Beschwerderecht bei einer Aufsichtsbehörde (Art. 77 DSGVO)
 Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten zu beschweren.
 
 **Zuständige Aufsichtsbehörde für Berlin:**  
@@ -123,23 +131,23 @@ Telefon: 030 13889-0
 E-Mail: mailbox@datenschutz-berlin.de  
 Website: https://www.datenschutz-berlin.de
 
-## 9. Keine automatisierte Entscheidungsfindung
+## 10. Keine automatisierte Entscheidungsfindung
 
 Wir nutzen keine automatisierte Entscheidungsfindung einschließlich Profiling gemäß Art. 22 DSGVO.
 
-## 10. Keine Weitergabe an Dritte
+## 11. Keine Weitergabe an Dritte
 
 Eine Übermittlung Ihrer persönlichen Daten an Dritte erfolgt nicht, außer:
 - wenn Sie ausdrücklich eingewilligt haben (Art. 6 Abs. 1 lit. a DSGVO)
 - wenn dies zur Erfüllung gesetzlicher Verpflichtungen erforderlich ist (Art. 6 Abs. 1 lit. c DSGVO)
 - an unsere technischen Dienstleister (Netlify) im Rahmen der Auftragsverarbeitung
 
-## 11. Änderungen der Datenschutzerklärung
+## 12. Änderungen der Datenschutzerklärung
 
 Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, um sie an geänderte Rechtslagen oder Änderungen unserer Dienste anzupassen. Für Ihren nächsten Besuch gilt dann die neue Datenschutzerklärung.
 
-**Stand:** Januar 2026
+**Stand:** Februar 2026
 
 ---
 
-**Bei Fragen zum Datenschutz kontaktieren Sie uns bitte unter:** info@jochenhornung.de
+**Bei Fragen zum Datenschutz kontaktieren Sie uns bitte unter:** kontakt@jochenhornung.de
