@@ -3,10 +3,19 @@ layout: base
 title: Die Geschichte hinter Gefühlskompass 5D
 ---
 
+<style>
+.text-content.sans,
+.text-content.sans h2,
+.text-content.sans p,
+.text-content.sans strong {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+</style>
+
 <div class="content-page">
 <a href="/werkzeuge/" class="back-link">← Zurück zu Werkzeuge</a>
 
-<div class="text-content">
+<div class="text-content sans">
 
 ## Warum ein weiterer Mood-Tracker?
 
