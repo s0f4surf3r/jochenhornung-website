@@ -62,7 +62,7 @@ layout: base
     }
 
     .donation-block {
-        margin-top: 2rem;
+        margin-top: 5rem;
         padding-top: 1.5rem;
         border-top: 1px solid #eee;
         max-width: 600px;
@@ -75,16 +75,16 @@ layout: base
     }
 
     .donation-button {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
+        display: inline-block;
         margin-top: 0.5rem;
         padding: 0.6rem 1.3rem;
-        background: #1a1a1a;
+        background: #0070ba;
         color: white;
         text-decoration: none;
-        border-radius: 6px;
+        border-radius: 8px;
         font-size: 0.9rem;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-weight: 500;
     }
 
     .quellen-block {
@@ -94,15 +94,51 @@ layout: base
         max-width: 600px;
     }
 
-    .quellen-block h3 {
+    .quellen-block summary {
         font-size: 1rem;
+        font-weight: 400;
         color: #666;
-        margin-bottom: 0.5rem;
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0;
+        user-select: none;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
+    .quellen-block summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .quellen-block summary::before {
+        content: '+';
+        font-size: 1.3rem;
+        font-weight: 300;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #666;
+        transition: transform 0.2s ease;
+    }
+
+    .quellen-block[open] summary::before {
+        content: '−';
+    }
+
+    .quellen-block summary:hover {
+        color: #1a1a1a;
+    }
+
+    .quellen-block summary:hover::before {
+        color: #1a1a1a;
+    }
+
     .quellen-block .text-content {
-        margin-top: 0;
+        margin-top: 0.5rem;
     }
 </style>
 <div class="content-page">
@@ -124,16 +160,16 @@ layout: base
 
     <div class="donation-block">
         <p>Alle Texte hier sind frei zugänglich. Wenn sie dir etwas geben, freue ich mich über eine kleine Unterstützung.</p>
-        <a href="https://paypal.me/JochenHornung1982" target="_blank" class="donation-button">Unterstützen via <svg xmlns="http://www.w3.org/2000/svg" width="60" height="16" viewBox="0 0 100 26"><path fill="#fff" d="M12.2 2.1C11.2.8 9.4 0 7.1 0H1.5c-.5 0-1 .4-1.1.9L0 21.8c0 .4.3.7.7.7h3.8l1-6v.2c.1-.5.6-.9 1.1-.9h2.3c4.4 0 7.8-1.8 8.8-6.9v-.4c-.1 0-.1 0 0 0 .3-1.8 0-3-1-4.1"/><path fill="#fff" d="M12.2 2.1C11.2.8 9.4 0 7.1 0H1.5c-.5 0-1 .4-1.1.9L0 21.8c0 .4.3.7.7.7h3.8l1-6v.2c.1-.5.6-.9 1.1-.9h2.3c4.4 0 7.8-1.8 8.8-6.9.3-1.5.4-2.8 0-3.8-.3-.4-.5-.7-.8-1" opacity=".7"/><path fill="#fff" d="M5.2 5.3c0-.3.2-.6.5-.7.1 0 .2-.1.3-.1h4.5c.5 0 1 0 1.5.1.1 0 .3.1.4.1.1 0 .3.1.4.1.1 0 .1 0 .2.1.4.1.7.3 1 .5-.3-1.8 0-3-1-4.1C11.9.8 10 0 7.8 0H2.2c-.5 0-1 .4-1.1.9L.7 21.8c0 .4.3.7.7.7h3.8l1-6 1-11.2z"/><path fill="#fff" d="M38.4 5.6h-3.8c-.3 0-.6.2-.7.5l-.2 1-.3-.4c-.8-1.2-2.7-1.6-4.5-1.6-4.2 0-7.8 3.2-8.5 7.6-.4 2.2.2 4.4 1.4 5.8 1.2 1.4 2.8 1.9 4.8 1.9 3.4 0 5.3-2.2 5.3-2.2l-.2 1c0 .4.3.8.7.8h3.4c.5 0 1-.4 1.1-.9l2-12.8c.1-.3-.2-.7-.5-.7zm-5.3 7.4c-.4 2.2-2.1 3.6-4.3 3.6-1.1 0-2-.4-2.5-1-.6-.7-.8-1.6-.6-2.6.3-2.1 2.1-3.6 4.2-3.6 1.1 0 1.9.4 2.5 1 .7.7.9 1.6.7 2.6zM55.8 5.6H52c-.4 0-.7.2-.9.5l-5.1 7.5-2.2-7.2c-.1-.5-.6-.8-1-.8h-3.7c-.5 0-.8.4-.7.9l4.1 12-3.8 5.4c-.3.4 0 1 .5 1h3.7c.4 0 .7-.2.9-.5l12.2-17.6c.4-.5.1-1.2-.5-1.2h.3z"/><path fill="#fff" d="M67.2 2.1C66.2.8 64.4 0 62.1 0h-5.6c-.5 0-1 .4-1.1.9L55 21.8c0 .4.3.7.7.7h4.1c.4 0 .7-.3.7-.6l.4-2.5.1.2c.1-.5.6-.9 1.1-.9H64.3c4.4 0 7.8-1.8 8.8-6.9v-.4c.3-1.8 0-3-1-4.1"/><path fill="#fff" d="M60.2 5.3c0-.3.2-.6.5-.7.1 0 .2-.1.3-.1H65.5c.5 0 1 0 1.5.1.1 0 .3.1.4.1.1 0 .3.1.4.1.1 0 .1 0 .2.1.4.1.7.3 1 .5-.3-1.8 0-3-1-4.1C66.9.8 65 0 62.8 0h-5.6c-.5 0-1 .4-1.1.9l-.4 20.9c0 .4.3.7.7.7h4.1c.5 0 1-.4 1.1-.9l.6-16.3z"/><path fill="#fff" d="M93.4 5.6h-3.8c-.3 0-.6.2-.7.5l-.2 1-.3-.4c-.8-1.2-2.7-1.6-4.5-1.6-4.2 0-7.8 3.2-8.5 7.6-.4 2.2.2 4.4 1.4 5.8 1.2 1.4 2.8 1.9 4.8 1.9 3.4 0 5.3-2.2 5.3-2.2l-.2 1c0 .4.3.8.7.8H91c.5 0 1-.4 1.1-.9l2-12.8c0-.3-.3-.7-.7-.7zm-5.3 7.4c-.4 2.2-2.1 3.6-4.3 3.6-1.1 0-2-.4-2.5-1-.6-.7-.8-1.6-.6-2.6.3-2.1 2.1-3.6 4.2-3.6 1.1 0 1.9.4 2.5 1 .7.7.9 1.6.7 2.6zM96.2 1l-.5 21c0 .4.3.7.7.7h3.3c.5 0 1-.4 1.1-.9L101.2.7c0-.4-.3-.7-.7-.7h-3.6c-.3 0-.6.2-.7.5V1z"/></svg></a>
+        <a href="https://paypal.me/JochenHornung1982" target="_blank" rel="noopener noreferrer" class="donation-button">Via PayPal unterstützen</a>
     </div>
 
     {% if quellen %}
-    <div class="quellen-block">
-        <h3>Quellen</h3>
+    <details class="quellen-block">
+        <summary>Quellen</summary>
         <div class="text-content">
             {{ quellen | markdownify | safe }}
         </div>
-    </div>
+    </details>
     {% endif %}
 
     {% if heroImage %}
