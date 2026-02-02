@@ -1,6 +1,10 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: s0f4surf3r/jochenhornung-website
   branch: main
+  # FIX: Diese beiden Zeilen lösen das "Not Found" Problem
+  base_url: https://api.netlify.com
+  site_domain: poetic-lollipop-029be3.netlify.app
 
 media_folder: "src/images"
 public_folder: "/images"
@@ -19,4 +23,3 @@ collections:
       - {label: "Typ", name: "type", widget: "select", options: ["Gedicht", "Essay", "Notiz"], default: "Essay"}
       - {label: "Kurzbeschreibung (optional)", name: "excerpt", widget: "text", required: false}
       - {label: "Text", name: "body", widget: "markdown"}
-      - {label: "Quellen (optional)", name: "quellen", widget: "markdown", required: false}
