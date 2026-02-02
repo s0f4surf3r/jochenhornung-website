@@ -9,19 +9,23 @@ module.exports = function(eleventyConfig) {
   
   const md = markdownIt(markdownItOptions);
   eleventyConfig.setLibrary("md", md);
-
   // Markdown filter für Frontmatter-Felder (z.B. quellen)
   eleventyConfig.addFilter("markdownify", (content) => {
     if (!content) return "";
     return md.render(content);
   });
-
+  // Filter: Zeilenumbrüche in <br> umwandeln (für CMS-Titel)
+  eleventyConfig.addFilter("nlToBr", function(str) {
+    if (!str) return str;
+    return str.replace(/\n/g, "<br>");
+  });
   // Copy static assets
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy({"src/images": "images"});
   eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPassthroughCopy("src/docs");
   eleventyConfig.addPassthroughCopy("src/audio");
+  eleventyConfig.addPassthroughCopy("src/apps");
   // Date filter
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return new Date(dateObj).toLocaleDateString('de-DE', {
