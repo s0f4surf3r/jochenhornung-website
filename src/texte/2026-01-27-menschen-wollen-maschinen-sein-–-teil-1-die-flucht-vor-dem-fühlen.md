@@ -11,6 +11,71 @@ excerpt: 'Perfektionismus steigt um 33%, Burnout verzehnfacht sich, wir
   alles besser können, steht die Frage im Raum: Was bleibt von uns übrig? Teil 1
   über die Wurzeln unserer Maschinenwerdung – und warum selbst Weltstars wie
   Robbie Williams trotz 80.000 Fans dachten: "Gleich fliegen sie mich auf."'
+quellen: >-
+  ## Quellen & Weiterführende Literatur
+
+
+  ### Wissenschaftliche Studien
+
+
+  **Curran, T., & Hill, A. P. (2019).** Perfectionism is increasing over time: A meta-analysis of birth cohort differences from 1989 to 2016. *Psychological Bulletin*, 145(4), 410-429.
+
+  DOI: 10.1037/bul0000138
+
+  PubMed: https://pubmed.ncbi.nlm.nih.gov/29283599/
+
+
+  **Chalmers, David (1996).** *The Conscious Mind: In Search of a Fundamental Theory.* Oxford University Press.
+
+
+  **Akmatov, M. K., Holstiege, J., Dammertz, L., Kohring, C., & Müller, D. (2024).** Entwicklung der Prävalenz diagnostizierter Autoimmunerkrankungen im Zeitraum 2012-2022. *Versorgungsatlas-Bericht Nr. 24/05.* Zentralinstitut für die kassenärztliche Versorgung.
+
+  DOI: 10.20364/VA-24.05
+
+  URL: https://doi.org/10.20364/VA-24.05
+
+
+  **Wissenschaftliches Institut der AOK (WIdO).** Fehlzeiten-Report 2024. Burnout-bedingte Arbeitsunfähigkeitstage.
+
+  URL: https://www.wido.de/news-presse/pressemitteilungen/2024/fehlzeiten-report-2024/
+
+  Statista: https://de.statista.com/statistik/daten/studie/239872/umfrage/arbeitsunfaehigkeitsfaelle-aufgrund-von-burn-out-erkrankungen/
+
+
+  **World Health Organization (WHO).** Mental Health and Substance Use - Depression and Anxiety Disorders.
+
+  URL: https://www.who.int/news/item/02-09-2025-over-a-billion-people-living-with-mental-health-conditions-services-require-urgent-scale-up
+
+
+  **Vereinigung der Deutschen Ästhetisch-Plastischen Chirurgen (VDÄPC).** Behandlungsstatistik 2022.
+
+  URL: https://www.vdaepc.de/vdaepc-statistik-2022-zahlen-fakten-entwicklungen-in-der-aesthetisch-plastischen-chirurgie/
+
+
+  **Business Research Insights.** Productivity Apps Market Size, Share 2025-2035.
+
+  URL: https://www.businessresearchinsights.com/market-reports/productivity-apps-market-117791
+
+
+  ### Psychologie & Trauma
+
+
+  **Prof. Ashok Riehm** – Psychologe und Traumaforscher
+
+  YouTube-Vortrag: https://www.youtube.com/watch?v=gqxbXEuPO_8
+
+
+  ### Kulturelle Referenzen
+
+
+  **Robbie Williams Netflix Dokumentation (2023)** – „Robbie Williams" (4-teilige Serie)
+
+  Artikel: https://www.aol.com/news/robbie-williams-felt-imposter-syndrome-212942153.html
+
+
+  **Yahoo Entertainment Interview (Dezember 2023)** – „Robbie Williams has started to 'respect' himself as a performer"
+
+  URL: https://nz.news.yahoo.com/robbie-williams-started-respect-himself-070134460.html
 ---
 **Wortanzahl:** ~2020 Wörter
 **Lesezeit:** ~9 Minuten
