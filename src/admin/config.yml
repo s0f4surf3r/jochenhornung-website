@@ -5,10 +5,8 @@ backend:
   # FIX: Diese beiden Zeilen lösen das "Not Found" Problem
   base_url: https://api.netlify.com
   site_domain: poetic-lollipop-029be3.netlify.app
-
 media_folder: "src/images"
 public_folder: "/images"
-
 collections:
   - name: "texte"
     label: "Texte"
@@ -18,7 +16,7 @@ collections:
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "text"}
       - {label: "Tags", name: "tags", widget: "hidden", default: "text"}
-      - {label: "Titel", name: "title", widget: "string"}
+      - {label: "Titel", name: "title", widget: "text"}
       - {label: "Datum", name: "date", widget: "datetime"}
       - {label: "Typ", name: "type", widget: "select", options: ["Gedicht", "Essay", "Notiz"], default: "Essay"}
       - {label: "Kurzbeschreibung (optional)", name: "excerpt", widget: "text", required: false}
