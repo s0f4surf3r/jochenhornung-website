@@ -79,7 +79,10 @@ Willkommen bei dir selbst.
 
 ---
 
-[Gefühlskompass 5D öffnen](https://gefuehlskompass.vercel.app){target="_blank"}
+<a href="https://gefuehlskompass.vercel.app" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;">
+  <img src="/images/Gefuelskompass5d_icon-192.png" alt="" width="24" height="24" style="border-radius: 6px;">
+  Gefühlskompass 5D öffnen
+</a>
 
 </div>
 </div>
