@@ -21,7 +21,6 @@ Ich arbeite ressourcenorientiert und neurosystemisch. Das bedeutet: Wir stärken
 
 <img src="/images/schale.jpg" alt="Kintsugi Schale als Symbol für Heilung, bei der Risse mit Gold repariert werden" style="float: left; margin: 0 1.5rem 1rem 0; max-width: 300px; border-radius: 8px;">
 
-
 Unter den Anpassungen und Schutzmechanismen, die du dir über die Jahre zugelegt hast, verbirgt sich, wer du wirklich bist – dein Selbstwert, deine wahre Persönlichkeit, vielleicht auch deine Berufung. Oft verdeckt durch frühe Prägungen oder schmerzhafte Erfahrungen. Meine Arbeit ist es, dich zu begleiten, diesen Zugang wieder freizulegen.
 
 Wie das aussieht: Wir bauen gemeinsam ein Verständnis für dein inneres Erleben auf. Wir suchen Ressourcen, verkörpern sie und integrieren sie. Mit Regulationstechniken und behutsamem Pendeln (Somatic Experiencing) führen wir dein Nervensystem Schritt für Schritt zurück in die Balance.
