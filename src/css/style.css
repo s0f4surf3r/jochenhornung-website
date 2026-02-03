@@ -281,27 +281,18 @@ body {
 /* NEU: Spezial-Klassen für Coaching & Texte */
 /* ========================================= */
 
-/* 1. Silbentrennung & Blocksatz für schöne Textkanten */
+/* 1. Silbentrennung aktivieren (kein Blocksatz) */
 .lesetext {
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
-    text-align: justify;
 }
 
-/* 2. Spezielle Bild-Regeln für Lesetexte (überschreibt Standard) */
-/* Verhindert, dass Bilder am Text kleben und erlaubt das Umfließen */
+/* 2. Bilder im Lesetext sauber ausrichten */
+/* margin-top: 8px sorgt dafür, dass das Bild oben bündig mit dem Text abschließt */
 .lesetext img {
-    display: inline-block; /* Wichtig für float */
-    margin-top: 8px;      /* Damit Bild-Oberkante bündig mit Textzeile ist */
+    display: inline-block; 
+    margin-top: 8px;       
     margin-bottom: 1rem;
-}
-
-/* Entfernt den weißen Hintergrund bei Vektorgrafiken (wie dem Männer-Bild) */
-/* Funktioniert wie "Multiplizieren" in Photoshop */
-.lesetext img[src$=".jpg"], 
-.lesetext img[src$=".png"] {
-    /* Optional: Falls du es generell für alle Bilder im Text willst.
-       Sonst lassen wir es im HTML inline, wie ich es dir vorhin gegeben habe. */
 }
