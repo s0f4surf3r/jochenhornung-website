@@ -4,7 +4,7 @@ title: Coaching
 ---
 <div class="content-page">
 <a href="/" class="back-link">← Zurück</a>
-<img src="/images/hero_coaching_seite.jpg" alt="Zwei Menschen unter dem Sternenhimmel" style="width: 100%; max-height: 400px; object-fit: cover; margin-bottom: 2rem; border-radius: 8px;">
+<img src="/images/hero_coaching_seite.jpg" alt="Weg ins Licht" style="width: 100%; max-height: 400px; object-fit: cover; margin-bottom: 2rem; border-radius: 8px;">
 <div class="text-content">
 
 Ich kenne die dunklen Orte. Ich war selbst dort.
@@ -19,7 +19,7 @@ Zertifizierter Coach für Neurosystemische Integration (Verena König, 2024). Ab
 
 Ich arbeite ressourcenorientiert und neurosystemisch. Das bedeutet: Wir stärken gezielt das, was dich trägt. Nicht, um das Schwere auszublenden – sondern um deinem Nervensystem die Kapazität (Containment) zu geben, den Schmerz wirklich zu halten und zu durchfühlen, anstatt vor ihm fliehen zu müssen.
 
-<img src="/images/schale.jpg" alt="Kintsugi Schale als Symbol für Heilung, bei der Risse mit Gold repariert werden" style="float: left; margin: 0 1.5rem 1rem 0; max-width: 250px; border-radius: 8px;">
+<img src="/images/schale.jpg" alt="Kintsugi Schale" style="float: left; margin: 8px 1.5rem 1rem 0; max-width: 280px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
 
 Unter den Anpassungen und Schutzmechanismen, die du dir über die Jahre zugelegt hast, verbirgt sich, wer du wirklich bist – dein Selbstwert, deine wahre Persönlichkeit, vielleicht auch deine Berufung. Oft verdeckt durch frühe Prägungen oder schmerzhafte Erfahrungen. Meine Arbeit ist es, dich zu begleiten, diesen Zugang wieder freizulegen.
 
@@ -33,7 +33,7 @@ Ich begleite nur wenige Menschen gleichzeitig. Dafür mit vollem Fokus.
 
 ## Speziell für Männer
 
-<img src="/images/archetypen_vektor.jpg" alt="Kopf, Herz und Bauch – verbunden" style="float: right; margin: 0 0 1rem 1.5rem; max-width: 333px; border-radius: 8px;">
+<img src="/images/archetypen_vektor.jpg" alt="Kopf, Herz und Bauch" style="float: right; margin: 8px 0 1rem 1.5rem; max-width: 320px; border-radius: 8px; mix-blend-mode: multiply;">
 
 Vielleicht gehörst du zu den Feinfühligen, die sich oft fragen, was von ihnen erwartet wird, und die schmerzhaft erlebt haben, dass ihre Offenheit nicht immer willkommen war. Vielleicht bist du eher der Analytiker, der Sicherheit im Verstand sucht, aber spürt, dass ihm der Zugang zum eigenen Erleben entgleitet. Oder du hast gelernt, der Starke zu sein – der, der funktioniert und leistet, sich aber insgeheim danach sehnt, die Rüstung abzulegen und mit seinen Selbstzweifeln gesehen zu werden.
 
