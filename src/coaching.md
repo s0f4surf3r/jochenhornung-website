@@ -29,13 +29,17 @@ Was meine Arbeit besonders macht: Ich nutze moderne Technik für tiefe Prozesse.
 
 Ich begleite nur wenige Menschen gleichzeitig. Dafür mit vollem Fokus.
 
+---
+
 ## Speziell für Männer
 
-Vielleicht gehörst du zu den "Guten". Zu den Rücksichtsvollen, den Feinfühligen, den Analytikern. Du hast gelernt, zu verstehen, dich anzupassen und nicht zur Last zu fallen.
+<img src="/images/archetypen_vektor.jpg" alt="Kopf, Herz und Bauch – verbunden" style="float: right; margin: 0 0 1rem 1.5rem; max-width: 180px; border-radius: 8px;">
 
-Aber vielleicht spürst du darunter eine stille Verzweiflung. Weil du nicht mehr weißt, was eigentlich von dir erwartet wird – von den Frauen, von der Welt, von dir selbst. Vielleicht hast du das Gefühl, deine Identität als Mann verloren zu haben (oder nie ganz gefunden zu haben) und versuchst nun verzweifelt, über den Kopf zu lösen, was man nur im Bauch spüren kann.
+Vielleicht gehörst du zu den Feinfühligen, die sich oft fragen, was von ihnen erwartet wird, und die schmerzhaft erlebt haben, dass ihre Offenheit nicht immer willkommen war. Vielleicht bist du eher der Analytiker, der Sicherheit im Verstand sucht, aber spürt, dass ihm der Zugang zum eigenen Erleben entgleitet. Oder du hast gelernt, der Starke zu sein – der, der funktioniert und leistet, sich aber insgeheim danach sehnt, die Rüstung abzulegen und mit seinen Selbstzweifeln gesehen zu werden.
 
-Mein Ansatz ist kein mentaler Quick-Fix. Wir können deine Identität nicht "herbeidenken". Wir finden sie dort wieder, wo sie verloren ging: in deinem Körper und deinem Nervensystem. Es geht nicht darum, ein harter Kerl zu werden. Es geht darum, deine eigene, unverfälschte Schwingung wiederzufinden. Weg von der Anpassung, hin zu dem, wer du wirklich bist. Damit du nicht mehr nur reagierst, sondern wieder in dir selbst ruhst.
+Egal welche Strategie du gewählt hast: Wahrscheinlich spürst du darunter eine stille Erschöpfung. Weil du versuchst, über den Kopf oder durch Härte zu lösen, was man nur fühlen kann. Weil du vielleicht das Gefühl hast, deine echte Identität als Mann verloren zu haben – oder sie nie ganz leben durftest.
+
+Mein Ansatz ist kein mentaler Quick-Fix. Wir können Identität nicht "herbeidenken". Wir finden sie dort wieder, wo sie verloren ging: in deinem Körper und deinem Nervensystem. Es geht darum, wieder Zugang zu Herz und Bauch zu bekommen. Deine Sensibilität mit Kraft zu unterlegen, deinen Verstand mit dem Fühlen zu verbinden oder deine Härte durch echte Stabilität zu ersetzen. Weg von der Rolle, hin zu dem, wer du wirklich bist.
 
 ## Rahmen
 
@@ -49,7 +53,7 @@ Das Honorar besprechen wir individuell - orientiert an dem, was dir zur Verfügu
 
 ## Kontakt
 
-kontakt@jochenhornung.de
+info@jochenhornung.de
 
 </div>
 </div>
