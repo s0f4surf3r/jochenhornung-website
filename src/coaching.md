@@ -29,8 +29,6 @@ Was meine Arbeit besonders macht: Ich nutze moderne Technik für tiefe Prozesse.
 
 Ich begleite nur wenige Menschen gleichzeitig. Dafür mit vollem Fokus.
 
----
-
 ## Speziell für Männer
 
 Vielleicht gehörst du zu den "Guten". Zu den Rücksichtsvollen, den Feinfühligen, den Analytikern. Du hast gelernt, zu verstehen, dich anzupassen und nicht zur Last zu fallen.
