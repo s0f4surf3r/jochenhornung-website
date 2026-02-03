@@ -54,7 +54,7 @@ Das Honorar besprechen wir individuell - orientiert an dem, was dir zur Verfügu
 
 ## Kontakt
 
-info@jochenhornung.de
+kontakt@jochenhornung.de
 
 </div>
 </div>
