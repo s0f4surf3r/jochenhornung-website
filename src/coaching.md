@@ -31,7 +31,7 @@ Ich begleite nur wenige Menschen gleichzeitig. Dafür mit vollem Fokus.
 
 ## Speziell für Männer
 
-<img src="/images/archetypen_vektor.jpg" alt="Kopf, Herz und Bauch – verbunden" style="float: right; margin: 0 0 1rem 1.5rem; max-width: 180px; border-radius: 8px;">
+<img src="/images/archetypen_vektor.jpg" alt="Kopf, Herz und Bauch – verbunden" style="float: right; margin: 0 0 1rem 1.5rem; max-width: 300px; border-radius: 8px;">
 
 Vielleicht gehörst du zu den Feinfühligen, die sich oft fragen, was von ihnen erwartet wird, und die schmerzhaft erlebt haben, dass ihre Offenheit nicht immer willkommen war. Vielleicht bist du eher der Analytiker, der Sicherheit im Verstand sucht, aber spürt, dass ihm der Zugang zum eigenen Erleben entgleitet. Oder du hast gelernt, der Starke zu sein – der, der funktioniert und leistet, sich aber insgeheim danach sehnt, die Rüstung abzulegen und mit seinen Selbstzweifeln gesehen zu werden.
 
