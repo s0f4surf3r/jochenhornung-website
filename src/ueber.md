@@ -14,7 +14,7 @@ title: Über mich
       margin: 2rem 0 1.5rem 0;
     }
   </style>
-  <img src="/images/jochen1u2.png" alt="Jochen Hornung" class="about-photo">
+  <img src="/images/jochen1u2.jpg" alt="Jochen Hornung" class="about-photo">
   <div class="text-content">
 
 Jochen Hornung. <span id="age">43</span> Jahre. Berlin-Mitte.
