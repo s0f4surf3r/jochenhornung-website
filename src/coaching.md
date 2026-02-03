@@ -29,8 +29,6 @@ Was meine Arbeit besonders macht: Ich nutze moderne Technik für tiefe Prozesse.
 
 Ich begleite nur wenige Menschen gleichzeitig. Dafür mit vollem Fokus.
 
----
-
 ## Speziell für Männer
 
 <img src="/images/archetypen_vektor.jpg" alt="Kopf, Herz und Bauch – verbunden" style="float: right; margin: 0 0 1rem 1.5rem; max-width: 180px; border-radius: 8px;">
