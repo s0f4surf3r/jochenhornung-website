@@ -17,17 +17,19 @@ Zertifizierter Coach für Neurosystemische Integration (Verena König, 2024). Ab
 
 ## Der Prozess
 
-Ich arbeite ressourcenorientiert und neurosystemisch. Das bedeutet: Wir schauen nicht nur auf das, was schwer ist – sondern vor allem auf das, was dich trägt.
+Ich arbeite ressourcenorientiert und neurosystemisch. Das bedeutet: Wir stärken gezielt das, was dich trägt. Nicht, um das Schwere auszublenden – sondern um deinem Nervensystem die Kapazität (Containment) zu geben, den Schmerz wirklich zu halten und zu durchfühlen, anstatt vor ihm fliehen zu müssen.
 
-In dir liegt ein unverletzter Kern. Oft ist er verdeckt durch Narben aus traumatischen Erlebnissen oder frühen Prägungen. Meine Arbeit ist es, dich zu begleiten, den Zugang zu diesem Kern wieder freizulegen.
+Unter den Anpassungen und Schutzmechanismen, die du dir über die Jahre zugelegt hast, verbirgt sich, wer du wirklich bist – dein Selbstwert, deine wahre Persönlichkeit, vielleicht auch deine Berufung. Oft verdeckt durch frühe Prägungen oder schmerzhafte Erfahrungen. Meine Arbeit ist es, dich zu begleiten, diesen Zugang wieder freizulegen.
 
 Wie das aussieht: Wir bauen gemeinsam ein Verständnis für dein inneres Erleben auf. Wir suchen Ressourcen, verkörpern sie und integrieren sie. Mit Regulationstechniken und behutsamem Pendeln (Somatic Experiencing) führen wir dein Nervensystem Schritt für Schritt zurück in die Balance.
 
 Dabei geht es mir um echte Verbindung. Ich bin überzeugt: Ohne persönlichen Kontakt, ohne Raum für Verletzlichkeit und Scham, passiert nichts Wesentliches. Egal ob du gelernt hast, immer stark sein zu müssen, oder ob du dich oft unsichtbar fühlst – ich gebe Raum für alles, was da ist. Und ich zeige mich selbst.
 
-Was meine Arbeit besonders macht: Ich nutze moderne Technik für tiefe Prozesse. Wenn es passt, baue ich maßgeschneiderte, oft KI-gestützte Werkzeuge für dich. Keine Methode von der Stange, sondern etwas, das genau deinen Moment einfängt – damit die Erkenntnisse nicht im Raum verpuffen, sondern in deinem Alltag landen.
+Was meine Arbeit besonders macht: Ich nutze moderne Technik für tiefe Prozesse. Wenn es passt, baue ich maßgeschneiderte, oft KI-gestützte [Werkzeuge](/werkzeuge/) für dich. Keine Methode von der Stange, sondern etwas, das genau deinen Moment einfängt – damit die Erkenntnisse nicht im Raum verpuffen, sondern in deinem Alltag landen.
 
 Ich begleite nur wenige Menschen gleichzeitig. Dafür mit vollem Fokus.
+
+---
 
 ## Speziell für Männer
 
@@ -49,7 +51,7 @@ Das Honorar besprechen wir individuell - orientiert an dem, was dir zur Verfügu
 
 ## Kontakt
 
-info@jochenhornung.de
+kontakt@jochenhornung.de
 
 </div>
 </div>
