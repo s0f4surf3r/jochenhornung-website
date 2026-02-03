@@ -17,6 +17,8 @@ Zertifizierter Coach für Neurosystemische Integration (Verena König, 2024). Ab
 
 ## Der Prozess
 
+<img src="/images/schale.jpg" alt="Kintsugi Schale als Symbol für Heilung, bei der Risse mit Gold repariert werden" style="float: left; margin: 0 1.5rem 1rem 0; max-width: 300px; border-radius: 8px;">
+
 Ich arbeite ressourcenorientiert und neurosystemisch. Das bedeutet: Wir stärken gezielt das, was dich trägt. Nicht, um das Schwere auszublenden – sondern um deinem Nervensystem die Kapazität (Containment) zu geben, den Schmerz wirklich zu halten und zu durchfühlen, anstatt vor ihm fliehen zu müssen.
 
 Unter den Anpassungen und Schutzmechanismen, die du dir über die Jahre zugelegt hast, verbirgt sich, wer du wirklich bist – dein Selbstwert, deine wahre Persönlichkeit, vielleicht auch deine Berufung. Oft verdeckt durch frühe Prägungen oder schmerzhafte Erfahrungen. Meine Arbeit ist es, dich zu begleiten, diesen Zugang wieder freizulegen.
