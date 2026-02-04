@@ -62,7 +62,7 @@ layout: base
     }
 
     .donation-block {
-        margin-top: 5rem;
+        margin-top: 3rem;
         padding-top: 1.5rem;
         border-top: 1px solid #eee;
         max-width: 600px;
@@ -158,6 +158,10 @@ layout: base
         {{ content | safe }}
     </div>
 
+    {% if heroImage %}
+    <img src="{{ heroImage }}" alt="" class="text-hero-image">
+    {% endif %}
+
     <div class="donation-block">
         <p>Alle Texte hier sind frei zugänglich. Wenn sie dir etwas geben, freue ich mich über eine kleine Unterstützung.</p>
         <a href="https://paypal.me/JochenHornung1982" target="_blank" rel="noopener noreferrer" class="donation-button">Via PayPal unterstützen</a>
@@ -170,9 +174,5 @@ layout: base
             {{ quellen | markdownify | safe }}
         </div>
     </details>
-    {% endif %}
-
-    {% if heroImage %}
-    <img src="{{ heroImage }}" alt="" class="text-hero-image">
     {% endif %}
 </div>
