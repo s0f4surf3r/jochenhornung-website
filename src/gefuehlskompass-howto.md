@@ -71,7 +71,7 @@ Alles bleibt auf deinem Gerät. Kein Server, kein Account, kein Tracking. Deine 
 
 Gefühlskompass 5D verbindet westliche Psychologie mit östlichen Traditionen. Für Menschen, die wirklich hinschauen wollen.
 
-[Gefühlskompass 5D öffnen](https://gefuehlskompass.vercel.app){target="_blank"}
+[Gefühlskompass 5D öffnen](https://gefuehlskompass.vercel.app)
 
 </div>
 </div>
