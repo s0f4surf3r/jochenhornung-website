@@ -2,13 +2,20 @@
 layout: base.njk
 title: Raum für Menschlichkeit und Tiefe
 ---
-
 <style>
+html, body {
+  background: #000;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+}
 .hero {
   background-image: url('/images/hero.jpg');
   background-size: cover;
   background-position: center;
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -16,7 +23,6 @@ title: Raum für Menschlichkeit und Tiefe
   padding: 4rem 2rem 10rem;
   position: relative;
 }
-
 .hero nav {
   position: relative;
   z-index: 1;
@@ -27,7 +33,6 @@ title: Raum für Menschlichkeit und Tiefe
   align-items: center;
   max-width: 300px;
 }
-
 .hero nav a,
 .hero nav span {
   color: white;
@@ -35,13 +40,11 @@ title: Raum für Menschlichkeit und Tiefe
   font-size: 1.1rem;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
-
 @media (max-width: 768px) {
   .hero {
     background-position: 70% center;
   }
 }
-
 @media (min-width: 769px) {
   .hero {
     padding-bottom: 8rem;
@@ -52,7 +55,6 @@ title: Raum für Menschlichkeit und Tiefe
   }
 }
 </style>
-
 <div class="hero">
   <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.6);"></div>
   
