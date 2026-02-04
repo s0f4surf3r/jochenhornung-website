@@ -32,7 +32,6 @@
 
     <link rel="stylesheet" href="/css/style.css">
 
-    <!-- Styles ans Ende verschoben für bessere WhatsApp-Kompatibilität -->
     <style>
         .site-header {
             padding: 3rem 2rem 1rem;
@@ -79,12 +78,10 @@
             color: #999;
         }
 
-        /* Weniger Abstand oben bei Content-Seiten */
         .content-page {
             padding-top: 1rem;
         }
 
-        /* Georgia für Content */
         .content-page .text-content,
         .content-page .text-excerpt,
         .text-item h3 a {
@@ -100,7 +97,6 @@
             text-decoration: underline;
         }
 
-        /* Footer spacing nur bei Content-Seiten */
         .site-footer {
             text-align: center;
             padding: 2rem 0;
@@ -109,7 +105,6 @@
             color: #666;
         }
 
-        /* Auf Content-Seiten: Abstand oben */
         .content-page ~ .site-footer {
             margin-top: 4rem;
         }
@@ -140,8 +135,10 @@
 
     {{ content | safe }}
 
+    {% if page.url != "/" %}
     <footer class="site-footer">
         © 2026 Jochen Hornung | <a href="/impressum">Impressum</a> | <a href="/datenschutz">Datenschutz</a>
     </footer>
+    {% endif %}
 </body>
 </html>
