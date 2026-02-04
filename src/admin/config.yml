@@ -20,5 +20,6 @@ collections:
       - {label: "Datum", name: "date", widget: "datetime"}
       - {label: "Typ", name: "type", widget: "select", options: ["Gedicht", "Essay", "Notiz"], default: "Essay"}
       - {label: "Kurzbeschreibung (optional)", name: "excerpt", widget: "text", required: false}
+      - {label: "Bild (optional)", name: "heroImage", widget: "image", required: false}
       - {label: "Text", name: "body", widget: "markdown"}
       - {label: "Quellen (optional)", name: "quellen", widget: "markdown", required: false}
