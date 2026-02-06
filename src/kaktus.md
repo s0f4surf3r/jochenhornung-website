@@ -1,6 +1,7 @@
 ---
 layout: base
 title: Kaktus
+description: "Kaktus – eine Mental-Health-Coaching-App in Entwicklung von Jochen Hornung."
 ---
 
 <div class="content-page">

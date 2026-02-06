@@ -1,0 +1,28 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Jochen Hornung – Texte</title>
+    <subtitle>Raum für Menschlichkeit und Tiefe</subtitle>
+    <link href="https://jochenhornung.de/feed.xml" rel="self"/>
+    <link href="https://jochenhornung.de/"/>
+    <updated>{{ collections.sortedTexte[0].date.toISOString() }}</updated>
+    <id>https://jochenhornung.de/</id>
+    <author>
+        <name>Jochen Hornung</name>
+        <email>kontakt@jochenhornung.de</email>
+    </author>
+    {%- for text in collections.sortedTexte %}
+    <entry>
+        <title>{{ text.data.title }}</title>
+        <link href="https://jochenhornung.de{{ text.url }}"/>
+        <id>https://jochenhornung.de{{ text.url }}</id>
+        <updated>{{ text.date.toISOString() }}</updated>
+        {%- if text.data.excerpt %}
+        <summary>{{ text.data.excerpt }}</summary>
+        {%- endif %}
+    </entry>
+    {%- endfor %}
+</feed>

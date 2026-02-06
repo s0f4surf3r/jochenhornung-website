@@ -1,6 +1,7 @@
 ---
 layout: base
 title: Coaching
+description: "Neurosystemisches Coaching in Berlin. Jochen Hornung begleitet Männer und Menschen auf dem Weg zu sich selbst."
 ---
 <div class="content-page">
 <a href="/" class="back-link">← Zurück</a>

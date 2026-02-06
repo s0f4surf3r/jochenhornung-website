@@ -26,6 +26,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/docs");
   eleventyConfig.addPassthroughCopy("src/audio");
   eleventyConfig.addPassthroughCopy("src/apps");
+  eleventyConfig.addPassthroughCopy("src/robots.txt");
   // Date filter
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return new Date(dateObj).toLocaleDateString('de-DE', {
@@ -39,6 +40,11 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getFilteredByTag("text").sort((a, b) => {
       return b.date - a.date;
     });
+  });
+  // Dev-Server im Netzwerk erreichbar (z.B. iPhone)
+  eleventyConfig.setServerOptions({
+    port: 8080,
+    host: "0.0.0.0"
   });
   return {
     dir: {

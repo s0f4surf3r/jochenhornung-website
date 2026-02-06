@@ -1,0 +1,38 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://jochenhornung.de/</loc>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://jochenhornung.de/texte/</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jochenhornung.de/coaching/</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jochenhornung.de/werkzeuge/</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jochenhornung.de/ueber/</loc>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://jochenhornung.de/kaktus/</loc>
+        <priority>0.6</priority>
+    </url>
+    {%- for text in collections.sortedTexte %}
+    <url>
+        <loc>https://jochenhornung.de{{ text.url }}</loc>
+        <lastmod>{{ text.date.toISOString() }}</lastmod>
+        <priority>0.7</priority>
+    </url>
+    {%- endfor %}
+</urlset>

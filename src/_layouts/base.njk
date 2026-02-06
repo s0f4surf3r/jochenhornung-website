@@ -5,23 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if title %}{{ title }} - {% endif %}Jochen Hornung</title>
 
+    <meta name="google-site-verification" content="f13dJEfZlqqMox3rZIfQUUGtqO5QJjmuIrgYIGI5Gb0" />
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Raum für Menschlichkeit und Tiefe. Coaching, Werkzeuge und Texte von Jochen Hornung aus Berlin.">
+    {% set pageDescription = description or excerpt or "Raum für Menschlichkeit und Tiefe. Coaching, Werkzeuge und Texte von Jochen Hornung aus Berlin." %}
+    {% set pageImage = heroImage or "/images/hero_for_SM_WA.jpg" %}
+    {% set ogType = "article" if tags and "text" in tags else "website" %}
+    <meta name="description" content="{{ pageDescription }}">
     <meta name="author" content="Jochen Hornung">
+    <link rel="canonical" href="https://jochenhornung.de{{ page.url }}">
 
     <!-- Open Graph / Facebook / WhatsApp -->
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="{{ ogType }}">
     <meta property="og:url" content="https://jochenhornung.de{{ page.url }}">
     <meta property="og:title" content="{% if title %}{{ title }} - {% endif %}Jochen Hornung">
-    <meta property="og:description" content="Raum für Menschlichkeit und Tiefe. Coaching, Werkzeuge und Texte von Jochen Hornung aus Berlin.">
-    <meta property="og:image" content="https://jochenhornung.de/images/hero_for_SM_WA.jpg">
+    <meta property="og:description" content="{{ pageDescription }}">
+    <meta property="og:image" content="https://jochenhornung.de{{ pageImage }}">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://jochenhornung.de{{ page.url }}">
     <meta name="twitter:title" content="{% if title %}{{ title }} - {% endif %}Jochen Hornung">
-    <meta property="twitter:description" content="Raum für Menschlichkeit und Tiefe. Coaching, Werkzeuge und Texte von Jochen Hornung aus Berlin.">
-    <meta property="twitter:image" content="https://jochenhornung.de/images/hero_for_SM_WA.jpg">
+    <meta property="twitter:description" content="{{ pageDescription }}">
+    <meta property="twitter:image" content="https://jochenhornung.de{{ pageImage }}">
 
     <!-- Favicons für alle Browser und Plattformen -->
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
@@ -29,6 +35,24 @@
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="manifest" href="/images/site.webmanifest">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jochen Hornung",
+        "url": "https://jochenhornung.de",
+        "jobTitle": "Coach für neurosystemische Integration",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Berlin",
+            "addressCountry": "DE"
+        },
+        "email": "kontakt@jochenhornung.de",
+        "description": "Raum für Menschlichkeit und Tiefe. Coaching, Werkzeuge und Texte."
+    }
+    </script>
 
     <link rel="stylesheet" href="/css/style.css">
 
