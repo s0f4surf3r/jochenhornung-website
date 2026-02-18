@@ -89,38 +89,76 @@ Es werden auf unserer Website selbst keine Daten an PayPal übermittelt. Erst na
 
 **Rechtsgrundlage:** Art. 6 Abs. 1 lit. a DSGVO (Einwilligung durch aktiven Klick)
 
-## 8. Verwendung von KI-generierten Bildern
+## 8. M-Sphere (msphere.jochenhornung.de)
+
+Die interaktive Meditations-App M-Sphere wird unter der Subdomain msphere.jochenhornung.de betrieben und auf Servern von **GitHub Inc.** (88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) über GitHub Pages gehostet.
+
+### 8.1 Hosting über GitHub Pages
+
+**Verarbeitete Daten:** IP-Adresse, Datum und Uhrzeit der Anfrage, Zugriffsstatus, Browser-Typ, Betriebssystem, Referrer URL
+
+**Zweck:** Bereitstellung der Web-App
+
+**Rechtsgrundlage:** Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)
+
+**Datenübermittlung in Drittländer:** GitHub ist in den USA ansässig. Weitere Informationen: https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement
+
+### 8.2 Webanalyse mit GoatCounter
+
+Für die statistische Auswertung der Website-Nutzung verwenden wir **GoatCounter**, einen datenschutzfreundlichen Analysedienst von Martin Tournoij.
+
+**GoatCounter erfasst keine personenbezogenen Daten.** Es werden keine Cookies gesetzt, keine IP-Adressen gespeichert und kein Fingerprinting durchgeführt. Es werden lediglich aggregierte, anonyme Daten erhoben (Seitenaufrufe, ungefähre Region auf Landesebene, Browser-Typ, Bildschirmgröße, Referrer).
+
+**Rechtsgrundlage:** Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der anonymen Nutzungsanalyse)
+
+**Ein Cookie-Banner ist nicht erforderlich**, da GoatCounter keine Cookies oder vergleichbare Tracking-Technologien einsetzt.
+
+Weitere Informationen: https://www.goatcounter.com/help/privacy
+
+### 8.3 Externe Ressourcen (CDN)
+
+M-Sphere lädt die 3D-Rendering-Bibliothek Three.js von **jsDelivr** (einem Open-Source-CDN). Dabei wird Ihre IP-Adresse an die CDN-Server übermittelt.
+
+**Zweck:** Effiziente Bereitstellung von JavaScript-Bibliotheken
+
+**Rechtsgrundlage:** Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der performanten Bereitstellung)
+
+### 8.4 Lokale Datenspeicherung
+
+M-Sphere speichert Ihre Einstellungen (Meditationszeit, Sound-Auswahl, Gedankenmodus) ausschließlich lokal in Ihrem Browser (localStorage). Diese Daten verlassen Ihr Gerät nicht und werden nicht an uns oder Dritte übermittelt.
+
+## 9. Verwendung von KI-generierten Bildern (jochenhornung.de)
 
 Auf dieser Website werden teilweise Bilder verwendet, die mit KI-Tools (Google Gemini) erstellt wurden. Diese Bilder werden lokal auf unseren Servern gehostet. Es findet keine Datenübermittlung an Google beim Betrachten der Website statt.
 
 Die Erstellung der Bilder erfolgte durch die Nutzung von Google Gemini, wobei die Nutzungsbedingungen von Google beachtet wurden.
 
-## 9. Ihre Rechte als betroffene Person
+## 10. Ihre Rechte als betroffene Person
 
 Sie haben folgende Rechte:
 
-### 9.1 Auskunftsrecht (Art. 15 DSGVO)
+### 10.1 Auskunftsrecht (Art. 15 DSGVO)
 Sie haben das Recht, Auskunft über Ihre von uns verarbeiteten personenbezogenen Daten zu verlangen.
 
-### 9.2 Recht auf Berichtigung (Art. 16 DSGVO)
+### 10.2 Recht auf Berichtigung (Art. 16 DSGVO)
 Sie haben das Recht, die Berichtigung unrichtiger oder die Vervollständigung unvollständiger Daten zu verlangen.
 
-### 9.3 Recht auf Löschung (Art. 17 DSGVO)
+### 10.3 Recht auf Löschung (Art. 17 DSGVO)
 Sie haben das Recht auf Löschung Ihrer personenbezogenen Daten, sofern keine gesetzliche Aufbewahrungspflicht entgegensteht.
 
-### 9.4 Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)
+### 10.4 Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)
 Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer Daten zu verlangen.
 
-### 9.5 Recht auf Datenübertragbarkeit (Art. 20 DSGVO)
+### 10.5 Recht auf Datenübertragbarkeit (Art. 20 DSGVO)
 Sie haben das Recht, die Sie betreffenden personenbezogenen Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten.
 
-### 9.6 Widerspruchsrecht (Art. 21 DSGVO)
+### 10.6 Widerspruchsrecht (Art. 21 DSGVO)
 Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Sie betreffender personenbezogener Daten Widerspruch einzulegen.
 
-### 9.7 Widerruf einer Einwilligung (Art. 7 Abs. 3 DSGVO)
+### 10.7 Widerruf einer Einwilligung (Art. 7 Abs. 3 DSGVO)
 Sofern die Verarbeitung auf einer Einwilligung beruht, können Sie diese jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung bleibt davon unberührt.
 
-### 9.8 Beschwerderecht bei einer Aufsichtsbehörde (Art. 77 DSGVO)
+### 10.8 Beschwerderecht bei einer Aufsichtsbehörde (Art. 77 DSGVO)
 Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten zu beschweren.
 
 **Zuständige Aufsichtsbehörde für Berlin:**  
@@ -131,18 +169,18 @@ Telefon: 030 13889-0
 E-Mail: mailbox@datenschutz-berlin.de  
 Website: https://www.datenschutz-berlin.de
 
-## 10. Keine automatisierte Entscheidungsfindung
+## 11. Keine automatisierte Entscheidungsfindung
 
 Wir nutzen keine automatisierte Entscheidungsfindung einschließlich Profiling gemäß Art. 22 DSGVO.
 
-## 11. Keine Weitergabe an Dritte
+## 12. Keine Weitergabe an Dritte
 
 Eine Übermittlung Ihrer persönlichen Daten an Dritte erfolgt nicht, außer:
 - wenn Sie ausdrücklich eingewilligt haben (Art. 6 Abs. 1 lit. a DSGVO)
 - wenn dies zur Erfüllung gesetzlicher Verpflichtungen erforderlich ist (Art. 6 Abs. 1 lit. c DSGVO)
 - an unsere technischen Dienstleister (Netlify) im Rahmen der Auftragsverarbeitung
 
-## 12. Änderungen der Datenschutzerklärung
+## 13. Änderungen der Datenschutzerklärung
 
 Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, um sie an geänderte Rechtslagen oder Änderungen unserer Dienste anzupassen. Für Ihren nächsten Besuch gilt dann die neue Datenschutzerklärung.
 
