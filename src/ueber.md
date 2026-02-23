@@ -1,7 +1,7 @@
 ---
 layout: base
 title: Über mich
-description: "Jochen Hornung, 43, Berlin. Coach für neurosystemische Integration, Vater, Philosoph. Hintergrund und Kontakt."
+description: "Jochen Hornung, 43, Berlin. Coach für neurosystemische Integration, Vater, Philosoph im Geiste. Hintergrund und Kontakt."
 ---
 <div class="content-page">
   <a href="/" class="back-link">← Zurück</a>
@@ -19,7 +19,7 @@ description: "Jochen Hornung, 43, Berlin. Coach für neurosystemische Integratio
   <div class="text-content">
 
 Jochen Hornung. <span id="age">43</span> Jahre. Berlin-Mitte.
-Philosoph, Coach, Vater. Auf der Suche nach dem, was bleibt, wenn man den Lärm weglässt.
+Philosoph im Geiste, Coach, Vater. Auf der Suche nach dem, was bleibt, wenn man den Lärm weglässt.
 
 ## Hintergrund
 

@@ -83,7 +83,7 @@ Diese Website verwendet nur technisch notwendige Cookies für die Authentifizier
 
 ## 7. Zahlungsdienstleister (PayPal)
 
-Auf dieser Website besteht die Möglichkeit, über den Zahlungsdienst PayPal eine freiwillige Unterstützung zu leisten. Beim Klick auf den entsprechenden Link werden Sie auf die Website von PayPal (Europe) S.à r.l. et Cie, S.C.A., 22-24 Boulevard Royal, L-2449 Luxemburg, weitergeleitet.
+Auf dieser Website besteht die Möglichkeit, über den Zahlungsdienst PayPal eine freiwillige Wertschätzung zu leisten. Beim Klick auf den entsprechenden Link werden Sie auf die Website von PayPal (Europe) S.à r.l. et Cie, S.C.A., 22-24 Boulevard Royal, L-2449 Luxemburg, weitergeleitet.
 
 Es werden auf unserer Website selbst keine Daten an PayPal übermittelt. Erst nach Weiterleitung auf die PayPal-Website gelten die dortigen Datenschutzbestimmungen: https://www.paypal.com/de/webapps/mpp/ua/privacy-full
 
