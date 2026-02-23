@@ -36,7 +36,7 @@ Wie kann man einen Zustand „machen", der per Definition das Gegenteil von Mach
 
 Die M-Sphäre ist mehr als nur eine Physik-Simulation. Sie ist eine Allegorie auf unser modernes Ego:
 
-**Die Figur:** Sie repräsentiert das konstruierte Selbst. Oft starr, golden und „glänzend" – verliebt in die eigene Form und den Status des „Meditierenden".
+**Die Figur:** Sie repräsentiert das konstruierte Selbst. Oft starr und „glänzend" – verliebt in die eigene Form und den Status des „Meditierenden".
 
 **Der Sturm:** Das sind nicht nur weiße Flocken, sondern unsere Gedanken: oft grell, neonfarben und süchtig machend. Wir wirbeln sie ständig auf, weil wir die Agitation gewohnt sind.
 
