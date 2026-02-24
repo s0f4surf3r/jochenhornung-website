@@ -34,7 +34,7 @@ Wie kann man einen Zustand „machen", der per Definition das Gegenteil von Mach
 
 ### 3. Die Philosophie im Code
 
-Die M-Sphäre ist mehr als nur eine Physik-Simulation. Sie ist eine Allegorie auf unser modernes Ego:
+Die J-Sphäre ist mehr als nur eine Physik-Simulation. Sie ist eine Allegorie auf unser modernes Ego:
 
 **Die Figur:** Sie repräsentiert das konstruierte Selbst. Oft starr und „glänzend" – verliebt in die eigene Form und den Status des „Meditierenden".
 
@@ -56,7 +56,7 @@ Du bist nicht die Person in der Mitte. Du bist auch nicht der Sturm der Gedanken
 
 <a href="https://msphere.jochenhornung.de" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;">
   <img src="/images/msphere-icon-192.png" alt="" width="24" height="24" style="border-radius: 6px;">
-  M-Sphäre öffnen
+  J-Sphäre öffnen
 </a>
 
 </div>

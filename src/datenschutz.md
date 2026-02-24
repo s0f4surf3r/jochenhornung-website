@@ -89,9 +89,9 @@ Es werden auf unserer Website selbst keine Daten an PayPal übermittelt. Erst na
 
 **Rechtsgrundlage:** Art. 6 Abs. 1 lit. a DSGVO (Einwilligung durch aktiven Klick)
 
-## 8. M-Sphere (msphere.jochenhornung.de)
+## 8. J-Sphere (msphere.jochenhornung.de)
 
-Die interaktive Meditations-App M-Sphere wird unter der Subdomain msphere.jochenhornung.de betrieben und auf Servern von **GitHub Inc.** (88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) über GitHub Pages gehostet.
+Die interaktive Meditations-App J-Sphere wird unter der Subdomain msphere.jochenhornung.de betrieben und auf Servern von **GitHub Inc.** (88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) über GitHub Pages gehostet.
 
 ### 8.1 Hosting über GitHub Pages
 
@@ -117,7 +117,7 @@ Weitere Informationen: https://www.goatcounter.com/help/privacy
 
 ### 8.3 Externe Ressourcen (CDN)
 
-M-Sphere lädt die 3D-Rendering-Bibliothek Three.js von **jsDelivr** (einem Open-Source-CDN). Dabei wird Ihre IP-Adresse an die CDN-Server übermittelt.
+J-Sphere lädt die 3D-Rendering-Bibliothek Three.js von **jsDelivr** (einem Open-Source-CDN). Dabei wird Ihre IP-Adresse an die CDN-Server übermittelt.
 
 **Zweck:** Effiziente Bereitstellung von JavaScript-Bibliotheken
 
@@ -125,7 +125,7 @@ M-Sphere lädt die 3D-Rendering-Bibliothek Three.js von **jsDelivr** (einem Open
 
 ### 8.4 Lokale Datenspeicherung
 
-M-Sphere speichert Ihre Einstellungen (Meditationszeit, Sound-Auswahl, Gedankenmodus) ausschließlich lokal in Ihrem Browser (localStorage). Diese Daten verlassen Ihr Gerät nicht und werden nicht an uns oder Dritte übermittelt.
+J-Sphere speichert Ihre Einstellungen (Meditationszeit, Sound-Auswahl, Gedankenmodus) ausschließlich lokal in Ihrem Browser (localStorage). Diese Daten verlassen Ihr Gerät nicht und werden nicht an uns oder Dritte übermittelt.
 
 ## 9. Verwendung von KI-generierten Bildern (jochenhornung.de)
 
