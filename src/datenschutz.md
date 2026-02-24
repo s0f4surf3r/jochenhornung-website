@@ -89,9 +89,9 @@ Es werden auf unserer Website selbst keine Daten an PayPal übermittelt. Erst na
 
 **Rechtsgrundlage:** Art. 6 Abs. 1 lit. a DSGVO (Einwilligung durch aktiven Klick)
 
-## 8. J-Sphere (msphere.jochenhornung.de)
+## 8. J-Sphere (jsphere.jochenhornung.de)
 
-Die interaktive Meditations-App J-Sphere wird unter der Subdomain msphere.jochenhornung.de betrieben und auf Servern von **GitHub Inc.** (88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) über GitHub Pages gehostet.
+Die interaktive Meditations-App J-Sphere wird unter der Subdomain jsphere.jochenhornung.de betrieben und auf Servern von **GitHub Inc.** (88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) über GitHub Pages gehostet.
 
 ### 8.1 Hosting über GitHub Pages
 

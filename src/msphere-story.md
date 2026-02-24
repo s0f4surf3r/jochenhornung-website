@@ -54,7 +54,7 @@ Du bist nicht die Person in der Mitte. Du bist auch nicht der Sturm der Gedanken
 
 ---
 
-<a href="https://msphere.jochenhornung.de" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;">
+<a href="https://jsphere.jochenhornung.de" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;">
   <img src="/images/msphere-icon-192.png" alt="" width="24" height="24" style="border-radius: 6px;">
   J-Sphäre öffnen
 </a>
