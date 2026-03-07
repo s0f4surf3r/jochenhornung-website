@@ -60,6 +60,28 @@ description: "Digitale Werkzeuge von Jochen Hornung: J-Sphere Interactive Medita
         font-style: italic;
         margin-top: 1rem;
     }
+    .product-item--soon {
+        position: relative;
+        opacity: 0.55;
+        pointer-events: none;
+    }
+    .coming-soon-badge {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-8deg);
+        background: #1a1a1a;
+        color: #fff;
+        font-size: 1.4rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 0.6rem 2rem;
+        border-radius: 4px;
+        z-index: 10;
+        white-space: nowrap;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
     .donation-button {
         display: inline-block;
         margin-top: 0.3rem;
@@ -108,29 +130,18 @@ description: "Digitale Werkzeuge von Jochen Hornung: J-Sphere Interactive Medita
     <a href="/" class="back-link">← Zurück</a>
     
     <div class="product-grid">
-        <div class="product-item">
+        <div class="product-item product-item--soon">
+            <span class="coming-soon-badge">Coming Soon</span>
             <img src="/images/msphere-icon-192.png" alt="J-Sphere" loading="lazy" class="product-logo" style="width: 80px; height: 80px; border-radius: 18px;">
             <h3>J-Sphere — Interactive Meditation</h3>
-            <p>Schüttle die Schneekugel. Lass los. Finde Stille. Eine interaktive Meditations-Erfahrung im Browser – inspiriert von Thomas Metzingers <a href="https://youtu.be/dKnYKWoHpZw?si=lGgdcThNxalekEeu" target="_blank" rel="noopener noreferrer">Schneekugel-Analogie</a>. Schüttle deine Gedanken auf, widerstehe der Versuchung nachzugeben, und erlebe, wie Stille entsteht. Mit wählbaren Atemrhythmen, Meditations-Sounds und Gedankenmodi. Funktioniert auf Desktop und Smartphone.</p>
-            <div class="product-links">
-                <a href="https://jsphere.jochenhornung.de" target="_blank">App öffnen</a>
-                <a href="/msphere-story/">Die Geschichte dahinter</a>
-            </div>
-            <p style="color: #666; margin-top: 1.5rem; font-size: 0.85rem;">Diese App ist kostenlos. Wenn sie dir etwas gibt, freue ich mich über deine Wertschätzung.</p>
-            <a href="https://www.paypal.com/donate/?hosted_button_id=9DZ3ENM66BEC8" target="_blank" rel="noopener noreferrer" class="donation-button">Via PayPal wertschätzen</a>
+            <p>Schüttle die Schneekugel. Lass los. Finde Stille. Eine interaktive Meditations-Erfahrung im Browser – inspiriert von Thomas Metzingers Schneekugel-Analogie. Schüttle deine Gedanken auf, widerstehe der Versuchung nachzugeben, und erlebe, wie Stille entsteht. Mit wählbaren Atemrhythmen, Meditations-Sounds und Gedankenmodi. Funktioniert auf Desktop und Smartphone.</p>
         </div>
 
-        <div class="product-item">
+        <div class="product-item product-item--soon">
+            <span class="coming-soon-badge">Coming Soon</span>
             <img src="/images/Gefuelskompass5d_icon-192.png" alt="Gefühlskompass 5D" loading="lazy" class="product-logo" style="width: 80px; height: 80px; border-radius: 18px;">
             <h3>Gefühlskompass 5D</h3>
             <p>Entdecke dich wieder als spürendes Wesen. Dieser Kompass übersetzt deine Körperwahrnehmung in präzise Worte, damit du lernst, deine Gefühle und Nervensystem-Zustände wirklich zu verstehen und einzuordnen. Erhalte heilsame Reframings, die dir helfen, schwierige Momente als Ressource zu nutzen, und vertiefe deine Einsichten optional mit KI. Dein sicherer Raum für echte Selbsterkenntnis – 100 % privat und offline.</p>
-            <div class="product-links">
-                <a href="https://gefuehlskompass.vercel.app" target="_blank">App öffnen</a>
-                <a href="/gefuehlskompass-howto/">So funktioniert's</a>
-                <a href="/gefuehlskompass-story/">Die Geschichte dahinter</a>
-            </div>
-            <p style="color: #666; margin-top: 1.5rem; font-size: 0.85rem;">Diese App ist kostenlos. Wenn sie dir etwas gibt, freue ich mich über deine Wertschätzung.</p>
-            <a href="https://www.paypal.com/donate/?hosted_button_id=9DZ3ENM66BEC8" target="_blank" rel="noopener noreferrer" class="donation-button">Via PayPal wertschätzen</a>
         </div>
 
         <div class="product-item">
