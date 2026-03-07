@@ -3,11 +3,27 @@ layout: base
 ---
 <style>
     .text-meta {
-        font-size: 0.8rem;
+        margin-bottom: 3rem;
+    }
+
+    .text-type {
+        display: block;
+        font-size: 0.78rem;
         color: #bbb;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        margin-bottom: 3rem;
+        margin-bottom: 0.3rem;
+        background: none;
+        padding: 0;
+        border-radius: 0;
+        margin-left: 0;
+    }
+
+    .text-date {
+        display: block;
+        font-size: 0.8rem;
+        color: #bbb;
+        letter-spacing: 0.05em;
     }
     
     .text-excerpt {
@@ -146,7 +162,8 @@ layout: base
     
     <div class="text-header">
         <div class="text-meta">
-            {{ date | readableDate }}{% if type %} · {{ type }}{% endif %}
+            {% if type %}<span class="text-type">{{ type }}</span>{% endif %}
+            <span class="text-date">{{ date | readableDate }}</span>
         </div>
         {% if excerpt %}
         <div class="text-excerpt">{{ excerpt }}</div>
