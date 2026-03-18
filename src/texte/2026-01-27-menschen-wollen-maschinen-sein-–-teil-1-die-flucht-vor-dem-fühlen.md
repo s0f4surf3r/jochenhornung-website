@@ -1,7 +1,7 @@
 ---
 layout: text
 tags: text
-title: "Menschen wollen Maschinen sein – Teil 1: Die Flucht vor dem Fühlen"
+title: Menschen wollen Maschinen sein. Die Flucht vor dem Fühlen.
 date: 2026-01-27T12:22:00.000+01:00
 type: Essay
 excerpt: 'Perfektionismus steigt um 33%, Burnout verzehnfacht sich, wir
@@ -193,4 +193,4 @@ Die Maschine zu warten, wird uns nicht retten. Jetzt, wo echte Maschinen da sind
 
 **Transparenzhinweis**
 
-*Dieser Text ist ein Experiment in Koexistenz. Die Gedanken, der Schmerz und die These sind zu 100 % menschlich. Formuliert und geschärft wurden sie im Dialog mit künstlicher Intelligenz. Ich nutze die Maschine, um das Menschliche klarer zu machen – genau darum wird es nächste Woche gehen.*
+*Dieser Text ist ein Experiment in Koexistenz. Die Gedanken, der Schmerz und die These sind zu 100 % menschlich. Formuliert und geschärft wurden sie im Dialog mit künstlicher Intelligenz. Ich nutze die Maschine, um das Menschliche klarer zu machen.*
