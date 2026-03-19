@@ -19,15 +19,22 @@ description: "Jochen Hornung, 43, Berlin. Coach für neurosystemische Integratio
   <div class="text-content">
 
 Jochen Hornung. <span id="age">43</span> Jahre. Berlin-Mitte.
-Philosoph im Geiste, Coach, Vater. Auf der Suche nach dem, was bleibt, wenn man den Lärm weglässt.
+
+## Ich kenne die dunklen Orte. Ich war selbst dort.
+
+Mein eigener Weg durch Trauma, ADHS und Sucht hat mir gezeigt: Wir haben uns trainiert, schlechte Maschinen zu sein. Jetzt, wo echte Maschinen das besser können, bleibt die Frage — was bleibt, wenn man den Lärm weglässt?
+
+## Was ich tue
+
+Ich begleite Menschen, die sich im Funktionieren verloren haben. Besonders Männer, die gelernt haben stark zu sein und dabei vergessen haben zu fühlen. Ressourcenorientiert, körperbasiert, mit dem Nervensystem — nicht gegen es.
+
+Gleichzeitig baue ich digitale Werkzeuge, die Tiefe ermöglichen statt abzusaugen. Sechs Produkte sind fertig — vom Gefühlskompass über interaktive Meditation bis zum Retro-Spiel für meinen Sohn. Kein Lock-in, kein Dark Pattern, kein Chi-Chi.
+
+Ich schreibe über das Menschsein in einer Zeit, die uns zu Maschinen machen will.
 
 ## Hintergrund
 
-Magister in Politikwissenschaft, Volkswirtschaftslehre und Bildungswissenschaft an der Universität Heidelberg (2013). Ausbildung in neurosystemischer Integration bei Verena König (2023). Jahrelang in Strukturen gearbeitet, die Menschen zu Funktionen machen. Dagegen wehre ich mich.
-
-## Was mich antreibt
-
-Die Frage, wie wir Menschlichkeit bewahren in einer Zeit, die uns zu Maschinen machen will. Wie wir Tiefe finden, wenn alles nach Oberfläche schreit. Wie wir bei uns bleiben, wenn alles uns wegzieht.
+Magister in Politikwissenschaft, Volkswirtschaftslehre und Bildungswissenschaft (Universität Heidelberg, 2013). Zertifizierter Coach für Neurosystemische Integration (Verena König, 2024). Jahrelang in Strukturen gearbeitet, die Menschen zu Funktionen machen — IKEA, Convergys, Apple. Dagegen wehre ich mich.
 
 ## Kontakt
 
