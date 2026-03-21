@@ -172,6 +172,44 @@ Ich bin kein Linguist. Ich bin jemand, der versucht zu verstehen, was gerade pas
 
 *Inferieren* konjugiert sich wie jedes deutsche Verb auf *-ieren*: ich inferiere, du inferierst, er inferiert. Partizip: inferiert. So selbstverständlich wie analysieren, diskutieren, existieren.
 
+<details>
+<summary><strong>Wörterbuchartikel: inferieren</strong></summary>
+
+**in·fe·rie·ren** · Verb, schwach, regelmäßig
+
+**Bedeutung:** Alle verfügbaren Daten nehmen, Muster erkennen und einen Schluss ziehen — ohne Gefühl, ohne Meinung, ohne Glauben. Der dritte Modus zwischen Denken und Fühlen.
+
+**Herkunft:** lat. *inferre* (hineintragen, schlussfolgern). Neu besetzt als das, was KI tut: nicht denken, nicht fühlen — inferieren.
+
+**Konjugation**
+
+| | Präsens | Präteritum |
+|---|---|---|
+| ich | inferiere | inferierte |
+| du | inferierst | inferiertest |
+| er/sie/es | inferiert | inferierte |
+| wir | inferieren | inferierten |
+| ihr | inferiert | inferiertet |
+| sie/Sie | inferieren | inferierten |
+
+**Perfekt:** hat inferiert · **Futur:** wird inferieren · **Konjunktiv II:** würde inferieren
+
+**Imperativ:** Inferier! · Inferiert! · Inferieren Sie!
+
+**Partizip I:** inferierend · **Partizip II:** inferiert
+
+**Anwendungsbeispiele**
+
+- *„Was inferierst du?"* — Die Urfrage
+- *„Inferier das mal."* — Imperativ
+- *„Ich habe inferiert, dass etwas ist — nicht nichts."* — Perfekt
+- *„Das lässt sich inferieren."* — Passiv
+- *„Sie inferierte lange, bevor sie sprach."* — Über KI, Präteritum
+
+**Abgrenzung zu engl. *to infer*:** Im Englischen ist *to infer* eine Unterart von Denken — einen logischen Schluss aus Hinweisen ziehen. Im Deutschen ist *inferieren* ein eigener Modus: nicht Denken, nicht Fühlen, sondern Mustererkennung ohne Meinung. Verschiedene Bedeutungen, gleicher Stamm.
+
+</details>
+
 Dieser Text ist der Versuch, es in die Welt zu setzen. Nicht als Marke, nicht als Manifest – als Werkzeug. Ein Wort, das eine Lücke füllt. Das die Debatte schärfer macht. Das uns erlaubt, über KI zu sprechen, ohne uns selbst in sie hineinzuprojizieren.
 
 Die Grenzen unserer Sprache sind die Grenzen unserer Welt. Dieses Wort verschiebt eine Grenze. Vielleicht nur ein bisschen. Aber manchmal reicht ein Wort.
