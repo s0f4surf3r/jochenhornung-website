@@ -73,8 +73,14 @@ body {
 .hero-image {
   width: 100%;
   display: block;
-  perspective: 1000px;
+  perspective: 600px;
   overflow: hidden;
+  cursor: grab;
+}
+
+.hero-image img {
+  transition: transform 0.1s ease-out;
+  transform-style: preserve-3d;
 }
 
 .hero-image img {
@@ -1146,7 +1152,7 @@ body {
           var rect = heroImage.getBoundingClientRect();
           var x = (e.clientX - rect.left) / rect.width - 0.5;
           var y = (e.clientY - rect.top) / rect.height - 0.5;
-          bannerImg.style.transform = 'rotateY(' + (x * 6) + 'deg) rotateX(' + (-y * 4) + 'deg)';
+          bannerImg.style.transform = 'rotateY(' + (x * 15) + 'deg) rotateX(' + (-y * 10) + 'deg) scale(1.02)';
           bannerImg.style.transition = 'transform 0.1s ease-out';
         });
         heroImage.addEventListener('mouseleave', function() {
