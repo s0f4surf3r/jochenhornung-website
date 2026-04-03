@@ -67,6 +67,8 @@ body::before {
 .hero-image {
   width: 100%;
   display: block;
+  perspective: 1000px;
+  overflow: hidden;
 }
 
 .hero-image img {
@@ -74,6 +76,9 @@ body::before {
   height: auto;
   display: block;
   opacity: 0.85;
+  max-height: 35vh;
+  object-fit: cover;
+  object-position: center right;
 }
 
 .hero-claim-wrap {
@@ -112,7 +117,6 @@ body::before {
   line-height: 1.65;
   color: rgba(244, 246, 255, 0.3);
   margin: 0;
-  max-width: 550px;
 }
 
 .hero-nav {
@@ -600,10 +604,11 @@ body::before {
 <!--  HERO                           -->
 <!-- ═══════════════════════════════ -->
 <div class="hero-home">
+  <div class="hero-zone">
   <nav class="hero-nav" role="navigation" aria-label="Hauptnavigation">
     <a href="/" class="nav-home" aria-label="Startseite">
       <img src="/images/streaming-avatar.png" alt="" class="nav-logo" width="32" height="32">
-      Jochen Hornung
+      Jochen Hornung <span style="opacity:0.3;margin:0 0.3rem;">⌁</span> <span style="font-weight:400;opacity:0.5;">@s0f4surf3r</span>
     </a>
     <span class="nav-sep" aria-hidden="true">/</span>
     <a href="/texte/">Texte</a>
@@ -614,8 +619,6 @@ body::before {
     <span class="nav-sep" aria-hidden="true">/</span>
     <a href="/ueber/">Über mich</a>
   </nav>
-
-  <div class="hero-zone">
     <div class="hero-image">
       <img src="/images/hero-banner.png"
            alt="s0f4surf3r — Vektor-Figur im Sessel, digitale Energie"
@@ -625,7 +628,7 @@ body::before {
 
     <div class="hero-claim-wrap">
       <h1 class="hero-claim">Raum für Menschlichkeit und Tiefe.</h1>
-      <p class="hero-sub">Retro Game Dev · Meditation Tech · AI Experiments</p>
+      <p class="hero-sub">Retro Game Dev · Consciousness Tools · AI Experiments</p>
       <p class="hero-sub-dim">Websites für Menschen die mehr sind als ihre Online-Präsenz. Code · Design · Bewusstsein · zu viele Projekte · Berlin.</p>
     </div>
   </div>
@@ -759,7 +762,35 @@ body::before {
     var scattered = false;
     var returnTimer;
 
+    /* Glass shatter sound via Web Audio */
+    function playShatter() {
+      try {
+        var ctx = new (window.AudioContext || window.webkitAudioContext)();
+        var duration = 0.4;
+        var buf = ctx.createBuffer(1, ctx.sampleRate * duration, ctx.sampleRate);
+        var data = buf.getChannelData(0);
+        for (var i = 0; i < data.length; i++) {
+          var t = i / ctx.sampleRate;
+          var env = Math.exp(-t * 12);
+          data[i] = (Math.random() * 2 - 1) * env * 0.15;
+          /* Helle Glassplitter-Resonanz */
+          data[i] += Math.sin(t * 4800) * env * 0.04;
+          data[i] += Math.sin(t * 7200) * env * 0.02;
+        }
+        var src = ctx.createBufferSource();
+        src.buffer = buf;
+        var hp = ctx.createBiquadFilter();
+        hp.type = 'highpass';
+        hp.frequency.value = 2000;
+        src.connect(hp);
+        hp.connect(ctx.destination);
+        src.start();
+        setTimeout(function() { ctx.close(); }, 600);
+      } catch(e) {}
+    }
+
     function scatter() {
+      playShatter();
       var letters = nameEl.querySelectorAll('.letter');
       letters.forEach(function(l) {
         var angle = Math.random() * Math.PI * 2;
@@ -804,16 +835,18 @@ body::before {
     }, { passive: false });
   }
 
-  /* ═══ BANNER PARALLAX ═══ */
+  /* ═══ BANNER 3D TILT + PARALLAX ═══ */
   if (!reducedMotion) {
     var bannerImg = document.querySelector('.hero-image img');
-    if (bannerImg) {
+    var heroImage = document.querySelector('.hero-image');
+    if (bannerImg && heroImage) {
+      /* Parallax on scroll */
       var ticking = false;
       window.addEventListener('scroll', function() {
         if (!ticking) {
           requestAnimationFrame(function() {
             var scrollY = window.pageYOffset;
-            var rect = bannerImg.parentElement.getBoundingClientRect();
+            var rect = heroImage.getBoundingClientRect();
             if (rect.bottom > 0) {
               bannerImg.style.transform = 'translateY(' + (scrollY * 0.08) + 'px)';
             }
@@ -822,6 +855,21 @@ body::before {
           ticking = true;
         }
       });
+
+      /* 3D tilt on mousemove */
+      if (window.matchMedia('(hover: hover)').matches) {
+        heroImage.addEventListener('mousemove', function(e) {
+          var rect = heroImage.getBoundingClientRect();
+          var x = (e.clientX - rect.left) / rect.width - 0.5;
+          var y = (e.clientY - rect.top) / rect.height - 0.5;
+          bannerImg.style.transform = 'rotateY(' + (x * 8) + 'deg) rotateX(' + (-y * 6) + 'deg) scale(1.03)';
+          bannerImg.style.transition = 'transform 0.1s ease-out';
+        });
+        heroImage.addEventListener('mouseleave', function() {
+          bannerImg.style.transform = '';
+          bannerImg.style.transition = 'transform 0.6s ease-out';
+        });
+      }
     }
   }
 
