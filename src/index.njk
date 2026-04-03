@@ -105,50 +105,7 @@ body {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   white-space: nowrap;
-  /* Multi-Color Scanlines — 40C3 Style */
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      transparent 0px,
-      transparent 2px,
-      rgba(0, 0, 0, 0.35) 2px,
-      rgba(0, 0, 0, 0.35) 4px
-    ),
-    linear-gradient(
-      to bottom,
-      var(--cyan) 0%,
-      var(--green) 35%,
-      var(--amber) 55%,
-      var(--magenta) 80%,
-      var(--magenta) 100%
-    );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Glow als separates Layer — nicht auf background-clip Element */
-.hero-claim-wrap {
-  position: relative;
-}
-.hero-claim-wrap::before {
-  content: attr(data-glow);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  font-family: 'Courier New', monospace;
-  font-size: clamp(1.4rem, 3.2vw, 2.6rem);
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  text-align: center;
-  color: var(--green);
-  opacity: 0.15;
-  filter: blur(15px);
-  pointer-events: none;
-  z-index: -1;
+  text-shadow: 0 0 20px rgba(255, 176, 0, 0.3), 0 0 60px rgba(255, 176, 0, 0.1);
 }
 
 .hero-sub {
