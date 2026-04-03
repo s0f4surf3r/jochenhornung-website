@@ -76,9 +76,6 @@ body::before {
   height: auto;
   display: block;
   opacity: 0.85;
-  max-height: 35vh;
-  object-fit: cover;
-  object-position: center right;
 }
 
 .hero-claim-wrap {
@@ -147,7 +144,7 @@ body::before {
 }
 
 .hero-nav a {
-  color: rgba(244, 246, 255, 0.5);
+  color: var(--sand-text-muted);
   text-decoration: none;
   padding: 0.5rem 0;
   min-height: 44px;
@@ -157,18 +154,18 @@ body::before {
 }
 
 @media (hover: hover) {
-  .hero-nav a:hover { color: #f4f6ff; }
+  .hero-nav a:hover { color: var(--sand-text); }
 }
 
 .hero-nav a:active { color: var(--sand-accent); }
 
 .hero-nav .nav-sep {
-  color: rgba(244, 246, 255, 0.15);
+  color: var(--sand-border);
   user-select: none;
 }
 
 .hero-nav .nav-home {
-  color: #f4f6ff;
+  color: var(--sand-text);
 }
 
 /* ── SECTIONS ── */
@@ -638,7 +635,6 @@ body::before {
 <!--  HERO                           -->
 <!-- ═══════════════════════════════ -->
 <div class="hero-home">
-  <div class="hero-zone">
   <nav class="hero-nav" role="navigation" aria-label="Hauptnavigation">
     <a href="/" class="nav-home" aria-label="Startseite">
       <img src="/images/streaming-avatar.png" alt="" class="nav-logo" width="32" height="32">
@@ -653,6 +649,8 @@ body::before {
     <span class="nav-sep" aria-hidden="true">/</span>
     <a href="/ueber/">Über mich</a>
   </nav>
+
+  <div class="hero-zone">
     <div class="hero-image">
       <img src="/images/hero-banner.png"
            alt="s0f4surf3r — Vektor-Figur im Sessel, digitale Energie"
@@ -896,7 +894,7 @@ body::before {
           var rect = heroImage.getBoundingClientRect();
           var x = (e.clientX - rect.left) / rect.width - 0.5;
           var y = (e.clientY - rect.top) / rect.height - 0.5;
-          bannerImg.style.transform = 'rotateY(' + (x * 8) + 'deg) rotateX(' + (-y * 6) + 'deg) scale(1.03)';
+          bannerImg.style.transform = 'rotateY(' + (x * 6) + 'deg) rotateX(' + (-y * 4) + 'deg)';
           bannerImg.style.transition = 'transform 0.1s ease-out';
         });
         heroImage.addEventListener('mouseleave', function() {
