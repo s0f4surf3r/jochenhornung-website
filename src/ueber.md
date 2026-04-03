@@ -26,27 +26,30 @@ Mein eigener Weg durch Trauma, ADHS und Sucht hat mir gezeigt: Wir haben uns tra
 
 ## Was ich tue
 
-Ich baue digitale Werkzeuge, die Tiefe ermöglichen statt abzusaugen. Spiele, die sich anfühlen. Meditations-Apps, die atmen. Websites, die Menschen zeigen statt verkaufen.
+Ich baue digitale Werkzeuge, die Tiefe ermöglichen statt abzusaugen. Sechs Produkte sind fertig — vom Gefühlskompass über interaktive Meditation bis zum Retro-Spiel für meinen Sohn. Kein Lock-in, kein Dark Pattern, kein Chi-Chi.
 
-Ich schreibe über das Menschsein in einer Zeit, die uns zu Maschinen machen will.
+Ich schreibe über das Menschsein in einer Zeit, die uns zu Maschinen machen will. Mein Buch: [Menschen wollen Maschinen sein](https://www.amazon.de/dp/B0BX98MK87).
 
 Manchmal [begleite ich Menschen](/coaching/) — wenn sie fragen. Nicht als Beruf, sondern weil ich den Weg kenne.
 
 ## Was ich baue
-
-Code · Design · Bewusstsein · zu viele Projekte · Berlin.
 
 **J-THRUST** — Retro-Gravitation, C64-Seele
 **M-Sphere** — Meditation als Erlebnis
 **Klarsite** — Websites die Menschen zeigen, nicht verkaufen
 **Spüra** — Emotionales Self-Tracking
 **Prüfstein** — Ethische Bewertung von KI-Entscheidungen
+**Gefühlskompass** — Emotionale Selbsterkenntnis
 
-Kein Lock-in, kein Dark Pattern, kein Chi-Chi. Shipping > Perfecting.
+## Woher ich komme
 
-## Hintergrund
+Geboren in Schwäbisch Hall. Aufgewachsen in der schwäbischen Provinz — zwischen Fachwerk und dem Gefühl, dass da noch was anderes sein muss.
 
-Magister in Politikwissenschaft, Volkswirtschaftslehre und Bildungswissenschaft (Universität Heidelberg, 2013). Jahrelang in Strukturen gearbeitet, die Menschen zu Funktionen machen — IKEA, Convergys, Apple. Dagegen wehre ich mich.
+Studium in Heidelberg: Politikwissenschaft, Volkswirtschaftslehre und Bildungswissenschaft (Magister 2013). Dann jahrelang in Strukturen gearbeitet, die Menschen zu Funktionen machen — IKEA, Convergys, Apple. Die Erkenntnis kam langsam: Ich war selbst eine Funktion geworden.
+
+Berlin seit über zehn Jahren. Zertifizierter Coach für Neurosystemische Integration (Verena König, 2024). Nicht um ein Schild an die Tür zu hängen, sondern um zu verstehen, was mir selbst passiert ist.
+
+Heute baue ich Werkzeuge aus eigener Tiefe. Und ich wehre mich — gegen Systeme die Menschen absaugen, gegen Lock-in, gegen Design das manipuliert statt einlädt.
 
 ## Kontakt
 
