@@ -531,10 +531,7 @@ body {
 
 .footer-links { display: flex; gap: 1.5rem; }
 
-/* ── SCROLL REVEAL ── */
-.reveal {
-  opacity: 1;
-}
+/* Scroll reveal disabled */
 
 /* ══════════════════════════
    RESPONSIVE
@@ -887,7 +884,7 @@ body {
 <!-- ═══════════════════════════════ -->
 <div class="pixel-divider"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
 
-<section class="section reveal" id="bauen">
+<section class="section" id="bauen">
   <p class="section-label">Was ich baue</p>
   <h2 class="section-heading">Dinge die sich anfühlen sollen.</h2>
   <p class="section-text">Kein Lock-in, kein Dark Pattern, kein Chi-Chi. Code im Dienst der Menschlichkeit.</p>
@@ -918,7 +915,7 @@ body {
 <!-- ═══════════════════════════════ -->
 <div class="pixel-divider"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
 
-<section class="section reveal" id="texte">
+<section class="section" id="texte">
   <p class="section-label">Texte</p>
   <div class="texte-teaser">
     <blockquote class="texte-quote">
@@ -936,7 +933,7 @@ body {
 <!-- ═══════════════════════════════ -->
 <div class="pixel-divider"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
 
-<section class="section reveal" id="streaming">
+<section class="section" id="streaming">
   <p class="section-label">Streaming</p>
   <a href="/kaktus/" class="streaming-teaser">
     <img src="/images/streaming-avatar.png"
@@ -997,20 +994,7 @@ body {
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var audioCtx, gainNode, isPlaying = false;
 
-  /* ═══ SCROLL REVEAL ═══ */
-  if (reducedMotion) {
-    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
-  } else {
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
-    document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
-  }
+  /* Scroll reveal removed */
 
   /* ═══ LETTER DISPERSION ═══ */
   var nameEl = document.querySelector('.hero-claim');
