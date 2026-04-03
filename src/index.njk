@@ -73,14 +73,8 @@ body {
 .hero-image {
   width: 100%;
   display: block;
-  perspective: 600px;
   overflow: hidden;
-  cursor: grab;
-}
-
-.hero-image img {
-  transition: transform 0.1s ease-out;
-  transform-style: preserve-3d;
+  position: relative;
 }
 
 .hero-image img {
@@ -1146,20 +1140,150 @@ body {
         }
       });
 
-      /* 3D tilt on mousemove */
-      if (window.matchMedia('(hover: hover)').matches) {
-        heroImage.addEventListener('mousemove', function(e) {
-          var rect = heroImage.getBoundingClientRect();
-          var x = (e.clientX - rect.left) / rect.width - 0.5;
-          var y = (e.clientY - rect.top) / rect.height - 0.5;
-          bannerImg.style.transform = 'rotateY(' + (x * 15) + 'deg) rotateX(' + (-y * 10) + 'deg) scale(1.02)';
-          bannerImg.style.transition = 'transform 0.1s ease-out';
-        });
-        heroImage.addEventListener('mouseleave', function() {
-          bannerImg.style.transform = '';
-          bannerImg.style.transition = 'transform 0.6s ease-out';
-        });
+      /* Distortion-Effekt — Wasser-Ripple auf dem Banner */
+      var distCanvas = document.createElement('canvas');
+      distCanvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;';
+      heroImage.style.position = 'relative';
+      heroImage.appendChild(distCanvas);
+
+      var dctx = distCanvas.getContext('2d');
+      var ripples = [];
+      var distW, distH, bannerLoaded = false;
+
+      function resizeDist() {
+        var rect = heroImage.getBoundingClientRect();
+        distW = distCanvas.width = Math.floor(rect.width);
+        distH = distCanvas.height = Math.floor(rect.height);
       }
+      resizeDist();
+      window.addEventListener('resize', resizeDist);
+
+      /* Warte bis Banner geladen */
+      if (bannerImg.complete) { bannerLoaded = true; }
+      else { bannerImg.addEventListener('load', function() { bannerLoaded = true; }); }
+
+      heroImage.style.cursor = 'crosshair';
+      heroImage.style.pointerEvents = 'auto';
+
+      function addRipple(x, y) {
+        ripples.push({ x: x, y: y, radius: 0, maxRadius: 120, strength: 12, life: 1 });
+      }
+
+      heroImage.addEventListener('mousemove', function(e) {
+        var rect = heroImage.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        if (Math.random() < 0.3) addRipple(x, y);
+      });
+
+      heroImage.addEventListener('touchmove', function(e) {
+        var rect = heroImage.getBoundingClientRect();
+        var touch = e.touches[0];
+        addRipple(touch.clientX - rect.left, touch.clientY - rect.top);
+      }, { passive: true });
+
+      heroImage.addEventListener('click', function(e) {
+        var rect = heroImage.getBoundingClientRect();
+        addRipple(e.clientX - rect.left, e.clientY - rect.top);
+        /* Große Ripple bei Klick */
+        ripples[ripples.length - 1].maxRadius = 200;
+        ripples[ripples.length - 1].strength = 20;
+      });
+
+      function renderDistortion() {
+        if (!bannerLoaded || ripples.length === 0) {
+          dctx.clearRect(0, 0, distW, distH);
+          requestAnimationFrame(renderDistortion);
+          return;
+        }
+
+        dctx.clearRect(0, 0, distW, distH);
+
+        /* Banner auf offscreen canvas zeichnen */
+        dctx.drawImage(bannerImg, 0, 0, distW, distH);
+
+        try {
+          var imgData = dctx.getImageData(0, 0, distW, distH);
+          var src = imgData.data;
+
+          /* Saubere Kopie vom Banner */
+          var cleanCanvas = document.createElement('canvas');
+          cleanCanvas.width = distW;
+          cleanCanvas.height = distH;
+          var cctx = cleanCanvas.getContext('2d');
+          cctx.drawImage(bannerImg, 0, 0, distW, distH);
+          var cleanData = cctx.getImageData(0, 0, distW, distH).data;
+
+          var out = dctx.createImageData(distW, distH);
+          var dst = out.data;
+
+          for (var i = 0; i < dst.length; i++) dst[i] = cleanData[i];
+
+          for (var r = ripples.length - 1; r >= 0; r--) {
+            var rip = ripples[r];
+            rip.radius += 3;
+            rip.life -= 0.02;
+
+            if (rip.life <= 0 || rip.radius > rip.maxRadius) {
+              ripples.splice(r, 1);
+              continue;
+            }
+
+            var cx = Math.floor(rip.x);
+            var cy = Math.floor(rip.y);
+            var rad = Math.floor(rip.radius);
+            var str = rip.strength * rip.life;
+
+            for (var dy = -rad; dy < rad; dy += 2) {
+              for (var dx = -rad; dx < rad; dx += 2) {
+                var dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist > rad) continue;
+
+                var px = cx + dx;
+                var py = cy + dy;
+                if (px < 0 || px >= distW || py < 0 || py >= distH) continue;
+
+                /* Ripple wave displacement */
+                var wave = Math.sin((dist / rad) * Math.PI * 3) * str * (1 - dist / rad);
+                var angle = Math.atan2(dy, dx);
+                var sx = Math.floor(px + Math.cos(angle) * wave);
+                var sy = Math.floor(py + Math.sin(angle) * wave);
+
+                sx = Math.max(0, Math.min(distW - 1, sx));
+                sy = Math.max(0, Math.min(distH - 1, sy));
+
+                var di = (py * distW + px) * 4;
+                var si = (sy * distW + sx) * 4;
+                dst[di] = cleanData[si];
+                dst[di + 1] = cleanData[si + 1];
+                dst[di + 2] = cleanData[si + 2];
+              }
+            }
+          }
+
+          dctx.putImageData(out, 0, 0);
+        } catch(e) {
+          /* CORS/tainted canvas — fallback: nur visueller Glow */
+          for (var r2 = ripples.length - 1; r2 >= 0; r2--) {
+            var rip2 = ripples[r2];
+            rip2.radius += 3;
+            rip2.life -= 0.02;
+            if (rip2.life <= 0) { ripples.splice(r2, 1); continue; }
+
+            dctx.beginPath();
+            dctx.arc(rip2.x, rip2.y, rip2.radius, 0, Math.PI * 2);
+            var grad = dctx.createRadialGradient(rip2.x, rip2.y, 0, rip2.x, rip2.y, rip2.radius);
+            grad.addColorStop(0, 'rgba(0, 229, 255, ' + (0.15 * rip2.life) + ')');
+            grad.addColorStop(0.5, 'rgba(255, 176, 0, ' + (0.08 * rip2.life) + ')');
+            grad.addColorStop(1, 'transparent');
+            dctx.fillStyle = grad;
+            dctx.fill();
+          }
+        }
+
+        requestAnimationFrame(renderDistortion);
+      }
+      renderDistortion();
     }
   }
 
