@@ -87,24 +87,16 @@ body::before {
 }
 
 .hero-name {
-  font-family: -apple-system, 'Helvetica Neue', sans-serif;
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 300;
-  line-height: 1.15;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.4;
   color: var(--sand-text);
-  margin: 0 0 1rem 0;
-  letter-spacing: -0.02em;
+  margin: 0;
+  max-width: 500px;
 }
 
-.hero-tagline {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
-  font-weight: 400;
-  line-height: 1.65;
-  color: var(--sand-text-muted);
-  margin: 0;
-  max-width: 460px;
-}
+/* hero-tagline removed — h1 IS the tagline now */
 
 .hero-nav {
   display: flex;
@@ -122,6 +114,15 @@ body::before {
   font-weight: 600;
   color: var(--sand-text);
   margin-right: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.nav-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
 }
 
 .hero-nav a {
@@ -532,7 +533,10 @@ body::before {
 <!-- ═══════════════════════════════ -->
 <div class="hero-home">
   <nav class="hero-nav" role="navigation" aria-label="Hauptnavigation">
-    <a href="/" class="nav-home" aria-label="Startseite">Jochen Hornung</a>
+    <a href="/" class="nav-home" aria-label="Startseite">
+      <img src="/images/streaming-avatar.png" alt="" class="nav-logo" width="32" height="32">
+      Jochen Hornung
+    </a>
     <span class="nav-sep" aria-hidden="true">/</span>
     <a href="/texte/">Texte</a>
     <span class="nav-sep" aria-hidden="true">/</span>
@@ -552,8 +556,7 @@ body::before {
 
   <div class="hero-body">
     <div class="hero-text">
-      <h1 class="hero-name">Jochen Hornung</h1>
-      <p class="hero-tagline">Raum für Menschlichkeit und Tiefe. Texte, Werkzeuge, Bewusstsein — aus Berlin.</p>
+      <h1 class="hero-name">Raum für Menschlichkeit und Tiefe.</h1>
     </div>
   </div>
 
