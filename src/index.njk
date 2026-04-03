@@ -717,6 +717,132 @@ body {
   letter-spacing: 0.05em;
 }
 
+/* ── CHAT WIDGET ── */
+.chat-widget {
+  position: fixed;
+  bottom: 5rem;
+  right: 1.5rem;
+  width: 340px;
+  max-height: 450px;
+  background: #0e1420;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.chat-widget.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.chat-header {
+  padding: 0.8rem 1rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: var(--green);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-close {
+  font-size: 1.2rem;
+  color: var(--dim);
+  cursor: pointer;
+}
+
+.chat-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-height: 320px;
+}
+
+.chat-msg {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  max-width: 90%;
+}
+
+.chat-msg.user {
+  background: rgba(0, 229, 255, 0.1);
+  color: var(--cyan);
+  align-self: flex-end;
+  border: 1px solid rgba(0, 229, 255, 0.15);
+}
+
+.chat-msg.assistant {
+  background: rgba(255, 176, 0, 0.06);
+  color: var(--text);
+  align-self: flex-start;
+  border: 1px solid rgba(255, 176, 0, 0.1);
+}
+
+.chat-msg.typing {
+  color: var(--dim);
+  font-style: italic;
+}
+
+.chat-input-wrap {
+  display: flex;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 0;
+}
+
+.chat-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  padding: 0.8rem 1rem;
+  outline: none;
+}
+
+.chat-input::placeholder { color: var(--dim); }
+
+.chat-send {
+  background: transparent;
+  border: none;
+  color: var(--amber);
+  font-size: 1.2rem;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+}
+
+@media (max-width: 480px) {
+  .chat-widget {
+    width: calc(100vw - 2rem);
+    right: 1rem;
+    bottom: 4rem;
+  }
+}
+
 /* ── CARD TILT ── */
 @media (hover: hover) {
   .card {
@@ -856,6 +982,23 @@ body {
 <!-- ═══════════════════════════════ -->
 <!--  FOOTER                         -->
 <!-- ═══════════════════════════════ -->
+<!-- Chat Widget -->
+<div class="chat-widget" id="chatWidget">
+  <div class="chat-header" id="chatToggle">
+    <span>// ask me anything</span>
+    <span class="chat-close" id="chatClose">×</span>
+  </div>
+  <div class="chat-body" id="chatBody">
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg assistant">Was willst du wissen?</div>
+    </div>
+    <form class="chat-input-wrap" id="chatForm">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Frag mich was..." maxlength="1000" autocomplete="off">
+      <button type="submit" class="chat-send">→</button>
+    </form>
+  </div>
+</div>
+
 <!-- Floating Controls -->
 <div class="floating-controls">
   <button class="ctrl-btn" id="soundToggle" aria-label="Sound an/aus" title="Sound">
@@ -865,6 +1008,7 @@ body {
     </div>
   </button>
   <button class="ctrl-btn" id="langToggle" aria-label="Sprache wechseln" title="Sprache">DE</button>
+  <button class="ctrl-btn" id="chatBtn" aria-label="Chat öffnen" title="Ask me anything">?</button>
 </div>
 
 <footer class="home-footer">
@@ -1158,6 +1302,72 @@ body {
       requestAnimationFrame(animatePixels);
     }
     animatePixels();
+  }
+
+  /* ═══ CHAT WIDGET ═══ */
+  var chatWidget = document.getElementById('chatWidget');
+  var chatBtn = document.getElementById('chatBtn');
+  var chatClose = document.getElementById('chatClose');
+  var chatForm = document.getElementById('chatForm');
+  var chatInput = document.getElementById('chatInput');
+  var chatMessages = document.getElementById('chatMessages');
+  var chatHistory = [];
+
+  if (chatBtn && chatWidget) {
+    chatBtn.addEventListener('click', function() {
+      chatWidget.classList.toggle('open');
+      if (chatWidget.classList.contains('open')) chatInput.focus();
+    });
+
+    chatClose.addEventListener('click', function() {
+      chatWidget.classList.remove('open');
+    });
+
+    chatForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var msg = chatInput.value.trim();
+      if (!msg) return;
+
+      /* User message */
+      var userDiv = document.createElement('div');
+      userDiv.className = 'chat-msg user';
+      userDiv.textContent = msg;
+      chatMessages.appendChild(userDiv);
+      chatInput.value = '';
+
+      /* Typing indicator */
+      var typingDiv = document.createElement('div');
+      typingDiv.className = 'chat-msg assistant typing';
+      typingDiv.textContent = '...';
+      chatMessages.appendChild(typingDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+
+      /* Send to backend */
+      fetch('/.netlify/functions/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: msg, history: chatHistory })
+      })
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        typingDiv.remove();
+        var ansDiv = document.createElement('div');
+        ansDiv.className = 'chat-msg assistant';
+        ansDiv.textContent = data.answer || 'Fehler bei der Verbindung.';
+        chatMessages.appendChild(ansDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        chatHistory.push({ role: 'user', content: msg });
+        chatHistory.push({ role: 'assistant', content: data.answer });
+      })
+      .catch(function() {
+        typingDiv.remove();
+        var errDiv = document.createElement('div');
+        errDiv.className = 'chat-msg assistant';
+        errDiv.textContent = 'Verbindungsfehler. Schreib mir direkt: kontakt@jochenhornung.de';
+        chatMessages.appendChild(errDiv);
+      });
+    });
   }
 
   /* ═══ LANGUAGE TOGGLE ═══ */
