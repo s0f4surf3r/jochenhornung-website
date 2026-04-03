@@ -100,9 +100,54 @@ body {
   margin: 0;
   cursor: default;
   user-select: none;
-  text-shadow:
-    0 0 30px rgba(255, 176, 0, 0.25),
-    0 0 60px rgba(255, 176, 0, 0.1);
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 15px rgba(255, 176, 0, 0.4);
+}
+
+.hero-claim::before,
+.hero-claim::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.hero-claim::before {
+  color: var(--cyan);
+  animation: glitch-1 4s infinite linear;
+  clip-path: inset(0 0 65% 0);
+  opacity: 0.6;
+}
+
+.hero-claim::after {
+  color: var(--magenta);
+  animation: glitch-2 4s infinite linear;
+  clip-path: inset(40% 0 0 0);
+  opacity: 0.5;
+}
+
+@keyframes glitch-1 {
+  0%, 92%, 100% { transform: translate(0); }
+  93% { transform: translate(-3px, 1px); }
+  95% { transform: translate(2px, -1px); }
+  97% { transform: translate(-1px, 2px); }
+}
+
+@keyframes glitch-2 {
+  0%, 90%, 100% { transform: translate(0); }
+  91% { transform: translate(2px, -1px); }
+  94% { transform: translate(-3px, 1px); }
+  96% { transform: translate(1px, -2px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-claim::before,
+  .hero-claim::after { animation: none; opacity: 0; }
 }
 
 .hero-sub {
@@ -752,7 +797,7 @@ body {
     </div>
 
     <div class="hero-claim-wrap">
-      <h1 class="hero-claim">Raum für Menschlichkeit und Tiefe</h1>
+      <h1 class="hero-claim" data-text="Raum für Menschlichkeit und Tiefe">Raum für Menschlichkeit und Tiefe</h1>
       <p class="hero-sub">Retro Game Dev · Consciousness Tools · Design · AI Experiments</p>
       <p class="hero-sub-dim">Websites für Menschen die mehr sind als ihre Online-Präsenz. Code · Design · Bewusstsein · zu viele Projekte · Berlin</p>
     </div>
