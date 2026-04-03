@@ -119,35 +119,33 @@ body {
 
 .hero-claim::before {
   color: var(--cyan);
-  animation: glitch-1 4s infinite linear;
+  animation: glitch-1 6s infinite linear;
   clip-path: inset(0 0 65% 0);
-  opacity: 0.6;
+  opacity: 0;
 }
 
 .hero-claim::after {
   color: var(--magenta);
-  animation: glitch-2 4s infinite linear;
+  animation: glitch-2 6s infinite linear;
   clip-path: inset(40% 0 0 0);
-  opacity: 0.5;
+  opacity: 0;
 }
 
 @keyframes glitch-1 {
-  0%, 92%, 100% { transform: translate(0); }
-  93% { transform: translate(-3px, 1px); }
-  95% { transform: translate(2px, -1px); }
-  97% { transform: translate(-1px, 2px); }
+  0%, 92%, 96%, 100% { transform: translate(0); opacity: 0; }
+  93% { transform: translate(-3px, 1px); opacity: 0.7; }
+  95% { transform: translate(2px, -1px); opacity: 0.5; }
 }
 
 @keyframes glitch-2 {
-  0%, 90%, 100% { transform: translate(0); }
-  91% { transform: translate(2px, -1px); }
-  94% { transform: translate(-3px, 1px); }
-  96% { transform: translate(1px, -2px); }
+  0%, 90%, 95%, 100% { transform: translate(0); opacity: 0; }
+  91% { transform: translate(2px, -1px); opacity: 0.6; }
+  94% { transform: translate(-3px, 1px); opacity: 0.4; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-claim::before,
-  .hero-claim::after { animation: none; opacity: 0; }
+  .hero-claim::after { animation: none; }
 }
 
 .hero-sub {
@@ -1083,34 +1081,46 @@ body {
   /* ═══ AMBIENT SOUND ═══ */
   var soundBtn = document.getElementById('soundToggle');
 
-  function createAmbient() {
-    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  var breathInterval;
 
-    /* Two detuned sine waves — barely audible warmth */
+  function createAmbient() {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    /* Atem-Sound: Oscillatoren deren Lautstärke rhythmisch atmet */
     var osc1 = audioCtx.createOscillator();
     var osc2 = audioCtx.createOscillator();
-    var osc3 = audioCtx.createOscillator();
-    osc1.type = 'sine'; osc1.frequency.value = 85;
-    osc2.type = 'sine'; osc2.frequency.value = 87.5;
-    osc3.type = 'triangle'; osc3.frequency.value = 170;
+    osc1.type = 'sine'; osc1.frequency.value = 110;
+    osc2.type = 'sine'; osc2.frequency.value = 113; /* leichtes Detune = Wärme */
 
     var filter = audioCtx.createBiquadFilter();
     filter.type = 'lowpass';
-    filter.frequency.value = 300;
-    filter.Q.value = 1;
+    filter.frequency.value = 250;
 
     gainNode = audioCtx.createGain();
     gainNode.gain.value = 0;
 
     osc1.connect(filter);
     osc2.connect(filter);
-    osc3.connect(filter);
     filter.connect(gainNode);
     gainNode.connect(audioCtx.destination);
 
     osc1.start();
     osc2.start();
-    osc3.start();
+
+    /* Atem-Zyklus: 4s ein, 6s aus (Coherent Breathing) */
+    function breathCycle() {
+      if (!isPlaying || !audioCtx) return;
+      var now = audioCtx.currentTime;
+      gainNode.gain.cancelScheduledValues(now);
+      gainNode.gain.setValueAtTime(gainNode.gain.value, now);
+      /* Einatmen 4s */
+      gainNode.gain.linearRampToValueAtTime(0.04, now + 4);
+      /* Ausatmen 6s */
+      gainNode.gain.linearRampToValueAtTime(0.008, now + 10);
+    }
+
+    breathInterval = setInterval(breathCycle, 10000);
+    breathCycle();
   }
 
   if (soundBtn) {
@@ -1122,13 +1132,28 @@ body {
       }
 
       if (isPlaying) {
+        gainNode.gain.cancelScheduledValues(audioCtx.currentTime);
         gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.8);
+        clearInterval(breathInterval);
         isPlaying = false;
         soundBtn.classList.remove('active');
       } else {
-        gainNode.gain.linearRampToValueAtTime(0.025, audioCtx.currentTime + 1.5);
         isPlaying = true;
         soundBtn.classList.add('active');
+        /* Starte Atem-Zyklus */
+        var now = audioCtx.currentTime;
+        gainNode.gain.cancelScheduledValues(now);
+        gainNode.gain.setValueAtTime(0, now);
+        gainNode.gain.linearRampToValueAtTime(0.04, now + 4);
+        gainNode.gain.linearRampToValueAtTime(0.008, now + 10);
+        breathInterval = setInterval(function() {
+          if (!isPlaying) return;
+          var n = audioCtx.currentTime;
+          gainNode.gain.cancelScheduledValues(n);
+          gainNode.gain.setValueAtTime(gainNode.gain.value, n);
+          gainNode.gain.linearRampToValueAtTime(0.04, n + 4);
+          gainNode.gain.linearRampToValueAtTime(0.008, n + 10);
+        }, 10000);
       }
     });
   }
