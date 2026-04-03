@@ -465,7 +465,7 @@ body::before {
 .floating-controls {
   position: fixed;
   bottom: 1.5rem;
-  left: 1.5rem;
+  right: 1.5rem;
   display: flex;
   gap: 0.5rem;
   z-index: 100;
@@ -475,8 +475,10 @@ body::before {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1.5px solid var(--sand-border);
-  background: var(--sand-surface);
+  border: 1.5px solid rgba(128, 128, 128, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: var(--sand-text-muted);
   cursor: pointer;
   display: flex;
@@ -503,6 +505,49 @@ body::before {
   color: var(--sand-accent);
 }
 
+/* Sound wave bars */
+.sound-bars {
+  display: none;
+  align-items: flex-end;
+  gap: 2px;
+  height: 16px;
+}
+
+.ctrl-btn.active .sound-off { display: none; }
+.ctrl-btn.active .sound-bars { display: flex; }
+.ctrl-btn:not(.active) .sound-bars { display: none; }
+.ctrl-btn:not(.active) .sound-off { display: block; }
+
+.sound-bars span {
+  display: block;
+  width: 3px;
+  background: var(--sand-accent);
+  border-radius: 1.5px;
+  animation: soundWave 1.2s ease-in-out infinite;
+}
+
+.sound-bars span:nth-child(1) { height: 4px; animation-delay: 0s; }
+.sound-bars span:nth-child(2) { height: 10px; animation-delay: 0.15s; }
+.sound-bars span:nth-child(3) { height: 6px; animation-delay: 0.3s; }
+.sound-bars span:nth-child(4) { height: 12px; animation-delay: 0.45s; }
+
+@keyframes soundWave {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sound-bars span { animation: none; }
+}
+
+/* Lang toggle */
+#langToggle {
+  font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
 /* ── CARD TILT ── */
 @media (hover: hover) {
   .card {
@@ -520,7 +565,7 @@ body::before {
 @media (max-width: 900px) {
   .floating-controls {
     bottom: 1rem;
-    left: 1rem;
+    right: 1rem;
   }
 }
 </style>
@@ -642,7 +687,13 @@ body::before {
 <!-- ═══════════════════════════════ -->
 <!-- Floating Controls -->
 <div class="floating-controls">
-  <button class="ctrl-btn" id="soundToggle" aria-label="Sound an/aus" title="Sound">&#9835;</button>
+  <button class="ctrl-btn" id="soundToggle" aria-label="Sound an/aus" title="Sound">
+    <svg class="sound-off" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+    <div class="sound-bars">
+      <span></span><span></span><span></span><span></span>
+    </div>
+  </button>
+  <button class="ctrl-btn" id="langToggle" aria-label="Sprache wechseln" title="Sprache">DE</button>
 </div>
 
 <footer class="home-footer">
@@ -818,6 +869,24 @@ body::before {
         isPlaying = true;
         soundBtn.classList.add('active');
       }
+    });
+  }
+  /* ═══ LANGUAGE TOGGLE ═══ */
+  var langBtn = document.getElementById('langToggle');
+  var _saved = localStorage.getItem('jochenhornung-lang');
+  var lang = _saved || ((navigator.language || 'de').toLowerCase().startsWith('de') ? 'de' : 'en');
+
+  function updateLangBtn() {
+    langBtn.textContent = lang.toUpperCase();
+  }
+
+  if (langBtn) {
+    updateLangBtn();
+    langBtn.addEventListener('click', function() {
+      lang = lang === 'de' ? 'en' : 'de';
+      localStorage.setItem('jochenhornung-lang', lang);
+      updateLangBtn();
+      /* i18n swap kommt später — für jetzt nur den State speichern */
     });
   }
 })();
