@@ -28,9 +28,17 @@ Mein eigener Weg durch Trauma, ADHS und Sucht hat mir gezeigt: Wir haben uns tra
 
 Ich begleite Menschen, die sich im Funktionieren verloren haben. Besonders Männer, die gelernt haben stark zu sein und dabei vergessen haben zu fühlen. Ressourcenorientiert, körperbasiert, mit dem Nervensystem — nicht gegen es.
 
-Gleichzeitig baue ich digitale Werkzeuge, die Tiefe ermöglichen statt abzusaugen. Sechs Produkte sind fertig — vom Gefühlskompass über interaktive Meditation bis zum Retro-Spiel für meinen Sohn. Kein Lock-in, kein Dark Pattern, kein Chi-Chi.
-
 Ich schreibe über das Menschsein in einer Zeit, die uns zu Maschinen machen will.
+
+## Was ich baue
+
+Dinge die sich anfühlen sollen. Code · Design · Bewusstsein · zu viele Projekte · Berlin.
+
+🎮 **J-THRUST** — Retro-Gravitation, C64-Seele
+🔮 **M-Sphere** — Meditation als Erlebnis
+⚡ **Klarsite** — Websites die Menschen zeigen, nicht verkaufen
+
+Kein Lock-in, kein Dark Pattern, kein Chi-Chi. Shipping > Perfecting.
 
 ## Hintergrund
 
