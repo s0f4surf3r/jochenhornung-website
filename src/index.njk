@@ -13,15 +13,23 @@ heroImage: "/images/og-image.png"
    ══════════════════════════════════════ */
 
 :root {
+  --bg: #0a0a0f;
+  --text: #e0e0e0;
+  --dim: #555;
+  --amber: #ffb000;
+  --cyan: #00e5ff;
+  --magenta: #ff00aa;
+  --green: #00ff41;
+  --card-bg: rgba(255, 176, 0, 0.03);
+  --card-border: rgba(255, 176, 0, 0.15);
+  --pixel-size: 4px;
+  /* Sand fallbacks for inner pages */
   --sand-bg: #f5f0e6;
-  --sand-surface: #ffffff;
   --sand-text: #1a1816;
   --sand-text-muted: #6b6054;
   --sand-text-dim: #9a8e7e;
   --sand-accent: #b8942a;
-  --sand-accent-hover: #a07e1e;
   --sand-border: #e0d8cc;
-  --sand-warm: #ede4d2;
   --sand-card: #faf8f4;
 }
 
@@ -33,35 +41,33 @@ html { scroll-behavior: smooth; }
 }
 
 body {
-  background-color: var(--sand-bg);
-  color: var(--sand-text);
+  background-color: var(--bg);
+  color: var(--text);
   -webkit-tap-highlight-color: transparent;
   overflow-x: hidden;
   position: relative;
 }
 
-/* Noise-Grain Overlay — analoges Papier */
-body::before {
-  content: '';
+/* Particle Canvas */
+#pixel-rain {
   position: fixed;
   inset: 0;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: 0.035;
-  pointer-events: none;
   z-index: 0;
+  pointer-events: none;
+}
+
+/* ── COLOR BAR ── */
+.color-bar {
+  height: 3px;
+  background: linear-gradient(90deg, var(--green), var(--cyan), var(--amber), var(--magenta), var(--cyan), var(--green));
+  position: relative;
+  z-index: 10;
 }
 
 /* ── HERO ── */
 .hero-home {
   position: relative;
   z-index: 1;
-}
-
-/* ── DARK HERO ZONE ── */
-.hero-zone {
-  background: #06090f;
-  position: relative;
-  overflow: hidden;
 }
 
 .hero-image {
@@ -85,19 +91,17 @@ body::before {
 }
 
 .hero-claim {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(2rem, 4.5vw, 3.5rem);
-  font-weight: 400;
+  font-family: 'Courier New', 'Courier', monospace;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
   line-height: 1.35;
-  color: #f4f6ff;
+  color: var(--amber);
   margin: 0;
   cursor: default;
   user-select: none;
-  /* Bloom — man merkt es erst wenn man es wegnimmt */
   text-shadow:
-    0 0 40px rgba(0, 210, 255, 0.12),
-    0 0 80px rgba(130, 50, 200, 0.08),
-    0 0 2px rgba(244, 246, 255, 0.3);
+    0 0 30px rgba(255, 176, 0, 0.25),
+    0 0 60px rgba(255, 176, 0, 0.1);
 }
 
 .hero-sub {
@@ -144,7 +148,7 @@ body::before {
 }
 
 .hero-nav a {
-  color: var(--sand-text-muted);
+  color: var(--dim);
   text-decoration: none;
   padding: 0.5rem 0;
   min-height: 44px;
@@ -154,18 +158,18 @@ body::before {
 }
 
 @media (hover: hover) {
-  .hero-nav a:hover { color: var(--sand-text); }
+  .hero-nav a:hover { color: var(--text); }
 }
 
-.hero-nav a:active { color: var(--sand-accent); }
+.hero-nav a:active { color: var(--amber); }
 
 .hero-nav .nav-sep {
-  color: var(--sand-border);
+  color: rgba(255,255,255,0.1);
   user-select: none;
 }
 
 .hero-nav .nav-home {
-  color: var(--sand-text);
+  color: var(--text);
 }
 
 /* ── SECTIONS ── */
@@ -177,47 +181,59 @@ body::before {
   margin: 0 auto;
 }
 
-.section-dark {
-  max-width: none;
-  background: #06090f;
-  padding: 5rem 4rem;
+/* ── PIXEL DIVIDER ── */
+.pixel-divider {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 0;
+  padding: 3rem 2rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 
-.section-dark > * {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
+.pixel-divider span {
+  width: var(--pixel-size);
+  height: var(--pixel-size);
+  background: var(--green);
+  opacity: 0.4;
+  display: inline-block;
 }
 
-.section-dark .section-label { color: rgba(244,246,255,0.3); }
-.section-dark .section-heading { color: #f4f6ff; }
-.section-dark .section-text { color: rgba(244,246,255,0.45); }
+.pixel-divider span:nth-child(3n) { background: var(--cyan); opacity: 0.6; }
+.pixel-divider span:nth-child(7n) { background: var(--magenta); opacity: 0.5; }
+.pixel-divider span:nth-child(5n) { background: var(--amber); opacity: 0.5; }
 
 .section-label {
-  font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  font-family: 'Courier New', monospace;
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--sand-text-dim);
+  color: var(--green);
   margin: 0 0 1.5rem 0;
+  text-align: center;
 }
 
 .section-heading {
-  font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  font-weight: 400;
+  font-family: 'Courier New', monospace;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
   line-height: 1.4;
-  color: var(--sand-text);
+  color: var(--amber);
   margin: 0 0 2rem 0;
+  text-align: center;
+  text-shadow: 0 0 20px rgba(255, 176, 0, 0.15);
 }
 
 .section-text {
   font-family: -apple-system, 'Helvetica Neue', sans-serif;
   font-size: 1.05rem;
   line-height: 1.75;
-  color: var(--sand-text-muted);
+  color: var(--dim);
   max-width: 900px;
-  margin-bottom: 3rem;
+  margin: 0 auto 3rem;
+  text-align: center;
 }
 
 /* ── CARDS ── */
@@ -311,9 +327,9 @@ body::before {
   font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(1.2rem, 2.5vw, 1.5rem);
   line-height: 1.65;
-  color: var(--sand-text);
+  color: var(--text);
   font-style: italic;
-  border-left: 2px solid var(--sand-accent);
+  border-left: 2px solid var(--amber);
   padding-left: 1.5rem;
   margin: 0;
 }
@@ -325,32 +341,32 @@ body::before {
 }
 
 .texte-link-wrap p {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: -apple-system, 'Helvetica Neue', sans-serif;
   font-size: 1.05rem;
   line-height: 1.75;
-  color: var(--sand-text-muted);
+  color: var(--dim);
   margin: 0 0 1.5rem 0;
 }
 
 /* ── STREAMING ── */
 .streaming-teaser {
-  background: var(--sand-card);
-  border: 1px solid var(--sand-border);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 12px;
   padding: 2.5rem;
   display: flex;
   align-items: center;
   gap: 2rem;
   text-decoration: none;
-  color: var(--sand-text);
+  color: var(--text);
   transition: border-color 0.25s;
 }
 
 @media (hover: hover) {
-  .streaming-teaser:hover { border-color: var(--sand-accent); }
+  .streaming-teaser:hover { border-color: var(--amber); }
 }
 
-.streaming-teaser:active { border-color: var(--sand-accent); }
+.streaming-teaser:active { border-color: var(--amber); }
 
 .streaming-avatar {
   width: 72px;
@@ -360,38 +376,38 @@ body::before {
 }
 
 .streaming-info p {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: -apple-system, 'Helvetica Neue', sans-serif;
   font-size: 1.05rem;
   line-height: 1.65;
-  color: var(--sand-text-muted);
+  color: var(--dim);
   margin: 0.5rem 0 0 0;
 }
 
 .streaming-badge {
   display: inline-block;
-  font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  font-family: 'Courier New', monospace;
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--sand-accent);
-  border: 1px solid var(--sand-accent);
+  color: var(--green);
+  border: 1px solid var(--green);
   border-radius: 4px;
   padding: 0.25rem 0.6rem;
 }
 
 /* ── LINKS ── */
 .text-link {
-  color: var(--sand-text);
+  color: var(--cyan);
   text-decoration: none;
-  border-bottom: 1px solid var(--sand-accent);
+  border-bottom: 1px solid rgba(0, 229, 255, 0.3);
   padding-bottom: 1px;
   transition: border-color 0.2s;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.05rem;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
 }
 
 @media (hover: hover) {
-  .text-link:hover { border-color: var(--sand-text); }
+  .text-link:hover { border-color: var(--cyan); }
 }
 
 /* ── DIVIDER ── */
@@ -416,19 +432,19 @@ body::before {
   padding: 3rem 4rem;
   max-width: 1100px;
   margin: 0 auto;
-  border-top: 1px solid var(--sand-border);
+  border-top: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-  font-family: -apple-system, 'Helvetica Neue', sans-serif;
-  font-size: 0.85rem;
-  color: var(--sand-text-dim);
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: var(--dim);
 }
 
 .home-footer a {
-  color: var(--sand-text-dim);
+  color: var(--dim);
   text-decoration: none;
   min-height: 44px;
   display: inline-flex;
@@ -437,7 +453,7 @@ body::before {
 }
 
 @media (hover: hover) {
-  .home-footer a:hover { color: var(--sand-text); }
+  .home-footer a:hover { color: var(--cyan); }
 }
 
 .footer-links { display: flex; gap: 1.5rem; }
@@ -536,11 +552,11 @@ body::before {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1.5px solid rgba(128, 128, 128, 0.3);
-  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  color: var(--sand-text-muted);
+  color: var(--dim);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -634,6 +650,9 @@ body::before {
 <!-- ═══════════════════════════════ -->
 <!--  HERO                           -->
 <!-- ═══════════════════════════════ -->
+<div class="color-bar"></div>
+<canvas id="pixel-rain"></canvas>
+
 <div class="hero-home">
   <nav class="hero-nav" role="navigation" aria-label="Hauptnavigation">
     <a href="/" class="nav-home" aria-label="Startseite">
@@ -650,7 +669,6 @@ body::before {
     <a href="/ueber/">Über mich</a>
   </nav>
 
-  <div class="hero-zone">
     <div class="hero-image">
       <img src="/images/hero-banner.png"
            alt="s0f4surf3r — Vektor-Figur im Sessel, digitale Energie"
@@ -660,10 +678,9 @@ body::before {
 
     <div class="hero-claim-wrap">
       <h1 class="hero-claim">Raum für Menschlichkeit und Tiefe.</h1>
-      <p class="hero-sub">Retro Game Dev · Consciousness Tools · AI Experiments</p>
+      <p class="hero-sub">Retro Game Dev · Consciousness Tools · Design · AI Experiments</p>
       <p class="hero-sub-dim">Websites für Menschen die mehr sind als ihre Online-Präsenz. Code · Design · Bewusstsein · zu viele Projekte · Berlin.</p>
     </div>
-  </div>
 
   <div class="sr-only">
     <p>Jochen Hornung – Builder, Autor, Mensch. Berlin. Texte über das Menschsein, digitale Werkzeuge für emotionale Selbsterkenntnis.</p>
@@ -673,9 +690,9 @@ body::before {
 <!-- ═══════════════════════════════ -->
 <!--  WAS ICH BAUE                  -->
 <!-- ═══════════════════════════════ -->
-<div class="section-divider"><hr></div>
+<div class="pixel-divider"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
 
-<section class="section section-dark reveal" id="bauen">
+<section class="section reveal" id="bauen">
   <p class="section-label">Was ich baue</p>
   <h2 class="section-heading">Dinge die sich anfühlen sollen.</h2>
   <p class="section-text">Kein Lock-in, kein Dark Pattern, kein Chi-Chi. Code im Dienst der Menschlichkeit.</p>
@@ -704,7 +721,7 @@ body::before {
 <!-- ═══════════════════════════════ -->
 <!--  TEXTE                          -->
 <!-- ═══════════════════════════════ -->
-<div class="section-divider"><hr></div>
+<div class="pixel-divider"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
 
 <section class="section reveal" id="texte">
   <p class="section-label">Texte</p>
@@ -722,7 +739,7 @@ body::before {
 <!-- ═══════════════════════════════ -->
 <!--  STREAMING                      -->
 <!-- ═══════════════════════════════ -->
-<div class="section-divider"><hr></div>
+<div class="pixel-divider"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
 
 <section class="section reveal" id="streaming">
   <p class="section-label">Streaming</p>
@@ -995,6 +1012,48 @@ body::before {
       }
     });
   }
+  /* ═══ PIXEL RAIN (particles) ═══ */
+  var canvas = document.getElementById('pixel-rain');
+  if (canvas && !reducedMotion) {
+    var pctx = canvas.getContext('2d');
+    var pw, ph;
+    function resizeCanvas() {
+      pw = canvas.width = window.innerWidth;
+      ph = canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    var pixels = [];
+    var pcolors = ['#00ff41', '#00e5ff', '#ff00aa', '#ffb000'];
+
+    function spawnPixel() {
+      pixels.push({
+        x: Math.random() * pw,
+        y: -5,
+        size: Math.random() * 3 + 1,
+        speed: Math.random() * 0.5 + 0.15,
+        color: pcolors[Math.floor(Math.random() * pcolors.length)],
+        opacity: Math.random() * 0.15 + 0.03
+      });
+    }
+
+    function animatePixels() {
+      pctx.clearRect(0, 0, pw, ph);
+      if (Math.random() < 0.3) spawnPixel();
+      for (var i = pixels.length - 1; i >= 0; i--) {
+        var p = pixels[i];
+        p.y += p.speed;
+        pctx.globalAlpha = p.opacity;
+        pctx.fillStyle = p.color;
+        pctx.fillRect(p.x, p.y, p.size, p.size);
+        if (p.y > ph) pixels.splice(i, 1);
+      }
+      requestAnimationFrame(animatePixels);
+    }
+    animatePixels();
+  }
+
   /* ═══ LANGUAGE TOGGLE ═══ */
   var langBtn = document.getElementById('langToggle');
   var _saved = localStorage.getItem('jochenhornung-lang');
