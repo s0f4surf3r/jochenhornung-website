@@ -180,6 +180,22 @@ body::before {
   margin: 0 auto;
 }
 
+.section-dark {
+  max-width: none;
+  background: #06090f;
+  padding: 5rem 4rem;
+}
+
+.section-dark > * {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-dark .section-label { color: rgba(244,246,255,0.3); }
+.section-dark .section-heading { color: #f4f6ff; }
+.section-dark .section-text { color: rgba(244,246,255,0.45); }
+
 .section-label {
   font-family: -apple-system, 'Helvetica Neue', sans-serif;
   font-size: 0.8rem;
@@ -199,8 +215,8 @@ body::before {
 }
 
 .section-text {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.08rem;
+  font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  font-size: 1.05rem;
   line-height: 1.75;
   color: var(--sand-text-muted);
   max-width: 900px;
@@ -215,33 +231,45 @@ body::before {
 }
 
 .card {
-  background: var(--sand-card);
-  border: 1px solid var(--sand-border);
-  border-radius: 10px;
+  background: #0e1420;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
   padding: 2rem 1.8rem;
   text-decoration: none;
-  color: var(--sand-text);
-  transition: border-color 0.25s, transform 0.25s;
+  color: #f4f6ff;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
   display: block;
   min-height: 44px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(0,210,255,0.06) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s;
 }
 
 @media (hover: hover) {
   .card:hover {
-    border-color: var(--sand-accent);
-    transform: translateY(-2px);
+    transform: translateY(-4px);
+    border-color: rgba(0,210,255,0.2);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3), 0 0 30px rgba(0,210,255,0.06);
   }
+  .card:hover::before { opacity: 1; }
 }
 
 .card:active {
-  border-color: var(--sand-accent);
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 
 .card-icon {
   margin-bottom: 1rem;
   display: block;
-  color: var(--sand-text-dim);
+  color: rgba(244,246,255,0.4);
 }
 
 .card-logo {
@@ -251,6 +279,8 @@ body::before {
   margin-bottom: 1rem;
   display: block;
   object-fit: contain;
+  position: relative;
+  z-index: 1;
 }
 
 .card-title {
@@ -258,14 +288,18 @@ body::before {
   font-size: 1.05rem;
   font-weight: 600;
   margin: 0 0 0.6rem 0;
+  position: relative;
+  z-index: 1;
 }
 
 .card-desc {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: var(--sand-text-muted);
+  font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(244,246,255,0.45);
   margin: 0;
+  position: relative;
+  z-index: 1;
 }
 
 /* ── TEXTE ── */
@@ -643,7 +677,7 @@ body::before {
 <!-- ═══════════════════════════════ -->
 <div class="section-divider"><hr></div>
 
-<section class="section reveal" id="bauen">
+<section class="section section-dark reveal" id="bauen">
   <p class="section-label">Was ich baue</p>
   <h2 class="section-heading">Dinge die sich anfühlen sollen.</h2>
   <p class="section-text">Kein Lock-in, kein Dark Pattern, kein Chi-Chi. Code im Dienst der Menschlichkeit.</p>
