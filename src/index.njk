@@ -108,46 +108,20 @@ body {
   white-space: nowrap;
 }
 
-.hero-claim::before,
-.hero-claim::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+/* Claim Farbwechsel — cycled durch alle Palette-Farben */
+@keyframes claimGlow {
+  0%, 100% { color: var(--amber); text-shadow: 0 0 10px rgba(255, 176, 0, 0.3); }
+  25% { color: var(--cyan); text-shadow: 0 0 10px rgba(0, 229, 255, 0.3); }
+  50% { color: var(--magenta); text-shadow: 0 0 10px rgba(255, 0, 170, 0.3); }
+  75% { color: var(--green); text-shadow: 0 0 10px rgba(0, 255, 65, 0.3); }
 }
 
-.hero-claim::before {
-  color: var(--cyan);
-  animation: glitch-1 6s infinite linear;
-  clip-path: inset(0 0 65% 0);
-  opacity: 0;
-}
-
-.hero-claim::after {
-  color: var(--magenta);
-  animation: glitch-2 6s infinite linear;
-  clip-path: inset(40% 0 0 0);
-  opacity: 0;
-}
-
-@keyframes glitch-1 {
-  0%, 92%, 96%, 100% { transform: translate(0); opacity: 0; }
-  93% { transform: translate(-3px, 1px); opacity: 0.7; }
-  95% { transform: translate(2px, -1px); opacity: 0.5; }
-}
-
-@keyframes glitch-2 {
-  0%, 90%, 95%, 100% { transform: translate(0); opacity: 0; }
-  91% { transform: translate(2px, -1px); opacity: 0.6; }
-  94% { transform: translate(-3px, 1px); opacity: 0.4; }
+.hero-claim {
+  animation: claimGlow 12s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-claim::before,
-  .hero-claim::after { animation: none; }
+  .hero-claim { animation: none; }
 }
 
 .hero-sub {
