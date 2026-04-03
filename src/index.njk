@@ -61,6 +61,7 @@ body::before {
   width: 100%;
   display: block;
   border-bottom: 1px solid var(--sand-border);
+  position: relative;
 }
 
 .hero-image img {
@@ -69,31 +70,23 @@ body::before {
   display: block;
 }
 
-.hero-body {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 4rem 4rem 3rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 3rem;
-}
-
-.hero-text {
-  flex: 1;
-}
-
-.hero-name {
+.hero-claim {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 4rem;
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
   font-weight: 400;
-  line-height: 1.4;
-  color: var(--sand-text);
+  line-height: 1.35;
+  color: #f4f6ff;
   margin: 0;
+  text-shadow:
+    0 1px 3px rgba(0,0,0,0.5),
+    0 0 30px rgba(0,0,0,0.3);
   max-width: 500px;
 }
 
-/* hero-tagline removed — h1 IS the tagline now */
+/* hero-body removed — claim is now overlay on banner */
 
 .hero-nav {
   display: flex;
@@ -391,15 +384,15 @@ body::before {
    ══════════════════════════ */
 
 @media (max-width: 900px) {
-  .hero-body {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 3rem 2rem 2rem;
-    gap: 2rem;
+  .hero-claim {
+    bottom: 1.5rem;
+    left: 2rem;
+    right: 2rem;
   }
 
   .hero-nav {
     gap: 1rem;
+    padding: 1.5rem 2rem;
   }
 
   .section {
@@ -432,8 +425,8 @@ body::before {
 }
 
 @media (max-width: 480px) {
-  .hero-body { padding: 2rem 1.5rem 1.5rem; }
-  .hero-nav { gap: 0.5rem; font-size: 0.9rem; }
+  .hero-claim { bottom: 1rem; left: 1.5rem; right: 1.5rem; }
+  .hero-nav { gap: 0.5rem; font-size: 0.9rem; padding: 1rem 1.5rem; }
   .section { padding: 3rem 1.5rem; }
   .streaming-teaser { padding: 1.5rem; }
   .section-divider, .home-footer { padding-left: 1.5rem; padding-right: 1.5rem; }
@@ -549,12 +542,7 @@ body::before {
          alt="s0f4surf3r — Vektor-Figur im Sessel, digitale Energie"
          width="1200" height="480"
          loading="eager">
-  </div>
-
-  <div class="hero-body">
-    <div class="hero-text">
-      <h1 class="hero-name">Raum für Menschlichkeit und Tiefe.</h1>
-    </div>
+    <h1 class="hero-claim">Raum für Menschlichkeit<br>und Tiefe.</h1>
   </div>
 
   <div class="sr-only">
@@ -674,7 +662,7 @@ body::before {
   }
 
   /* ═══ LETTER DISPERSION ═══ */
-  var nameEl = document.querySelector('.hero-name');
+  var nameEl = document.querySelector('.hero-claim');
   if (nameEl && !reducedMotion) {
     var original = nameEl.textContent;
     nameEl.innerHTML = original.split('').map(function(ch) {
