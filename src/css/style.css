@@ -13,26 +13,6 @@ body {
     background: #ffffff;
 }
 
-/* Center content */
-.center-content {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-}
-
-/* Main title */
-.main-title {
-    font-size: 1.5rem;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    text-align: center;
-    margin-bottom: 3rem;
-    color: #1a1a1a;
-}
-
 /* Navigation */
 .main-nav {
     display: flex;

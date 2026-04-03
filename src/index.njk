@@ -87,12 +87,13 @@ body::before {
 }
 
 .hero-name {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: -apple-system, 'Helvetica Neue', sans-serif;
   font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.15;
   color: var(--sand-text);
   margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
 }
 
 .hero-tagline {
@@ -112,7 +113,15 @@ body::before {
   align-items: center;
   font-family: -apple-system, 'Helvetica Neue', sans-serif;
   font-size: 0.95rem;
-  flex-shrink: 0;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 4rem;
+}
+
+.hero-nav .nav-home {
+  font-weight: 600;
+  color: var(--sand-text);
+  margin-right: auto;
 }
 
 .hero-nav a {
@@ -443,9 +452,21 @@ body::before {
 <!--  HERO                           -->
 <!-- ═══════════════════════════════ -->
 <div class="hero-home">
+  <nav class="hero-nav" role="navigation" aria-label="Hauptnavigation">
+    <a href="/" class="nav-home" aria-label="Startseite">Jochen Hornung</a>
+    <span class="nav-sep" aria-hidden="true">/</span>
+    <a href="/texte/">Texte</a>
+    <span class="nav-sep" aria-hidden="true">/</span>
+    <a href="/werkzeuge/">Werkzeuge</a>
+    <span class="nav-sep" aria-hidden="true">/</span>
+    <a href="/kaktus/">Streaming</a>
+    <span class="nav-sep" aria-hidden="true">/</span>
+    <a href="/ueber/">Über mich</a>
+  </nav>
+
   <div class="hero-image">
     <img src="/images/hero-banner.png"
-         alt="s0f4surf3r — Vektor-Figur im Sessel, Energie und Bewusstsein"
+         alt="s0f4surf3r — Vektor-Figur im Sessel, digitale Energie"
          width="1200" height="480"
          loading="eager">
   </div>
@@ -453,22 +474,12 @@ body::before {
   <div class="hero-body">
     <div class="hero-text">
       <h1 class="hero-name">Jochen Hornung</h1>
-      <p class="hero-tagline">Raum für Menschlichkeit und Tiefe. Texte, Coaching, digitale Werkzeuge — aus Berlin.</p>
+      <p class="hero-tagline">Raum für Menschlichkeit und Tiefe. Texte, Werkzeuge, Bewusstsein — aus Berlin.</p>
     </div>
-
-    <nav class="hero-nav" role="navigation" aria-label="Hauptnavigation">
-      <a href="/texte/">Texte</a>
-      <span class="nav-sep" aria-hidden="true">/</span>
-      <a href="/werkzeuge/">Werkzeuge</a>
-      <span class="nav-sep" aria-hidden="true">/</span>
-      <a href="/kaktus/">Streaming</a>
-      <span class="nav-sep" aria-hidden="true">/</span>
-      <a href="/ueber/">Über mich</a>
-    </nav>
   </div>
 
   <div class="sr-only">
-    <p>Jochen Hornung – Coach für neurosystemische Integration in Berlin. Gedichte, Essays und persönliche Texte über das Menschsein. Digitale Werkzeuge für emotionale Selbsterkenntnis.</p>
+    <p>Jochen Hornung – Builder, Autor, Mensch. Berlin. Texte über das Menschsein, digitale Werkzeuge für emotionale Selbsterkenntnis.</p>
   </div>
 </div>
 
