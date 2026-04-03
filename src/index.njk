@@ -82,6 +82,9 @@ body {
   height: auto;
   display: block;
   opacity: 0.85;
+  max-height: 45vh;
+  object-fit: cover;
+  object-position: center;
 }
 
 .hero-claim-wrap {
@@ -125,8 +128,30 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* Green Glow wie bei 40C3 */
-  filter: drop-shadow(0 0 20px rgba(0, 255, 65, 0.3)) drop-shadow(0 0 60px rgba(0, 255, 65, 0.15));
+}
+
+/* Glow als separates Layer — nicht auf background-clip Element */
+.hero-claim-wrap {
+  position: relative;
+}
+.hero-claim-wrap::before {
+  content: attr(data-glow);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-family: 'Courier New', monospace;
+  font-size: clamp(1.4rem, 3.2vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+  color: var(--green);
+  opacity: 0.15;
+  filter: blur(15px);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .hero-sub {
@@ -899,8 +924,8 @@ body {
            loading="eager">
     </div>
 
-    <div class="hero-claim-wrap">
-      <h1 class="hero-claim" data-text="Raum für Menschlichkeit und Tiefe">Raum für Menschlichkeit und Tiefe</h1>
+    <div class="hero-claim-wrap" data-glow="RAUM FÜR MENSCHLICHKEIT UND TIEFE">
+      <h1 class="hero-claim">Raum für Menschlichkeit und Tiefe</h1>
       <p class="hero-sub">Retro Game Dev · Consciousness Tools · Design · AI Experiments</p>
       <p class="hero-sub-dim">Websites für Menschen die mehr sind als ihre Online-Präsenz. Code · Design · Bewusstsein · zu viele Projekte · Berlin</p>
     </div>
@@ -1140,150 +1165,75 @@ body {
         }
       });
 
-      /* Distortion-Effekt — Wasser-Ripple auf dem Banner */
-      var distCanvas = document.createElement('canvas');
-      distCanvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;';
-      heroImage.style.position = 'relative';
-      heroImage.appendChild(distCanvas);
+      /* Ripple-Glow Effekt — Canvas Overlay */
+      var ripCanvas = document.createElement('canvas');
+      ripCanvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;';
+      heroImage.appendChild(ripCanvas);
 
-      var dctx = distCanvas.getContext('2d');
+      var rctx = ripCanvas.getContext('2d');
       var ripples = [];
-      var distW, distH, bannerLoaded = false;
+      var rw, rh;
 
-      function resizeDist() {
+      function resizeRip() {
         var rect = heroImage.getBoundingClientRect();
-        distW = distCanvas.width = Math.floor(rect.width);
-        distH = distCanvas.height = Math.floor(rect.height);
+        rw = ripCanvas.width = Math.floor(rect.width);
+        rh = ripCanvas.height = Math.floor(rect.height);
       }
-      resizeDist();
-      window.addEventListener('resize', resizeDist);
+      resizeRip();
+      window.addEventListener('resize', resizeRip);
 
-      /* Warte bis Banner geladen */
-      if (bannerImg.complete) { bannerLoaded = true; }
-      else { bannerImg.addEventListener('load', function() { bannerLoaded = true; }); }
+      var pcolors2 = ['rgba(0,229,255,', 'rgba(255,176,0,', 'rgba(255,0,170,', 'rgba(0,255,65,'];
 
-      heroImage.style.cursor = 'crosshair';
       heroImage.style.pointerEvents = 'auto';
+      heroImage.style.cursor = 'crosshair';
 
-      function addRipple(x, y) {
-        ripples.push({ x: x, y: y, radius: 0, maxRadius: 120, strength: 12, life: 1 });
+      function addRip(x, y, big) {
+        var c = pcolors2[Math.floor(Math.random() * pcolors2.length)];
+        ripples.push({ x: x, y: y, radius: 0, maxR: big ? 180 : 100, color: c, life: 1 });
       }
 
       heroImage.addEventListener('mousemove', function(e) {
         var rect = heroImage.getBoundingClientRect();
-        var x = e.clientX - rect.left;
-        var y = e.clientY - rect.top;
-        if (Math.random() < 0.3) addRipple(x, y);
+        if (Math.random() < 0.25) addRip(e.clientX - rect.left, e.clientY - rect.top, false);
       });
 
       heroImage.addEventListener('touchmove', function(e) {
         var rect = heroImage.getBoundingClientRect();
-        var touch = e.touches[0];
-        addRipple(touch.clientX - rect.left, touch.clientY - rect.top);
+        var t = e.touches[0];
+        addRip(t.clientX - rect.left, t.clientY - rect.top, false);
       }, { passive: true });
 
       heroImage.addEventListener('click', function(e) {
         var rect = heroImage.getBoundingClientRect();
-        addRipple(e.clientX - rect.left, e.clientY - rect.top);
-        /* Große Ripple bei Klick */
-        ripples[ripples.length - 1].maxRadius = 200;
-        ripples[ripples.length - 1].strength = 20;
+        addRip(e.clientX - rect.left, e.clientY - rect.top, true);
       });
 
-      function renderDistortion() {
-        if (!bannerLoaded || ripples.length === 0) {
-          dctx.clearRect(0, 0, distW, distH);
-          requestAnimationFrame(renderDistortion);
-          return;
+      function renderRipples() {
+        rctx.clearRect(0, 0, rw, rh);
+        for (var i = ripples.length - 1; i >= 0; i--) {
+          var r = ripples[i];
+          r.radius += 2.5;
+          r.life -= 0.015;
+          if (r.life <= 0 || r.radius > r.maxR) { ripples.splice(i, 1); continue; }
+
+          /* Ring */
+          rctx.beginPath();
+          rctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
+          rctx.strokeStyle = r.color + (0.4 * r.life) + ')';
+          rctx.lineWidth = 2;
+          rctx.stroke();
+
+          /* Inner glow */
+          var grad = rctx.createRadialGradient(r.x, r.y, 0, r.x, r.y, r.radius);
+          grad.addColorStop(0, r.color + (0.08 * r.life) + ')');
+          grad.addColorStop(0.7, r.color + (0.03 * r.life) + ')');
+          grad.addColorStop(1, 'transparent');
+          rctx.fillStyle = grad;
+          rctx.fill();
         }
-
-        dctx.clearRect(0, 0, distW, distH);
-
-        /* Banner auf offscreen canvas zeichnen */
-        dctx.drawImage(bannerImg, 0, 0, distW, distH);
-
-        try {
-          var imgData = dctx.getImageData(0, 0, distW, distH);
-          var src = imgData.data;
-
-          /* Saubere Kopie vom Banner */
-          var cleanCanvas = document.createElement('canvas');
-          cleanCanvas.width = distW;
-          cleanCanvas.height = distH;
-          var cctx = cleanCanvas.getContext('2d');
-          cctx.drawImage(bannerImg, 0, 0, distW, distH);
-          var cleanData = cctx.getImageData(0, 0, distW, distH).data;
-
-          var out = dctx.createImageData(distW, distH);
-          var dst = out.data;
-
-          for (var i = 0; i < dst.length; i++) dst[i] = cleanData[i];
-
-          for (var r = ripples.length - 1; r >= 0; r--) {
-            var rip = ripples[r];
-            rip.radius += 3;
-            rip.life -= 0.02;
-
-            if (rip.life <= 0 || rip.radius > rip.maxRadius) {
-              ripples.splice(r, 1);
-              continue;
-            }
-
-            var cx = Math.floor(rip.x);
-            var cy = Math.floor(rip.y);
-            var rad = Math.floor(rip.radius);
-            var str = rip.strength * rip.life;
-
-            for (var dy = -rad; dy < rad; dy += 2) {
-              for (var dx = -rad; dx < rad; dx += 2) {
-                var dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist > rad) continue;
-
-                var px = cx + dx;
-                var py = cy + dy;
-                if (px < 0 || px >= distW || py < 0 || py >= distH) continue;
-
-                /* Ripple wave displacement */
-                var wave = Math.sin((dist / rad) * Math.PI * 3) * str * (1 - dist / rad);
-                var angle = Math.atan2(dy, dx);
-                var sx = Math.floor(px + Math.cos(angle) * wave);
-                var sy = Math.floor(py + Math.sin(angle) * wave);
-
-                sx = Math.max(0, Math.min(distW - 1, sx));
-                sy = Math.max(0, Math.min(distH - 1, sy));
-
-                var di = (py * distW + px) * 4;
-                var si = (sy * distW + sx) * 4;
-                dst[di] = cleanData[si];
-                dst[di + 1] = cleanData[si + 1];
-                dst[di + 2] = cleanData[si + 2];
-              }
-            }
-          }
-
-          dctx.putImageData(out, 0, 0);
-        } catch(e) {
-          /* CORS/tainted canvas — fallback: nur visueller Glow */
-          for (var r2 = ripples.length - 1; r2 >= 0; r2--) {
-            var rip2 = ripples[r2];
-            rip2.radius += 3;
-            rip2.life -= 0.02;
-            if (rip2.life <= 0) { ripples.splice(r2, 1); continue; }
-
-            dctx.beginPath();
-            dctx.arc(rip2.x, rip2.y, rip2.radius, 0, Math.PI * 2);
-            var grad = dctx.createRadialGradient(rip2.x, rip2.y, 0, rip2.x, rip2.y, rip2.radius);
-            grad.addColorStop(0, 'rgba(0, 229, 255, ' + (0.15 * rip2.life) + ')');
-            grad.addColorStop(0.5, 'rgba(255, 176, 0, ' + (0.08 * rip2.life) + ')');
-            grad.addColorStop(1, 'transparent');
-            dctx.fillStyle = grad;
-            dctx.fill();
-          }
-        }
-
-        requestAnimationFrame(renderDistortion);
+        requestAnimationFrame(renderRipples);
       }
-      renderDistortion();
+      renderRipples();
     }
   }
 
