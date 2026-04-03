@@ -57,36 +57,46 @@ body::before {
   z-index: 1;
 }
 
+/* ── DARK HERO ZONE ── */
+.hero-zone {
+  background: #06090f;
+  position: relative;
+  overflow: hidden;
+}
+
 .hero-image {
   width: 100%;
   display: block;
-  border-bottom: 1px solid var(--sand-border);
-  position: relative;
 }
 
 .hero-image img {
   width: 100%;
   height: auto;
   display: block;
+  opacity: 0.85;
+}
+
+.hero-claim-wrap {
+  padding: 3rem 4rem 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .hero-claim {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 4rem;
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
   font-weight: 400;
   line-height: 1.35;
   color: #f4f6ff;
   margin: 0;
+  cursor: default;
+  user-select: none;
+  /* Bloom — man merkt es erst wenn man es wegnimmt */
   text-shadow:
-    0 1px 3px rgba(0,0,0,0.5),
-    0 0 30px rgba(0,0,0,0.3);
-  max-width: 500px;
+    0 0 40px rgba(0, 210, 255, 0.12),
+    0 0 80px rgba(130, 50, 200, 0.08),
+    0 0 2px rgba(244, 246, 255, 0.3);
 }
-
-/* hero-body removed — claim is now overlay on banner */
 
 .hero-nav {
   display: flex;
@@ -116,7 +126,7 @@ body::before {
 }
 
 .hero-nav a {
-  color: var(--sand-text-muted);
+  color: rgba(244, 246, 255, 0.5);
   text-decoration: none;
   padding: 0.5rem 0;
   min-height: 44px;
@@ -126,14 +136,18 @@ body::before {
 }
 
 @media (hover: hover) {
-  .hero-nav a:hover { color: var(--sand-text); }
+  .hero-nav a:hover { color: #f4f6ff; }
 }
 
 .hero-nav a:active { color: var(--sand-accent); }
 
 .hero-nav .nav-sep {
-  color: var(--sand-border);
+  color: rgba(244, 246, 255, 0.15);
   user-select: none;
+}
+
+.hero-nav .nav-home {
+  color: #f4f6ff;
 }
 
 /* ── SECTIONS ── */
@@ -168,7 +182,7 @@ body::before {
   font-size: 1.08rem;
   line-height: 1.75;
   color: var(--sand-text-muted);
-  max-width: 600px;
+  max-width: 900px;
   margin-bottom: 3rem;
 }
 
@@ -384,10 +398,8 @@ body::before {
    ══════════════════════════ */
 
 @media (max-width: 900px) {
-  .hero-claim {
-    bottom: 1.5rem;
-    left: 2rem;
-    right: 2rem;
+  .hero-claim-wrap {
+    padding: 2rem 2rem 3rem;
   }
 
   .hero-nav {
@@ -425,7 +437,7 @@ body::before {
 }
 
 @media (max-width: 480px) {
-  .hero-claim { bottom: 1rem; left: 1.5rem; right: 1.5rem; }
+  .hero-claim-wrap { padding: 1.5rem 1.5rem 2.5rem; }
   .hero-nav { gap: 0.5rem; font-size: 0.9rem; padding: 1rem 1.5rem; }
   .section { padding: 3rem 1.5rem; }
   .streaming-teaser { padding: 1.5rem; }
@@ -435,13 +447,8 @@ body::before {
 /* ── LETTER DISPERSION ── */
 .letter {
   display: inline-block;
-  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.6s ease;
-  will-change: transform;
-}
-
-.hero-name {
-  cursor: default;
-  user-select: none;
+  transition: transform 0.9s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.8s ease;
+  will-change: transform, opacity;
 }
 
 /* ── PARALLAX ── */
@@ -537,12 +544,17 @@ body::before {
     <a href="/ueber/">Über mich</a>
   </nav>
 
-  <div class="hero-image">
-    <img src="/images/hero-banner.png"
-         alt="s0f4surf3r — Vektor-Figur im Sessel, digitale Energie"
-         width="1200" height="480"
-         loading="eager">
-    <h1 class="hero-claim">Raum für Menschlichkeit<br>und Tiefe.</h1>
+  <div class="hero-zone">
+    <div class="hero-image">
+      <img src="/images/hero-banner.png"
+           alt="s0f4surf3r — Vektor-Figur im Sessel, digitale Energie"
+           width="1200" height="480"
+           loading="eager">
+    </div>
+
+    <div class="hero-claim-wrap">
+      <h1 class="hero-claim">Raum für Menschlichkeit und Tiefe.</h1>
+    </div>
   </div>
 
   <div class="sr-only">
@@ -677,11 +689,14 @@ body::before {
     function scatter() {
       var letters = nameEl.querySelectorAll('.letter');
       letters.forEach(function(l) {
-        var x = (Math.random() - 0.5) * 10;
-        var y = (Math.random() - 0.5) * 8;
-        var r = (Math.random() - 0.5) * 6;
-        l.style.transform = 'translate(' + x + 'px,' + y + 'px) rotate(' + r + 'deg)';
-        l.style.opacity = (0.65 + Math.random() * 0.35).toString();
+        var angle = Math.random() * Math.PI * 2;
+        var dist = 60 + Math.random() * 140;
+        var x = Math.cos(angle) * dist;
+        var y = Math.sin(angle) * dist;
+        var r = (Math.random() - 0.5) * 60;
+        var s = 0.6 + Math.random() * 0.8;
+        l.style.transform = 'translate(' + x + 'px,' + y + 'px) rotate(' + r + 'deg) scale(' + s + ')';
+        l.style.opacity = (0.15 + Math.random() * 0.5).toString();
       });
       scattered = true;
     }
@@ -711,7 +726,7 @@ body::before {
         unscatter();
       } else {
         scatter();
-        returnTimer = setTimeout(unscatter, 1800);
+        returnTimer = setTimeout(unscatter, 2500);
       }
     }, { passive: false });
   }
