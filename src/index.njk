@@ -67,9 +67,6 @@ body::before {
   width: 100%;
   height: auto;
   display: block;
-  max-height: 50vh;
-  object-fit: cover;
-  object-position: center;
 }
 
 .hero-body {
@@ -742,15 +739,13 @@ body::before {
             var scrollY = window.pageYOffset;
             var rect = bannerImg.parentElement.getBoundingClientRect();
             if (rect.bottom > 0) {
-              bannerImg.style.transform = 'translateY(' + (scrollY * 0.15) + 'px) scale(1.05)';
+              bannerImg.style.transform = 'translateY(' + (scrollY * 0.08) + 'px)';
             }
             ticking = false;
           });
           ticking = true;
         }
       });
-      /* Initial scale to prevent gap */
-      bannerImg.style.transform = 'scale(1.05)';
     }
   }
 
