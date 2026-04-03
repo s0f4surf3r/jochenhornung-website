@@ -9,6 +9,7 @@ heroImage: "/images/og-image.png"
 /* ══════════════════════════════════════
    SAND-WELT — Hell, warm, einladend.
    Kontrast-Achse: 35% (weich, nicht laut)
+   Noise-Grain für analoge Wärme.
    ══════════════════════════════════════ */
 
 :root {
@@ -22,49 +23,96 @@ heroImage: "/images/og-image.png"
   --sand-border: #e0d8cc;
   --sand-warm: #ede4d2;
   --sand-card: #faf8f4;
-  --sand-purple: #6b4a8a;
-  --sand-teal: #3a6a6a;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1 !important; transform: none !important; }
 }
 
-/* Reset for homepage */
 body {
-  background: var(--sand-bg);
+  background-color: var(--sand-bg);
   color: var(--sand-text);
   -webkit-tap-highlight-color: transparent;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* Noise-Grain Overlay — analoges Papier */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* ── HERO ── */
 .hero-home {
-  min-height: 100vh;
-  min-height: 100svh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 1fr auto;
-  gap: 0;
-  padding: 3rem 4rem;
-  background: var(--sand-bg);
   position: relative;
+  z-index: 1;
+}
+
+.hero-image {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid var(--sand-border);
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 50vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-body {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 4rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 3rem;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-name {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--sand-text);
+  margin: 0 0 1rem 0;
+}
+
+.hero-tagline {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--sand-text-muted);
+  margin: 0;
+  max-width: 460px;
 }
 
 .hero-nav {
-  grid-column: 1 / -1;
   display: flex;
-  gap: 1.5rem;
+  gap: 1.3rem;
   flex-wrap: wrap;
   align-items: center;
-  padding-bottom: 2rem;
   font-family: -apple-system, 'Helvetica Neue', sans-serif;
   font-size: 0.95rem;
+  flex-shrink: 0;
 }
 
 .hero-nav a {
@@ -78,97 +126,21 @@ body {
 }
 
 @media (hover: hover) {
-  .hero-nav a:hover {
-    color: var(--sand-text);
-  }
+  .hero-nav a:hover { color: var(--sand-text); }
 }
 
-.hero-nav a:active {
-  color: var(--sand-accent);
-}
+.hero-nav a:active { color: var(--sand-accent); }
 
 .hero-nav .nav-sep {
   color: var(--sand-border);
   user-select: none;
 }
 
-.hero-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-right: 3rem;
-}
-
-.hero-name {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(2.8rem, 5vw, 4rem);
-  font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-  color: var(--sand-text);
-  margin: 0 0 1.2rem 0;
-}
-
-.hero-tagline {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(1.15rem, 2vw, 1.4rem);
-  font-weight: 400;
-  line-height: 1.65;
-  color: var(--sand-text-muted);
-  margin: 0 0 2rem 0;
-  max-width: 420px;
-}
-
-.hero-intro {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.05rem;
-  line-height: 1.75;
-  color: var(--sand-text-dim);
-  max-width: 400px;
-  margin: 0;
-}
-
-.hero-portrait-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-portrait {
-  width: 100%;
-  max-width: 420px;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  aspect-ratio: 3 / 4;
-}
-
-.hero-scroll {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding-top: 1.5rem;
-}
-
-.hero-scroll-indicator {
-  display: inline-block;
-  width: 1.5px;
-  height: 48px;
-  background: linear-gradient(to bottom, var(--sand-border), transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
-}
-
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.4; transform: scaleY(1); }
-  50% { opacity: 1; transform: scaleY(1.15); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-scroll-indicator { animation: none; opacity: 0.5; }
-}
-
 /* ── SECTIONS ── */
 .section {
-  padding: 6rem 4rem;
+  position: relative;
+  z-index: 1;
+  padding: 5rem 4rem;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -232,9 +204,9 @@ body {
 }
 
 .card-icon {
-  font-size: 1.8rem;
   margin-bottom: 1rem;
   display: block;
+  color: var(--sand-text-dim);
 }
 
 .card-title {
@@ -247,12 +219,12 @@ body {
 .card-desc {
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--sand-text-muted);
   margin: 0;
 }
 
-/* ── TEXTE SECTION ── */
+/* ── TEXTE ── */
 .texte-teaser {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -262,7 +234,7 @@ body {
 
 .texte-quote {
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
   line-height: 1.65;
   color: var(--sand-text);
   font-style: italic;
@@ -285,26 +257,31 @@ body {
   margin: 0 0 1.5rem 0;
 }
 
-/* ── STREAMING SECTION ── */
+/* ── STREAMING ── */
 .streaming-teaser {
   background: var(--sand-card);
   border: 1px solid var(--sand-border);
   border-radius: 12px;
-  padding: 3rem;
+  padding: 2.5rem;
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 2rem;
+  text-decoration: none;
+  color: var(--sand-text);
+  transition: border-color 0.25s;
 }
+
+@media (hover: hover) {
+  .streaming-teaser:hover { border-color: var(--sand-accent); }
+}
+
+.streaming-teaser:active { border-color: var(--sand-accent); }
 
 .streaming-avatar {
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   flex-shrink: 0;
-}
-
-.streaming-info {
-  flex: 1;
 }
 
 .streaming-info p {
@@ -339,17 +316,28 @@ body {
 }
 
 @media (hover: hover) {
-  .text-link:hover {
-    border-color: var(--sand-text);
-  }
+  .text-link:hover { border-color: var(--sand-text); }
 }
 
-.text-link:active {
-  color: var(--sand-accent);
+/* ── DIVIDER ── */
+.section-divider {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.section-divider hr {
+  border: none;
+  border-top: 1px solid var(--sand-border);
+  margin: 0;
 }
 
 /* ── FOOTER ── */
 .home-footer {
+  position: relative;
+  z-index: 1;
   padding: 3rem 4rem;
   max-width: 1100px;
   margin: 0 auto;
@@ -377,10 +365,7 @@ body {
   .home-footer a:hover { color: var(--sand-text); }
 }
 
-.footer-links {
-  display: flex;
-  gap: 1.5rem;
-}
+.footer-links { display: flex; gap: 1.5rem; }
 
 /* ── SCROLL REVEAL ── */
 .reveal {
@@ -394,61 +379,20 @@ body {
   transform: translateY(0);
 }
 
-/* ── DIVIDER ── */
-.section-divider {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 4rem;
-}
-
-.section-divider hr {
-  border: none;
-  border-top: 1px solid var(--sand-border);
-  margin: 0;
-}
-
-/* ══════════════════════════════════════
+/* ══════════════════════════
    RESPONSIVE
-   ══════════════════════════════════════ */
+   ══════════════════════════ */
 
-/* Tablet & below */
 @media (max-width: 900px) {
-  .hero-home {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
-    padding: 2rem 2rem;
-    min-height: auto;
-    padding-bottom: 3rem;
+  .hero-body {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3rem 2rem 2rem;
+    gap: 2rem;
   }
 
   .hero-nav {
     gap: 1rem;
-    padding-bottom: 2rem;
-  }
-
-  .hero-portrait-wrap {
-    order: -1;
-    padding: 1rem 0 2rem;
-  }
-
-  .hero-portrait {
-    max-width: 280px;
-    border-radius: 10px;
-  }
-
-  .hero-content {
-    padding-right: 0;
-    text-align: center;
-    align-items: center;
-  }
-
-  .hero-tagline,
-  .hero-intro {
-    max-width: 100%;
-  }
-
-  .hero-scroll {
-    display: none;
   }
 
   .section {
@@ -471,9 +415,7 @@ body {
     padding: 2rem;
   }
 
-  .section-divider {
-    padding: 0 2rem;
-  }
+  .section-divider { padding: 0 2rem; }
 
   .home-footer {
     padding: 2.5rem 2rem;
@@ -482,37 +424,14 @@ body {
   }
 }
 
-/* Small phones */
 @media (max-width: 480px) {
-  .hero-home {
-    padding: 1.5rem 1.5rem;
-  }
-
-  .hero-portrait {
-    max-width: 220px;
-  }
-
-  .hero-nav {
-    gap: 0.6rem;
-    font-size: 0.9rem;
-  }
-
-  .section {
-    padding: 3rem 1.5rem;
-  }
-
-  .streaming-teaser {
-    padding: 1.5rem;
-  }
-
-  .section-divider,
-  .home-footer {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
+  .hero-body { padding: 2rem 1.5rem 1.5rem; }
+  .hero-nav { gap: 0.5rem; font-size: 0.9rem; }
+  .section { padding: 3rem 1.5rem; }
+  .streaming-teaser { padding: 1.5rem; }
+  .section-divider, .home-footer { padding-left: 1.5rem; padding-right: 1.5rem; }
 }
 
-/* Hidden SR-only */
 .sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0;
   margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
@@ -520,35 +439,34 @@ body {
 }
 </style>
 
+<!-- ═══════════════════════════════ -->
+<!--  HERO                           -->
+<!-- ═══════════════════════════════ -->
 <div class="hero-home">
-  <nav class="hero-nav" role="navigation" aria-label="Hauptnavigation">
-    <a href="/texte/">Texte</a>
-    <span class="nav-sep" aria-hidden="true">/</span>
-    <a href="/coaching/">Coaching</a>
-    <span class="nav-sep" aria-hidden="true">/</span>
-    <a href="/werkzeuge/">Werkzeuge</a>
-    <span class="nav-sep" aria-hidden="true">/</span>
-    <a href="/kaktus/">Streaming</a>
-    <span class="nav-sep" aria-hidden="true">/</span>
-    <a href="/ueber/">Über mich</a>
-  </nav>
-
-  <div class="hero-content">
-    <h1 class="hero-name">Jochen<br>Hornung</h1>
-    <p class="hero-tagline">Raum für Menschlichkeit und Tiefe.</p>
-    <p class="hero-intro">Texte über das Menschsein. Coaching. Digitale Werkzeuge die sich anfühlen sollen.</p>
-  </div>
-
-  <div class="hero-portrait-wrap">
-    <img src="/images/jochen1.jpeg"
-         alt="Jochen Hornung"
-         class="hero-portrait"
-         width="420" height="560"
+  <div class="hero-image">
+    <img src="/images/hero-banner.png"
+         alt="s0f4surf3r — Vektor-Figur im Sessel, Energie und Bewusstsein"
+         width="1200" height="480"
          loading="eager">
   </div>
 
-  <div class="hero-scroll" aria-hidden="true">
-    <div class="hero-scroll-indicator"></div>
+  <div class="hero-body">
+    <div class="hero-text">
+      <h1 class="hero-name">Jochen Hornung</h1>
+      <p class="hero-tagline">Raum für Menschlichkeit und Tiefe. Texte, Coaching, digitale Werkzeuge — aus Berlin.</p>
+    </div>
+
+    <nav class="hero-nav" role="navigation" aria-label="Hauptnavigation">
+      <a href="/texte/">Texte</a>
+      <span class="nav-sep" aria-hidden="true">/</span>
+      <a href="/coaching/">Coaching</a>
+      <span class="nav-sep" aria-hidden="true">/</span>
+      <a href="/werkzeuge/">Werkzeuge</a>
+      <span class="nav-sep" aria-hidden="true">/</span>
+      <a href="/kaktus/">Streaming</a>
+      <span class="nav-sep" aria-hidden="true">/</span>
+      <a href="/ueber/">Über mich</a>
+    </nav>
   </div>
 
   <div class="sr-only">
@@ -618,11 +536,11 @@ body {
 
 <section class="section reveal" id="streaming">
   <p class="section-label">Streaming</p>
-  <a href="/kaktus/" class="streaming-teaser" style="text-decoration: none;">
+  <a href="/kaktus/" class="streaming-teaser">
     <img src="/images/streaming-avatar.png"
-         alt="s0f4surfer Avatar"
+         alt="s0f4surfer"
          class="streaming-avatar"
-         width="80" height="80"
+         width="72" height="72"
          loading="lazy">
     <div class="streaming-info">
       <span class="streaming-badge">Coming soon</span>
@@ -644,15 +562,11 @@ body {
 </footer>
 
 <script>
-/* Scroll Reveal — IntersectionObserver */
 (function() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('.reveal').forEach(function(el) {
-      el.classList.add('visible');
-    });
+    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
     return;
   }
-
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
@@ -661,9 +575,6 @@ body {
       }
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
-
-  document.querySelectorAll('.reveal').forEach(function(el) {
-    observer.observe(el);
-  });
+  document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
 })();
 </script>
