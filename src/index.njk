@@ -798,26 +798,61 @@ body::before {
     function playShatter() {
       try {
         var ctx = new (window.AudioContext || window.webkitAudioContext)();
-        var duration = 0.4;
-        var buf = ctx.createBuffer(1, ctx.sampleRate * duration, ctx.sampleRate);
-        var data = buf.getChannelData(0);
-        for (var i = 0; i < data.length; i++) {
-          var t = i / ctx.sampleRate;
-          var env = Math.exp(-t * 12);
-          data[i] = (Math.random() * 2 - 1) * env * 0.15;
-          /* Helle Glassplitter-Resonanz */
-          data[i] += Math.sin(t * 4800) * env * 0.04;
-          data[i] += Math.sin(t * 7200) * env * 0.02;
+        var sr = ctx.sampleRate;
+        var duration = 0.6;
+        var buf = ctx.createBuffer(2, sr * duration, sr);
+
+        for (var ch = 0; ch < 2; ch++) {
+          var data = buf.getChannelData(ch);
+          for (var i = 0; i < data.length; i++) {
+            var t = i / sr;
+
+            /* Initialer Impact — kurzer, harter Knall */
+            var impact = Math.exp(-t * 40) * (Math.random() * 2 - 1) * 0.3;
+
+            /* Splitter — viele hohe Sinus-Fragmente die schnell sterben */
+            var splinters = 0;
+            splinters += Math.sin(t * 8400 + ch) * Math.exp(-t * 18) * 0.08;
+            splinters += Math.sin(t * 11200 + ch * 2) * Math.exp(-t * 22) * 0.06;
+            splinters += Math.sin(t * 14800 + ch * 3) * Math.exp(-t * 25) * 0.04;
+            splinters += Math.sin(t * 6100 + ch * 5) * Math.exp(-t * 15) * 0.05;
+            splinters += Math.sin(t * 9900) * Math.exp(-t * 20) * 0.04;
+
+            /* Klirren — metallisches Nachklingen */
+            var ring = Math.sin(t * 3200) * Math.exp(-t * 8) * 0.03;
+            ring += Math.sin(t * 5500) * Math.exp(-t * 10) * 0.02;
+
+            /* Helles Rauschen das schnell abfällt */
+            var noise = (Math.random() * 2 - 1) * Math.exp(-t * 14) * 0.12;
+
+            data[i] = impact + splinters + ring + noise;
+          }
         }
+
         var src = ctx.createBufferSource();
         src.buffer = buf;
+
+        /* Highpass damit es hell und glasig klingt */
         var hp = ctx.createBiquadFilter();
         hp.type = 'highpass';
-        hp.frequency.value = 2000;
+        hp.frequency.value = 1800;
+
+        /* Leichte Resonanz für Glas-Charakter */
+        var peak = ctx.createBiquadFilter();
+        peak.type = 'peaking';
+        peak.frequency.value = 6000;
+        peak.Q.value = 3;
+        peak.gain.value = 6;
+
+        var gain = ctx.createGain();
+        gain.gain.value = 0.7;
+
         src.connect(hp);
-        hp.connect(ctx.destination);
+        hp.connect(peak);
+        peak.connect(gain);
+        gain.connect(ctx.destination);
         src.start();
-        setTimeout(function() { ctx.close(); }, 600);
+        setTimeout(function() { ctx.close(); }, 800);
       } catch(e) {}
     }
 
