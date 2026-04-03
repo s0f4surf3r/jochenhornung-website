@@ -1,59 +1,24 @@
 ---
 layout: base
-title: Coaching
-description: "Neurosystemisches Coaching in Berlin. Jochen Hornung begleitet Männer und Menschen auf dem Weg zu sich selbst."
+title: Begleitung
+description: "Jochen Hornung begleitet manchmal Menschen. Nicht als Beruf, sondern weil er den Weg kennt."
 ---
 <div class="content-page">
 <a href="/" class="back-link">← Zurück</a>
-<img src="/images/hero_coaching_seite.jpg" alt="Weg ins Licht" style="width: 100%; max-height: 400px; object-fit: cover; margin-bottom: 2rem; border-radius: 8px;">
 
 <div class="text-content lesetext">
 
-Ich kenne die dunklen Orte. Ich war selbst dort.
+## Begleitung
 
-Heute begleite ich Menschen, die spüren, dass ihre Themen tiefer liegen. Die merken, dass Tipps und Strategien nicht reichen. Die bereit sind, hinzuschauen.
+Ich bin kein Coach der Kunden sucht. Ich bin jemand der einen Weg gegangen ist und manchmal neben anderen geht, die einen ähnlichen vor sich haben.
 
-## Mein Weg
+Mein eigener Weg durch Trauma, ADHS und Sucht hat mir gezeigt, wie das Nervensystem funktioniert — nicht aus dem Lehrbuch, sondern am eigenen Leib. Ich habe eine Ausbildung in Neurosystemischer Integration gemacht (Verena König, 2024). Nicht um ein Schild an die Tür zu hängen, sondern um zu verstehen, was mir selbst passiert ist.
 
-Zertifizierter Coach für Neurosystemische Integration (Verena König, 2024). Aber das Zertifikat ist nicht der Punkt. Der Punkt ist: Ich habe meinen eigenen Weg durch Trauma, Sucht und Vaterwunde gemacht. Das gibt mir keine Antworten für dich. Aber es gibt mir die Fähigkeit, bei dir zu bleiben, wenn es dunkel wird.
+Wenn du spürst, dass deine Themen tiefer liegen als Tipps und Strategien reichen — dann schreib mir. Kein Erstgespräch-Funnel, kein Kennenlernangebot. Einfach eine Mail. Ich antworte ehrlich, ob ich der Richtige bin.
 
-## Der Prozess
+Ich begleite nur wenige Menschen. Dafür mit vollem Fokus.
 
-Ich arbeite ressourcenorientiert und neurosystemisch. Das bedeutet: Wir stärken gezielt das, was dich trägt. Nicht, um das Schwere auszublenden – sondern um deinem Nervensystem die Kapazität (Containment) zu geben, den Schmerz wirklich zu halten und zu durchfühlen, anstatt vor ihm fliehen zu müssen.
-
-<img src="/images/schale.jpg" alt="Kintsugi Schale" style="float: left; margin: 8px 1.5rem 1rem 0; max-width: 300px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-
-Unter den Anpassungen und Schutzmechanismen, die du dir über die Jahre zugelegt hast, verbirgt sich, wer du wirklich bist – dein Selbstwert, deine wahre Persönlichkeit, vielleicht auch deine Berufung. Oft verdeckt durch frühe Prägungen oder schmerzhafte Erfahrungen. Meine Arbeit ist es, dich zu begleiten, diesen Zugang wieder freizulegen.
-
-Wie das aussieht: Wir bauen gemeinsam ein Verständnis für dein inneres Erleben auf. Wir suchen Ressourcen, verkörpern sie und integrieren sie. Mit Regulationstechniken und behutsamem Pendeln (Somatic Experiencing) führen wir dein Nervensystem Schritt für Schritt zurück in die Balance.
-
-Dabei geht es mir um echte Verbindung. Ich bin überzeugt: Ohne persönlichen Kontakt, ohne Raum für Verletzlichkeit und Scham, passiert nichts Wesentliches. Egal ob du gelernt hast, immer stark sein zu müssen, oder ob du dich oft unsichtbar fühlst – ich gebe Raum für alles, was da ist. Und ich zeige mich selbst.
-
-Was meine Arbeit besonders macht: Ich nutze moderne Technik für tiefe Prozesse. Wenn es passt, baue ich maßgeschneiderte, oft KI-gestützte [Werkzeuge](/werkzeuge/) für dich. Keine Methode von der Stange, sondern etwas, das genau deinen Moment einfängt – damit die Erkenntnisse nicht im Raum verpuffen, sondern in deinem Alltag landen.
-
-Ich begleite nur wenige Menschen gleichzeitig. Dafür mit vollem Fokus.
-
-## Speziell für Männer
-
-<img src="/images/archetypen_vektor.jpg" alt="Kopf, Herz und Bauch" style="float: right; margin: 8px 0 1rem 1.5rem; max-width: 330px; border-radius: 8px; mix-blend-mode: multiply;">
-
-Vielleicht gehörst du zu den Feinfühligen, die sich oft fragen, was von ihnen erwartet wird, und die schmerzhaft erlebt haben, dass ihre Offenheit nicht immer willkommen war. Vielleicht bist du eher der Analytiker, der Sicherheit im Verstand sucht, aber spürt, dass ihm der Zugang zum eigenen Erleben entgleitet. Oder du hast gelernt, der Starke zu sein – der, der funktioniert und leistet, sich aber insgeheim danach sehnt, die Rüstung abzulegen und mit seinen Selbstzweifeln gesehen zu werden.
-
-Egal welche Strategie du gewählt hast: Wahrscheinlich spürst du darunter eine stille Erschöpfung. Weil du versuchst, über den Kopf oder durch Härte zu lösen, was man nur fühlen kann. Weil du vielleicht das Gefühl hast, deine echte Identität als Mann verloren zu haben – oder sie nie ganz leben durftest.
-
-Mein Ansatz ist kein mentaler Quick-Fix. Wir können Identität nicht "herbeidenken". Wir finden sie dort wieder, wo sie verloren ging: in deinem Körper und deinem Nervensystem. Es geht darum, wieder Zugang zu Herz und Bauch zu bekommen. Deine Sensibilität mit Kraft zu unterlegen, deinen Verstand mit dem Fühlen zu verbinden oder deine Härte durch echte Stabilität zu ersetzen. Weg von der Rolle, hin zu dem, wer du wirklich bist.
-
-## Rahmen
-
-Einzelbegleitung. Online oder in Berlin. Kein Schema, sondern echter Kontakt.
-
-Ich leite außerdem eine Selbsthilfegruppe im Heilehaus Berlin - ein Raum für Menschen, die ihre Wunde zeigen wollen und schon angefangen haben, Verantwortung für sich zu übernehmen. Wenn du dich für die Gruppe interessierst, trage dich gerne auf der Seite kptbs.de auf der Warteliste für die Berlin Heilehaus Gruppe ein, indem du eine Mail über den Menüpunkt Kontakt schreibst.
-
-## Honorar
-
-Das Honorar besprechen wir individuell - orientiert an dem, was dir zur Verfügung steht. Das Kennenlerngespräch ist kostenlos.
-
-## Kontakt
+Ich leite außerdem eine Selbsthilfegruppe im Heilehaus Berlin — ein Raum für Menschen, die ihre Wunde zeigen wollen. Bei Interesse: [kptbs.de](https://kptbs.de), über den Menüpunkt Kontakt auf die Warteliste für die Berlin Heilehaus Gruppe setzen.
 
 kontakt@jochenhornung.de
 

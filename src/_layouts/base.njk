@@ -146,13 +146,11 @@
         <nav class="site-nav">
             <a href="/texte/"{% if page.url.includes("/texte") %} class="active"{% endif %}>Texte</a>
             <span>/</span>
-            <a href="/coaching/"{% if page.url.includes("/coaching") %} class="active"{% endif %}>Coaching</a>
-            <span>/</span>
             <a href="/werkzeuge/"{% if page.url.includes("/werkzeuge") %} class="active"{% endif %}>Werkzeuge</a>
             <span>/</span>
             <a href="/kaktus/"{% if page.url.includes("/kaktus") %} class="active"{% endif %}>Streaming</a>
             <span>/</span>
-            <a href="/ueber/"{% if page.url.includes("/ueber") %} class="active"{% endif %}>Über mich</a>
+            <a href="/ueber/"{% if page.url.includes("/ueber") or page.url.includes("/coaching") %} class="active"{% endif %}>Über mich</a>
         </nav>
     </header>
     {% endif %}

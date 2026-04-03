@@ -1,7 +1,7 @@
 ---
 layout: base
 title: Über mich
-description: "Jochen Hornung, 43, Berlin. Coach für neurosystemische Integration, Entwickler digitaler Werkzeuge, Vater. Texte über das Menschsein."
+description: "Jochen Hornung, Berlin. Baut digitale Werkzeuge aus eigener Tiefe. Schreibt über das Menschsein."
 ---
 <div class="content-page">
   <a href="/" class="back-link">← Zurück</a>
@@ -18,7 +18,7 @@ description: "Jochen Hornung, 43, Berlin. Coach für neurosystemische Integratio
   <img src="/images/jochen1u2.png" alt="Jochen Hornung" class="about-photo">
   <div class="text-content">
 
-Jochen Hornung. <span id="age">43</span> Jahre. Berlin-Mitte.
+Jochen Hornung. <span id="age">43</span> Jahre. Berlin.
 
 ## Ich kenne die dunklen Orte. Ich war selbst dort.
 
@@ -26,23 +26,27 @@ Mein eigener Weg durch Trauma, ADHS und Sucht hat mir gezeigt: Wir haben uns tra
 
 ## Was ich tue
 
-Ich begleite Menschen, die sich im Funktionieren verloren haben. Besonders Männer, die gelernt haben stark zu sein und dabei vergessen haben zu fühlen. Ressourcenorientiert, körperbasiert, mit dem Nervensystem — nicht gegen es.
+Ich baue digitale Werkzeuge, die Tiefe ermöglichen statt abzusaugen. Spiele, die sich anfühlen. Meditations-Apps, die atmen. Websites, die Menschen zeigen statt verkaufen.
 
 Ich schreibe über das Menschsein in einer Zeit, die uns zu Maschinen machen will.
 
+Manchmal [begleite ich Menschen](/coaching/) — wenn sie fragen. Nicht als Beruf, sondern weil ich den Weg kenne.
+
 ## Was ich baue
 
-Dinge die sich anfühlen sollen. Code · Design · Bewusstsein · zu viele Projekte · Berlin.
+Code · Design · Bewusstsein · zu viele Projekte · Berlin.
 
-🎮 **J-THRUST** — Retro-Gravitation, C64-Seele
-🔮 **M-Sphere** — Meditation als Erlebnis
-⚡ **Klarsite** — Websites die Menschen zeigen, nicht verkaufen
+**J-THRUST** — Retro-Gravitation, C64-Seele
+**M-Sphere** — Meditation als Erlebnis
+**Klarsite** — Websites die Menschen zeigen, nicht verkaufen
+**Spüra** — Emotionales Self-Tracking
+**Prüfstein** — Ethische Bewertung von KI-Entscheidungen
 
 Kein Lock-in, kein Dark Pattern, kein Chi-Chi. Shipping > Perfecting.
 
 ## Hintergrund
 
-Magister in Politikwissenschaft, Volkswirtschaftslehre und Bildungswissenschaft (Universität Heidelberg, 2013). Zertifizierter Coach für Neurosystemische Integration (Verena König, 2024). Jahrelang in Strukturen gearbeitet, die Menschen zu Funktionen machen — IKEA, Convergys, Apple. Dagegen wehre ich mich.
+Magister in Politikwissenschaft, Volkswirtschaftslehre und Bildungswissenschaft (Universität Heidelberg, 2013). Jahrelang in Strukturen gearbeitet, die Menschen zu Funktionen machen — IKEA, Convergys, Apple. Dagegen wehre ich mich.
 
 ## Kontakt
 
