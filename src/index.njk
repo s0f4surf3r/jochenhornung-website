@@ -105,19 +105,28 @@ body {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   white-space: nowrap;
-  /* Scanline-Muster im Text */
-  background: repeating-linear-gradient(
-    to bottom,
-    var(--amber) 0px,
-    var(--amber) 2px,
-    rgba(255, 176, 0, 0.4) 2px,
-    rgba(255, 176, 0, 0.4) 4px
-  );
+  /* Multi-Color Scanlines — 40C3 Style */
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 2px,
+      rgba(0, 0, 0, 0.35) 2px,
+      rgba(0, 0, 0, 0.35) 4px
+    ),
+    linear-gradient(
+      to bottom,
+      var(--cyan) 0%,
+      var(--green) 35%,
+      var(--amber) 55%,
+      var(--magenta) 80%,
+      var(--magenta) 100%
+    );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* Glow drumherum */
-  filter: drop-shadow(0 0 12px rgba(255, 176, 0, 0.35)) drop-shadow(0 0 40px rgba(255, 176, 0, 0.15));
+  /* Green Glow wie bei 40C3 */
+  filter: drop-shadow(0 0 20px rgba(0, 255, 65, 0.3)) drop-shadow(0 0 60px rgba(0, 255, 65, 0.15));
 }
 
 .hero-sub {
