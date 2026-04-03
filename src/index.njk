@@ -2,87 +2,668 @@
 layout: base.njk
 title: Raum für Menschlichkeit und Tiefe
 description: "Texte über das Menschsein, Coaching, digitale Werkzeuge — von Jochen Hornung, Coach und Entwickler aus Berlin."
+heroImage: "/images/og-image.png"
 ---
+
 <style>
-html, body {
-  background: #000;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  min-height: 100svh;
-}
-.hero {
-  background-image: url('/images/hero.jpg');
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4rem 2rem 10rem;
-  position: relative;
-}
-.hero nav {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  max-width: 300px;
-}
-.hero nav a,
-.hero nav span {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+/* ══════════════════════════════════════
+   SAND-WELT — Hell, warm, einladend.
+   Kontrast-Achse: 35% (weich, nicht laut)
+   ══════════════════════════════════════ */
+
+:root {
+  --sand-bg: #f5f0e6;
+  --sand-surface: #ffffff;
+  --sand-text: #1a1816;
+  --sand-text-muted: #6b6054;
+  --sand-text-dim: #9a8e7e;
+  --sand-accent: #b8942a;
+  --sand-accent-hover: #a07e1e;
+  --sand-border: #e0d8cc;
+  --sand-warm: #ede4d2;
+  --sand-card: #faf8f4;
+  --sand-purple: #6b4a8a;
+  --sand-teal: #3a6a6a;
 }
 
-.hero nav a {
-  transition: text-shadow 0.3s ease;
+html {
+  scroll-behavior: smooth;
 }
-.hero nav a:hover {
-  text-shadow: 0 0 12px rgba(255,255,255,0.8), 1px 1px 2px rgba(0,0,0,0.8);
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1 !important; transform: none !important; }
 }
-@media (max-width: 768px) {
-  .hero {
-    background-position: 70% center;
+
+/* Reset for homepage */
+body {
+  background: var(--sand-bg);
+  color: var(--sand-text);
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+
+/* ── HERO ── */
+.hero-home {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 0;
+  padding: 3rem 4rem;
+  background: var(--sand-bg);
+  position: relative;
+}
+
+.hero-nav {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-bottom: 2rem;
+  font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  font-size: 0.95rem;
+}
+
+.hero-nav a {
+  color: var(--sand-text-muted);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+@media (hover: hover) {
+  .hero-nav a:hover {
+    color: var(--sand-text);
   }
 }
-@media (min-width: 769px) {
-  .hero {
-    padding-bottom: 8rem;
+
+.hero-nav a:active {
+  color: var(--sand-accent);
+}
+
+.hero-nav .nav-sep {
+  color: var(--sand-border);
+  user-select: none;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 3rem;
+}
+
+.hero-name {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--sand-text);
+  margin: 0 0 1.2rem 0;
+}
+
+.hero-tagline {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--sand-text-muted);
+  margin: 0 0 2rem 0;
+  max-width: 420px;
+}
+
+.hero-intro {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--sand-text-dim);
+  max-width: 400px;
+  margin: 0;
+}
+
+.hero-portrait-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-portrait {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  aspect-ratio: 3 / 4;
+}
+
+.hero-scroll {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding-top: 1.5rem;
+}
+
+.hero-scroll-indicator {
+  display: inline-block;
+  width: 1.5px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--sand-border), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.15); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-indicator { animation: none; opacity: 0.5; }
+}
+
+/* ── SECTIONS ── */
+.section {
+  padding: 6rem 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sand-text-dim);
+  margin: 0 0 1.5rem 0;
+}
+
+.section-heading {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--sand-text);
+  margin: 0 0 2rem 0;
+}
+
+.section-text {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: var(--sand-text-muted);
+  max-width: 600px;
+  margin-bottom: 3rem;
+}
+
+/* ── CARDS ── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--sand-card);
+  border: 1px solid var(--sand-border);
+  border-radius: 10px;
+  padding: 2rem 1.8rem;
+  text-decoration: none;
+  color: var(--sand-text);
+  transition: border-color 0.25s, transform 0.25s;
+  display: block;
+  min-height: 44px;
+}
+
+@media (hover: hover) {
+  .card:hover {
+    border-color: var(--sand-accent);
+    transform: translateY(-2px);
   }
-  
-  .hero nav {
-    max-width: none;
+}
+
+.card:active {
+  border-color: var(--sand-accent);
+  transform: scale(0.98);
+}
+
+.card-icon {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.card-title {
+  font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.6rem 0;
+}
+
+.card-desc {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--sand-text-muted);
+  margin: 0;
+}
+
+/* ── TEXTE SECTION ── */
+.texte-teaser {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.texte-quote {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  line-height: 1.65;
+  color: var(--sand-text);
+  font-style: italic;
+  border-left: 2px solid var(--sand-accent);
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.texte-link-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.texte-link-wrap p {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--sand-text-muted);
+  margin: 0 0 1.5rem 0;
+}
+
+/* ── STREAMING SECTION ── */
+.streaming-teaser {
+  background: var(--sand-card);
+  border: 1px solid var(--sand-border);
+  border-radius: 12px;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.streaming-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.streaming-info {
+  flex: 1;
+}
+
+.streaming-info p {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--sand-text-muted);
+  margin: 0.5rem 0 0 0;
+}
+
+.streaming-badge {
+  display: inline-block;
+  font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sand-accent);
+  border: 1px solid var(--sand-accent);
+  border-radius: 4px;
+  padding: 0.25rem 0.6rem;
+}
+
+/* ── LINKS ── */
+.text-link {
+  color: var(--sand-text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--sand-accent);
+  padding-bottom: 1px;
+  transition: border-color 0.2s;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+}
+
+@media (hover: hover) {
+  .text-link:hover {
+    border-color: var(--sand-text);
   }
+}
+
+.text-link:active {
+  color: var(--sand-accent);
+}
+
+/* ── FOOTER ── */
+.home-footer {
+  padding: 3rem 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-top: 1px solid var(--sand-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  font-size: 0.85rem;
+  color: var(--sand-text-dim);
+}
+
+.home-footer a {
+  color: var(--sand-text-dim);
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+@media (hover: hover) {
+  .home-footer a:hover { color: var(--sand-text); }
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── DIVIDER ── */
+.section-divider {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.section-divider hr {
+  border: none;
+  border-top: 1px solid var(--sand-border);
+  margin: 0;
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════ */
+
+/* Tablet & below */
+@media (max-width: 900px) {
+  .hero-home {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    padding: 2rem 2rem;
+    min-height: auto;
+    padding-bottom: 3rem;
+  }
+
+  .hero-nav {
+    gap: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  .hero-portrait-wrap {
+    order: -1;
+    padding: 1rem 0 2rem;
+  }
+
+  .hero-portrait {
+    max-width: 280px;
+    border-radius: 10px;
+  }
+
+  .hero-content {
+    padding-right: 0;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-tagline,
+  .hero-intro {
+    max-width: 100%;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+
+  .section {
+    padding: 4rem 2rem;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .texte-teaser {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .streaming-teaser {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .section-divider {
+    padding: 0 2rem;
+  }
+
+  .home-footer {
+    padding: 2.5rem 2rem;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .hero-home {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .hero-portrait {
+    max-width: 220px;
+  }
+
+  .hero-nav {
+    gap: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .section {
+    padding: 3rem 1.5rem;
+  }
+
+  .streaming-teaser {
+    padding: 1.5rem;
+  }
+
+  .section-divider,
+  .home-footer {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Hidden SR-only */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0;
+  margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
 }
 </style>
-<div class="hero">
-  <div style="position: absolute; inset: 0; background: radial-gradient(circle at 80% 15%, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.35) 40%), radial-gradient(circle at 15% 85%, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 35%);"></div>
-  
-  <div style="position: relative; z-index: 1; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center; max-width: 1000px; padding: 0 1rem; margin-top: -3rem;">
-    <p style="font-size: 1.5rem; font-weight: 400; color: white; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Jochen Hornung</p>
-    <h1 style="font-size: clamp(2.1rem, 6vw, 2.5rem); font-weight: 700; color: white; letter-spacing: 0.08em; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">RAUM FÜR MENSCHLICHKEIT UND TIEFE</h1>
-  </div>
-  
-  <nav>
+
+<div class="hero-home">
+  <nav class="hero-nav" role="navigation" aria-label="Hauptnavigation">
     <a href="/texte/">Texte</a>
-    <span>/</span>
+    <span class="nav-sep" aria-hidden="true">/</span>
     <a href="/coaching/">Coaching</a>
-    <span>/</span>
+    <span class="nav-sep" aria-hidden="true">/</span>
     <a href="/werkzeuge/">Werkzeuge</a>
-    <span>/</span>
+    <span class="nav-sep" aria-hidden="true">/</span>
     <a href="/kaktus/">Streaming</a>
-    <span>/</span>
+    <span class="nav-sep" aria-hidden="true">/</span>
     <a href="/ueber/">Über mich</a>
   </nav>
-  <div style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
-    <p>Jochen Hornung – Coach für neurosystemische Integration in Berlin. Gedichte, Essays und persönliche Texte über das Menschsein. Digitale Werkzeuge für emotionale Selbsterkenntnis. Coaching für Männer und Menschen, die Tiefe suchen.</p>
+
+  <div class="hero-content">
+    <h1 class="hero-name">Jochen<br>Hornung</h1>
+    <p class="hero-tagline">Raum für Menschlichkeit und Tiefe.</p>
+    <p class="hero-intro">Texte über das Menschsein. Coaching. Digitale Werkzeuge die sich anfühlen sollen.</p>
+  </div>
+
+  <div class="hero-portrait-wrap">
+    <img src="/images/jochen1.jpeg"
+         alt="Jochen Hornung"
+         class="hero-portrait"
+         width="420" height="560"
+         loading="eager">
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="hero-scroll-indicator"></div>
+  </div>
+
+  <div class="sr-only">
+    <p>Jochen Hornung – Coach für neurosystemische Integration in Berlin. Gedichte, Essays und persönliche Texte über das Menschsein. Digitale Werkzeuge für emotionale Selbsterkenntnis.</p>
   </div>
 </div>
+
+<!-- ═══════════════════════════════ -->
+<!--  WAS ICH BAUE                  -->
+<!-- ═══════════════════════════════ -->
+<div class="section-divider"><hr></div>
+
+<section class="section reveal" id="bauen">
+  <p class="section-label">Was ich baue</p>
+  <h2 class="section-heading">Dinge die sich anfühlen sollen.</h2>
+  <p class="section-text">Kein Lock-in, kein Dark Pattern, kein Chi-Chi. Code im Dienst der Menschlichkeit.</p>
+
+  <div class="card-grid">
+    <a href="/werkzeuge/" class="card">
+      <span class="card-icon" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      </span>
+      <h3 class="card-title">J-THRUST</h3>
+      <p class="card-desc">Retro-Gravitation, C64-Seele. Ein Spiel das sich spielt wie ein Gefühl.</p>
+    </a>
+
+    <a href="/werkzeuge/" class="card">
+      <span class="card-icon" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </span>
+      <h3 class="card-title">M-Sphere</h3>
+      <p class="card-desc">Meditation als Erlebnis. Eine Kugel die atmet, auf allen Apple-Geräten.</p>
+    </a>
+
+    <a href="/werkzeuge/" class="card">
+      <span class="card-icon" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </span>
+      <h3 class="card-title">Klarsite</h3>
+      <p class="card-desc">Websites die Menschen zeigen, nicht verkaufen. Für die, die mehr sind als ihre Online-Präsenz.</p>
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ -->
+<!--  TEXTE                          -->
+<!-- ═══════════════════════════════ -->
+<div class="section-divider"><hr></div>
+
+<section class="section reveal" id="texte">
+  <p class="section-label">Texte</p>
+  <div class="texte-teaser">
+    <blockquote class="texte-quote">
+      Wir haben uns trainiert, schlechte Maschinen zu sein. Jetzt, wo echte Maschinen das besser können, bleibt die Frage — was bleibt, wenn man den Lärm weglässt?
+    </blockquote>
+    <div class="texte-link-wrap">
+      <p>Gedichte, Essays und persönliche Texte über das Menschsein in einer Zeit, die uns zu Maschinen machen will.</p>
+      <a href="/texte/" class="text-link">Alle Texte lesen</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ -->
+<!--  STREAMING                      -->
+<!-- ═══════════════════════════════ -->
+<div class="section-divider"><hr></div>
+
+<section class="section reveal" id="streaming">
+  <p class="section-label">Streaming</p>
+  <a href="/kaktus/" class="streaming-teaser" style="text-decoration: none;">
+    <img src="/images/streaming-avatar.png"
+         alt="s0f4surfer Avatar"
+         class="streaming-avatar"
+         width="80" height="80"
+         loading="lazy">
+    <div class="streaming-info">
+      <span class="streaming-badge">Coming soon</span>
+      <p>Retro Game Dev, Meditation Tech und AI Experiments — live auf Twitch.</p>
+    </div>
+  </a>
+</section>
+
+<!-- ═══════════════════════════════ -->
+<!--  FOOTER                         -->
+<!-- ═══════════════════════════════ -->
+<footer class="home-footer">
+  <span>© 2026 Jochen Hornung</span>
+  <div class="footer-links">
+    <a href="/impressum/">Impressum</a>
+    <a href="/datenschutz/">Datenschutz</a>
+    <a href="mailto:kontakt@jochenhornung.de">Kontakt</a>
+  </div>
+</footer>
+
+<script>
+/* Scroll Reveal — IntersectionObserver */
+(function() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      el.classList.add('visible');
+    });
+    return;
+  }
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    observer.observe(el);
+  });
+})();
+</script>
