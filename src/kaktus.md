@@ -1,27 +1,60 @@
 ---
 layout: base
-title: Kaktus
-description: "Kaktus – eine Mental-Health-Coaching-App in Entwicklung von Jochen Hornung."
+title: Streaming
+description: "Jochen Hornung auf Twitch – Code, Design, Bewusstsein. Coming soon."
 ---
 
 <div class="content-page">
 <a href="/" class="back-link">← Zurück</a>
 
-<div class="text-content">
+<style>
+  .streaming-banner {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 8px;
+    margin: 2rem 0;
+  }
+  .streaming-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    display: block;
+  }
+  .streaming-coming-soon {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 2rem 0 1rem;
+    letter-spacing: 0.05em;
+  }
+  .streaming-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    border: 1.5px solid var(--color-accent, #9146FF);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+  .streaming-link:hover {
+    background: var(--color-accent, #9146FF);
+    color: #fff;
+  }
+</style>
 
-<span style="font-size: 4rem;">🌵</span>
+<div class="text-content" style="text-align: center;">
 
-Mental Health Coaching App für Menschen, die sich professionelles Coaching nicht leisten können.
+<img src="/images/streaming-banner.png" alt="s0f4surfer Twitch Banner" class="streaming-banner">
 
-## Die Idee
+<img src="/images/streaming-avatar.png" alt="s0f4surfer Avatar" class="streaming-avatar">
 
-Coaching sollte nicht nur für Privilegierte zugänglich sein. Kaktus bringt echte Begleitung zu denen, die sie brauchen – unabhängig vom Geldbeutel.
+<div class="streaming-coming-soon">Coming soon.</div>
 
-## Status
+Retro Game Dev · Meditation Tech · AI Experiments — live.
 
-In Entwicklung. Technologie im Dienst der Menschlichkeit.
-
-*Mehr Informationen folgen.*
+<a href="https://twitch.tv/s0f4surfer" target="_blank" rel="noopener" class="streaming-link">twitch.tv/s0f4surfer</a>
 
 </div>
 </div>
