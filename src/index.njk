@@ -441,10 +441,89 @@ body::before {
   .section-divider, .home-footer { padding-left: 1.5rem; padding-right: 1.5rem; }
 }
 
+/* ── LETTER DISPERSION ── */
+.letter {
+  display: inline-block;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.6s ease;
+  will-change: transform;
+}
+
+.hero-name {
+  cursor: default;
+  user-select: none;
+}
+
+/* ── PARALLAX ── */
+.hero-image {
+  overflow: hidden;
+}
+
+.hero-image img {
+  will-change: transform;
+  transition: none;
+}
+
+/* ── FLOATING CONTROLS ── */
+.floating-controls {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 100;
+}
+
+.ctrl-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--sand-border);
+  background: var(--sand-surface);
+  color: var(--sand-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: border-color 0.3s, color 0.3s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+  .ctrl-btn:hover {
+    border-color: var(--sand-accent);
+    color: var(--sand-text);
+  }
+}
+
+.ctrl-btn:active {
+  transform: scale(0.95);
+}
+
+.ctrl-btn.active {
+  border-color: var(--sand-accent);
+  color: var(--sand-accent);
+}
+
+/* ── CARD TILT ── */
+@media (hover: hover) {
+  .card {
+    transform-style: preserve-3d;
+    perspective: 800px;
+  }
+}
+
 .sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0;
   margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
   white-space: nowrap; border: 0;
+}
+
+@media (max-width: 900px) {
+  .floating-controls {
+    bottom: 1rem;
+    left: 1rem;
+  }
 }
 </style>
 
@@ -561,6 +640,11 @@ body::before {
 <!-- ═══════════════════════════════ -->
 <!--  FOOTER                         -->
 <!-- ═══════════════════════════════ -->
+<!-- Floating Controls -->
+<div class="floating-controls">
+  <button class="ctrl-btn" id="soundToggle" aria-label="Sound an/aus" title="Sound">&#9835;</button>
+</div>
+
 <footer class="home-footer">
   <span>© 2026 Jochen Hornung</span>
   <div class="footer-links">
@@ -572,18 +656,168 @@ body::before {
 
 <script>
 (function() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ═══ SCROLL REVEAL ═══ */
+  if (reducedMotion) {
     document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
-    return;
+  } else {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
   }
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+
+  /* ═══ LETTER DISPERSION ═══ */
+  var nameEl = document.querySelector('.hero-name');
+  if (nameEl && !reducedMotion) {
+    var original = nameEl.textContent;
+    nameEl.innerHTML = original.split('').map(function(ch) {
+      if (ch === ' ') return ' ';
+      if (ch === '\n') return '<br>';
+      return '<span class="letter">' + ch + '</span>';
+    }).join('');
+
+    var scattered = false;
+    var returnTimer;
+
+    function scatter() {
+      var letters = nameEl.querySelectorAll('.letter');
+      letters.forEach(function(l) {
+        var x = (Math.random() - 0.5) * 10;
+        var y = (Math.random() - 0.5) * 8;
+        var r = (Math.random() - 0.5) * 6;
+        l.style.transform = 'translate(' + x + 'px,' + y + 'px) rotate(' + r + 'deg)';
+        l.style.opacity = (0.65 + Math.random() * 0.35).toString();
+      });
+      scattered = true;
+    }
+
+    function unscatter() {
+      nameEl.querySelectorAll('.letter').forEach(function(l) {
+        l.style.transform = '';
+        l.style.opacity = '';
+      });
+      scattered = false;
+    }
+
+    /* Desktop: hover */
+    nameEl.addEventListener('mouseenter', function() {
+      clearTimeout(returnTimer);
+      scatter();
+    });
+    nameEl.addEventListener('mouseleave', function() {
+      unscatter();
+    });
+
+    /* Touch: tap to scatter, auto-return */
+    nameEl.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      clearTimeout(returnTimer);
+      if (scattered) {
+        unscatter();
+      } else {
+        scatter();
+        returnTimer = setTimeout(unscatter, 1800);
+      }
+    }, { passive: false });
+  }
+
+  /* ═══ BANNER PARALLAX ═══ */
+  if (!reducedMotion) {
+    var bannerImg = document.querySelector('.hero-image img');
+    if (bannerImg) {
+      var ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(function() {
+            var scrollY = window.pageYOffset;
+            var rect = bannerImg.parentElement.getBoundingClientRect();
+            if (rect.bottom > 0) {
+              bannerImg.style.transform = 'translateY(' + (scrollY * 0.15) + 'px) scale(1.05)';
+            }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+      /* Initial scale to prevent gap */
+      bannerImg.style.transform = 'scale(1.05)';
+    }
+  }
+
+  /* ═══ CARD TILT ═══ */
+  if (!reducedMotion && window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('.card').forEach(function(card) {
+      card.addEventListener('mousemove', function(e) {
+        var rect = card.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = 'translateY(-2px) rotateY(' + (x * 4) + 'deg) rotateX(' + (-y * 4) + 'deg)';
+      });
+      card.addEventListener('mouseleave', function() {
+        card.style.transform = '';
+      });
+    });
+  }
+
+  /* ═══ AMBIENT SOUND ═══ */
+  var audioCtx, gainNode, isPlaying = false;
+  var soundBtn = document.getElementById('soundToggle');
+
+  function createAmbient() {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    /* Two detuned sine waves — barely audible warmth */
+    var osc1 = audioCtx.createOscillator();
+    var osc2 = audioCtx.createOscillator();
+    var osc3 = audioCtx.createOscillator();
+    osc1.type = 'sine'; osc1.frequency.value = 85;
+    osc2.type = 'sine'; osc2.frequency.value = 87.5;
+    osc3.type = 'triangle'; osc3.frequency.value = 170;
+
+    var filter = audioCtx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.value = 300;
+    filter.Q.value = 1;
+
+    gainNode = audioCtx.createGain();
+    gainNode.gain.value = 0;
+
+    osc1.connect(filter);
+    osc2.connect(filter);
+    osc3.connect(filter);
+    filter.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+
+    osc1.start();
+    osc2.start();
+    osc3.start();
+  }
+
+  if (soundBtn) {
+    soundBtn.addEventListener('click', function() {
+      if (!audioCtx) createAmbient();
+
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+
+      if (isPlaying) {
+        gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.8);
+        isPlaying = false;
+        soundBtn.classList.remove('active');
+      } else {
+        gainNode.gain.linearRampToValueAtTime(0.025, audioCtx.currentTime + 1.5);
+        isPlaying = true;
+        soundBtn.classList.add('active');
       }
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+  }
 })();
 </script>
