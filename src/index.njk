@@ -93,17 +93,19 @@ body {
 
 .hero-claim {
   font-family: 'Courier New', 'Courier', monospace;
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(1.4rem, 3.2vw, 2.6rem);
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1.1;
   color: var(--amber);
   margin: 0;
   cursor: default;
   user-select: none;
   position: relative;
   display: inline-block;
-  letter-spacing: 0.04em;
-  text-shadow: 0 0 15px rgba(255, 176, 0, 0.4);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(255, 176, 0, 0.3);
+  white-space: nowrap;
 }
 
 .hero-claim::before,
@@ -665,10 +667,8 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1.5px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
   color: var(--dim);
   cursor: pointer;
   display: flex;
@@ -930,53 +930,24 @@ body {
     var scattered = false;
     var returnTimer;
 
-    /* Glass shatter sound — nutzt globalen audioCtx (Safari!) */
+    /* Glass shatter — pre-loaded WAV */
+    var shatterBuf = null;
+    function loadShatter() {
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      fetch('/images/shatter.wav')
+        .then(function(r) { return r.arrayBuffer(); })
+        .then(function(b) { return audioCtx.decodeAudioData(b); })
+        .then(function(decoded) { shatterBuf = decoded; });
+    }
+    loadShatter();
+
     function playShatter() {
-      if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      }
+      if (!audioCtx || !shatterBuf) return;
       if (audioCtx.state === 'suspended') audioCtx.resume();
-      try {
-        var sr = audioCtx.sampleRate;
-        var duration = 0.6;
-        var buf = audioCtx.createBuffer(2, sr * duration, sr);
-
-        for (var ch = 0; ch < 2; ch++) {
-          var data = buf.getChannelData(ch);
-          for (var i = 0; i < data.length; i++) {
-            var t = i / sr;
-            var impact = Math.exp(-t * 40) * (Math.random() * 2 - 1) * 0.3;
-            var splinters = 0;
-            splinters += Math.sin(t * 8400 + ch) * Math.exp(-t * 18) * 0.08;
-            splinters += Math.sin(t * 11200 + ch * 2) * Math.exp(-t * 22) * 0.06;
-            splinters += Math.sin(t * 14800 + ch * 3) * Math.exp(-t * 25) * 0.04;
-            splinters += Math.sin(t * 6100 + ch * 5) * Math.exp(-t * 15) * 0.05;
-            splinters += Math.sin(t * 9900) * Math.exp(-t * 20) * 0.04;
-            var ring = Math.sin(t * 3200) * Math.exp(-t * 8) * 0.03;
-            ring += Math.sin(t * 5500) * Math.exp(-t * 10) * 0.02;
-            var noise = (Math.random() * 2 - 1) * Math.exp(-t * 14) * 0.12;
-            data[i] = impact + splinters + ring + noise;
-          }
-        }
-
-        var src = audioCtx.createBufferSource();
-        src.buffer = buf;
-        var hp = audioCtx.createBiquadFilter();
-        hp.type = 'highpass';
-        hp.frequency.value = 1800;
-        var peak = audioCtx.createBiquadFilter();
-        peak.type = 'peaking';
-        peak.frequency.value = 6000;
-        peak.Q.value = 3;
-        peak.gain.value = 6;
-        var g = audioCtx.createGain();
-        g.gain.value = 0.7;
-        src.connect(hp);
-        hp.connect(peak);
-        peak.connect(g);
-        g.connect(audioCtx.destination);
-        src.start();
-      } catch(e) {}
+      var src = audioCtx.createBufferSource();
+      src.buffer = shatterBuf;
+      src.connect(audioCtx.destination);
+      src.start();
     }
 
     function scatter() {
