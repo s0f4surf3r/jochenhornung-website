@@ -125,6 +125,9 @@ body {
   overflow: hidden;
 }
 
+.br-desktop { display: block; }
+@media (max-width: 900px) { .br-desktop { display: inline; } }
+
 /* Scanlines als Pseudo-Element ÜBER dem Text */
 .hero-claim::after {
   content: '';
@@ -1011,7 +1014,7 @@ body {
     </div>
 
     <div class="hero-claim-wrap" data-glow="RAUM FÜR MENSCHLICHKEIT UND TIEFE">
-      <h1 class="hero-claim">Raum für Menschlichkeit<br>und Tiefe</h1>
+      <h1 class="hero-claim">Raum für Menschlichkeit <span class="br-desktop"></span>und Tiefe</h1>
       <p class="hero-sub">Retro Game Dev · Consciousness Tools · Design · AI Experiments · Berlin</p>
     </div>
 
