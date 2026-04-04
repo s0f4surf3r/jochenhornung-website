@@ -63,9 +63,20 @@ body {
 /* ── COLOR BAR ── */
 .color-bar {
   height: 4px;
-  background: linear-gradient(90deg, var(--green), var(--cyan), var(--amber), var(--magenta), var(--cyan), var(--green));
+  background: linear-gradient(90deg, var(--green), var(--cyan), var(--amber), var(--magenta), var(--cyan), var(--green), var(--cyan), var(--amber), var(--magenta), var(--cyan), var(--green));
+  background-size: 200% 100%;
+  animation: colorBarFlow 8s linear infinite;
   position: relative;
   z-index: 10;
+}
+
+@keyframes colorBarFlow {
+  0% { background-position: 0% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .color-bar { animation: none; }
 }
 
 /* ── HERO ── */
@@ -274,13 +285,22 @@ body {
   width: var(--pixel-size);
   height: var(--pixel-size);
   background: var(--green);
-  opacity: 0.4;
+  opacity: 0.15;
   display: inline-block;
+  transition: opacity 0.3s, box-shadow 0.3s;
 }
 
-.pixel-divider span:nth-child(3n) { background: var(--cyan); opacity: 0.6; }
-.pixel-divider span:nth-child(7n) { background: var(--magenta); opacity: 0.5; }
-.pixel-divider span:nth-child(5n) { background: var(--amber); opacity: 0.5; }
+.pixel-divider span:nth-child(3n) { background: var(--cyan); }
+.pixel-divider span:nth-child(7n) { background: var(--magenta); }
+.pixel-divider span:nth-child(5n) { background: var(--amber); }
+
+.pixel-divider span.kit-active {
+  opacity: 1;
+  box-shadow: 0 0 8px currentColor, 0 0 16px currentColor;
+}
+
+.pixel-divider span.kit-fade1 { opacity: 0.6; box-shadow: 0 0 4px currentColor; }
+.pixel-divider span.kit-fade2 { opacity: 0.35; }
 
 .section-label {
   font-family: 'Courier New', monospace;
@@ -993,7 +1013,31 @@ body {
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var audioCtx, gainNode, isPlaying = false;
 
-  /* Scroll reveal removed */
+  /* ═══ KNIGHT RIDER PIXEL DIVIDERS ═══ */
+  if (!reducedMotion) {
+    document.querySelectorAll('.pixel-divider').forEach(function(div) {
+      var spans = div.querySelectorAll('span');
+      var len = spans.length;
+      if (len === 0) return;
+      var pos = 0;
+      var dir = 1;
+
+      setInterval(function() {
+        spans.forEach(function(s) {
+          s.classList.remove('kit-active', 'kit-fade1', 'kit-fade2');
+        });
+        if (spans[pos]) spans[pos].classList.add('kit-active');
+        if (spans[pos - 1]) spans[pos - 1].classList.add('kit-fade1');
+        if (spans[pos + 1]) spans[pos + 1].classList.add('kit-fade1');
+        if (spans[pos - 2]) spans[pos - 2].classList.add('kit-fade2');
+        if (spans[pos + 2]) spans[pos + 2].classList.add('kit-fade2');
+
+        pos += dir;
+        if (pos >= len - 1) dir = -1;
+        if (pos <= 0) dir = 1;
+      }, 60);
+    });
+  }
 
   /* ═══ LETTER DISPERSION ═══ */
   var nameEl = document.querySelector('.hero-claim');
