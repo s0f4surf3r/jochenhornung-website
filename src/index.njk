@@ -1337,7 +1337,7 @@ body {
       chatMessages.scrollTop = chatMessages.scrollHeight;
 
       /* Send to backend */
-      fetch('/.netlify/functions/chat', {
+      fetch('https://jochenhornung-chat.jthrust.workers.dev', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: msg, history: chatHistory })
