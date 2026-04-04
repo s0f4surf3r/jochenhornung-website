@@ -392,37 +392,34 @@ body {
   z-index: 1;
 }
 
-/* ── TEXTE ── */
-.texte-teaser {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: start;
-}
-
-.texte-quote {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-  line-height: 1.65;
-  color: var(--text);
-  font-style: italic;
-  border-left: 2px solid var(--amber);
-  padding-left: 1.5rem;
-  margin: 0;
-}
-
-.texte-link-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.texte-link-wrap p {
+/* ── TEXTE (Terminal Style) ── */
+.terminal-quote {
   font-family: 'Courier New', monospace;
-  font-size: 0.95rem;
-  line-height: 1.85;
-  color: var(--text);
-  margin: 0 0 1.5rem 0;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  line-height: 1.5;
+  color: var(--amber);
+  text-align: center;
+  margin: 0 auto 2rem;
+  max-width: 600px;
+  text-shadow: 0 0 15px rgba(255, 176, 0, 0.2);
+}
+
+.terminal-link {
+  display: inline-block;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  color: var(--green);
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  transition: color 0.2s;
+}
+
+@media (hover: hover) {
+  .terminal-link:hover {
+    color: var(--cyan);
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+  }
 }
 
 /* ── STREAMING ── */
@@ -924,16 +921,10 @@ body {
 <div class="pixel-divider"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
 
 <section class="section" id="texte">
-  <p class="section-label">Texte</p>
-  <div class="texte-teaser">
-    <blockquote class="texte-quote">
-      Wir haben uns trainiert, schlechte Maschinen zu sein. Jetzt, wo echte Maschinen das besser können, bleibt die Frage — was bleibt, wenn man den Lärm weglässt?
-    </blockquote>
-    <div class="texte-link-wrap">
-      <p>Gedichte, Essays und persönliche Texte über das Menschsein in einer Zeit, die uns zu Maschinen machen will.</p>
-      <a href="/texte/" class="text-link">Alle Texte lesen</a>
-    </div>
-  </div>
+  <p class="section-label">// texte</p>
+  <p class="terminal-quote">"Was bleibt, wenn man den Lärm weglässt?"</p>
+  <p class="section-text">Gedichte, Essays und persönliche Texte über das Menschsein in einer Zeit, die uns zu Maschinen machen will.</p>
+  <a href="/texte/" class="terminal-link">> alle texte lesen</a>
 </section>
 
 <!-- ═══════════════════════════════ -->
