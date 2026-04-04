@@ -1012,6 +1012,17 @@ body {
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var audioCtx, gainNode, isPlaying = false;
 
+  /* AudioContext SOFORT bei erster Gesture erstellen — dann geht Sound ÜBERALL */
+  function ensureAudio() {
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    return audioCtx;
+  }
+  document.addEventListener('click', ensureAudio, { once: true });
+  document.addEventListener('touchstart', ensureAudio, { once: true });
+
   /* ═══ KNIGHT RIDER PIXEL DIVIDERS + KITT Sound ═══ */
   if (!reducedMotion) {
     /* KITT sweep oscillator — leise, nur wenn sichtbar */
@@ -1028,8 +1039,8 @@ body {
       if (idx === 0) {
         document.addEventListener('click', function initKitt() {
           if (kittCtx) return;
-          kittCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
-          if (!audioCtx) audioCtx = kittCtx;
+          ensureAudio();
+          kittCtx = audioCtx;
           kittOsc = kittCtx.createOscillator();
           kittOsc.type = 'sine';
           kittOsc.frequency.value = 200;
@@ -1090,8 +1101,7 @@ body {
     var shatterLoading = false;
 
     function playShatter() {
-      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      if (audioCtx.state === 'suspended') audioCtx.resume();
+      ensureAudio();
 
       if (shatterBuf) {
         var src = audioCtx.createBufferSource();
@@ -1156,13 +1166,10 @@ body {
       scattered = false;
     }
 
-    /* Desktop: hover scatter, click for sound */
+    /* Desktop: hover scatter MIT sound (AudioContext ist schon offen nach erstem Click) */
     nameEl.addEventListener('mouseenter', function() {
       clearTimeout(returnTimer);
-      scatter(false);
-    });
-    nameEl.addEventListener('click', function() {
-      playShatter();
+      scatter();
     });
     nameEl.addEventListener('mouseleave', function() {
       unscatter();
@@ -1227,7 +1234,7 @@ body {
   var breathInterval;
 
   function createAmbient() {
-    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    ensureAudio();
 
     /* Atem-Sound: Oscillatoren deren Lautstärke rhythmisch atmet */
     var osc1 = audioCtx.createOscillator();
