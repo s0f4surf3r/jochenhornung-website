@@ -48,7 +48,17 @@ body {
   position: relative;
 }
 
-/* Particle Canvas — disabled, was blocking sections */
+/* Particle Canvas — hinter allem Content */
+#pixel-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.6;
+}
 
 /* ── COLOR BAR ── */
 .color-bar {
@@ -61,6 +71,7 @@ body {
 /* ── HERO ── */
 .hero-home {
   position: relative;
+  background: var(--bg);
 }
 
 .hero-image {
@@ -100,6 +111,16 @@ body {
   text-transform: uppercase;
   white-space: nowrap;
   text-shadow: 0 0 20px rgba(255, 176, 0, 0.3), 0 0 60px rgba(255, 176, 0, 0.1);
+  /* Scanlines via repeating-gradient ÜBER dem Text */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.3) 2px,
+    rgba(0, 0, 0, 0.3) 4px
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .hero-sub {
@@ -107,7 +128,7 @@ body {
   font-size: 0.95rem;
   letter-spacing: 0.08em;
   color: var(--cyan);
-  margin: 1.5rem 0 0.8rem 0;
+  margin: 1.2rem 0 0 0;
   opacity: 0.6;
 }
 
@@ -116,7 +137,7 @@ body {
   font-size: 0.85rem;
   line-height: 1.85;
   color: var(--text);
-  margin: 0;
+  margin: 1.2rem 0 0 0;
 }
 
 .hero-nav {
@@ -494,7 +515,6 @@ body {
 /* ── FOOTER ── */
 .home-footer {
   position: relative;
-  z-index: 1;
   padding: 3rem 4rem;
   max-width: 1100px;
   margin: 0 auto;
@@ -506,11 +526,11 @@ body {
   gap: 1rem;
   font-family: 'Courier New', monospace;
   font-size: 0.8rem;
-  color: var(--dim);
+  color: var(--text);
 }
 
 .home-footer a {
-  color: var(--dim);
+  color: var(--text);
   text-decoration: none;
   min-height: 44px;
   display: inline-flex;
@@ -531,6 +551,11 @@ body {
    ══════════════════════════ */
 
 @media (max-width: 900px) {
+  .hero-claim {
+    white-space: normal;
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+  }
+
   .hero-claim-wrap {
     padding: 2rem 2rem 3rem;
   }
@@ -541,7 +566,7 @@ body {
   }
 
   .section {
-    padding: 4rem 2rem;
+    padding: 3rem 2rem;
   }
 
   .card-grid {
@@ -831,7 +856,7 @@ body {
 <!--  HERO                           -->
 <!-- ═══════════════════════════════ -->
 <div class="color-bar"></div>
-<!-- pixel-rain disabled -->
+<canvas id="pixel-rain"></canvas>
 
 <div class="hero-home">
   <nav class="hero-nav" role="navigation" aria-label="Hauptnavigation">
@@ -1025,21 +1050,38 @@ body {
     function scatter() {
       playShatter();
       var letters = nameEl.querySelectorAll('.letter');
-      letters.forEach(function(l) {
-        var angle = Math.random() * Math.PI * 2;
-        var dist = 60 + Math.random() * 140;
-        var x = Math.cos(angle) * dist;
-        var y = Math.sin(angle) * dist;
-        var r = (Math.random() - 0.5) * 60;
-        var s = 0.6 + Math.random() * 0.8;
-        l.style.transform = 'translate(' + x + 'px,' + y + 'px) rotate(' + r + 'deg) scale(' + s + ')';
-        l.style.opacity = (0.15 + Math.random() * 0.5).toString();
+      /* Bullet-Time: jeder Buchstabe fliegt gestaffelt */
+      letters.forEach(function(l, i) {
+        var delay = i * 25; /* 25ms Versatz pro Buchstabe */
+        setTimeout(function() {
+          var angle = Math.random() * Math.PI * 2;
+          var dist = 80 + Math.random() * 160;
+          var x = Math.cos(angle) * dist;
+          var y = Math.sin(angle) * dist;
+          var r = (Math.random() - 0.5) * 90;
+          var s = 0.3 + Math.random() * 0.7;
+          l.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.5s ease';
+          l.style.transform = 'translate(' + x + 'px,' + y + 'px) rotate(' + r + 'deg) scale(' + s + ')';
+          l.style.opacity = (0.1 + Math.random() * 0.3).toString();
+        }, delay);
       });
+      /* Sog zurück nach 1.5s — auch gestaffelt */
+      setTimeout(function() {
+        letters.forEach(function(l, i) {
+          setTimeout(function() {
+            l.style.transition = 'transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.8s ease';
+            l.style.transform = '';
+            l.style.opacity = '';
+          }, i * 15);
+        });
+        setTimeout(function() { scattered = false; }, letters.length * 15 + 1200);
+      }, 1500);
       scattered = true;
     }
 
     function unscatter() {
       nameEl.querySelectorAll('.letter').forEach(function(l) {
+        l.style.transition = 'transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.6s ease';
         l.style.transform = '';
         l.style.opacity = '';
       });
@@ -1198,7 +1240,29 @@ body {
     });
   }
 
-  /* Pixel rain disabled — was blocking sections */
+  /* ═══ PIXEL RAIN ═══ */
+  var pCanvas = document.getElementById('pixel-rain');
+  if (pCanvas && !reducedMotion) {
+    var pctx = pCanvas.getContext('2d');
+    var pw, ph;
+    function resizeP() { pw = pCanvas.width = window.innerWidth; ph = pCanvas.height = window.innerHeight; }
+    resizeP();
+    window.addEventListener('resize', resizeP);
+    var pxls = [];
+    var pcols = ['#00ff41', '#00e5ff', '#ff00aa', '#ffb000'];
+    function animP() {
+      pctx.clearRect(0, 0, pw, ph);
+      if (Math.random() < 0.3) pxls.push({ x: Math.random() * pw, y: -3, sz: Math.random() * 2.5 + 0.5, sp: Math.random() * 0.4 + 0.1, c: pcols[Math.floor(Math.random() * pcols.length)], o: Math.random() * 0.12 + 0.02 });
+      for (var i = pxls.length - 1; i >= 0; i--) {
+        var p = pxls[i]; p.y += p.sp;
+        pctx.globalAlpha = p.o; pctx.fillStyle = p.c;
+        pctx.fillRect(p.x, p.y, p.sz, p.sz);
+        if (p.y > ph) pxls.splice(i, 1);
+      }
+      requestAnimationFrame(animP);
+    }
+    animP();
+  }
 
   /* ═══ CHAT WIDGET ═══ */
   var chatWidget = document.getElementById('chatWidget');
