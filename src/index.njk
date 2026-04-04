@@ -1071,18 +1071,58 @@ body {
           if (kittCtx) return;
           ensureAudio();
           kittCtx = audioCtx;
+
+          /* Mehrere Oscillatoren für fetten KITT-Sound */
           kittOsc = kittCtx.createOscillator();
           kittOsc.type = 'sine';
           kittOsc.frequency.value = 200;
+
+          var kittOsc2 = kittCtx.createOscillator();
+          kittOsc2.type = 'sine';
+          kittOsc2.frequency.value = 400; /* Oktave drüber */
+
+          var kittOsc3 = kittCtx.createOscillator();
+          kittOsc3.type = 'sawtooth';
+          kittOsc3.frequency.value = 100; /* Brumm-Basis */
+
           kittGain = kittCtx.createGain();
           kittGain.gain.value = 0;
-          var filter = kittCtx.createBiquadFilter();
-          filter.type = 'lowpass';
-          filter.frequency.value = 800;
-          kittOsc.connect(filter);
-          filter.connect(kittGain);
-          kittGain.connect(kittCtx.destination);
+
+          var gain2 = kittCtx.createGain();
+          gain2.gain.value = 0;
+
+          var gain3 = kittCtx.createGain();
+          gain3.gain.value = 0;
+
+          /* Bandpass für den "Wuuusch"-Charakter */
+          var bp = kittCtx.createBiquadFilter();
+          bp.type = 'bandpass';
+          bp.frequency.value = 500;
+          bp.Q.value = 2;
+
+          var master = kittCtx.createGain();
+          master.gain.value = 1;
+
+          kittOsc.connect(kittGain);
+          kittOsc2.connect(gain2);
+          kittOsc3.connect(gain3);
+          kittGain.connect(bp);
+          gain2.connect(bp);
+          gain3.connect(bp);
+          bp.connect(master);
+          master.connect(kittCtx.destination);
+
           kittOsc.start();
+          kittOsc2.start();
+          kittOsc3.start();
+
+          /* Speichere für Sweep-Update */
+          kittOsc._osc2 = kittOsc2;
+          kittOsc._osc3 = kittOsc3;
+          kittOsc._gain2 = gain2;
+          kittOsc._gain3 = gain3;
+          kittOsc._bp = bp;
+          kittOsc._master = master;
         }, { once: true });
       }
 
@@ -1096,14 +1136,21 @@ body {
         if (spans[pos - 2]) spans[pos - 2].classList.add('kit-fade2');
         if (spans[pos + 2]) spans[pos + 2].classList.add('kit-fade2');
 
-        /* KITT sweep sound — Frequenz folgt Position */
+        /* KITT sweep — alle Oscillatoren folgen Position */
         if (kittOsc && kittGain && idx === 0) {
           var ratio = pos / len;
-          kittOsc.frequency.value = 180 + ratio * 600;
-          /* Nur hörbar wenn Divider im Viewport */
+          var baseFreq = 150 + ratio * 500;
+          kittOsc.frequency.value = baseFreq;
+          if (kittOsc._osc2) kittOsc._osc2.frequency.value = baseFreq * 2;
+          if (kittOsc._osc3) kittOsc._osc3.frequency.value = baseFreq * 0.5;
+          if (kittOsc._bp) kittOsc._bp.frequency.value = baseFreq * 1.5;
+
           var rect = div.getBoundingClientRect();
           var visible = rect.top < window.innerHeight && rect.bottom > 0;
-          kittGain.gain.value = visible ? 0.008 : 0;
+          var vol = visible ? 0.012 : 0;
+          kittGain.gain.value = vol;
+          if (kittOsc._gain2) kittOsc._gain2.gain.value = vol * 0.4;
+          if (kittOsc._gain3) kittOsc._gain3.gain.value = vol * 0.2;
         }
 
         pos += dir;
