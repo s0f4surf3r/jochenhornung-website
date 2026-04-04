@@ -150,7 +150,7 @@ body {
   font-size: 0.95rem;
   max-width: none;
   margin: 0;
-  padding: 0.6rem 2rem;
+  padding: 0.8rem 2rem;
 }
 
 .hero-nav .nav-home {
@@ -425,13 +425,12 @@ body {
 }
 
 .terminal-link {
-  display: inline-block;
+  display: block;
   font-family: 'Courier New', monospace;
   font-size: 1rem;
   color: var(--green);
   text-decoration: none;
   text-align: center;
-  margin: 0 auto;
   transition: color 0.2s;
 }
 
@@ -449,8 +448,10 @@ body {
   border-radius: 12px;
   padding: 2.5rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  text-align: center;
+  gap: 1.5rem;
   text-decoration: none;
   color: var(--text);
   transition: border-color 0.25s;
