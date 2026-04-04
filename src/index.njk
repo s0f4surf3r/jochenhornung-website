@@ -1030,12 +1030,24 @@ body {
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var audioCtx, gainNode, isPlaying = false;
 
-  /* AudioContext SOFORT bei erster Gesture erstellen — dann geht Sound ÜBERALL */
+  /* AudioContext SOFORT bei erster Gesture + WAV vorladen */
+  var shatterBuf = null;
+  var shatterLoading = false;
+
   function ensureAudio() {
     if (!audioCtx) {
       audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     }
     if (audioCtx.state === 'suspended') audioCtx.resume();
+    /* WAV sofort vorladen */
+    if (!shatterBuf && !shatterLoading) {
+      shatterLoading = true;
+      fetch('/images/shatter.wav')
+        .then(function(r) { return r.arrayBuffer(); })
+        .then(function(b) { return audioCtx.decodeAudioData(b); })
+        .then(function(decoded) { shatterBuf = decoded; })
+        .catch(function() { shatterLoading = false; });
+    }
     return audioCtx;
   }
   document.addEventListener('click', ensureAudio, { once: true });
@@ -1114,33 +1126,13 @@ body {
     var scattered = false;
     var returnTimer;
 
-    /* Glass shatter — lädt beim ersten Aufruf (Safari braucht User-Gesture) */
-    var shatterBuf = null;
-    var shatterLoading = false;
-
     function playShatter() {
-      ensureAudio();
-
-      if (shatterBuf) {
-        var src = audioCtx.createBufferSource();
-        src.buffer = shatterBuf;
-        src.connect(audioCtx.destination);
-        src.start();
-      } else if (!shatterLoading) {
-        shatterLoading = true;
-        fetch('/images/shatter.wav')
-          .then(function(r) { return r.arrayBuffer(); })
-          .then(function(b) { return audioCtx.decodeAudioData(b); })
-          .then(function(decoded) {
-            shatterBuf = decoded;
-            /* Sofort abspielen beim ersten Load */
-            var src = audioCtx.createBufferSource();
-            src.buffer = shatterBuf;
-            src.connect(audioCtx.destination);
-            src.start();
-          })
-          .catch(function() { shatterLoading = false; });
-      }
+      if (!audioCtx || !shatterBuf) return;
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      var src = audioCtx.createBufferSource();
+      src.buffer = shatterBuf;
+      src.connect(audioCtx.destination);
+      src.start();
     }
 
     function scatter(withSound) {
