@@ -38,8 +38,6 @@ Manchmal [begleite ich Menschen](/coaching/) — wenn sie fragen. Nicht als Beru
 **M-Sphere** — Meditation als Erlebnis
 **Klarsite** — Websites die Menschen zeigen, nicht verkaufen
 **Spüra** — Emotionales Self-Tracking
-**Prüfstein** — Ethische Bewertung von KI-Entscheidungen
-**Gefühlskompass** — Emotionale Selbsterkenntnis
 
 ## Woher ich komme
 
