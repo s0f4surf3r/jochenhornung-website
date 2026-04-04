@@ -1274,6 +1274,12 @@ body {
   }
 
   if (soundBtn) {
+    /* Sound-State aus localStorage wiederherstellen */
+    if (localStorage.getItem('jochenhornung-sound') === 'on') {
+      ensureAudio();
+      createAmbient();
+    }
+
     soundBtn.addEventListener('click', function() {
       if (!audioCtx) createAmbient();
 
@@ -1287,9 +1293,11 @@ body {
         clearInterval(breathInterval);
         isPlaying = false;
         soundBtn.classList.remove('active');
+        localStorage.setItem('jochenhornung-sound', 'off');
       } else {
         isPlaying = true;
         soundBtn.classList.add('active');
+        localStorage.setItem('jochenhornung-sound', 'on');
         /* Starte Atem-Zyklus */
         var now = audioCtx.currentTime;
         gainNode.gain.cancelScheduledValues(now);
