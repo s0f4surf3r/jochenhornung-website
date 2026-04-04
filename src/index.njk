@@ -110,28 +110,7 @@ body {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   white-space: nowrap;
-  /* Multi-Color Scanlines — 40C3 Glitch Style */
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      transparent 0px,
-      transparent 3px,
-      rgba(0, 0, 0, 0.35) 3px,
-      rgba(0, 0, 0, 0.35) 5px
-    ),
-    linear-gradient(
-      to bottom,
-      var(--cyan) 0%,
-      var(--green) 30%,
-      var(--amber) 55%,
-      var(--magenta) 85%
-    );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  /* Glow separat — text-shadow funktioniert nicht mit text-fill-color:transparent,
-     aber filter:drop-shadow schon (diesmal OHNE den alten text-shadow) */
-  filter: drop-shadow(0 0 15px rgba(0, 255, 65, 0.2)) drop-shadow(0 0 40px rgba(255, 176, 0, 0.1));
+  text-shadow: 0 0 20px rgba(255, 176, 0, 0.3), 0 0 60px rgba(255, 176, 0, 0.1);
 }
 
 .hero-sub {
