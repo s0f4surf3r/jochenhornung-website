@@ -1012,14 +1012,38 @@ body {
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var audioCtx, gainNode, isPlaying = false;
 
-  /* ═══ KNIGHT RIDER PIXEL DIVIDERS ═══ */
+  /* ═══ KNIGHT RIDER PIXEL DIVIDERS + KITT Sound ═══ */
   if (!reducedMotion) {
-    document.querySelectorAll('.pixel-divider').forEach(function(div) {
+    /* KITT sweep oscillator — leise, nur wenn sichtbar */
+    var kittOsc, kittGain, kittCtx;
+
+    document.querySelectorAll('.pixel-divider').forEach(function(div, idx) {
       var spans = div.querySelectorAll('span');
       var len = spans.length;
       if (len === 0) return;
       var pos = 0;
       var dir = 1;
+
+      /* Sound nur für den ersten sichtbaren Divider starten wenn User interagiert */
+      if (idx === 0) {
+        document.addEventListener('click', function initKitt() {
+          if (kittCtx) return;
+          kittCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+          if (!audioCtx) audioCtx = kittCtx;
+          kittOsc = kittCtx.createOscillator();
+          kittOsc.type = 'sine';
+          kittOsc.frequency.value = 200;
+          kittGain = kittCtx.createGain();
+          kittGain.gain.value = 0;
+          var filter = kittCtx.createBiquadFilter();
+          filter.type = 'lowpass';
+          filter.frequency.value = 800;
+          kittOsc.connect(filter);
+          filter.connect(kittGain);
+          kittGain.connect(kittCtx.destination);
+          kittOsc.start();
+        }, { once: true });
+      }
 
       setInterval(function() {
         spans.forEach(function(s) {
@@ -1030,6 +1054,16 @@ body {
         if (spans[pos + 1]) spans[pos + 1].classList.add('kit-fade1');
         if (spans[pos - 2]) spans[pos - 2].classList.add('kit-fade2');
         if (spans[pos + 2]) spans[pos + 2].classList.add('kit-fade2');
+
+        /* KITT sweep sound — Frequenz folgt Position */
+        if (kittOsc && kittGain && idx === 0) {
+          var ratio = pos / len;
+          kittOsc.frequency.value = 180 + ratio * 600;
+          /* Nur hörbar wenn Divider im Viewport */
+          var rect = div.getBoundingClientRect();
+          var visible = rect.top < window.innerHeight && rect.bottom > 0;
+          kittGain.gain.value = visible ? 0.008 : 0;
+        }
 
         pos += dir;
         if (pos >= len - 1) dir = -1;
@@ -1081,8 +1115,8 @@ body {
       }
     }
 
-    function scatter() {
-      playShatter();
+    function scatter(withSound) {
+      if (withSound !== false) playShatter();
       var letters = nameEl.querySelectorAll('.letter');
       /* Bullet-Time: jeder Buchstabe fliegt gestaffelt */
       letters.forEach(function(l, i) {
@@ -1122,10 +1156,13 @@ body {
       scattered = false;
     }
 
-    /* Desktop: hover */
+    /* Desktop: hover scatter, click for sound */
     nameEl.addEventListener('mouseenter', function() {
       clearTimeout(returnTimer);
-      scatter();
+      scatter(false);
+    });
+    nameEl.addEventListener('click', function() {
+      playShatter();
     });
     nameEl.addEventListener('mouseleave', function() {
       unscatter();
