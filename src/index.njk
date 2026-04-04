@@ -663,8 +663,26 @@ body {
 }
 
 .ctrl-btn.active {
-  border-color: var(--sand-accent);
-  color: var(--sand-accent);
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+/* Sound-Button wabern wenn inaktiv — Aufmerksamkeit */
+#soundToggle:not(.active) {
+  animation: soundPulse 3s ease-in-out infinite;
+}
+
+@keyframes soundPulse {
+  0%, 100% { border-color: rgba(255, 255, 255, 0.12); }
+  50% { border-color: rgba(255, 176, 0, 0.5); box-shadow: 0 0 12px rgba(255, 176, 0, 0.15); }
+}
+
+#soundToggle.active {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #soundToggle:not(.active) { animation: none; }
 }
 
 /* Sound wave bars */
