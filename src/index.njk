@@ -56,8 +56,8 @@ body {
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  z-index: -1;
-  opacity: 0.6;
+  z-index: 0;
+  opacity: 1;
 }
 
 /* ── COLOR BAR ── */
@@ -122,6 +122,22 @@ body {
   text-transform: uppercase;
   white-space: nowrap;
   text-shadow: 0 0 20px rgba(255, 176, 0, 0.3), 0 0 60px rgba(255, 176, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Scanlines als Pseudo-Element ÜBER dem Text */
+.hero-claim::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0, 0, 0, 0.3) 3px,
+    rgba(0, 0, 0, 0.3) 5px
+  );
+  pointer-events: none;
 }
 
 .hero-sub {
@@ -1478,7 +1494,7 @@ body {
     var pcols = ['#00ff41', '#00e5ff', '#ff00aa', '#ffb000'];
     function animP() {
       pctx.clearRect(0, 0, pw, ph);
-      if (Math.random() < 0.3) pxls.push({ x: Math.random() * pw, y: -3, sz: Math.random() * 2.5 + 0.5, sp: Math.random() * 0.4 + 0.1, c: pcols[Math.floor(Math.random() * pcols.length)], o: Math.random() * 0.12 + 0.02 });
+      if (Math.random() < 0.4) pxls.push({ x: Math.random() * pw, y: -3, sz: Math.random() * 3 + 1, sp: Math.random() * 0.5 + 0.15, c: pcols[Math.floor(Math.random() * pcols.length)], o: Math.random() * 0.2 + 0.05 });
       for (var i = pxls.length - 1; i >= 0; i--) {
         var p = pxls[i]; p.y += p.sp;
         pctx.globalAlpha = p.o; pctx.fillStyle = p.c;
