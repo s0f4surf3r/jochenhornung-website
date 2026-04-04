@@ -1017,24 +1017,34 @@ body {
     var scattered = false;
     var returnTimer;
 
-    /* Glass shatter — pre-loaded WAV */
+    /* Glass shatter — lädt beim ersten Aufruf (Safari braucht User-Gesture) */
     var shatterBuf = null;
-    function loadShatter() {
-      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      fetch('/images/shatter.wav')
-        .then(function(r) { return r.arrayBuffer(); })
-        .then(function(b) { return audioCtx.decodeAudioData(b); })
-        .then(function(decoded) { shatterBuf = decoded; });
-    }
-    loadShatter();
+    var shatterLoading = false;
 
     function playShatter() {
-      if (!audioCtx || !shatterBuf) return;
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
       if (audioCtx.state === 'suspended') audioCtx.resume();
-      var src = audioCtx.createBufferSource();
-      src.buffer = shatterBuf;
-      src.connect(audioCtx.destination);
-      src.start();
+
+      if (shatterBuf) {
+        var src = audioCtx.createBufferSource();
+        src.buffer = shatterBuf;
+        src.connect(audioCtx.destination);
+        src.start();
+      } else if (!shatterLoading) {
+        shatterLoading = true;
+        fetch('/images/shatter.wav')
+          .then(function(r) { return r.arrayBuffer(); })
+          .then(function(b) { return audioCtx.decodeAudioData(b); })
+          .then(function(decoded) {
+            shatterBuf = decoded;
+            /* Sofort abspielen beim ersten Load */
+            var src = audioCtx.createBufferSource();
+            src.buffer = shatterBuf;
+            src.connect(audioCtx.destination);
+            src.start();
+          })
+          .catch(function() { shatterLoading = false; });
+      }
     }
 
     function scatter() {
