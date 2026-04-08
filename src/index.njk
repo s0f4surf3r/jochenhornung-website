@@ -1283,12 +1283,49 @@ body {
     var returnTimer;
 
     function playShatter() {
-      if (!audioCtx || !shatterBuf) return;
+      /* Tennis-Hit synthetisiert: kurzer Noise-Burst durch Bandpass + Sub-Pop */
+      if (!audioCtx) return;
       if (audioCtx.state === 'suspended') audioCtx.resume();
-      var src = audioCtx.createBufferSource();
-      src.buffer = shatterBuf;
-      src.connect(audioCtx.destination);
-      src.start();
+      var now = audioCtx.currentTime;
+
+      /* (1) Noise-Burst — der "Thwack" der Saiten */
+      var bufferSize = audioCtx.sampleRate * 0.18;
+      var noiseBuf = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+      var data = noiseBuf.getChannelData(0);
+      for (var i = 0; i < bufferSize; i++) {
+        data[i] = (Math.random() * 2 - 1);
+      }
+      var noise = audioCtx.createBufferSource();
+      noise.buffer = noiseBuf;
+
+      /* Bandpass — Center bei 1200 Hz, schmal — die Saiten-Klangfarbe */
+      var bp = audioCtx.createBiquadFilter();
+      bp.type = 'bandpass';
+      bp.frequency.value = 1200;
+      bp.Q.value = 1.4;
+
+      /* Envelope: instant attack, schneller Decay */
+      var noiseGain = audioCtx.createGain();
+      noiseGain.gain.setValueAtTime(0.001, now);
+      noiseGain.gain.exponentialRampToValueAtTime(0.6, now + 0.001);
+      noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.16);
+
+      noise.connect(bp); bp.connect(noiseGain); noiseGain.connect(audioCtx.destination);
+      noise.start(now); noise.stop(now + 0.18);
+
+      /* (2) Sub-Pop — der "Body" des Aufpralls (Filz auf Saiten) */
+      var sub = audioCtx.createOscillator();
+      sub.type = 'sine';
+      sub.frequency.setValueAtTime(180, now);
+      sub.frequency.exponentialRampToValueAtTime(60, now + 0.08);
+
+      var subGain = audioCtx.createGain();
+      subGain.gain.setValueAtTime(0.001, now);
+      subGain.gain.exponentialRampToValueAtTime(0.5, now + 0.002);
+      subGain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+
+      sub.connect(subGain); subGain.connect(audioCtx.destination);
+      sub.start(now); sub.stop(now + 0.12);
     }
 
     function scatter(withSound) {
