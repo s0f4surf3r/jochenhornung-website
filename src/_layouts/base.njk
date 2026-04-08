@@ -8,7 +8,7 @@
     <meta name="google-site-verification" content="f13dJEfZlqqMox3rZIfQUUGtqO5QJjmuIrgYIGI5Gb0" />
 
     <!-- SEO Meta Tags -->
-    {% set pageDescription = description or excerpt or "Raum für Menschlichkeit und Tiefe. Texte über das Menschsein, Coaching, digitale Werkzeuge — von Jochen Hornung, Coach und Entwickler aus Berlin." %}
+    {% set pageDescription = description or excerpt or "Retro Game Dev · Consciousness Tools · Design · AI Experiments · Berlin. Texte, Werkzeuge und Experimente von Jochen Hornung." %}
     {% set pageImage = heroImage or "/images/og-image.png" %}
     {% set ogType = "article" if tags and "text" in tags else "website" %}
     <meta name="description" content="{{ pageDescription }}">
@@ -43,14 +43,14 @@
         "@type": "Person",
         "name": "Jochen Hornung",
         "url": "https://jochenhornung.de",
-        "jobTitle": "Coach für neurosystemische Integration",
+        "jobTitle": "Builder · Game Dev · Consciousness Tools",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Berlin",
             "addressCountry": "DE"
         },
         "email": "kontakt@jochenhornung.de",
-        "description": "Raum für Menschlichkeit und Tiefe. Texte über das Menschsein, Coaching, digitale Werkzeuge — von Jochen Hornung, Coach und Entwickler aus Berlin."
+        "description": "Retro Game Dev · Consciousness Tools · Design · AI Experiments · Berlin. Texte, Werkzeuge und Experimente von Jochen Hornung."
     }
     </script>
 
@@ -142,7 +142,7 @@
     {% if page.url != "/" %}
     <header class="site-header">
         <h1><a href="/">Jochen Hornung</a></h1>
-        <p class="site-tagline">Raum für Menschlichkeit und Tiefe</p>
+        <p class="site-tagline">Retro Game Dev · Consciousness Tools · Design · AI Experiments · Berlin</p>
         <nav class="site-nav">
             <a href="/texte/"{% if page.url.includes("/texte") %} class="active"{% endif %}>Texte</a>
             <span>/</span>
