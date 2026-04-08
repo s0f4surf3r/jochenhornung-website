@@ -1,281 +1,135 @@
 ---
 layout: base
+solo: true
 ---
 <style>
-    .text-meta {
-        margin-bottom: 6rem;
+    /* ─── Solo Text Page ─── */
+    body {
+        background: #fafaf8;
+        color: #1a1a1a;
+        margin: 0;
+        min-height: 100vh;
     }
 
-    .text-type {
-        display: block;
-        font-size: 0.78rem;
-        color: #bbb;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        margin-bottom: 0.3rem;
-        background: none;
-        padding: 0;
-        border-radius: 0;
-        margin-left: 0;
+    .solo-page {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 8rem 2rem 6rem;
     }
 
-    .text-date {
-        display: block;
-        font-size: 0.8rem;
-        color: #bbb;
-        letter-spacing: 0.05em;
+    .solo-title {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        font-weight: 400;
+        line-height: 1.15;
+        margin: 0 0 4rem;
+        color: #0a0a0a;
+        letter-spacing: -0.01em;
     }
-    
-    .text-excerpt {
-        font-family: Georgia, serif;
-        font-size: 0.9rem;
+
+    .solo-content {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+        line-height: 1.7;
+        color: #1a1a1a;
+        max-width: 640px;
+    }
+
+    .solo-content p {
+        margin: 0 0 1.6rem;
+    }
+
+    .solo-content em {
         font-style: italic;
-        color: #888;
-        margin-bottom: 4rem;
-        line-height: 1.6;
-        max-width: 600px;
-    }
-    
-    .text-title {
-        font-family: Georgia, serif;
-        font-size: 1.8rem;
-        font-weight: 400;
-        margin-bottom: 0;
-        line-height: 1.3;
-    }
-    
-    .text-content {
-        font-family: Georgia, serif;
-        line-height: 1.5;
-        max-width: 600px;
-        margin-top: -0.5rem;
-    }
-    
-    .text-content p {
-        margin-top: 0;
-        margin-bottom: 1.5rem;
+        color: #444;
     }
 
-    .text-content img {
-        width: 100%;
-        max-width: 600px;
-        height: auto;
+    .solo-content a {
+        color: #1a1a1a;
+        text-decoration: underline;
+        text-decoration-color: #bbb;
+        text-underline-offset: 3px;
+    }
+
+    .solo-image {
         display: block;
-        margin: 2rem 0;
-        border-radius: 4px;
-    }
-
-    .text-content table {
         width: 100%;
-        max-width: 600px;
-        border-collapse: collapse;
-        margin: 1.5rem 0;
-        font-size: 0.9rem;
-    }
-
-    .text-content th,
-    .text-content td {
-        padding: 0.5rem 0.8rem;
-        border-bottom: 1px solid #eee;
-        text-align: left;
-    }
-
-    .text-content th {
-        font-weight: 600;
-        color: #666;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-    }
-    
-    .text-content details {
-        margin: 2rem 0;
-        padding: 1.2rem 1.4rem;
-        border: 1px solid #eee;
-        border-radius: 4px;
-        max-width: 600px;
-    }
-
-    .text-content details summary {
-        font-size: 0.95rem;
-        cursor: pointer;
-        list-style: none;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        user-select: none;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        color: #444;
-    }
-
-    .text-content details summary::-webkit-details-marker {
-        display: none;
-    }
-
-    .text-content details summary::before {
-        content: '+';
-        font-size: 1.3rem;
-        font-weight: 300;
-        width: 20px;
-        height: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #666;
-    }
-
-    .text-content details[open] summary::before {
-        content: '−';
-    }
-
-    .text-content details summary:hover {
-        color: #1a1a1a;
-    }
-
-    .text-content details > *:not(summary) {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        font-size: 0.9rem;
-        line-height: 1.6;
-        color: #444;
-    }
-
-    .text-content details table {
-        margin: 1rem 0;
-    }
-
-    /* Hero Image - als visueller Nachklang */
-    .text-hero-image {
-        width: 100%;
-        max-width: 600px;
+        max-width: 720px;
         height: auto;
-        margin-top: 4rem;
-    }
-    
-    .text-back {
-        display: inline-block;
-        margin-bottom: 2.5rem;
-        color: #999;
-        text-decoration: none;
-        font-size: 0.85rem;
-    }
-    
-    .text-back:hover {
-        color: #1a1a1a;
+        margin: 5rem auto 0;
     }
 
-    .donation-block {
-        margin-top: 3rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid #eee;
-        max-width: 600px;
-    }
-
-    .donation-block p {
-        color: #666;
-        font-size: 0.9rem;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
-
-    .donation-button {
-        display: inline-block;
-        margin-top: 0.5rem;
-        padding: 0.6rem 1.3rem;
-        background: #0070ba;
-        color: white;
-        text-decoration: none;
-        border-radius: 8px;
-        font-size: 0.9rem;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        font-weight: 500;
-    }
-
-    .quellen-block {
-        margin-top: 2rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid #eee;
-        max-width: 600px;
-    }
-
-    .quellen-block summary {
-        font-size: 1rem;
-        font-weight: 400;
-        color: #666;
-        cursor: pointer;
-        list-style: none;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.5rem 0;
-        user-select: none;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
-
-    .quellen-block summary::-webkit-details-marker {
-        display: none;
-    }
-
-    .quellen-block summary::before {
-        content: '+';
-        font-size: 1.3rem;
-        font-weight: 300;
-        width: 20px;
-        height: 20px;
+    /* ─── Floating Glass Close ─── */
+    .solo-close {
+        position: fixed;
+        top: 1.5rem;
+        left: 1.5rem;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.55);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        box-shadow:
+            0 8px 32px rgba(0, 0, 0, 0.08),
+            inset 0 1px 0 rgba(255, 255, 255, 0.9);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #666;
-        transition: transform 0.2s ease;
-    }
-
-    .quellen-block[open] summary::before {
-        content: '−';
-    }
-
-    .quellen-block summary:hover {
+        text-decoration: none;
         color: #1a1a1a;
+        font-family: -apple-system, sans-serif;
+        font-size: 22px;
+        font-weight: 300;
+        z-index: 100;
+        transition: all 0.25s ease;
     }
 
-    .quellen-block summary:hover::before {
-        color: #1a1a1a;
+    .solo-close::before {
+        content: '×';
+        line-height: 1;
+        margin-top: -2px;
     }
 
-    .quellen-block .text-content {
-        margin-top: 0.5rem;
+    @media (hover: hover) {
+        .solo-close:hover {
+            background: rgba(255, 255, 255, 0.85);
+            transform: scale(1.05);
+            box-shadow:
+                0 12px 40px rgba(0, 0, 0, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 1);
+        }
+    }
+
+    .solo-close:active {
+        transform: scale(0.95);
+    }
+
+    @media (max-width: 700px) {
+        .solo-page {
+            padding: 7rem 1.4rem 4rem;
+        }
+        .solo-close {
+            top: 1rem;
+            left: 1rem;
+            width: 46px;
+            height: 46px;
+            font-size: 20px;
+        }
     }
 </style>
-<div class="content-page">
-    <a href="/texte/" class="text-back">← Zurück zu Texte</a>
-    
-    <div class="text-header">
-        <div class="text-meta">
-            {% if type %}<span class="text-type">{{ type }}</span>{% endif %}
-            <span class="text-date">{{ date | readableDate }}</span>
-        </div>
-        {% if excerpt %}
-        <div class="text-excerpt">{{ excerpt }}</div>
-        {% endif %}
-        <h1 class="text-title">{{ title | nlToBr | safe }}</h1>
-    </div>
-    
-    <div class="text-content">
+
+<a href="/texte/" class="solo-close" aria-label="Schließen"></a>
+
+<article class="solo-page">
+    <h1 class="solo-title">{{ title | nlToBr | safe }}</h1>
+
+    <div class="solo-content">
         {{ content | safe }}
     </div>
 
     {% if heroImage %}
-    <img src="{{ heroImage }}" alt="Bild zum Text: {{ title }}" loading="lazy" class="text-hero-image">
+    <img src="{{ heroImage }}" alt="Bild zum Text: {{ title }}" loading="lazy" class="solo-image">
     {% endif %}
-
-    <div class="donation-block">
-        <p>Alle Texte hier sind frei zugänglich. Wenn sie dir etwas geben, freue ich mich über deine Wertschätzung.</p>
-        <a href="https://www.paypal.com/donate/?hosted_button_id=D9SMU5QARSRKL" target="_blank" rel="noopener noreferrer" class="donation-button">Via PayPal wertschätzen</a>
-    </div>
-
-    {% if quellen %}
-    <details class="quellen-block">
-        <summary>Quellen</summary>
-        <div class="text-content">
-            {{ quellen | markdownify | safe }}
-        </div>
-    </details>
-    {% endif %}
-</div>
+</article>

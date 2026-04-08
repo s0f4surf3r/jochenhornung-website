@@ -139,7 +139,7 @@
     </style>
 </head>
 <body>
-    {% if page.url != "/" %}
+    {% if page.url != "/" and not solo %}
     <header class="site-header">
         <h1><a href="/">Jochen Hornung</a></h1>
         <p class="site-tagline">Retro Game Dev · Consciousness Tools · Design · AI Experiments · Berlin</p>
@@ -157,7 +157,7 @@
 
     {{ content | safe }}
 
-    {% if page.url != "/" %}
+    {% if page.url != "/" and not solo %}
     <footer class="site-footer">
         © 2026 Jochen Hornung | <a href="/impressum/">Impressum</a> | <a href="/datenschutz/">Datenschutz</a>
     </footer>
