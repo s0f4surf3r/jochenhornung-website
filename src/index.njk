@@ -112,7 +112,7 @@ body {
   font-size: clamp(1.4rem, 3.2vw, 2.6rem);
   font-weight: 700;
   line-height: 1.1;
-  color: var(--amber);
+  color: var(--claim-color, var(--green));
   margin: 0;
   cursor: default;
   user-select: none;
@@ -120,7 +120,7 @@ body {
   display: inline-block;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  text-shadow: 0 0 20px rgba(255, 176, 0, 0.3), 0 0 60px rgba(255, 176, 0, 0.1);
+  text-shadow: 0 0 20px var(--claim-glow, rgba(0, 255, 65, 0.3)), 0 0 60px var(--claim-glow-far, rgba(0, 255, 65, 0.1));
   text-wrap: balance;
 }
 
@@ -1599,6 +1599,39 @@ body {
       updateLangBtn();
       /* i18n swap kommt später — für jetzt nur den State speichern */
     });
+  }
+
+  /* ═══ LIVE COLOR PICKER (Dev Tool) ═══ */
+  /* Aktivieren mit ?picker in der URL */
+  if (location.search.indexOf('picker') !== -1) {
+    var palette = [
+      { name: 'Green',   hex: '#00ff41', rgb: '0,255,65' },
+      { name: 'Cyan',    hex: '#00e5ff', rgb: '0,229,255' },
+      { name: 'Magenta', hex: '#ff00aa', rgb: '255,0,170' },
+      { name: 'Amber',   hex: '#ffb000', rgb: '255,176,0' },
+      { name: 'White',   hex: '#e0e0e0', rgb: '224,224,224' }
+    ];
+    var saved = localStorage.getItem('claim-color') || 'Green';
+    function applyClaimColor(name) {
+      var c = palette.find(function(x){return x.name===name;});
+      if (!c) return;
+      document.documentElement.style.setProperty('--claim-color', c.hex);
+      document.documentElement.style.setProperty('--claim-glow', 'rgba('+c.rgb+',0.3)');
+      document.documentElement.style.setProperty('--claim-glow-far', 'rgba('+c.rgb+',0.1)');
+      localStorage.setItem('claim-color', name);
+    }
+    applyClaimColor(saved);
+    var panel = document.createElement('div');
+    panel.style.cssText = 'position:fixed;bottom:80px;right:20px;background:#000;border:1px solid #333;padding:1rem;z-index:9999;font-family:monospace;font-size:12px;color:#fff;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.5)';
+    panel.innerHTML = '<div style="margin-bottom:0.6rem;opacity:0.6">CLAIM COLOR</div>';
+    palette.forEach(function(c) {
+      var b = document.createElement('button');
+      b.textContent = c.name;
+      b.style.cssText = 'display:block;width:100%;margin:4px 0;padding:8px 12px;background:'+c.hex+';color:#000;border:none;border-radius:4px;cursor:pointer;font-family:monospace;font-weight:700;text-align:left';
+      b.onclick = function(){ applyClaimColor(c.name); };
+      panel.appendChild(b);
+    });
+    document.body.appendChild(panel);
   }
 })();
 </script>
