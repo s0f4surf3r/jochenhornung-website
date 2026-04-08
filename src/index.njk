@@ -121,7 +121,6 @@ body {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-shadow: 0 0 20px rgba(255, 176, 0, 0.3), 0 0 60px rgba(255, 176, 0, 0.1);
-  overflow: hidden;
   text-wrap: balance;
 }
 
@@ -708,6 +707,10 @@ body {
 }
 
 /* ── LETTER DISPERSION ── */
+.word {
+  display: inline-block;
+  white-space: nowrap;
+}
 .letter {
   display: inline-block;
   transition: transform 0.9s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.8s ease;
@@ -1267,11 +1270,14 @@ body {
   var nameEl = document.querySelector('.hero-claim');
   if (nameEl && !reducedMotion) {
     var original = nameEl.textContent;
-    nameEl.innerHTML = original.split('').map(function(ch) {
-      if (ch === ' ') return ' ';
-      if (ch === '\n') return '<br>';
-      return '<span class="letter">' + ch + '</span>';
-    }).join('');
+    /* Wörter in nowrap-Container packen damit Browser nur zwischen Wörtern umbricht */
+    nameEl.innerHTML = original.split(' ').map(function(word) {
+      if (word === '') return '';
+      var letters = word.split('').map(function(ch) {
+        return '<span class="letter">' + ch + '</span>';
+      }).join('');
+      return '<span class="word">' + letters + '</span>';
+    }).join(' ');
 
     var scattered = false;
     var returnTimer;
