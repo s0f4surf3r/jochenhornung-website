@@ -46,15 +46,15 @@ description: "Jochen Hornung auf Twitch – Code, Design, Bewusstsein. Coming so
 
 <div class="text-content" style="text-align: center;">
 
-<img src="/images/streaming-banner.png" alt="s0f4surfer Twitch Banner" class="streaming-banner">
-
-<img src="/images/streaming-avatar.png" alt="s0f4surfer Avatar" class="streaming-avatar">
-
 <div class="streaming-coming-soon">Coming soon.</div>
 
-Retro Game Dev · Meditation Tech · AI Experiments — live.
+Design · Consciousness Tools · AI — live.
 
-<a href="https://twitch.tv/s0f4surfer" target="_blank" rel="noopener" class="streaming-link">twitch.tv/s0f4surfer</a>
+<a href="https://twitch.tv/s0f4surf3r" target="_blank" rel="noopener" class="streaming-link">twitch.tv/s0f4surf3r</a>
+
+<img src="/images/streaming-avatar.png" alt="s0f4surf3r Avatar" class="streaming-avatar">
+
+<img src="/images/streaming-banner.png" alt="s0f4surf3r Twitch Banner" class="streaming-banner">
 
 </div>
 </div>
