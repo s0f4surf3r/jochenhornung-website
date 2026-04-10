@@ -1251,7 +1251,7 @@ body {
 
           var rect = div.getBoundingClientRect();
           var visible = rect.top < window.innerHeight && rect.bottom > 0;
-          var vol = visible ? 0.012 : 0;
+          var vol = (visible && isPlaying) ? 0.012 : 0;
           kittGain.gain.value = vol;
           if (kittOsc._gain2) kittOsc._gain2.gain.value = vol * 0.4;
           if (kittOsc._gain3) kittOsc._gain3.gain.value = vol * 0.2;
@@ -1499,6 +1499,8 @@ body {
         isPlaying = false;
         soundBtn.classList.remove('active');
         localStorage.setItem('jochenhornung-sound', 'off');
+        /* AudioContext suspenden damit coreaudiod den Mac schlafen lässt */
+        setTimeout(function() { if (!isPlaying && audioCtx) audioCtx.suspend(); }, 1000);
       } else {
         /* Defensiv: alten Interval killen falls einer hängt */
         if (breathInterval) { clearInterval(breathInterval); breathInterval = null; }
