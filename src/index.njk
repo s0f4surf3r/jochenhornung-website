@@ -1414,7 +1414,73 @@ body {
       scattered = false;
     }
 
-    /* Desktop: hover scatter MIT sound (AudioContext ist schon offen nach erstem Click) */
+    /* ═══ CLAIM SOUND PADS ═══ */
+    /* Jedes Claim-Wort hat seinen eigenen Sound */
+    var claimSounds = {};
+    var soundFiles = {
+      'claim-design': '/sounds/design.mp3',
+      'claim-consciousness': '/sounds/consciousness.mp3',
+      'claim-tools': '/sounds/tools.mp3',
+      'claim-ai': '/sounds/ai.mp3'
+    };
+
+    function playClaimSound(className) {
+      ensureAudio();
+      if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+      if (!claimSounds[className]) {
+        /* Lade Sound beim ersten Tap */
+        fetch(soundFiles[className]).then(function(r) { return r.arrayBuffer(); }).then(function(buf) {
+          audioCtx.decodeAudioData(buf, function(decoded) {
+            claimSounds[className] = decoded;
+            triggerSound(decoded);
+          });
+        });
+      } else {
+        triggerSound(claimSounds[className]);
+      }
+    }
+
+    function triggerSound(buffer) {
+      var src = audioCtx.createBufferSource();
+      src.buffer = buffer;
+      var g = audioCtx.createGain();
+      g.gain.value = 0.5;
+      src.connect(g);
+      g.connect(audioCtx.destination);
+      src.start();
+    }
+
+    claimWords.forEach(function(cw) {
+      cw.style.cursor = 'pointer';
+      cw.style.webkitTapHighlightColor = 'transparent';
+
+      /* Visuelles Feedback */
+      function flash() {
+        cw.style.filter = 'brightness(2)';
+        cw.style.transition = 'filter 0.08s';
+        setTimeout(function() {
+          cw.style.filter = '';
+          cw.style.transition = 'filter 0.4s';
+        }, 100);
+      }
+
+      /* Touch */
+      cw.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        var cls = Array.from(cw.classList).find(function(c) { return c.startsWith('claim-'); });
+        if (cls) playClaimSound(cls);
+        flash();
+      }, { passive: false });
+
+      /* Click (Desktop) */
+      cw.addEventListener('click', function() {
+        var cls = Array.from(cw.classList).find(function(c) { return c.startsWith('claim-'); });
+        if (cls) playClaimSound(cls);
+        flash();
+      });
+    });
+
+    /* Desktop: hover scatter MIT sound */
     nameEl.addEventListener('mouseenter', function() {
       clearTimeout(returnTimer);
       scatter();

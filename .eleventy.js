@@ -25,6 +25,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPassthroughCopy("src/docs");
   eleventyConfig.addPassthroughCopy("src/audio");
+  eleventyConfig.addPassthroughCopy({"src/sounds": "sounds"});
   eleventyConfig.addPassthroughCopy("src/apps");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
   // Date filter
