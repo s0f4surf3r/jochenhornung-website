@@ -668,10 +668,12 @@ body {
 
   .floating-controls {
     position: fixed;
-    top: 0.6rem;
-    right: 3.5rem;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
     bottom: auto;
-    gap: 0.3rem;
+    gap: 0.4rem;
     z-index: 1001;
   }
 
@@ -1287,15 +1289,28 @@ body {
   /* ═══ LETTER DISPERSION ═══ */
   var nameEl = document.querySelector('.hero-claim');
   if (nameEl && !reducedMotion) {
-    var original = nameEl.textContent;
-    /* Wörter in nowrap-Container packen damit Browser nur zwischen Wörtern umbricht */
-    nameEl.innerHTML = original.split(' ').map(function(word) {
-      if (word === '') return '';
-      var letters = word.split('').map(function(ch) {
-        return '<span class="letter">' + ch + '</span>';
-      }).join('');
-      return '<span class="word">' + letters + '</span>';
-    }).join(' ');
+    /* Claim-Word-Spans (.claim-design etc.) bewahren, nur Text darin in Letter-Spans wrappen */
+    var claimWords = nameEl.querySelectorAll('.claim-word');
+    if (claimWords.length) {
+      claimWords.forEach(function(cw) {
+        var txt = cw.textContent;
+        cw.innerHTML = txt.split('').map(function(ch) {
+          if (ch === ' ') return ' ';
+          return '<span class="letter">' + ch + '</span>';
+        }).join('');
+      });
+      /* Separatoren (.claim-sep) behalten wir, brauchen keine Letter-Wrap */
+    } else {
+      /* Fallback falls keine .claim-word Spans da sind */
+      var original = nameEl.textContent;
+      nameEl.innerHTML = original.split(' ').map(function(word) {
+        if (word === '') return '';
+        var letters = word.split('').map(function(ch) {
+          return '<span class="letter">' + ch + '</span>';
+        }).join('');
+        return '<span class="word">' + letters + '</span>';
+      }).join(' ');
+    }
 
     var scattered = false;
     var returnTimer;
