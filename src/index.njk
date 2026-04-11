@@ -597,7 +597,16 @@ body {
   /* Claim: untereinander, keine Punkte */
   .claim-word { display: block; margin: 0.4rem 0; }
   .claim-sep { display: none; }
-  .claim-ai { font-size: 2em; }
+
+  .hero-image img { max-height: 55vh; object-fit: contain; }
+
+  .floating-controls {
+    bottom: auto;
+    right: auto;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
   .hero-claim-wrap {
     padding: 1.5rem 2rem 2rem;
