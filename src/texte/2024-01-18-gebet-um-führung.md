@@ -4,7 +4,7 @@ tags: text
 title: Gebet um Führung
 date: 2024-01-18T12:12:00.000+01:00
 type: Gedicht
-heroImage: /images/Gebet um Führung_kl.jpg
+heroImage: /images/gebet-um-fuehrung-stimmung.png
 excerpt: >
   Geschrieben während meiner Reha als stilles Gegenstück zur inneren und äußeren
   Diagnose.  

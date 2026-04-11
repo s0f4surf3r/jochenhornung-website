@@ -4,6 +4,7 @@ tags: text
 title: Vater nochmal
 date: 2025-02-06T13:11:00.000+01:00
 type: Gedicht
+heroImage: /images/vater-nochmal-stimmung.png
 excerpt: "Dieses Gedicht ist entstanden um in tiefem Kontakt mit meiner
   Vaterwunde zu kommen. Zu einem Zeitpunkt als ich eigentlich dachte ich hätte
   die Arbeit schon getan, wurde mir klar, dass diese Arbeit niemals enden wird.

@@ -4,7 +4,7 @@ tags: text
 title: Das grüne Sofa
 date: 2021-12-22T12:45:00.000+01:00
 type: Gedicht
-heroImage: /images/das-grüne-sofa_kl.jpg
+heroImage: /images/das-gruene-sofa-stimmung.png
 excerpt: "In Gedenken an die schönen Heiligabende bei meiner Oma Lilly und Opa
   Albert. RIP. "
 ---

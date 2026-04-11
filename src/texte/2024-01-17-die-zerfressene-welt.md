@@ -4,7 +4,7 @@ tags: text
 title: Die zerfressene Welt
 date: 2024-01-17T23:23:00.000+01:00
 type: Gedicht
-heroImage: /images/die-zerfressene-welt.jpg
+heroImage: /images/die-zerfressene-welt-stimmung.png
 excerpt: >
   Entstanden während meiner Reha.  
 

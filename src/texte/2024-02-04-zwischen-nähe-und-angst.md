@@ -4,7 +4,7 @@ tags: text
 title: Zwischen Nähe und Angst
 date: 2024-02-04T12:12:00.000+01:00
 type: Gedicht
-heroImage: /images/zwischen-nähe-und-angst_kl.jpg
+heroImage: /images/zwischen-naehe-und-angst-stimmung.png
 excerpt: >+
   Geschrieben während meiner Reha aus einer realen Beziehungsspannung heraus.  
 

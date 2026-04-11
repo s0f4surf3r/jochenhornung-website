@@ -5,7 +5,7 @@ title: Stille im Sturm
 date: 2026-03-03T13:37:00.000+01:00
 type: Gedicht
 excerpt: Dieses Gedicht ist einfach aufgetaucht. Ich weiß nicht, woher.
-heroImage: /images/stille-im-sturm-gedicht-bild-kl.jpg
+heroImage: /images/stille-im-sturm-stimmung.png
 ---
 Mitten im Sturm  
 liegt eine Stille,  

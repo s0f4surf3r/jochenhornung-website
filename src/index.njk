@@ -112,7 +112,7 @@ body {
   font-size: clamp(1.4rem, 3.2vw, 2.6rem);
   font-weight: 700;
   line-height: 1.1;
-  color: var(--claim-color, var(--green));
+  color: inherit;
   margin: 0;
   cursor: default;
   user-select: none;
@@ -120,11 +120,15 @@ body {
   display: inline-block;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  text-shadow: 0 0 20px var(--claim-glow, rgba(0, 255, 65, 0.3)), 0 0 60px var(--claim-glow-far, rgba(0, 255, 65, 0.1));
+  text-shadow: none; /* Jedes Claim-Wort hat eigene text-shadow */
   text-wrap: balance;
 }
 
-/* Claim balanced wrapping */
+/* Drei Farben für die drei Claim-Wörter */
+.claim-design { color: var(--amber); text-shadow: 0 0 20px rgba(255,176,0,0.4), 0 0 60px rgba(255,176,0,0.15); }
+.claim-consciousness { color: var(--cyan); text-shadow: 0 0 20px rgba(0,229,255,0.4), 0 0 60px rgba(0,229,255,0.15); }
+.claim-ai { color: var(--magenta); text-shadow: 0 0 20px rgba(255,0,170,0.4), 0 0 60px rgba(255,0,170,0.15); }
+.claim-sep { color: rgba(255,255,255,0.2); }
 
 /* Scanlines als Pseudo-Element ÜBER dem Text */
 .hero-claim::after {
@@ -589,19 +593,31 @@ body {
     font-size: clamp(1.2rem, 5vw, 1.8rem);
   }
 
+  /* Claim: untereinander, keine Punkte */
+  .claim-word { display: block; margin: 0.3rem 0; }
+  .claim-sep { display: none; }
+
   .hero-claim-wrap {
-    padding: 2rem 2rem 2.5rem;
+    padding: 1.5rem 2rem 2rem;
   }
 
-  /* Nav: nur Avatar + Burger sichtbar */
+  /* Nav: zwei Zeilen — Buttons oben rechts, Name darunter zentriert */
   .hero-nav {
-    gap: 0.8rem;
-    padding: 0.8rem 1.5rem;
+    flex-wrap: wrap;
+    padding: 0.5rem 1.5rem;
+    justify-content: flex-end;
   }
 
   .nav-home {
     font-size: 0.85rem;
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    margin-right: 0;
+    padding-top: 0.3rem;
   }
+
+  .nav-burger { order: 1; }
 
   /* Name kürzen auf Mobile — nur Avatar + @s0f4surf3r */
   .nav-home span[style*="opacity:0.2"] { display: none; } /* ⌁ weg */
@@ -1022,7 +1038,7 @@ body {
     </div>
 
     <div class="hero-claim-wrap" data-glow="DESIGN · CONSCIOUSNESS TOOLS · AI">
-      <h1 class="hero-claim">Design · Consciousness&nbsp;Tools · AI</h1>
+      <h1 class="hero-claim"><span class="claim-word claim-design">Design</span> <span class="claim-sep">·</span> <span class="claim-word claim-consciousness">Consciousness&nbsp;Tools</span> <span class="claim-sep">·</span> <span class="claim-word claim-ai">AI</span></h1>
     </div>
 
   <div class="sr-only">
