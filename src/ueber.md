@@ -34,11 +34,11 @@ Manchmal [begleite ich Menschen](/coaching/) — wenn sie fragen. Nicht als Beru
 
 ## Was ich baue
 
-<div style="display:flex;flex-direction:column;gap:0.8rem;">
-<div><img src="/images/jthrust-icon-white.png" alt="" style="width:24px;height:24px;vertical-align:middle;margin-right:0.4rem;border-radius:4px;display:inline;"><strong>J-THRUST</strong> — Retro-Gravitation, C64-Seele</div>
-<div><img src="/images/msphere-icon-192.png" alt="" style="width:24px;height:24px;vertical-align:middle;margin-right:0.4rem;border-radius:4px;display:inline;"><strong>M-Sphere</strong> — Meditation als Erlebnis</div>
-<div><img src="/images/klarsite-logo.svg" alt="" style="width:24px;height:24px;vertical-align:middle;margin-right:0.4rem;border-radius:4px;display:inline;"><strong>Klarsite</strong> — Websites die Menschen zeigen, nicht verkaufen</div>
-<div><img src="/images/spuera-icon-192.png" alt="" style="width:24px;height:24px;vertical-align:middle;margin-right:0.4rem;border-radius:4px;display:inline;"><strong>Spüra</strong> — Emotionales Self-Tracking</div>
+<div style="display:flex;flex-direction:column;gap:0.4rem;line-height:1.6;">
+<div><img src="/images/jthrust-icon.png" alt="" style="width:22px;height:22px;vertical-align:middle;margin-right:0.3rem;border-radius:4px;display:inline;"><strong>J-THRUST</strong> — Retro-Gravitation, C64-Seele</div>
+<div><img src="/images/msphere-icon-192.png" alt="" style="width:22px;height:22px;vertical-align:middle;margin-right:0.3rem;border-radius:4px;display:inline;"><strong>M-Sphere</strong> — Meditation als Erlebnis</div>
+<div><img src="/images/klarsite-logo.svg" alt="" style="width:22px;height:22px;vertical-align:middle;margin-right:0.3rem;border-radius:4px;display:inline;"><strong>Klarsite</strong> — Websites für Menschen</div>
+<div><img src="/images/spuera-icon-192.png" alt="" style="width:22px;height:22px;vertical-align:middle;margin-right:0.3rem;border-radius:4px;display:inline;"><strong>Spüra</strong> — Emotionales Self-Tracking</div>
 </div>
 
 ## Woher ich komme
