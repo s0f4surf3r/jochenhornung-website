@@ -1802,15 +1802,27 @@ body {
 if (location.search.includes('edit')) {
   (function() {
     var controls = [
-      { label: 'Claim Farbe', type: 'color', target: '.hero-claim', prop: 'color', def: '#00ff41' },
-      { label: 'Claim Glow', type: 'color', target: '.hero-claim', prop: 'textShadow', def: '#00ff41', isShadow: true },
-      { label: 'Claim Font-Size', type: 'range', target: '.hero-claim', prop: 'fontSize', min: 10, max: 60, def: 26, unit: 'px' },
-      { label: 'Claim Letter-Spacing', type: 'range', target: '.hero-claim', prop: 'letterSpacing', min: 0, max: 20, def: 2, unit: 'px', step: 0.5 },
+      { label: '── CLAIM ──', type: 'heading' },
+      { label: 'Claim Margin Top', type: 'range', target: '.hero-claim-wrap', prop: 'marginTop', min: -100, max: 100, def: 0, unit: 'px' },
       { label: 'Claim Padding Top', type: 'range', target: '.hero-claim-wrap', prop: 'paddingTop', min: 0, max: 120, def: 48, unit: 'px' },
       { label: 'Claim Padding Bottom', type: 'range', target: '.hero-claim-wrap', prop: 'paddingBottom', min: 0, max: 120, def: 64, unit: 'px' },
+      { label: 'Claim Font-Size', type: 'range', target: '.hero-claim', prop: 'fontSize', min: 10, max: 80, def: 26, unit: 'px' },
+      { label: 'Claim Letter-Spacing', type: 'range', target: '.hero-claim', prop: 'letterSpacing', min: 0, max: 20, def: 2, unit: 'px', step: 0.5 },
+      { label: 'Claim Word Gap', type: 'range', target: '.claim-word', prop: 'marginBottom', min: 0, max: 40, def: 6, unit: 'px' },
+      { label: 'Design Farbe', type: 'color', target: '.claim-design', prop: 'color', def: '#ffb000' },
+      { label: 'Consciousness Farbe', type: 'color', target: '.claim-consciousness', prop: 'color', def: '#00ff41' },
+      { label: 'Tools Farbe', type: 'color', target: '.claim-tools', prop: 'color', def: '#00e5ff' },
+      { label: 'AI Farbe', type: 'color', target: '.claim-ai', prop: 'color', def: '#ff00aa' },
+      { label: '── HERO ──', type: 'heading' },
+      { label: 'Hero Max-Height', type: 'range', target: '.hero-image', prop: 'maxHeight', min: 100, max: 900, def: 600, unit: 'px' },
       { label: 'Hero Opacity', type: 'range', target: '.hero-image img', prop: 'opacity', min: 0, max: 100, def: 85, unit: '%', divisor: 100 },
-      { label: 'Nav Padding', type: 'range', target: '.hero-nav', prop: 'padding', min: 0, max: 40, def: 6, unit: 'px', isVertPad: true },
-      { label: 'Nav Gap', type: 'range', target: '.hero-nav', prop: 'gap', min: 0, max: 40, def: 13, unit: 'px' },
+      { label: '── NAV ──', type: 'heading' },
+      { label: 'Avatar Größe', type: 'range', target: '.nav-logo', prop: 'width', min: 16, max: 80, def: 32, unit: 'px', alsoH: true },
+      { label: '@s0f4 Font-Size', type: 'range', target: '.nav-home', prop: 'fontSize', min: 8, max: 30, def: 14, unit: 'px' },
+      { label: 'Jochen Hornung Size', type: 'range', target: '.nav-name', prop: 'fontSize', min: 10, max: 60, def: 22, unit: 'px' },
+      { label: 'Nav Padding Top', type: 'range', target: '.hero-nav', prop: 'paddingTop', min: 0, max: 40, def: 8, unit: 'px' },
+      { label: 'Nav Gap', type: 'range', target: '.nav-home', prop: 'gap', min: 0, max: 30, def: 4, unit: 'px' },
+      { label: '── SECTIONS ──', type: 'heading' },
       { label: 'Sections Padding', type: 'range', target: '.section', prop: 'paddingTop', min: 10, max: 120, def: 48, unit: 'px', alsoBottom: true },
       { label: 'Card Gap', type: 'range', target: '.card-grid', prop: 'gap', min: 0, max: 60, def: 20, unit: 'px' },
       { label: 'Card Padding', type: 'range', target: '.card', prop: 'padding', min: 5, max: 60, def: 24, unit: 'px' },
@@ -1827,8 +1839,16 @@ if (location.search.includes('edit')) {
     panel.appendChild(title);
 
     controls.forEach(function(c) {
+      if (c.type === 'heading') {
+        var h = document.createElement('div');
+        h.textContent = c.label;
+        h.style.cssText = 'font-size:11px;color:#ffb000;margin:12px 0 4px;letter-spacing:1px';
+        panel.appendChild(h);
+        return;
+      }
+
       var wrap = document.createElement('div');
-      wrap.style.cssText = 'margin-bottom:8px';
+      wrap.style.cssText = 'margin-bottom:6px';
 
       var lbl = document.createElement('label');
       lbl.textContent = c.label;
@@ -1842,15 +1862,12 @@ if (location.search.includes('edit')) {
         var inp = document.createElement('input');
         inp.type = 'color';
         inp.value = c.def;
-        inp.style.cssText = 'width:100%;height:30px;border:none;cursor:pointer;background:none';
+        inp.style.cssText = 'width:100%;height:26px;border:none;cursor:pointer;background:none';
         inp.addEventListener('input', function() {
           var els = document.querySelectorAll(c.target);
           els.forEach(function(el) {
-            if (c.isShadow) {
-              el.style.textShadow = '0 0 20px ' + inp.value + '80, 0 0 60px ' + inp.value + '30';
-            } else {
-              el.style[c.prop] = inp.value;
-            }
+            el.style[c.prop] = inp.value;
+            el.style.textShadow = '0 0 20px ' + inp.value + '66, 0 0 60px ' + inp.value + '26';
           });
         });
         wrap.appendChild(inp);
@@ -1872,13 +1889,9 @@ if (location.search.includes('edit')) {
           valDisplay.textContent = inp.value + (c.unit || '');
           var els = document.querySelectorAll(c.target);
           els.forEach(function(el) {
-            if (c.isVertPad) {
-              el.style.paddingTop = val + unit;
-              el.style.paddingBottom = val + unit;
-            } else {
-              el.style[c.prop] = val + unit;
-              if (c.alsoBottom) el.style.paddingBottom = val + unit;
-            }
+            el.style[c.prop] = val + unit;
+            if (c.alsoBottom) el.style.paddingBottom = val + unit;
+            if (c.alsoH) el.style.height = val + unit;
           });
         });
         wrap.appendChild(inp);
