@@ -1876,50 +1876,88 @@ body {
       { label: 'Divider Padding', type: 'range', target: '.pixel-divider', prop: 'paddingTop', min: 0, max: 80, def: 32, unit: 'px', alsoBottom: true },
     ];
 
-    /* Schlankes Karussell — eine Zeile, Pfeile links/rechts */
-    var bar = document.createElement('div');
-    bar.id = 'editBar';
-    bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:rgba(10,10,15,0.95);border-top:1px solid #333;padding:8px 12px 12px;z-index:99999;font:12px monospace;color:#ccc;backdrop-filter:blur(10px);display:flex;align-items:center;gap:8px';
+    /* Draggable Bubble — verschiebbar, expandiert zum Slider */
+    var bubble = document.createElement('div');
+    bubble.id = 'editBar';
+    bubble.style.cssText = 'position:fixed;top:50%;right:12px;z-index:99999;font:12px monospace;touch-action:none';
+
+    /* Bubble-Button (zusammengeklappt) */
+    var bubbleBtn = document.createElement('div');
+    bubbleBtn.style.cssText = 'width:48px;height:48px;border-radius:50%;background:#ffb000;color:#000;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;cursor:grab;box-shadow:0 2px 12px rgba(255,176,0,0.4)';
+    bubbleBtn.textContent = '⚙';
+
+    /* Expanded Panel */
+    var expandedPanel = document.createElement('div');
+    expandedPanel.style.cssText = 'display:none;background:rgba(10,10,15,0.95);border:1px solid #333;border-radius:12px;padding:10px;backdrop-filter:blur(10px);width:260px;margin-bottom:8px';
+
+    var lblEl = document.createElement('div');
+    lblEl.style.cssText = 'font-size:10px;color:#ffb000;margin-bottom:6px;letter-spacing:1px;text-align:center';
+
+    var inputWrap = document.createElement('div');
+    inputWrap.style.cssText = 'display:flex;align-items:center;gap:6px';
 
     var prevBtn = document.createElement('button');
     prevBtn.textContent = '◀';
-    prevBtn.style.cssText = 'background:none;border:1px solid #555;color:#ccc;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:14px;flex-shrink:0';
+    prevBtn.style.cssText = 'background:none;border:1px solid #555;color:#ccc;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:12px;flex-shrink:0';
+
+    var sliderEl = document.createElement('input');
+    sliderEl.style.cssText = 'flex:1;accent-color:#ffb000;cursor:pointer';
 
     var nextBtn = document.createElement('button');
     nextBtn.textContent = '▶';
     nextBtn.style.cssText = prevBtn.style.cssText;
 
-    var mid = document.createElement('div');
-    mid.style.cssText = 'flex:1;text-align:center';
-
-    var lblEl = document.createElement('div');
-    lblEl.style.cssText = 'font-size:10px;color:#ffb000;margin-bottom:4px;letter-spacing:1px';
-
-    var inputWrap = document.createElement('div');
-    inputWrap.style.cssText = 'display:flex;align-items:center;gap:6px';
-
-    var sliderEl = document.createElement('input');
-    sliderEl.style.cssText = 'flex:1;accent-color:#ffb000;cursor:pointer';
-
     var valEl = document.createElement('span');
-    valEl.style.cssText = 'color:#ffb000;font-size:11px;min-width:40px;text-align:right';
+    valEl.style.cssText = 'color:#ffb000;font-size:11px;min-width:36px;text-align:right';
 
+    inputWrap.appendChild(prevBtn);
     inputWrap.appendChild(sliderEl);
     inputWrap.appendChild(valEl);
-    mid.appendChild(lblEl);
-    mid.appendChild(inputWrap);
+    inputWrap.appendChild(nextBtn);
+    expandedPanel.appendChild(lblEl);
+    expandedPanel.appendChild(inputWrap);
 
-    var closeBtn = document.createElement('button');
-    closeBtn.textContent = '✕';
-    closeBtn.style.cssText = 'background:none;border:1px solid #555;color:#ccc;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:14px;flex-shrink:0';
-    closeBtn.addEventListener('click', function() { bar.remove(); editActive = false; });
+    bubble.appendChild(expandedPanel);
+    bubble.appendChild(bubbleBtn);
 
-    bar.appendChild(prevBtn);
-    bar.appendChild(mid);
-    bar.appendChild(nextBtn);
-    bar.appendChild(closeBtn);
+    var expanded = false;
+    bubbleBtn.addEventListener('click', function(e) {
+      if (e.target._dragged) return;
+      expanded = !expanded;
+      expandedPanel.style.display = expanded ? 'block' : 'none';
+      bubbleBtn.textContent = expanded ? '✕' : '⚙';
+    });
 
-    var panel = bar; /* Compat für Export-Code unten */
+    /* Drag */
+    var dragX, dragY, startX, startY, dragging = false;
+    function onStart(e) {
+      dragging = true;
+      bubbleBtn._dragged = false;
+      var t = e.touches ? e.touches[0] : e;
+      dragX = t.clientX - bubble.offsetLeft;
+      dragY = t.clientY - bubble.offsetTop;
+      startX = t.clientX; startY = t.clientY;
+      bubbleBtn.style.cursor = 'grabbing';
+    }
+    function onMove(e) {
+      if (!dragging) return;
+      e.preventDefault();
+      var t = e.touches ? e.touches[0] : e;
+      bubble.style.left = (t.clientX - dragX) + 'px';
+      bubble.style.top = (t.clientY - dragY) + 'px';
+      bubble.style.right = 'auto';
+      if (Math.abs(t.clientX - startX) > 5 || Math.abs(t.clientY - startY) > 5) bubbleBtn._dragged = true;
+    }
+    function onEnd() { dragging = false; bubbleBtn.style.cursor = 'grab'; }
+    bubbleBtn.addEventListener('mousedown', onStart);
+    bubbleBtn.addEventListener('touchstart', onStart, { passive: false });
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('touchmove', onMove, { passive: false });
+    document.addEventListener('mouseup', onEnd);
+    document.addEventListener('touchend', onEnd);
+
+    var closeBtn = { addEventListener: function(){} }; /* Compat */
+    var bar = bubble;
 
     /* Filter: nur echte Controls (keine Headings) */
     var realControls = controls.filter(function(c) { return c.type !== 'heading'; });
