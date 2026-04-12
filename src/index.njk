@@ -2081,18 +2081,7 @@ body {
     });
     bar.appendChild(saveBtn);
 
-    /* Beim Laden: gespeicherte Werte aus localStorage wiederherstellen */
-    var saved = localStorage.getItem('jochenhornung-edit-' + window.innerWidth);
-    if (saved) {
-      try {
-        var data = JSON.parse(saved);
-        Object.keys(data.values).forEach(function(key) {
-          var v = data.values[key];
-          var els = document.querySelectorAll(v.target);
-          els.forEach(function(el) { el.style[v.prop] = v.value; });
-        });
-      } catch(e) {}
-    }
+    /* Gespeicherte Werte NUR wiederherstellen wenn Edit aktiv ist (nicht bei normalem Besuch) */
 
     showControl(0);
     document.body.appendChild(bar);
