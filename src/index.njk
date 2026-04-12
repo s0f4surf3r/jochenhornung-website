@@ -1831,12 +1831,19 @@ if (location.search.includes('edit')) {
 
     var panel = document.createElement('div');
     panel.id = 'editPanel';
-    panel.style.cssText = 'position:fixed;top:0;left:0;width:280px;max-height:100vh;overflow-y:auto;background:rgba(10,10,15,0.95);border-right:1px solid #333;padding:12px;z-index:99999;font:12px/1.6 monospace;color:#ccc;backdrop-filter:blur(10px)';
+    panel.style.cssText = 'position:fixed;bottom:0;left:0;right:0;max-height:40vh;overflow-y:auto;background:rgba(10,10,15,0.95);border-top:1px solid #333;padding:12px 12px 24px;z-index:99999;font:12px/1.6 monospace;color:#ccc;backdrop-filter:blur(10px);transition:transform 0.3s';
 
-    var title = document.createElement('div');
-    title.textContent = 'LIVE EDIT';
-    title.style.cssText = 'font-size:14px;font-weight:700;color:#ffb000;margin-bottom:12px;letter-spacing:2px';
-    panel.appendChild(title);
+    /* Toggle-Button oben am Panel */
+    var toggle = document.createElement('button');
+    toggle.textContent = '▼ LIVE EDIT';
+    toggle.style.cssText = 'position:absolute;top:-36px;left:50%;transform:translateX(-50%);background:#ffb000;color:#000;border:none;padding:6px 20px;border-radius:8px 8px 0 0;font:700 11px monospace;cursor:pointer;letter-spacing:1px;z-index:100000';
+    var panelOpen = true;
+    toggle.addEventListener('click', function() {
+      panelOpen = !panelOpen;
+      panel.style.transform = panelOpen ? '' : 'translateY(calc(100% + 1px))';
+      toggle.textContent = (panelOpen ? '▼' : '▲') + ' LIVE EDIT';
+    });
+    panel.appendChild(toggle);
 
     controls.forEach(function(c) {
       if (c.type === 'heading') {
