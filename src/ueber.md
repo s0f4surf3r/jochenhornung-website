@@ -34,12 +34,7 @@ Manchmal [begleite ich Menschen](/coaching/) — wenn sie fragen. Nicht als Beru
 
 ## Was ich baue
 
-<div style="display:flex;flex-direction:column;gap:0.4rem;line-height:1.6;">
-<div><img src="/images/jthrust-icon.png" alt="J-THRUST Logo" style="width:22px;height:22px;vertical-align:middle;margin-right:0.3rem;border-radius:4px;display:inline;"><strong>J-THRUST</strong> — Retro-Gravitation, C64-Seele</div>
-<div><img src="/images/msphere-icon-192.png" alt="M-Sphere Logo" style="width:22px;height:22px;vertical-align:middle;margin-right:0.3rem;border-radius:4px;display:inline;"><strong>M-Sphere</strong> — Meditation als Erlebnis</div>
-<div><img src="/images/klarsite-logo.svg" alt="Klarsite Logo" style="width:22px;height:22px;vertical-align:middle;margin-right:0.3rem;border-radius:4px;display:inline;"><strong>Klarsite</strong> — Websites für Menschen</div>
-<div><img src="/images/spuera-icon-192.png" alt="Spüra Logo" style="width:22px;height:22px;vertical-align:middle;margin-right:0.3rem;border-radius:4px;display:inline;"><strong>Spüra</strong> — Emotionales Self-Tracking</div>
-</div>
+<table style="border:none;border-collapse:collapse;"><tr><td style="border:none;padding:0.3rem 0;"><img src="/images/jthrust-icon.png" alt="J-THRUST" style="width:20px;height:20px;vertical-align:middle;margin-right:0.3rem;border-radius:4px;"><strong>J-THRUST</strong> — Retro-Gravitation, C64-Seele</td></tr><tr><td style="border:none;padding:0.3rem 0;"><img src="/images/msphere-icon-192.png" alt="M-Sphere" style="width:20px;height:20px;vertical-align:middle;margin-right:0.3rem;border-radius:4px;"><strong>M-Sphere</strong> — Meditation als Erlebnis</td></tr><tr><td style="border:none;padding:0.3rem 0;"><img src="/images/klarsite-logo.svg" alt="Klarsite" style="width:20px;height:20px;vertical-align:middle;margin-right:0.3rem;border-radius:4px;"><strong>Klarsite</strong> — Websites für Menschen</td></tr><tr><td style="border:none;padding:0.3rem 0;"><img src="/images/spuera-icon-192.png" alt="Spüra" style="width:20px;height:20px;vertical-align:middle;margin-right:0.3rem;border-radius:4px;"><strong>Spüra</strong> — Emotionales Self-Tracking</td></tr></table>
 
 ## Woher ich komme
 
