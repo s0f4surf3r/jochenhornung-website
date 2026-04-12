@@ -594,13 +594,35 @@ body {
    RESPONSIVE
    ══════════════════════════ */
 
-@media (max-width: 900px) {
-  .hero-claim {
-    white-space: normal;
-    font-size: clamp(1.2rem, 5vw, 1.8rem);
-  }
+/* ── iPad Portrait (768–900px) — Jochen's iPad Tuning 12.04.2026 ── */
+@media (min-width: 768px) and (max-width: 900px) {
+  .hero-image img { max-height: 50vh; object-fit: contain; opacity: 0.89; }
 
-  /* Claim: Pyramide — Jochen's iPhone Tuning (430x774, 12.04.2026) */
+  .hero-claim { white-space: normal; font-size: 30px; }
+  .claim-word { display: block; text-align: center; letter-spacing: 6px; margin-bottom: 8px; }
+  .claim-sep { display: none; }
+  .claim-ai { font-size: 0.6em; }
+  .claim-tools { font-size: 0.8em; }
+  .claim-design { font-size: 1.05em; }
+  .claim-consciousness { font-size: 1.3em; }
+
+  .hero-claim-wrap { margin-top: 56px; padding: 40px 2rem 60px; }
+
+  .nav-logo { width: 49px; height: 49px; }
+  .nav-home { font-size: 16px; gap: 7px; }
+  .nav-home .nav-name { font-size: 40px; }
+  .hero-nav { padding-top: 23px; }
+
+  .section { padding-top: 83px; padding-bottom: 83px; }
+  .card-grid { gap: 36px; }
+  .card { padding: 51px; }
+  .pixel-divider { padding-top: 46px; padding-bottom: 46px; }
+}
+
+/* ── iPhone (<768px) — Jochen's iPhone Tuning 12.04.2026 ── */
+@media (max-width: 767px) {
+  .hero-claim { white-space: normal; font-size: 30px; }
+
   .claim-word { display: block; text-align: center; letter-spacing: 8px; margin-bottom: 6px; }
   .claim-sep { display: none; }
   .claim-ai { font-size: 0.55em; }
@@ -608,14 +630,7 @@ body {
   .claim-design { font-size: 1.0em; }
   .claim-consciousness { font-size: 1.25em; }
 
-  .hero-claim {
-    font-size: 30px;
-  }
-
-  .hero-claim-wrap {
-    margin-top: 39px;
-    padding: 77px 1.5rem 80px;
-  }
+  .hero-claim-wrap { margin-top: 39px; padding: 77px 1.5rem 80px; }
 
   .hero-image { max-height: 745px; }
   .hero-image img { opacity: 0.89; }
@@ -1082,7 +1097,7 @@ body {
 
     <div class="hero-image">
       <picture>
-        <source media="(max-width: 900px)" srcset="/images/hero-banner-mobile.png">
+        <source media="(max-width: 767px)" srcset="/images/hero-banner-mobile.png">
         <img src="/images/hero-banner.png"
              alt="s0f4surf3r — Vektor-Figur im Sessel, digitale Energie"
              width="1200" height="480"
