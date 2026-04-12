@@ -1934,11 +1934,10 @@ body {
 
   /* Avatar-Tap aktiviert Edit */
   if (avatarEl) {
-    var tapCount = 0;
     avatarEl.addEventListener('click', function(e) {
-      tapCount++;
-      if (tapCount >= 3) { initEdit(); tapCount = 0; e.preventDefault(); }
-      setTimeout(function() { tapCount = 0; }, 1000);
+      e.preventDefault();
+      if (editActive) { var b = document.getElementById('editBar'); if (b) b.remove(); editActive = false; }
+      else initEdit();
     });
   }
 
