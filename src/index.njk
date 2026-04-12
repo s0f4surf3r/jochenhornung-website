@@ -601,29 +601,63 @@ body {
    RESPONSIVE
    ══════════════════════════ */
 
-/* ── iPad Portrait (768–900px) — Jochen's iPad Tuning 12.04.2026 ── */
+/* ═══════════════════════════════════════
+   iPad Portrait (768–900px) — 12.04.2026
+   Gleiche Logik wie iPhone: Portrait-Hero, Pyramide, Nav gestackt
+   ═══════════════════════════════════════ */
 @media (min-width: 768px) and (max-width: 900px) {
-  .hero-image img { max-height: 50vh; object-fit: contain; opacity: 0.89; }
 
-  .hero-claim { white-space: normal; font-size: 30px; }
-  .claim-word { display: block; text-align: center; letter-spacing: 6px; margin-bottom: 8px; }
+  /* ── NAV: gestackt wie iPhone ── */
+  .hero-nav {
+    flex-wrap: wrap;
+    padding-top: calc(env(safe-area-inset-top, 10px) + 30px);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    justify-content: center;
+  }
+  .nav-logo { width: 52px; height: 52px; }
+  .nav-home {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    gap: 8px;
+    margin-right: 0;
+  }
+  .nav-home .nav-name {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-home .nav-blitz { display: none; }
+  .nav-burger { position: absolute; top: calc(env(safe-area-inset-top, 10px) + 30px); right: 2rem; }
+
+  /* ── HERO ── */
+  .hero-image img { opacity: 0.9; }
+
+  /* ── CLAIM PYRAMIDE ── */
+  .hero-claim { white-space: normal; font-size: 36px; letter-spacing: 10px; }
+  .hero-claim-wrap { margin-top: 20px; padding: 50px 2rem 60px; }
+  .claim-word { display: block; text-align: center; margin-bottom: 5px; }
   .claim-sep { display: none; }
-  .claim-ai { font-size: 0.6em; }
-  .claim-tools { font-size: 0.8em; }
-  .claim-design { font-size: 1.05em; }
-  .claim-consciousness { font-size: 1.3em; }
+  .claim-ai { font-size: 28px; }
+  .claim-tools { font-size: 32px; }
+  .claim-design { font-size: 40px; }
+  .claim-consciousness { font-size: 34px; }
 
-  .hero-claim-wrap { margin-top: 56px; padding: 40px 2rem 60px; }
+  /* ── SECTIONS ── */
+  .section { padding: 83px 2rem; }
+  .card-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .card { padding: 40px; }
+  .pixel-divider { padding: 46px 2rem; }
 
-  .nav-logo { width: 49px; height: 49px; }
-  .nav-home { font-size: 16px; gap: 7px; }
-  .nav-home .nav-name { font-size: 40px; }
-  .hero-nav { padding-top: calc(env(safe-area-inset-top, 10px) + 23px); }
-
-  .section { padding-top: 83px; padding-bottom: 83px; }
-  .card-grid { gap: 36px; }
-  .card { padding: 51px; }
-  .pixel-divider { padding-top: 46px; padding-bottom: 46px; }
+  /* ── TOGGLES ── */
+  .floating-controls { bottom: 1rem; right: 1rem; }
 }
 
 /* ── iPhone (<768px) — Jochen's iPhone Tuning 12.04.2026 ── */
@@ -1013,7 +1047,7 @@ body {
 
     <div class="hero-image">
       <picture>
-        <source media="(max-width: 767px)" srcset="/images/hero-banner-mobile.png">
+        <source media="(max-width: 900px)" srcset="/images/hero-banner-mobile.png">
         <img src="/images/hero-banner.png"
              alt="s0f4surf3r — Vektor-Figur im Sessel, digitale Energie"
              width="1200" height="480"
