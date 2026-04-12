@@ -717,7 +717,7 @@ body {
   .claim-ai { font-size: 45px; }
   .claim-tools { font-size: 34px; }
   .claim-design { font-size: 50px; }
-  .claim-consciousness { font-size: 37px; }
+  .claim-consciousness { font-size: 37px; white-space: nowrap; }
 
   /* ── SECTIONS ── */
   .section { padding: 82px 1.5rem; }
@@ -738,7 +738,9 @@ body {
   .ctrl-btn { width: 44px; height: 44px; }
 
   /* ── CHAT ── */
-  .chat-widget { width: calc(100vw - 1.5rem); right: 0.75rem; bottom: 3.5rem; max-height: 60vh; }
+  .chat-widget { width: calc(100vw - 2rem); left: 1rem; right: 1rem; bottom: 3.5rem; max-height: 60vh; }
+  .chat-input-wrap { padding-right: 0; }
+  .chat-send { min-width: 44px; }
 }
 
 /* ═══ 480px — KEIN Override mehr, iPhone-Block oben ist die Wahrheit ═══ */
