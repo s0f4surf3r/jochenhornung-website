@@ -370,6 +370,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  perspective: 800px;
 }
 
 .card {
@@ -381,6 +382,7 @@ body {
   color: #f4f6ff;
   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
   display: block;
+  text-align: center;
   min-height: 44px;
   position: relative;
   overflow: hidden;
@@ -418,7 +420,7 @@ body {
   width: 56px;
   height: 56px;
   border-radius: 12px;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem;
   display: block;
   object-fit: contain;
   position: relative;
@@ -1662,6 +1664,19 @@ body {
       burger.setAttribute('aria-expanded', open);
     });
   }
+
+  /* ═══ CARD FLIP ═══ */
+  document.querySelectorAll('.card').forEach(function(card) {
+    var angle = 0;
+    card.addEventListener('click', function(e) {
+      e.preventDefault();
+      angle += 360;
+      card.style.transform = 'rotateY(' + angle + 'deg)';
+      card.style.transition = 'transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
+      /* Nach Dreh zur Werkzeuge-Seite navigieren */
+      setTimeout(function() { window.location.href = card.href; }, 900);
+    });
+  });
 
   /* ═══ PIXEL RAIN ═══ */
   var pCanvas = document.getElementById('pixel-rain');
