@@ -1798,9 +1798,15 @@ body {
   }
 })();
 
-/* ═══ LIVE EDIT PANEL ═══ */
-if (location.search.includes('edit')) {
-  (function() {
+/* ═══ LIVE EDIT CAROUSEL ═══ */
+(function() {
+  /* Aktiviert per ?edit ODER Tap auf Avatar */
+  var avatarEl = document.querySelector('.nav-logo');
+  var editActive = location.search.includes('edit');
+
+  function initEdit() {
+    if (document.getElementById('editBar')) return;
+    editActive = true;
     var controls = [
       { label: '── CLAIM ──', type: 'heading' },
       { label: 'Claim Margin Top', type: 'range', target: '.hero-claim-wrap', prop: 'marginTop', min: -100, max: 100, def: 0, unit: 'px' },
@@ -1829,110 +1835,114 @@ if (location.search.includes('edit')) {
       { label: 'Divider Padding', type: 'range', target: '.pixel-divider', prop: 'paddingTop', min: 0, max: 80, def: 32, unit: 'px', alsoBottom: true },
     ];
 
-    var panel = document.createElement('div');
-    panel.id = 'editPanel';
-    panel.style.cssText = 'position:fixed;bottom:0;left:0;right:0;max-height:40vh;overflow-y:auto;background:rgba(10,10,15,0.95);border-top:1px solid #333;padding:12px 12px 24px;z-index:99999;font:12px/1.6 monospace;color:#ccc;backdrop-filter:blur(10px);transition:transform 0.3s';
+    /* Schlankes Karussell — eine Zeile, Pfeile links/rechts */
+    var bar = document.createElement('div');
+    bar.id = 'editBar';
+    bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:rgba(10,10,15,0.95);border-top:1px solid #333;padding:8px 12px 12px;z-index:99999;font:12px monospace;color:#ccc;backdrop-filter:blur(10px);display:flex;align-items:center;gap:8px';
 
-    /* Toggle-Button oben am Panel */
-    var toggle = document.createElement('button');
-    toggle.textContent = '▼ LIVE EDIT';
-    toggle.style.cssText = 'position:absolute;top:-36px;left:50%;transform:translateX(-50%);background:#ffb000;color:#000;border:none;padding:6px 20px;border-radius:8px 8px 0 0;font:700 11px monospace;cursor:pointer;letter-spacing:1px;z-index:100000';
-    var panelOpen = true;
-    toggle.addEventListener('click', function() {
-      panelOpen = !panelOpen;
-      panel.style.transform = panelOpen ? '' : 'translateY(calc(100% + 1px))';
-      toggle.textContent = (panelOpen ? '▼' : '▲') + ' LIVE EDIT';
-    });
-    panel.appendChild(toggle);
+    var prevBtn = document.createElement('button');
+    prevBtn.textContent = '◀';
+    prevBtn.style.cssText = 'background:none;border:1px solid #555;color:#ccc;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:14px;flex-shrink:0';
 
-    controls.forEach(function(c) {
-      if (c.type === 'heading') {
-        var h = document.createElement('div');
-        h.textContent = c.label;
-        h.style.cssText = 'font-size:11px;color:#ffb000;margin:12px 0 4px;letter-spacing:1px';
-        panel.appendChild(h);
-        return;
-      }
+    var nextBtn = document.createElement('button');
+    nextBtn.textContent = '▶';
+    nextBtn.style.cssText = prevBtn.style.cssText;
 
-      var wrap = document.createElement('div');
-      wrap.style.cssText = 'margin-bottom:6px';
+    var mid = document.createElement('div');
+    mid.style.cssText = 'flex:1;text-align:center';
 
-      var lbl = document.createElement('label');
-      lbl.textContent = c.label;
-      lbl.style.cssText = 'display:block;font-size:11px;color:#888;margin-bottom:2px';
-      wrap.appendChild(lbl);
+    var lblEl = document.createElement('div');
+    lblEl.style.cssText = 'font-size:10px;color:#ffb000;margin-bottom:4px;letter-spacing:1px';
 
-      var valDisplay = document.createElement('span');
-      valDisplay.style.cssText = 'float:right;color:#ffb000;font-size:11px';
+    var inputWrap = document.createElement('div');
+    inputWrap.style.cssText = 'display:flex;align-items:center;gap:6px';
 
-      if (c.type === 'color') {
-        var inp = document.createElement('input');
-        inp.type = 'color';
-        inp.value = c.def;
-        inp.style.cssText = 'width:100%;height:26px;border:none;cursor:pointer;background:none';
-        inp.addEventListener('input', function() {
-          var els = document.querySelectorAll(c.target);
-          els.forEach(function(el) {
-            el.style[c.prop] = inp.value;
-            el.style.textShadow = '0 0 20px ' + inp.value + '66, 0 0 60px ' + inp.value + '26';
-          });
-        });
-        wrap.appendChild(inp);
-      } else {
-        lbl.appendChild(valDisplay);
-        var inp = document.createElement('input');
-        inp.type = 'range';
-        inp.min = c.min;
-        inp.max = c.max;
-        inp.value = c.def;
-        inp.step = c.step || 1;
-        inp.style.cssText = 'width:100%;cursor:pointer;accent-color:#ffb000';
-        valDisplay.textContent = c.def + (c.unit || '');
+    var sliderEl = document.createElement('input');
+    sliderEl.style.cssText = 'flex:1;accent-color:#ffb000;cursor:pointer';
 
-        inp.addEventListener('input', function() {
-          var val = c.divisor ? (inp.value / c.divisor) : inp.value;
-          var unit = c.divisor ? '' : (c.unit === '%' ? 'px' : (c.unit || 'px'));
-          if (c.unit === '%') { val = inp.value / 100; unit = ''; }
-          valDisplay.textContent = inp.value + (c.unit || '');
-          var els = document.querySelectorAll(c.target);
-          els.forEach(function(el) {
-            el.style[c.prop] = val + unit;
-            if (c.alsoBottom) el.style.paddingBottom = val + unit;
-            if (c.alsoH) el.style.height = val + unit;
-          });
-        });
-        wrap.appendChild(inp);
-      }
+    var valEl = document.createElement('span');
+    valEl.style.cssText = 'color:#ffb000;font-size:11px;min-width:40px;text-align:right';
 
-      panel.appendChild(wrap);
-    });
+    inputWrap.appendChild(sliderEl);
+    inputWrap.appendChild(valEl);
+    mid.appendChild(lblEl);
+    mid.appendChild(inputWrap);
 
-    /* Export Button */
-    var exportBtn = document.createElement('button');
-    exportBtn.textContent = 'CSS KOPIEREN';
-    exportBtn.style.cssText = 'width:100%;margin-top:16px;padding:10px;background:#ffb000;color:#000;border:none;border-radius:4px;cursor:pointer;font:700 12px monospace;letter-spacing:1px';
-    exportBtn.addEventListener('click', function() {
-      var css = '/* Live Edit Export */\\n';
-      controls.forEach(function(c) {
-        var el = document.querySelector(c.target);
-        if (el && c.type !== 'color') {
-          css += c.target + ' { ' + c.prop.replace(/([A-Z])/g, '-$1').toLowerCase() + ': ' + el.style[c.prop] + '; }\\n';
-        } else if (el && !c.isShadow) {
-          css += c.target + ' { color: ' + el.style.color + '; }\\n';
-        }
-      });
-      navigator.clipboard.writeText(css).then(function() { exportBtn.textContent = 'KOPIERT ✓'; setTimeout(function(){ exportBtn.textContent = 'CSS KOPIEREN'; }, 2000); });
-    });
-    panel.appendChild(exportBtn);
-
-    /* Close Button */
     var closeBtn = document.createElement('button');
-    closeBtn.textContent = '✕ SCHLIESSEN';
-    closeBtn.style.cssText = 'width:100%;margin-top:8px;padding:8px;background:transparent;color:#666;border:1px solid #333;border-radius:4px;cursor:pointer;font:11px monospace';
-    closeBtn.addEventListener('click', function() { panel.remove(); });
-    panel.appendChild(closeBtn);
+    closeBtn.textContent = '✕';
+    closeBtn.style.cssText = 'background:none;border:1px solid #555;color:#ccc;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:14px;flex-shrink:0';
+    closeBtn.addEventListener('click', function() { bar.remove(); editActive = false; });
 
-    document.body.appendChild(panel);
-  })();
-}
+    bar.appendChild(prevBtn);
+    bar.appendChild(mid);
+    bar.appendChild(nextBtn);
+    bar.appendChild(closeBtn);
+
+    var panel = bar; /* Compat für Export-Code unten */
+
+    /* Filter: nur echte Controls (keine Headings) */
+    var realControls = controls.filter(function(c) { return c.type !== 'heading'; });
+    var idx = 0;
+
+    function applyControl(c, value) {
+      var els = document.querySelectorAll(c.target);
+      if (c.type === 'color') {
+        els.forEach(function(el) {
+          el.style[c.prop] = value;
+          el.style.textShadow = '0 0 20px ' + value + '66, 0 0 60px ' + value + '26';
+        });
+      } else {
+        var val = c.divisor ? (value / c.divisor) : value;
+        var unit = c.divisor ? '' : (c.unit === '%' ? '' : (c.unit || 'px'));
+        if (c.unit === '%') val = value / 100;
+        els.forEach(function(el) {
+          el.style[c.prop] = val + unit;
+          if (c.alsoBottom) el.style.paddingBottom = val + unit;
+          if (c.alsoH) el.style.height = val + unit;
+        });
+      }
+    }
+
+    function showControl(i) {
+      var c = realControls[i];
+      lblEl.textContent = (i + 1) + '/' + realControls.length + '  ' + c.label;
+      if (c.type === 'color') {
+        sliderEl.type = 'color';
+        sliderEl.min = ''; sliderEl.max = ''; sliderEl.step = '';
+        sliderEl.value = c.def;
+        valEl.textContent = '';
+      } else {
+        sliderEl.type = 'range';
+        sliderEl.min = c.min;
+        sliderEl.max = c.max;
+        sliderEl.value = c.def;
+        sliderEl.step = c.step || 1;
+        valEl.textContent = c.def + (c.unit || '');
+      }
+      sliderEl.oninput = function() {
+        applyControl(c, sliderEl.value);
+        if (c.type !== 'color') valEl.textContent = sliderEl.value + (c.unit || '');
+      };
+    }
+
+    prevBtn.addEventListener('click', function() { idx = (idx - 1 + realControls.length) % realControls.length; showControl(idx); });
+    nextBtn.addEventListener('click', function() { idx = (idx + 1) % realControls.length; showControl(idx); });
+
+    showControl(0);
+    document.body.appendChild(bar);
+  }
+
+  /* Avatar-Tap aktiviert Edit */
+  if (avatarEl) {
+    var tapCount = 0;
+    avatarEl.addEventListener('click', function(e) {
+      tapCount++;
+      if (tapCount >= 3) { initEdit(); tapCount = 0; e.preventDefault(); }
+      setTimeout(function() { tapCount = 0; }, 1000);
+    });
+  }
+
+  /* ?edit in URL → sofort aktivieren */
+  if (location.search.includes('edit')) initEdit();
+})();
 </script>
