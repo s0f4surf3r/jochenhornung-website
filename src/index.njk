@@ -1928,6 +1928,56 @@ body {
     prevBtn.addEventListener('click', function() { idx = (idx - 1 + realControls.length) % realControls.length; showControl(idx); });
     nextBtn.addEventListener('click', function() { idx = (idx + 1) % realControls.length; showControl(idx); });
 
+    /* Speichern-Button */
+    var saveBtn = document.createElement('button');
+    saveBtn.textContent = '💾';
+    saveBtn.style.cssText = 'background:none;border:1px solid #555;color:#ccc;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px;flex-shrink:0';
+    saveBtn.addEventListener('click', function() {
+      /* Alle geänderten Werte sammeln */
+      var values = {};
+      realControls.forEach(function(c) {
+        var el = document.querySelector(c.target);
+        if (el) {
+          var val = el.style[c.prop];
+          if (val) values[c.label] = { target: c.target, prop: c.prop, value: val };
+        }
+      });
+      var device = window.innerWidth + 'x' + window.innerHeight + ' ' + (navigator.userAgent.match(/iPhone|iPad|Macintosh/) || ['unknown'])[0];
+      var payload = {
+        device: device,
+        viewport: window.innerWidth + 'x' + window.innerHeight,
+        dpr: window.devicePixelRatio,
+        timestamp: new Date().toISOString(),
+        values: values
+      };
+      var json = JSON.stringify(payload, null, 2);
+
+      /* 1. localStorage für Persistenz auf diesem Gerät */
+      localStorage.setItem('jochenhornung-edit-' + window.innerWidth, json);
+
+      /* 2. Per Mail verschicken */
+      var subject = 'Live Edit ' + device + ' ' + new Date().toLocaleString('de');
+      var body = json;
+      window.location.href = 'mailto:jochen.hornung@me.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+      saveBtn.textContent = '✓';
+      setTimeout(function() { saveBtn.textContent = '💾'; }, 2000);
+    });
+    bar.appendChild(saveBtn);
+
+    /* Beim Laden: gespeicherte Werte aus localStorage wiederherstellen */
+    var saved = localStorage.getItem('jochenhornung-edit-' + window.innerWidth);
+    if (saved) {
+      try {
+        var data = JSON.parse(saved);
+        Object.keys(data.values).forEach(function(key) {
+          var v = data.values[key];
+          var els = document.querySelectorAll(v.target);
+          els.forEach(function(el) { el.style[v.prop] = v.value; });
+        });
+      } catch(e) {}
+    }
+
     showControl(0);
     document.body.appendChild(bar);
   }
