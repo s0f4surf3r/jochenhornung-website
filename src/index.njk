@@ -706,15 +706,31 @@ body {
   /* Name kürzen auf Mobile — nur Avatar + @s0f4surf3r */
   .nav-home span[style*="opacity:0.2"] { display: none; } /* ⌁ weg */
 
-  /* ── HERO: Nav + Bild füllen genau einen Screen, Claim ist below fold ── */
+  /* ── HERO: Nav + Bild + Toggles füllen genau einen Screen ── */
   .hero-home {
     height: 100svh;
     display: flex;
     flex-direction: column;
     overflow: visible;
   }
-  .hero-image { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
-  .hero-image img { width: 100%; height: auto; max-height: 100%; object-fit: contain; opacity: 1; }
+  .hero-image {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0;
+  }
+  .hero-image img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    opacity: 1;
+    display: block;
+    margin: 0 auto;
+  }
 
   /* ── CLAIM PYRAMIDE ── */
   .hero-claim { white-space: normal; font-size: 45px; letter-spacing: 11.5px; }
