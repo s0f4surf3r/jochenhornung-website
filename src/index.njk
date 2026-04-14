@@ -706,17 +706,15 @@ body {
   /* Name kürzen auf Mobile — nur Avatar + @s0f4surf3r */
   .nav-home span[style*="opacity:0.2"] { display: none; } /* ⌁ weg */
 
-  /* ── HERO: füllt exakt den Rest des Screens nach Nav ── */
+  /* ── HERO: Nav + Bild füllen genau einen Screen, Claim ist below fold ── */
   .hero-home {
     height: 100svh;
     display: flex;
     flex-direction: column;
+    overflow: visible;
   }
-  .hero-image { flex: 1; overflow: hidden; }
-  .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: 1; }
-
-  /* Claim NICHT im ersten Screen — kommt beim Scrollen */
-  .hero-claim-wrap { margin-top: 0; }
+  .hero-image { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
+  .hero-image img { width: 100%; height: auto; max-height: 100%; object-fit: contain; opacity: 1; }
 
   /* ── CLAIM PYRAMIDE ── */
   .hero-claim { white-space: normal; font-size: 45px; letter-spacing: 11.5px; }
