@@ -33,12 +33,64 @@ permalink: /j-thrust/index.html
         margin: 3rem auto 0;
     }
     .jt-logo {
-        width: 220px;
-        max-width: 60vw;
+        width: 200px;
+        max-width: 55vw;
         height: auto;
         margin: 0 auto 1.5rem;
         display: block;
         filter: drop-shadow(0 8px 32px rgba(15, 170, 182, 0.18));
+    }
+    /* Logo Animation */
+    .jt-logo .ship {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: jt-thrust 3.4s ease-in-out infinite;
+    }
+    .jt-logo .flame {
+        transform-box: fill-box;
+        transform-origin: top center;
+        animation: jt-flame 0.55s ease-in-out infinite alternate;
+    }
+    .jt-logo .tether {
+        stroke-dasharray: 8 5;
+        animation: jt-tether 1.6s linear infinite;
+    }
+    .jt-logo .pod {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: jt-pod 2.4s ease-in-out infinite;
+    }
+    .jt-logo .pod-core {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: jt-pod-core 2.4s ease-in-out infinite;
+    }
+    @keyframes jt-thrust {
+        0%, 100% { transform: translateY(0); }
+        50%      { transform: translateY(-3px); }
+    }
+    @keyframes jt-flame {
+        0%   { transform: scaleY(0.85); opacity: 0.7; }
+        100% { transform: scaleY(1.15); opacity: 1; }
+    }
+    @keyframes jt-tether {
+        from { stroke-dashoffset: 0; }
+        to   { stroke-dashoffset: -26; }
+    }
+    @keyframes jt-pod {
+        0%, 100% { transform: scale(1); }
+        50%      { transform: scale(1.12); }
+    }
+    @keyframes jt-pod-core {
+        0%, 100% { opacity: 0.45; }
+        50%      { opacity: 0.85; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .jt-logo .ship,
+        .jt-logo .flame,
+        .jt-logo .tether,
+        .jt-logo .pod,
+        .jt-logo .pod-core { animation: none; }
     }
     .jt-wordmark {
         font-size: 2.1rem;
@@ -236,7 +288,47 @@ permalink: /j-thrust/index.html
     <a href="/" class="jt-back">← Zurück</a>
 
     <section class="jt-hero">
-        <img src="/images/jthrust-stacked.svg" alt="J-THRUST Logo" class="jt-logo">
+        <svg class="jt-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="J-THRUST Logo" role="img">
+            <defs>
+                <linearGradient id="jtHookG" x1="0.5" y1="0" x2="0.2" y2="1">
+                    <stop offset="0%" stop-color="#0FAAB6"/>
+                    <stop offset="100%" stop-color="#DE9C36"/>
+                </linearGradient>
+                <linearGradient id="jtTetherG" x1="0.5" y1="0" x2="0.4" y2="1">
+                    <stop offset="0%" stop-color="#0FAAB6" stop-opacity="0.6"/>
+                    <stop offset="100%" stop-color="#0FAAB6" stop-opacity="0.15"/>
+                </linearGradient>
+                <radialGradient id="jtPodGlow" cx="0.5" cy="0.5" r="0.5">
+                    <stop offset="0%" stop-color="#FDBF55" stop-opacity="0.5"/>
+                    <stop offset="100%" stop-color="#DE9C36" stop-opacity="0.7"/>
+                </radialGradient>
+            </defs>
+            <g class="ship">
+                <path d="M256 60 L230 130 L242 122 L242 148 L270 148 L270 122 L282 130 Z" fill="#0FAAB6"/>
+                <ellipse cx="256" cy="95" rx="7" ry="9" fill="#0D8A94"/>
+                <ellipse cx="256" cy="93" rx="5" ry="6" fill="#0FAAB6" opacity="0.5"/>
+                <rect x="236" y="148" width="40" height="7" rx="3" fill="#0FAAB6" opacity="0.5"/>
+            </g>
+            <g class="flame">
+                <path d="M245 155 L256 190 L267 155" fill="#DE9C36" opacity="0.8"/>
+                <path d="M249 155 L256 180 L263 155" fill="#FDBF55" opacity="0.6"/>
+            </g>
+            <path class="tether" d="M256 190 Q260 240 254 290 Q252 330 256 360"
+                  fill="none" stroke="url(#jtTetherG)" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M244 360 L268 360 L268 410
+                     Q268 460 240 478
+                     Q218 492 192 486
+                     Q166 480 156 458
+                     Q148 438 156 418
+                     L184 418
+                     Q178 438 192 454
+                     Q208 466 226 450
+                     Q238 440 238 420
+                     L238 360 Z"
+                  fill="url(#jtHookG)"/>
+            <circle class="pod" cx="196" cy="450" r="14" fill="url(#jtPodGlow)"/>
+            <circle class="pod-core" cx="196" cy="450" r="7" fill="#FDBF55"/>
+        </svg>
         <h1 class="jt-wordmark">J-THRUST</h1>
         <p class="jt-sub">Digital Studio · Berlin</p>
         <div class="jt-trust">In&nbsp;J&nbsp;you&nbsp;can&nbsp;trust</div>
