@@ -1,0 +1,313 @@
+---
+layout: base
+title: J-THRUST
+description: "J-THRUST Digital Studio. Websites, die sich anfühlen wie der Mensch dahinter. In J you can trust."
+permalink: /j-thrust/index.html
+---
+<style>
+    .jt-page {
+        max-width: 740px;
+        margin: 0 auto;
+        padding: 1.5rem 1.5rem 5rem;
+    }
+    .jt-back {
+        display: inline-block;
+        margin-bottom: 2rem;
+        color: #666;
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+    .jt-back:hover { color: #1a1a1a; }
+
+    .jt-hero {
+        text-align: center;
+        padding: 2rem 0 3rem;
+        position: relative;
+    }
+    .jt-hero::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #DE9C36, transparent);
+        margin: 3rem auto 0;
+    }
+    .jt-logo {
+        width: 220px;
+        max-width: 60vw;
+        height: auto;
+        margin: 0 auto 1.5rem;
+        display: block;
+        filter: drop-shadow(0 8px 32px rgba(15, 170, 182, 0.18));
+    }
+    .jt-wordmark {
+        font-size: 2.1rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        background: linear-gradient(120deg, #0FAAB6 0%, #1ec2cf 40%, #DE9C36 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 0.4rem;
+        line-height: 1.1;
+    }
+    .jt-sub {
+        font-size: 1rem;
+        font-style: italic;
+        color: #666;
+        font-family: Georgia, serif;
+        letter-spacing: 0.02em;
+    }
+    .jt-trust {
+        margin: 2.5rem auto 0;
+        padding: 0.8rem 1.6rem;
+        display: inline-block;
+        font-size: 0.85rem;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: #DE9C36;
+        border: 1px solid rgba(222, 156, 54, 0.35);
+        border-radius: 999px;
+        background: rgba(222, 156, 54, 0.04);
+    }
+
+    .jt-section {
+        margin: 4rem 0;
+    }
+    .jt-section-label {
+        font-size: 0.78rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: #0FAAB6;
+        margin-bottom: 0.6rem;
+        font-weight: 600;
+    }
+    .jt-section h2 {
+        font-size: 1.7rem;
+        margin: 0 0 1.2rem;
+        font-weight: 600;
+        line-height: 1.25;
+    }
+    .jt-section p {
+        line-height: 1.7;
+        font-size: 1.05rem;
+        color: #2a2a2a;
+        margin-bottom: 1rem;
+    }
+    .jt-quote {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-style: italic;
+        font-size: 1.15rem;
+        color: #1a1a1a;
+        border-left: 3px solid #DE9C36;
+        padding: 0.4rem 0 0.4rem 1.2rem;
+        margin: 1.2rem 0;
+    }
+
+    .jt-metaphor {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    @media (min-width: 640px) {
+        .jt-metaphor { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    .jt-card {
+        padding: 1.4rem 1.3rem;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        background: #fafafa;
+    }
+    .jt-card-icon {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+    .jt-card h3 {
+        font-size: 1rem;
+        margin: 0 0 0.4rem;
+        color: #0FAAB6;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+    .jt-card p {
+        font-size: 0.95rem;
+        line-height: 1.55;
+        margin: 0;
+        color: #555;
+    }
+
+    .jt-pillars {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 1.5rem 0;
+    }
+    @media (min-width: 640px) {
+        .jt-pillars { grid-template-columns: 1fr 1fr; }
+    }
+    .jt-pillar {
+        padding: 1.2rem 0;
+        border-top: 1px solid #eee;
+    }
+    .jt-pillar h4 {
+        font-size: 0.95rem;
+        margin: 0 0 0.4rem;
+        color: #1a1a1a;
+        font-weight: 700;
+    }
+    .jt-pillar p {
+        font-size: 0.95rem;
+        line-height: 1.55;
+        margin: 0;
+        color: #555;
+    }
+
+    .jt-easter {
+        margin: 5rem 0 0;
+        padding: 2.2rem 1.5rem;
+        text-align: center;
+        background: linear-gradient(135deg, #0a0a0f 0%, #16161e 100%);
+        color: #d8d8d8;
+        border-radius: 16px;
+        position: relative;
+        overflow: hidden;
+    }
+    .jt-easter::before {
+        content: '';
+        position: absolute;
+        top: -40%;
+        left: -10%;
+        width: 60%;
+        height: 200%;
+        background: radial-gradient(ellipse, rgba(15, 170, 182, 0.18) 0%, transparent 60%);
+        pointer-events: none;
+    }
+    .jt-easter::after {
+        content: '';
+        position: absolute;
+        bottom: -40%;
+        right: -10%;
+        width: 60%;
+        height: 200%;
+        background: radial-gradient(ellipse, rgba(222, 156, 54, 0.14) 0%, transparent 60%);
+        pointer-events: none;
+    }
+    .jt-easter > * { position: relative; z-index: 1; }
+    .jt-easter-label {
+        font-size: 0.72rem;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: #DE9C36;
+        margin-bottom: 0.6rem;
+    }
+    .jt-easter h3 {
+        font-size: 1.4rem;
+        margin: 0 0 0.6rem;
+        color: #fff;
+        font-weight: 600;
+    }
+    .jt-easter p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #aaa;
+        margin: 0 auto 1.2rem;
+        max-width: 480px;
+    }
+    .jt-easter a.jt-launch {
+        display: inline-block;
+        padding: 0.7rem 1.6rem;
+        background: linear-gradient(120deg, #0FAAB6, #DE9C36);
+        color: #0a0a0f;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        border-radius: 999px;
+        transition: transform 0.15s ease;
+    }
+    .jt-easter a.jt-launch:hover {
+        transform: translateY(-1px);
+    }
+</style>
+
+<div class="jt-page">
+    <a href="/" class="jt-back">← Zurück</a>
+
+    <section class="jt-hero">
+        <img src="/images/jthrust-stacked.svg" alt="J-THRUST Logo" class="jt-logo">
+        <h1 class="jt-wordmark">J-THRUST</h1>
+        <p class="jt-sub">Digital Studio · Berlin</p>
+        <div class="jt-trust">In&nbsp;J&nbsp;you&nbsp;can&nbsp;trust</div>
+    </section>
+
+    <section class="jt-section">
+        <div class="jt-section-label">Manifesto</div>
+        <h2>Websites, die sich anfühlen wie der Mensch dahinter.</h2>
+        <p>J-THRUST baut keine Templates. Wir bauen digitale Räume die zu den Menschen passen, die in ihnen wohnen. Kein Lock-in, kein Abo-Theater, keine fake-strategischen „Wartungspakete".</p>
+        <p>Die meisten Agenturen verkaufen keine Technologie. Sie verkaufen die Illusion, dass nur sie es können. Lock-in ist deren Geschäftsmodell — Befreiung ist unseres.</p>
+        <blockquote class="jt-quote">Wir nehmen nicht einfach Aufträge an. Wir bergen.</blockquote>
+    </section>
+
+    <section class="jt-section">
+        <div class="jt-section-label">Die Metapher</div>
+        <h2>Schiff · Tether · Pod.</h2>
+        <p>J-THRUST kommt aus einem Spiel. Aus „Thrust", dem C64-Klassiker von 1986. Du fliegst durch enge Höhlen, an Geschützen vorbei, gegen die Schwerkraft — nicht weil du fliegen willst, sondern weil unten ein Pod liegt. Eine wertvolle Fracht. Den ganzen Sinn der Mission.</p>
+        <div class="jt-metaphor">
+            <div class="jt-card">
+                <span class="jt-card-icon">🚀</span>
+                <h3>Schiff</h3>
+                <p>Wir. Der Antrieb. Die Kompetenz, durch komplexe Systeme zu navigieren.</p>
+            </div>
+            <div class="jt-card">
+                <span class="jt-card-icon">⛓️</span>
+                <h3>Tether</h3>
+                <p>Die Verbindung. Vertrauen, Halt, das Band das nicht reißt — auch wenn's eng wird.</p>
+            </div>
+            <div class="jt-card">
+                <span class="jt-card-icon">💎</span>
+                <h3>Pod</h3>
+                <p>Dein Projekt. Das Wertvolle. Es gehört dir, nicht uns. Wir bringen es sicher nach Hause.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="jt-section">
+        <div class="jt-section-label">Haltung</div>
+        <h2>Was wir sind. Was wir nicht sind.</h2>
+        <div class="jt-pillars">
+            <div class="jt-pillar">
+                <h4>Befreiung statt Abhängigkeit</h4>
+                <p>Statische Sites. Eigene Domain. Git-Repo gehört dir. 0&nbsp;€ Hosting, kein Wartungsvertrag. Du kannst morgen ohne uns weiter — du wirst nur nicht wollen.</p>
+            </div>
+            <div class="jt-pillar">
+                <h4>Bewusstes Design</h4>
+                <p>Wir kennen die persuasiven Techniken. Wir nutzen sie sparsam und ehrlich. FOMO als Dark Pattern: nein. Neugier wecken, Relevanz zeigen: ja.</p>
+            </div>
+            <div class="jt-pillar">
+                <h4>Wahrnehmungsgrammatik</h4>
+                <p>Naturfarben leben, Synthetisches tötet. Spacing als Atmung. Radien als Versprechen. Apple HIG, WCAG&nbsp;AA — Pflicht, nicht Kür.</p>
+            </div>
+            <div class="jt-pillar">
+                <h4>Spür, was du berührst</h4>
+                <p>Die Frage ist nicht „sieht man das" — die Frage ist „spürt man das". Touch ist die Wahrheit. Hover ist Luxus.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="jt-section">
+        <div class="jt-section-label">Der Name</div>
+        <h2>Drei Schichten in einem Wort.</h2>
+        <p><strong>J</strong> wie Jochen — der einzige Buchstabe im Alphabet, der unter die Grundlinie sinkt und wieder aufsteigt. Tiefe und Rückkehr.</p>
+        <p><strong>THRUST</strong> wie Schub — der Antrieb gegen die Schwerkraft. Komplexe Systeme durchfliegen, die Fracht sicher halten.</p>
+        <p><strong>TRUST</strong> lebt in THRUST. Nimm das H raus, und das Vertrauen steht da. Buchstäblich. Das ist kein Wortspiel — das ist die Seele.</p>
+    </section>
+
+    <div class="jt-easter">
+        <div class="jt-easter-label">Easter Egg</div>
+        <h3>Es gibt das Spiel.</h3>
+        <p>Bevor das Studio existierte, war ein Retro-Gravitations-Spiel. Single-File-HTML, Pixel-Art, Marching-Squares-Terrain. Für meinen Sohn Levi habe ich einen Modus mit konfigurierbaren Tasten gebaut. Das Spiel ist der Ursprung. Wer es findet, versteht worum es geht.</p>
+        <a href="/docs/JThrust-Levi.dmg" class="jt-launch">→ Download Mac (DMG, 578 KB)</a>
+    </div>
+</div>

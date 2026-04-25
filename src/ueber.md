@@ -34,7 +34,20 @@ Manchmal [begleite ich Menschen](/coaching/) — wenn sie fragen. Nicht als Beru
 
 ## Was ich baue
 
-<table style="border:none;border-collapse:collapse;"><tr><td style="border:none;padding:0.3rem 0;"><img src="/images/jthrust-icon.png" alt="J-THRUST" style="width:20px;height:20px;vertical-align:middle;margin-right:0.3rem;border-radius:4px;"><strong>J-THRUST</strong> — Retro-Gravitation, C64-Seele</td></tr><tr><td style="border:none;padding:0.3rem 0;"><img src="/images/msphere-icon-192.png" alt="M-SPHERE" style="width:20px;height:20px;vertical-align:middle;margin-right:0.3rem;border-radius:4px;"><strong>M-SPHERE</strong> — Meditation als Erlebnis</td></tr><tr><td style="border:none;padding:0.3rem 0;"><img src="/images/klarsite-logo.svg" alt="Klarsite" style="width:20px;height:20px;vertical-align:middle;margin-right:0.3rem;border-radius:4px;"><strong>Klarsite</strong> — Websites für Menschen</td></tr><tr><td style="border:none;padding:0.3rem 0;"><img src="/images/spuera-icon-192.png" alt="Spüra" style="width:20px;height:20px;vertical-align:middle;margin-right:0.3rem;border-radius:4px;"><strong>Spüra</strong> — Emotionales Self-Tracking</td></tr></table>
+<style>
+.about-apps { list-style: none; padding: 0; margin: 1rem 0 0; }
+.about-apps li { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; }
+.about-apps li img { width: 32px; height: 32px; border-radius: 7px; object-fit: contain; flex-shrink: 0; }
+.about-apps li span { line-height: 1.4; }
+.about-apps li strong { font-weight: 700; }
+</style>
+<ul class="about-apps">
+  <li><img src="/images/msphere-icon-192.png" alt=""><span><strong>M-SPHERE</strong> — Meditation als Erlebnis</span></li>
+  <li><img src="/images/klarsite-logo.svg" alt=""><span><strong>Klarsite</strong> — Websites für Menschen</span></li>
+  <li><img src="/images/spuera-icon-192.png" alt=""><span><strong>Spüra</strong> — Emotionales Self-Tracking</span></li>
+</ul>
+
+Hinter allem steht <a href="/j-thrust/"><strong>J-THRUST</strong></a> — das Studio. Die Werkstatt. Das Schiff.
 
 ## Woher ich komme
 

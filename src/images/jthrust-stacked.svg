@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="700" viewBox="0 0 512 700">
+  <defs>
+    <linearGradient id="hookG" x1="0.5" y1="0" x2="0.2" y2="1">
+      <stop offset="0%" stop-color="#0FAAB6"/>
+      <stop offset="100%" stop-color="#DE9C36"/>
+    </linearGradient>
+    <linearGradient id="tetherG" x1="0.5" y1="0" x2="0.4" y2="1">
+      <stop offset="0%" stop-color="#0FAAB6" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#0FAAB6" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="titleG" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c8e030"/>
+      <stop offset="100%" stop-color="#8aa020"/>
+    </linearGradient>
+    <linearGradient id="lineG" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0FAAB6" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#0FAAB6" stop-opacity="0.3"/>
+      <stop offset="70%" stop-color="#DE9C36" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#DE9C36" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="podGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#FDBF55" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#DE9C36" stop-opacity="0.7"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Icon centered -->
+  <g transform="translate(256,220) scale(0.7)">
+    <!-- Ship -->
+    <path d="M0 -200 L-26 -70 L-14 -78 L-14 -48 L14 -48 L14 -78 L26 -70 Z" fill="#0FAAB6"/>
+    <ellipse cx="0" cy="-135" rx="7" ry="9" fill="#0D8A94"/>
+    <ellipse cx="0" cy="-137" rx="5" ry="6" fill="#0FAAB6" opacity="0.5"/>
+    <rect x="-20" y="-48" width="40" height="7" rx="3" fill="#0FAAB6" opacity="0.5"/>
+    <!-- Flame -->
+    <path d="M-10 -41 L0 -10 L10 -41" fill="#DE9C36" opacity="0.8"/>
+    <path d="M-6 -41 L0 -18 L6 -41" fill="#FDBF55" opacity="0.6"/>
+    <!-- Tether -->
+    <path d="M0 -10 Q3 40 -2 90 Q-3 130 0 160"
+          fill="none" stroke="url(#tetherG)" stroke-width="3.5"
+          stroke-linecap="round" stroke-dasharray="8 5"/>
+    <!-- J-Hook -->
+    <path d="M-12 160 L12 160 L12 210
+             Q12 260 -16 278
+             Q-38 292 -64 286
+             Q-90 280 -100 258
+             Q-108 238 -100 218
+             L-72 218
+             Q-78 238 -64 254
+             Q-48 266 -30 250
+             Q-18 240 -18 220
+             L-18 160 Z"
+          fill="url(#hookG)"/>
+    <!-- Ball -->
+    <circle cx="-60" cy="250" r="14" fill="url(#podGlow)"/>
+    <circle cx="-60" cy="250" r="7" fill="#FDBF55" opacity="0.45"/>
+  </g>
+
+  <!-- Accent line -->
+  <line x1="100" y1="530" x2="412" y2="530" stroke="url(#lineG)" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="256" y="590" font-family="'SF Mono', 'Menlo', monospace" font-weight="800"
+        font-size="64" fill="url(#titleG)" text-anchor="middle"
+        letter-spacing="6">J-THRUST</text>
+
+  <!-- Tagline -->
+  <text x="256" y="635" font-family="'SF Mono', 'Menlo', monospace" font-weight="400"
+        font-size="16" fill="#8aa020" text-anchor="middle"
+        letter-spacing="5" opacity="0.7">DIGITAL STUDIO</text>
+</svg>

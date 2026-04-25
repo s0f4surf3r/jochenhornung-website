@@ -146,7 +146,9 @@
         <nav class="site-nav">
             <a href="/texte/"{% if page.url.includes("/texte") %} class="active"{% endif %}>Texte</a>
             <span>/</span>
-            <a href="/werkzeuge/"{% if page.url.includes("/werkzeuge") %} class="active"{% endif %}>Werkzeuge</a>
+            <a href="/apps/"{% if page.url.includes("/apps") or page.url.includes("/werkzeuge") %} class="active"{% endif %}>Apps</a>
+            <span>/</span>
+            <a href="/j-thrust/"{% if page.url.includes("/j-thrust") %} class="active"{% endif %}>J-THRUST</a>
             <span>/</span>
             <a href="/kaktus/"{% if page.url.includes("/kaktus") %} class="active"{% endif %}>Streaming</a>
             <span>/</span>
