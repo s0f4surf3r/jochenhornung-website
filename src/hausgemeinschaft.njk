@@ -1,0 +1,164 @@
+---
+layout: base
+title: Hausgemeinschaft Schmidstr. 11
+description: "WhatsApp-Gruppe für die Hausgemeinschaft Schmidstr. 11."
+permalink: /hausgemeinschaft/index.html
+solo: true
+---
+<style>
+  @page { size: A4; margin: 0; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #1a1a1a;
+    background: #faf7f2;
+    margin: 0;
+    padding: 0;
+  }
+  .sheet {
+    max-width: 210mm;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 22mm 18mm;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: #faf7f2;
+  }
+  .sheet::before, .sheet::after {
+    content: '';
+    position: absolute;
+    left: 18mm; right: 18mm;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d4a574, transparent);
+  }
+  .sheet::before { top: 12mm; }
+  .sheet::after { bottom: 12mm; }
+
+  .badge {
+    text-align: center;
+    font-size: 11pt;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #b8835a;
+    font-family: -apple-system, system-ui, sans-serif;
+    font-weight: 600;
+    margin-bottom: 10mm;
+  }
+  h1 {
+    font-size: 38pt;
+    line-height: 1.1;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 4mm;
+    letter-spacing: -0.01em;
+  }
+  h1 strong { font-weight: 700; }
+  .subtitle {
+    text-align: center;
+    font-size: 14pt;
+    color: #6b5a47;
+    font-style: italic;
+    margin: 0 auto 14mm;
+    max-width: 140mm;
+    line-height: 1.45;
+  }
+  .qr-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto 10mm;
+  }
+  .qr {
+    width: 95mm;
+    height: 95mm;
+    background: white;
+    padding: 8mm;
+    border-radius: 4mm;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  }
+  .qr img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  .scan-hint {
+    text-align: center;
+    margin-top: 8mm;
+    font-size: 12pt;
+    color: #5a4836;
+  }
+  .scan-hint strong { color: #1a1a1a; }
+  .link-fallback {
+    text-align: center;
+    margin-top: 4mm;
+    font-size: 9pt;
+    color: #888;
+    font-family: -apple-system, ui-monospace, Menlo, monospace;
+    word-break: break-all;
+    max-width: 130mm;
+    margin-left: auto; margin-right: auto;
+    line-height: 1.5;
+  }
+  .link-fallback a {
+    color: #888;
+    text-decoration: none;
+  }
+  .link-fallback a:hover {
+    color: #1a1a1a;
+    text-decoration: underline;
+  }
+  .body-text {
+    font-size: 12pt;
+    line-height: 1.65;
+    max-width: 145mm;
+    margin: auto;
+    color: #2a2a2a;
+    text-align: center;
+  }
+  .body-text p { margin: 0 0 4mm; }
+  .signature {
+    text-align: center;
+    margin-top: 12mm;
+    font-size: 11pt;
+    color: #6b5a47;
+    font-style: italic;
+  }
+  .signature .name {
+    color: #b8835a;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0.05em;
+  }
+  @media print {
+    body { background: white; }
+    .sheet { background: white; padding: 18mm 16mm; min-height: 270mm; }
+  }
+</style>
+
+<div class="sheet">
+  <div class="badge">Hausgemeinschaft</div>
+  <h1>Schmidstr. <strong>11</strong></h1>
+  <p class="subtitle">Eine kleine WhatsApp-Gruppe für unser Haus —
+  damit wir uns kennen, austauschen und füreinander da sind.</p>
+
+  <div class="qr-wrap">
+    <div class="qr"><img src="/images/hausgemeinschaft-qr.png" alt="QR-Code WhatsApp-Gruppe Schmidstr. 11"></div>
+    <div class="scan-hint">
+      <strong>Scan mich</strong> mit der Kamera deines Handys.
+    </div>
+    <div class="link-fallback">
+      Oder direkt:<br>
+      <a href="https://chat.whatsapp.com/Emm7CKd9TPS2PtMVpLFZuo?mode=gi_t">chat.whatsapp.com/Emm7CKd9TPS2PtMVpLFZuo</a>
+    </div>
+  </div>
+
+  <div class="body-text">
+    <p>Pakete annehmen, kurze Fragen, kleine Hilfen, Hausflur-Themen,
+    spontane Kaffees, Werkzeug ausleihen — alles, was Nachbarschaft eben ist.</p>
+    <p>Niemand muss laut sein. Niemand muss da sein. Wer mag, ist dabei.</p>
+  </div>
+
+  <div class="signature">
+    Aus Wohnung <span class="name">— Jochen</span>
+  </div>
+</div>
