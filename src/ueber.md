@@ -37,14 +37,23 @@ Manchmal [begleite ich Menschen](/coaching/) — wenn sie fragen. Nicht als Beru
 <style>
 .about-apps { list-style: none; padding: 0; margin: 1rem 0 0; }
 .about-apps li { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; }
-.about-apps li img { width: 32px; height: 32px; border-radius: 7px; object-fit: contain; flex-shrink: 0; }
+.text-content .about-apps li img:not(.about-photo) {
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  margin: 0 !important;
+  border-radius: 7px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: inline-block;
+}
 .about-apps li span { line-height: 1.4; }
 .about-apps li strong { font-weight: 700; }
 </style>
 <ul class="about-apps">
   <li><img src="/images/msphere-icon-192.png" alt=""><span><strong>M-SPHERE</strong> — Meditation als Erlebnis</span></li>
   <li><img src="/images/Gefuelskompass5d_icon-192.png" alt=""><span><strong>Spüra</strong> — Emotionales Self-Tracking</span></li>
-  <li><span><strong>OneYear</strong> — Ein Jahr auf einer Seite</span></li>
+  <li><img src="/images/oneyear-icon.png" alt=""><span><strong>OneYear</strong> — Ein Jahr auf einer Seite</span></li>
 </ul>
 
 Hinter allem steht <a href="/j-thrust/"><strong>J-THRUST</strong></a> — das Studio. Die Werkstatt. Das Schiff.
