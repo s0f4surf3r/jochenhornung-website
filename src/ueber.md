@@ -51,6 +51,7 @@ Manchmal [begleite ich Menschen](/coaching/) — wenn sie fragen. Nicht als Beru
 .about-apps li strong { font-weight: 700; }
 </style>
 <ul class="about-apps">
+  <li><img src="/images/klarsite-logo.svg" alt=""><span><strong>Klarsite</strong> — Websites mit perfectCMS, ohne Lock-in</span></li>
   <li><img src="/images/msphere-icon-192.png" alt=""><span><strong>M-SPHERE</strong> — Meditation als Erlebnis</span></li>
   <li><img src="/images/Gefuelskompass5d_icon-192.png" alt=""><span><strong>Spüra</strong> — Emotionales Self-Tracking</span></li>
   <li><img src="/images/oneyear-icon.png" alt=""><span><strong>OneYear</strong> — Ein Jahr auf einer Seite</span></li>
