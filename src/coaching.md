@@ -47,7 +47,7 @@ Wichtig dabei: Ich stelle keine Diagnosen, ich verschreibe nichts, ich empfehle 
 
 - **Erstgespräch:** 30 Minuten, kostenfrei, per Video oder Telefon. Wir schauen, ob es passt — von beiden Seiten.
 - **Einzelgespräche:** 60 oder 90 Minuten, online oder in Berlin-Mitte.
-- **Frequenz:** je nach Anliegen. Keine Mindestlaufzeit, keine Pakete, keine Bindung.
+- **Frequenz:** je nach Anliegen. Keine Mindestlaufzeit, keine Pakete.
 - **Honorar:** transparent im Erstgespräch. Sliding Scale möglich, wenn die finanzielle Situation gerade eng ist.
 
 ### Selbsthilfe
