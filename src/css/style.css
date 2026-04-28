@@ -73,6 +73,13 @@ body {
     margin-bottom: 1rem;
 }
 
+.text-content h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+}
+
 .text-content p {
     margin-bottom: 1.5rem;
 }
