@@ -141,6 +141,26 @@
         .site-footer a {
             color: #666;
         }
+
+        /* Custom cursor dot — Daria-style (mix-blend-mode: difference) */
+        .cursor-dot {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: #fff;
+            pointer-events: none;
+            mix-blend-mode: difference;
+            z-index: 9999;
+            opacity: 0;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.2s ease;
+        }
+        @media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+            .cursor-dot { display: none; }
+        }
     </style>
 </head>
 <body>
@@ -169,5 +189,21 @@
         © 2026 Jochen Hornung | <a href="/impressum/">Impressum</a> | <a href="/datenschutz/">Datenschutz</a>
     </footer>
     {% endif %}
+
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <script>
+    (() => {
+        if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const dot = document.querySelector('.cursor-dot');
+        if (!dot) return;
+        const move = (e) => {
+            dot.style.opacity = '1';
+            dot.style.transform = `translate(-50%, -50%) translate(${e.clientX}px, ${e.clientY}px)`;
+        };
+        document.addEventListener('mousemove', move, { passive: true });
+        document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; });
+    })();
+    </script>
 </body>
 </html>

@@ -39,6 +39,18 @@ solo: true
         margin: 0 0 1.6rem;
     }
 
+    .solo-content img {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        margin: 2.5rem auto;
+        border-radius: 4px;
+    }
+    .solo-content p:has(> img) {
+        margin: 0;
+    }
+
     .solo-content em {
         font-style: italic;
         color: #444;
