@@ -1826,32 +1826,12 @@ body {
   function initEdit() {
     if (document.getElementById('editBar')) return;
     editActive = true;
+    /* Vertikale Position der 4 Hauptelemente: Nav · Hero · Claim · KITT-Divider */
     var controls = [
-      { label: '── CLAIM ──', type: 'heading' },
-      { label: 'Claim Margin Top', type: 'range', target: '.hero-claim-wrap', prop: 'marginTop', min: -100, max: 100, def: 0, unit: 'px' },
-      { label: 'Claim Padding Top', type: 'range', target: '.hero-claim-wrap', prop: 'paddingTop', min: 0, max: 120, def: 48, unit: 'px' },
-      { label: 'Claim Padding Bottom', type: 'range', target: '.hero-claim-wrap', prop: 'paddingBottom', min: 0, max: 120, def: 64, unit: 'px' },
-      { label: 'Claim Font-Size', type: 'range', target: '.hero-claim', prop: 'fontSize', min: 10, max: 80, def: 26, unit: 'px' },
-      { label: 'Claim Letter-Spacing', type: 'range', target: '.hero-claim', prop: 'letterSpacing', min: 0, max: 20, def: 2, unit: 'px', step: 0.5 },
-      { label: 'Claim Word Gap', type: 'range', target: '.claim-word', prop: 'marginBottom', min: 0, max: 40, def: 6, unit: 'px' },
-      { label: 'AI Size', type: 'range', target: '.claim-ai', prop: 'fontSize', min: 5, max: 50, def: 18, unit: 'px' },
-      { label: 'Tools Size', type: 'range', target: '.claim-tools', prop: 'fontSize', min: 5, max: 50, def: 25, unit: 'px' },
-      { label: 'Design Size', type: 'range', target: '.claim-design', prop: 'fontSize', min: 5, max: 50, def: 34, unit: 'px' },
-      { label: 'Consciousness Size', type: 'range', target: '.claim-consciousness', prop: 'fontSize', min: 5, max: 60, def: 37, unit: 'px' },
-      { label: '── HERO ──', type: 'heading' },
-      { label: 'Hero Max-Height', type: 'range', target: '.hero-image', prop: 'maxHeight', min: 100, max: 900, def: 600, unit: 'px' },
-      { label: 'Hero Opacity', type: 'range', target: '.hero-image img', prop: 'opacity', min: 0, max: 100, def: 85, unit: '%', divisor: 100 },
-      { label: '── NAV ──', type: 'heading' },
-      { label: 'Avatar Größe', type: 'range', target: '.nav-logo', prop: 'width', min: 16, max: 80, def: 32, unit: 'px', alsoH: true },
-      { label: '@s0f4 Font-Size', type: 'range', target: '.nav-home', prop: 'fontSize', min: 8, max: 30, def: 14, unit: 'px' },
-      { label: 'Jochen Hornung Size', type: 'range', target: '.nav-name', prop: 'fontSize', min: 10, max: 60, def: 22, unit: 'px' },
-      { label: 'Nav Padding Top', type: 'range', target: '.hero-nav', prop: 'paddingTop', min: 0, max: 40, def: 8, unit: 'px' },
-      { label: 'Nav Gap', type: 'range', target: '.nav-home', prop: 'gap', min: 0, max: 30, def: 4, unit: 'px' },
-      { label: '── SECTIONS ──', type: 'heading' },
-      { label: 'Sections Padding', type: 'range', target: '.section', prop: 'paddingTop', min: 10, max: 120, def: 48, unit: 'px', alsoBottom: true },
-      { label: 'Card Gap', type: 'range', target: '.card-grid', prop: 'gap', min: 0, max: 60, def: 20, unit: 'px' },
-      { label: 'Card Padding', type: 'range', target: '.card', prop: 'padding', min: 5, max: 60, def: 24, unit: 'px' },
-      { label: 'Divider Padding', type: 'range', target: '.pixel-divider', prop: 'paddingTop', min: 0, max: 80, def: 32, unit: 'px', alsoBottom: true },
+      { label: 'Nav ↕', type: 'range', target: '.hero-nav', prop: 'paddingTop', min: 0, max: 100, def: 10, unit: 'px' },
+      { label: 'Hero-Bild ↕', type: 'range', target: '.hero-image', prop: 'marginTop', min: 0, max: 250, def: 48, unit: 'px' },
+      { label: 'Claim ↕', type: 'range', target: '.hero-claim-wrap', prop: 'marginTop', min: 0, max: 250, def: 32, unit: 'px' },
+      { label: 'KITT-Divider ↕', type: 'range', target: '.pixel-divider', prop: 'marginTop', min: 0, max: 400, def: 0, unit: 'px' },
     ];
 
     /* Draggable Bubble — verschiebbar, expandiert zum Slider */
