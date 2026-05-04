@@ -604,12 +604,16 @@ body {
 /* ═══════════════════════════════════════
    Desktop (≥1301px) — Atemraum zur Nav, KITT-Divider im ersten Screen
    ═══════════════════════════════════════ */
-@media (min-width: 1301px) {
+/* Hero füllt 100svh ab Tablet-Landscape aufwärts, Divider sitzt am Boden */
+@media (min-width: 901px) {
   .hero-home { min-height: 100svh; display: flex; flex-direction: column; }
+  .hero-home > .pixel-divider { margin-top: auto; margin-bottom: 32px; padding-top: 20px; padding-bottom: 20px; }
+}
+
+@media (min-width: 1301px) {
   .hero-image { margin-top: 48px; max-height: 500px; }
   .hero-image img { max-height: 500px; object-fit: cover; object-position: center top; }
   .hero-claim-wrap { margin-top: 32px; padding-top: 20px; padding-bottom: 20px; }
-  .hero-home > .pixel-divider { margin-top: auto; margin-bottom: 32px; padding-top: 20px; padding-bottom: 20px; }
 }
 
 /* ═══════════════════════════════════════
