@@ -48,7 +48,7 @@ description: "Jochen Hornung auf Twitch – Code, Design, Bewusstsein. Coming so
 
 <div class="streaming-coming-soon">Coming soon.</div>
 
-Design · Consciousness Tools · AI — live.
+Design · Consciousness Apps · AI — live.
 
 <a href="https://twitch.tv/s0f4surf3r" target="_blank" rel="noopener" class="streaming-link">twitch.tv/s0f4surf3r</a>
 

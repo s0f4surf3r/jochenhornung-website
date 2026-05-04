@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc:*)",
+      "Bash(grep:*)",
+      "Bash(for file in /Users/joho21/Projekte/jochenhornung-website/github-repo/src/images/*.jpg /Users/joho21/Projekte/jochenhornung-website/github-repo/src/images/*.jpeg /Users/joho21/Projekte/jochenhornung-website/github-repo/src/images/*.png)",
+      "Bash(done)",
+      "Bash(for:*)",
+      "Bash(do test -f \"src/images/$img\")",
+      "Bash(echo:*)",
+      "Bash(ls:*)",
+      "Bash(sips:*)",
+      "Bash(npx @11ty/eleventy)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git checkout:*)",
+      "WebSearch",
+      "Bash(npx @11ty/eleventy --serve)",
+      "Bash(gh repo create:*)",
+      "Bash(npm install:*)",
+      "Bash(git init:*)",
+      "Bash(ipconfig getifaddr:*)",
+      "Bash(npx @11ty/eleventy:*)"
+    ]
+  }
+}
