@@ -4,3 +4,9 @@ _site/
 
 # Local Netlify folder
 .netlify
+
+# Local Claude permissions (never commit)
+.claude/
+
+# Local scripts (often symlinks to private repos)
+scripts/
