@@ -2022,6 +2022,62 @@ body {
     });
     bar.appendChild(saveBtn);
 
+    /* CSS-Export-Button → Zwischenablage */
+    var cssBtn = document.createElement('button');
+    cssBtn.textContent = '📋';
+    cssBtn.title = 'Aktuelle Werte als CSS in Zwischenablage kopieren';
+    cssBtn.style.cssText = 'background:none;border:1px solid #555;color:#ccc;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px;flex-shrink:0;margin-left:6px';
+    cssBtn.addEventListener('click', function() {
+      /* Werte gruppieren nach selector → property */
+      var bySelector = {};
+      realControls.forEach(function(c) {
+        var el = document.querySelector(c.target);
+        if (!el) return;
+        var val = el.style[c.prop];
+        if (!val) return;
+        if (!bySelector[c.target]) bySelector[c.target] = {};
+        var cssProp = c.prop.replace(/[A-Z]/g, function(m) { return '-' + m.toLowerCase(); });
+        bySelector[c.target][cssProp] = val;
+        if (c.alsoBottom) {
+          var bottomProp = cssProp.replace('-top', '-bottom');
+          bySelector[c.target][bottomProp] = val;
+        }
+        if (c.alsoH) bySelector[c.target]['height'] = val;
+      });
+      /* Media-Query basierend auf viewport */
+      var w = window.innerWidth;
+      var mq;
+      if (w <= 480) mq = '@media (max-width: 480px)';
+      else if (w <= 743) mq = '@media (max-width: 743px)';
+      else if (w <= 900) mq = '@media (min-width: 744px) and (max-width: 900px)';
+      else if (w <= 1300) mq = '@media (min-width: 901px) and (max-width: 1300px)';
+      else mq = '@media (min-width: 1301px)';
+      /* CSS bauen */
+      var lines = [];
+      lines.push('/* Live-Edit @ ' + window.innerWidth + '×' + window.innerHeight + ' (DPR ' + window.devicePixelRatio + ') — ' + new Date().toISOString() + ' */');
+      lines.push(mq + ' {');
+      Object.keys(bySelector).forEach(function(sel) {
+        var props = bySelector[sel];
+        var inner = Object.keys(props).map(function(p) { return '    ' + p + ': ' + props[p] + ';'; }).join('\n');
+        lines.push('  ' + sel + ' {\n' + inner + '\n  }');
+      });
+      lines.push('}');
+      var cssText = lines.join('\n');
+      /* In Zwischenablage */
+      var copy = function(t) {
+        try {
+          navigator.clipboard.writeText(t);
+        } catch(e) {
+          var ta = document.createElement('textarea');
+          ta.value = t; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+        }
+      };
+      copy(cssText);
+      cssBtn.textContent = '✓';
+      setTimeout(function() { cssBtn.textContent = '📋'; }, 1600);
+    });
+    bar.appendChild(cssBtn);
+
     /* Gespeicherte Werte NUR wiederherstellen wenn Edit aktiv ist (nicht bei normalem Besuch) */
 
     showControl(0);
