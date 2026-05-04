@@ -671,11 +671,12 @@ body {
   .nav-burger { position: absolute; top: calc(env(safe-area-inset-top, 10px) + 30px); right: 2rem; }
 
   /* ── HERO ── */
-  .hero-image { max-height: none; }
-  .hero-image img { opacity: 1; }
+  .hero-image { max-height: 450px; margin-top: 84px; }
+  .hero-image img { opacity: 1; max-height: 450px; object-fit: cover; object-position: center top; }
 
   /* ── CLAIM: inline auf einer Zeile (passt in 744–900 noch) ── */
-  .hero-claim-wrap { padding-top: 35px; padding-bottom: 35px; padding-left: 2rem; padding-right: 2rem; }
+  .hero-claim { font-size: 26px; letter-spacing: 1.2px; white-space: nowrap; }
+  .hero-claim-wrap { margin-top: 7px; padding-top: 30px; padding-bottom: 30px; padding-left: 2rem; padding-right: 2rem; }
 
   /* ── SECTIONS ── */
   .section { padding: 83px 2rem; }
@@ -1084,7 +1085,7 @@ body {
 
     <div class="hero-image">
       <picture>
-        <source media="(orientation: portrait), (max-width: 900px)" srcset="/images/hero-banner-mobile.png" width="864" height="1152">
+        <source media="(max-width: 743px)" srcset="/images/hero-banner-mobile.png" width="864" height="1152">
         <img src="/images/hero-banner.png"
              alt="s0f4surf3r — Vektor-Figur im Sessel, digitale Energie"
              width="1200" height="480"
