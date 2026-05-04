@@ -161,6 +161,10 @@
         @media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
             .cursor-dot { display: none; }
         }
+        html.cursor-dot-active,
+        html.cursor-dot-active * {
+            cursor: none !important;
+        }
 
         /* Landscape-Warnung nur für Smartphones */
         .orientation-warning {
@@ -231,6 +235,7 @@
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         const dot = document.querySelector('.cursor-dot');
         if (!dot) return;
+        document.documentElement.classList.add('cursor-dot-active');
         const move = (e) => {
             dot.style.opacity = '1';
             dot.style.transform = `translate(-50%, -50%) translate(${e.clientX}px, ${e.clientY}px)`;
