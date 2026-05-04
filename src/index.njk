@@ -604,8 +604,8 @@ body {
 /* ═══════════════════════════════════════
    Desktop (≥1301px) — Atemraum zur Nav, KITT-Divider im ersten Screen
    ═══════════════════════════════════════ */
-/* Hero füllt 100svh ab Tablet-Landscape aufwärts, Divider sitzt am Boden */
-@media (min-width: 901px) {
+/* Hero füllt 100svh ab Tablet-Portrait aufwärts, Divider sitzt am Boden */
+@media (min-width: 744px) {
   .hero-home { min-height: 100svh; display: flex; flex-direction: column; }
   .hero-home > .pixel-divider { margin-top: auto; margin-bottom: 62px; padding-top: 20px; padding-bottom: 20px; }
 }
@@ -650,8 +650,9 @@ body {
   .hero-image img { opacity: 1; max-height: 450px; object-fit: cover; object-position: center top; }
 
   /* ── CLAIM: inline auf einer Zeile (passt in 744–900 noch) ── */
-  .hero-claim { font-size: 26px; letter-spacing: 1.2px; white-space: nowrap; }
+  .hero-claim { font-size: 30px; letter-spacing: 1.4px; white-space: nowrap; }
   .hero-claim-wrap { margin-top: 7px; padding-top: 30px; padding-bottom: 30px; padding-left: 2rem; padding-right: 2rem; }
+  .hero-home > .pixel-divider { margin-bottom: 30px; }
 
   /* ── SECTIONS ── */
   .section { padding: 83px 2rem; }
