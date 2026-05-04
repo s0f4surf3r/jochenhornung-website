@@ -640,35 +640,10 @@ body {
    ═══════════════════════════════════════ */
 @media (min-width: 744px) and (max-width: 900px) {
 
-  /* ── NAV: gestackt wie iPhone ── */
-  .hero-nav {
-    flex-wrap: wrap;
-    padding-top: calc(env(safe-area-inset-top, 10px) + 30px);
-    padding-left: 2rem;
-    padding-right: 2rem;
-    justify-content: center;
-  }
-  .nav-logo { width: 47px; height: 47px; }
-  .nav-home {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    font-size: 16px;
-    gap: 8px;
-    margin-right: 0;
-  }
-  .nav-home .nav-name {
-    font-size: 37px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    line-height: 1.1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .nav-home .nav-blitz { display: none; }
-  .nav-burger { position: absolute; top: calc(env(safe-area-inset-top, 10px) + 30px); right: 2rem; }
+  /* ── NAV: kompakt wie 901-1300 (Burger-Variante) ── */
+  .nav-logo { width: 35px; height: 35px; }
+  .hero-nav { padding-top: 26px; }
+  .nav-home { gap: 12px; }
 
   /* ── HERO ── */
   .hero-image { max-height: 450px; margin-top: 84px; }
