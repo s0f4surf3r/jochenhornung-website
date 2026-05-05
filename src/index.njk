@@ -755,6 +755,16 @@ body {
   .hero-image { min-height: 100svh; max-height: none; margin-top: 0; overflow: hidden; }
   .hero-image img { min-height: 100svh; max-height: none; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
   .hero-home > .pixel-divider { margin-top: 0; margin-bottom: 0; }
+
+  /* Nav: kompakte horizontale Zeile (kein Stacking) */
+  .hero-nav { padding-top: calc(env(safe-area-inset-top, 0px) + 12px) !important; padding-left: 1rem !important; padding-right: 1rem !important; flex-wrap: nowrap !important; justify-content: space-between !important; align-items: center !important; }
+  .nav-home { width: auto !important; flex-direction: row !important; align-items: center !important; text-align: left !important; font-size: 13px !important; gap: 8px !important; margin-right: auto !important; }
+  .nav-home .nav-name { font-size: 16px !important; flex-direction: row !important; gap: 4px !important; }
+  .nav-logo { width: 32px !important; height: 32px !important; }
+  .nav-burger { position: relative !important; top: auto !important; right: auto !important; }
+
+  /* Toggles oben links, untereinander */
+  .floating-controls { top: calc(env(safe-area-inset-top, 0px) + 70px); left: 12px; bottom: auto; right: auto; flex-direction: column; gap: 0.5rem; }
 }
 
 @media (max-width: 480px) {
