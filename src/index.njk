@@ -753,21 +753,14 @@ body {
 
 /* ═══ 480px — KEIN Override mehr, iPhone-Block oben ist die Wahrheit ═══ */
 @media (max-width: 480px) and (orientation: portrait) {
-  /* iPhone Portrait — Hero füllt ganzes Viewport, Claim+Divider scrollbar drunter */
-  .hero-image { min-height: 100svh; max-height: none; margin-top: 0; overflow: hidden; }
-  .hero-image img { min-height: 100svh; max-height: none; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
+  /* iPhone Portrait — Brand-Block gestackt über Hero, Hero etwas kleiner */
+  .hero-image { min-height: 70svh; max-height: none; margin-top: 0; overflow: hidden; }
+  .hero-image img { min-height: 70svh; max-height: none; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
   .hero-home > .pixel-divider { margin-top: 0; margin-bottom: 0; }
 
-  /* Nav: kompakte horizontale Zeile (kein Stacking) */
-  .hero-nav { padding-top: calc(env(safe-area-inset-top, 0px) + 12px) !important; padding-left: 1rem !important; padding-right: 1rem !important; flex-wrap: nowrap !important; justify-content: space-between !important; align-items: center !important; }
-  .nav-home { width: auto !important; flex-direction: row !important; align-items: center !important; text-align: left !important; font-size: 13px !important; gap: 8px !important; margin-right: auto !important; }
-  .nav-home .nav-name { font-size: 16px !important; flex-direction: row !important; gap: 4px !important; }
-  .nav-logo { width: 32px !important; height: 32px !important; }
-  .nav-burger { position: relative !important; top: auto !important; right: auto !important; }
-
-  /* Toggles: Sound oben links, Chat oben rechts (iPhone Portrait) */
-  #soundToggle { top: calc(env(safe-area-inset-top, 0px) + 90px); left: 12px; bottom: auto; right: auto; }
-  #chatBtn { top: calc(env(safe-area-inset-top, 0px) + 90px); right: 12px; bottom: auto; left: auto; }
+  /* Toggles unter dem gestackten Brand-Block */
+  #soundToggle { top: calc(env(safe-area-inset-top, 0px) + 230px); left: 12px; bottom: auto; right: auto; }
+  #chatBtn { top: calc(env(safe-area-inset-top, 0px) + 230px); right: 12px; bottom: auto; left: auto; }
 }
 
 @media (max-width: 480px) {
