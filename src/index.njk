@@ -658,8 +658,9 @@ body {
   .card { padding: 40px; }
   .pixel-divider { padding: 46px 2rem; }
 
-  /* ── TOGGLES ── */
-  .floating-controls { bottom: 1rem; right: 1rem; }
+  /* ── TOGGLES (iPad Portrait) ── */
+  #soundToggle { bottom: 1rem; left: 1rem; }
+  #chatBtn { bottom: 1rem; right: 1rem; }
 }
 
 /* ── iPhone (<768px) — Jochen's iPhone Tuning 12.04.2026 ── */
@@ -740,8 +741,9 @@ body {
   /* ── FOOTER ── */
   .home-footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
 
-  /* ── TOGGLES ── */
-  .floating-controls { bottom: calc(env(safe-area-inset-bottom, 0px) + 0.5rem); right: 0.8rem; gap: 0.4rem; z-index: 999; }
+  /* ── TOGGLES (Mobile ≤743) ── */
+  #soundToggle { bottom: calc(env(safe-area-inset-bottom, 0px) + 0.5rem); left: 0.8rem; z-index: 999; }
+  #chatBtn { bottom: calc(env(safe-area-inset-bottom, 0px) + 0.5rem); right: 0.8rem; z-index: 999; }
   .ctrl-btn { width: 44px; height: 44px; }
 
   /* ── CHAT ── */
@@ -763,8 +765,9 @@ body {
   .nav-logo { width: 32px !important; height: 32px !important; }
   .nav-burger { position: relative !important; top: auto !important; right: auto !important; }
 
-  /* Toggles oben links, untereinander */
-  .floating-controls { top: calc(env(safe-area-inset-top, 0px) + 70px); left: 12px; bottom: auto; right: auto; flex-direction: column; gap: 0.5rem; }
+  /* Toggles: Sound oben links, Chat oben rechts (iPhone Portrait) */
+  #soundToggle { top: calc(env(safe-area-inset-top, 0px) + 70px); left: 12px; bottom: auto; right: auto; }
+  #chatBtn { top: calc(env(safe-area-inset-top, 0px) + 70px); right: 12px; bottom: auto; left: auto; }
 }
 
 @media (max-width: 480px) {
@@ -796,14 +799,11 @@ body {
 }
 
 /* ── FLOATING CONTROLS ── */
-.floating-controls {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  display: flex;
-  gap: 0.5rem;
-  z-index: 100;
-}
+/* Toggles: Sound links, Chat rechts (Lang ausgeblendet bis EN übersetzt ist) */
+.floating-controls { display: contents; }
+#langToggle { display: none !important; }
+#soundToggle { position: fixed; bottom: 1.5rem; left: 1.5rem; z-index: 100; }
+#chatBtn { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 100; }
 
 .ctrl-btn {
   width: 44px;
