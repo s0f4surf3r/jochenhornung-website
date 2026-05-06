@@ -637,18 +637,11 @@ body {
    iPad Portrait (744–900px) — 12.04.2026
    Gleiche Logik wie iPhone: Portrait-Hero, Pyramide, Nav gestackt
    ═══════════════════════════════════════ */
-@media (min-width: 481px) and (max-width: 900px) {
-
-  /* ── NAV: kompakt wie 901-1300 (Burger-Variante) ── */
-  .nav-logo { width: 35px; height: 35px; }
-  .hero-nav { padding-top: 26px; }
-  .nav-home { gap: 12px; }
-
-  /* ── HERO ── */
+/* 481-900-Block entfernt — iPad/Phablet Portrait nutzt jetzt iPhone-Layout (Mobile-Block + Portrait-Block bis 900px ausgeweitet) */
+@media (min-width: 481px) and (max-width: 900px) and (orientation: landscape) {
+  /* Nur Landscape im Phablet/Tablet-Range — sonst greift der Mobile-Block */
   .hero-image { max-height: 450px; margin-top: clamp(40px, 17vw, 144px); }
   .hero-image img { opacity: 1; max-height: 450px; object-fit: cover; object-position: center top; }
-
-  /* ── CLAIM: inline auf einer Zeile, font skaliert ── */
   .hero-claim { font-size: clamp(20px, 3.7vw, 30px); letter-spacing: 1.2px; white-space: nowrap; }
   .hero-claim-wrap { margin-top: 7px; padding-top: 30px; padding-bottom: 30px; padding-left: 2rem; padding-right: 2rem; }
   .hero-home > .pixel-divider { margin-bottom: 30px; }
@@ -664,12 +657,10 @@ body {
   #chatBtn { bottom: 1rem; right: 1rem; }
 }
 
-/* ── iPhone (<768px) — Jochen's iPhone Tuning 12.04.2026 ── */
 /* ═══════════════════════════════════════
-   iPhone (<767px) — KONSOLIDIERT 12.04.2026
-   Jochens Live-Edit Werte, EINE Quelle der Wahrheit
+   Mobile + iPad Portrait (≤900px) — Stacked Brand + Pyramide
    ═══════════════════════════════════════ */
-@media (max-width: 743px) {
+@media (max-width: 900px) {
 
   /* ── NAV ── */
   .hero-nav {
@@ -753,8 +744,8 @@ body {
 }
 
 /* ═══ 480px — KEIN Override mehr, iPhone-Block oben ist die Wahrheit ═══ */
-@media (max-width: 480px) and (orientation: portrait) {
-  /* iPhone Portrait — Brand-Block gestackt über Hero, Hero etwas kleiner */
+@media (max-width: 900px) and (orientation: portrait) {
+  /* Mobile + iPad Portrait — Brand-Block gestackt über Hero, Hero etwas kleiner */
   .hero-image { min-height: 70svh; max-height: none; margin-top: -15px; overflow: hidden; }
   .hero-image img { min-height: 70svh; max-height: none; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
   .hero-home > .pixel-divider { margin-top: 0; margin-bottom: 0; }
