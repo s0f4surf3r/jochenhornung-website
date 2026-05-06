@@ -884,6 +884,43 @@ body {
   .sound-bars span { animation: none; }
 }
 
+/* Headphone-Hint — dezenter Toast neben dem Sound-Button */
+.headphone-hint {
+  position: fixed;
+  bottom: calc(1.5rem + 11px);
+  left: calc(1.5rem + 44px + 12px);
+  background: rgba(20, 20, 30, 0.85);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 99;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  white-space: nowrap;
+}
+.headphone-hint.show { opacity: 1; transform: translateX(0); }
+@media (max-width: 743px) {
+  .headphone-hint {
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 0.5rem + 11px);
+    left: calc(0.8rem + 44px + 8px);
+  }
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .headphone-hint {
+    top: calc(env(safe-area-inset-top, 0px) + 230px + 11px);
+    left: 60px;
+    bottom: auto;
+  }
+}
+
 /* Lang toggle */
 #langToggle {
   font-family: -apple-system, 'Helvetica Neue', sans-serif;
@@ -1155,6 +1192,7 @@ body {
     </div>
   </button>
   <audio id="heartbeatAudio" src="/sounds/heartbeat.mp3" loop preload="auto"></audio>
+  <div id="headphoneHint" class="headphone-hint" aria-hidden="true">🎧 best with headphones</div>
   <button class="ctrl-btn" id="langToggle" aria-label="Sprache wechseln" title="Sprache">DE</button>
   <button class="ctrl-btn" id="chatBtn" aria-label="Chat öffnen" title="Ask me anything">?</button>
 </div>
@@ -1550,6 +1588,7 @@ body {
   /* ═══ HEARTBEAT-LOOP ═══ */
   var soundBtn = document.getElementById('soundToggle');
   var heartbeatAudio = document.getElementById('heartbeatAudio');
+  var headphoneHint = document.getElementById('headphoneHint');
 
   function fadeAudio(audio, targetVol, durationMs) {
     var startVol = audio.volume;
@@ -1573,6 +1612,7 @@ body {
         setTimeout(function() { if (!isPlaying) heartbeatAudio.pause(); }, 700);
         isPlaying = false;
         soundBtn.classList.remove('active');
+        if (headphoneHint) headphoneHint.classList.remove('show');
       } else {
         /* ON: starten + sanft hochfaden */
         heartbeatAudio.volume = 0;
@@ -1580,6 +1620,12 @@ body {
         fadeAudio(heartbeatAudio, 0.35, 1500);
         isPlaying = true;
         soundBtn.classList.add('active');
+        /* Dezenter Headphone-Hint nur beim ersten ON-Click pro Browser-Session */
+        if (headphoneHint && !localStorage.getItem('jh-headphone-hint-shown')) {
+          headphoneHint.classList.add('show');
+          localStorage.setItem('jh-headphone-hint-shown', '1');
+          setTimeout(function() { headphoneHint.classList.remove('show'); }, 3500);
+        }
       }
     });
   }
