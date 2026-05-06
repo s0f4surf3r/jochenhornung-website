@@ -746,13 +746,18 @@ body {
 /* ═══ 480px — KEIN Override mehr, iPhone-Block oben ist die Wahrheit ═══ */
 @media (max-width: 900px) and (orientation: portrait) {
   /* Mobile + iPad Portrait — Brand-Block gestackt über Hero, Hero kompakter */
-  .hero-image { min-height: 45svh; max-height: none; margin-top: -35px; overflow: hidden; }
+  .hero-image { min-height: 45svh; max-height: none; margin-top: -10px; overflow: hidden; }
   .hero-image img { min-height: 45svh; max-height: none; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
   .hero-home > .pixel-divider { margin-top: 0; margin-bottom: 0; }
 
   /* Toggles unter dem gestackten Brand-Block */
   #soundToggle { top: calc(env(safe-area-inset-top, 0px) + 230px); left: 12px; bottom: auto; right: auto; }
   #chatBtn { top: calc(env(safe-area-inset-top, 0px) + 230px); right: 12px; bottom: auto; left: auto; }
+}
+
+/* iPad Portrait Override — Hero noch höher als auf iPhone (mehr Platz zum Brand-Stack) */
+@media (min-width: 481px) and (max-width: 900px) and (orientation: portrait) {
+  .hero-image { margin-top: -35px; }
 }
 
 @media (max-width: 480px) {
