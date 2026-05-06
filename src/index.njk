@@ -1592,14 +1592,7 @@ body {
   }
 
   if (soundBtn) {
-    /* Sound-State aus localStorage wiederherstellen */
-    if (localStorage.getItem('jochenhornung-sound') === 'on') {
-      ensureAudio();
-      createAmbient();
-      /* WICHTIG: State synchron halten, sonst denkt der Toggle der Sound sei aus */
-      isPlaying = true;
-      soundBtn.classList.add('active');
-    }
+    /* Bei Refresh immer OFF — kein Restore aus localStorage (vermeidet "an aber lautlos"-State auf iOS Safari) */
 
     soundBtn.addEventListener('click', function() {
       if (!audioCtx) createAmbient();
