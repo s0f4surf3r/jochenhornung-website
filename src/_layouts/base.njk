@@ -228,6 +228,11 @@
     </footer>
     {% endif %}
 
+    <script>
+    /* Reload startet immer ganz oben + ganz links — kein Scroll-Restore */
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.addEventListener('pageshow', () => window.scrollTo(0, 0));
+    </script>
     <div class="cursor-dot" aria-hidden="true"></div>
     <script>
     (() => {
