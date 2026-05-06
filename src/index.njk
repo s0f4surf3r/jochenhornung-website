@@ -896,6 +896,7 @@ body {
 .chat-widget {
   position: fixed;
   bottom: 5rem;
+  left: auto;
   right: 1.5rem;
   width: 340px;
   max-width: calc(100vw - 2rem);
@@ -912,7 +913,7 @@ body {
   visibility: hidden;
   transform: translateY(20px) scale(0.95);
   pointer-events: none;
-  transition: opacity 0.3s, transform 0.3s, visibility 0s 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
 }
 
 .chat-widget.open {
@@ -1017,8 +1018,9 @@ body {
 
 @media (max-width: 480px) {
   .chat-widget {
-    width: calc(100vw - 2rem);
+    left: 1rem;
     right: 1rem;
+    width: auto;
     bottom: 4rem;
   }
 }
@@ -1699,7 +1701,9 @@ body {
   if (chatBtn && chatWidget) {
     chatBtn.addEventListener('click', function() {
       chatWidget.classList.toggle('open');
-      if (chatWidget.classList.contains('open')) chatInput.focus();
+      if (chatWidget.classList.contains('open')) {
+        setTimeout(function() { chatInput.focus(); }, 350);
+      }
     });
 
     chatClose.addEventListener('click', function() {

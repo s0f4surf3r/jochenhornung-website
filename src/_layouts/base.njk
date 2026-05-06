@@ -229,9 +229,12 @@
     {% endif %}
 
     <script>
-    /* Reload startet immer ganz oben + ganz links — kein Scroll-Restore */
+    /* Reload startet immer ganz oben + ganz links — kein Scroll-Restore. Plus: Chat-Widget schließen falls .open im BFCache hängt */
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-    window.addEventListener('pageshow', () => window.scrollTo(0, 0));
+    window.addEventListener('pageshow', () => {
+      window.scrollTo(0, 0);
+      document.getElementById('chatWidget')?.classList.remove('open');
+    });
     </script>
     <div class="cursor-dot" aria-hidden="true"></div>
     <script>
