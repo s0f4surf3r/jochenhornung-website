@@ -24,7 +24,7 @@ Personenbezogene Daten sind alle Informationen, die sich auf eine identifizierte
 
 ### 3.1 Hosting und Server-Logs
 
-Diese Website wird auf Servern von **statichost.eu** (EU-basierter Hosting-Anbieter, [statichost.eu/legal](https://statichost.eu/legal/)) gehostet. Die Auslieferung erfolgt über das CDN-Netzwerk **bunny.net** (BunnyWay d.o.o., Cesta komandanta Staneta 4A, 1215 Medvode, Slowenien — EU).
+Diese Website wird gehostet von **Variable Object Assignment** (Einzelunternehmen, registriert in Schweden), Markenname „statichost.eu", c/o Knackeriet, Sankt Paulsgatan 25, 118 48 Stockholm, Schweden (USt-ID: SE860201T611101, [statichost.eu](https://statichost.eu/)). Die Auslieferung erfolgt über das CDN-Netzwerk **bunny.net** (BunnyWay d.o.o., Cesta komandanta Staneta 4A, 1215 Medvode, Slowenien — EU).
 
 **Verarbeitete Daten:**
 - IP-Adresse
@@ -181,7 +181,7 @@ Eine Übermittlung Ihrer persönlichen Daten erfolgt grundsätzlich nicht, auße
 - wenn Sie ausdrücklich eingewilligt haben (Art. 6 Abs. 1 lit. a DSGVO)
 - wenn dies zur Erfüllung gesetzlicher Verpflichtungen erforderlich ist (Art. 6 Abs. 1 lit. c DSGVO)
 - an unsere technischen Dienstleister im Rahmen der Auftragsverarbeitung:
-  - **statichost.eu** (Hosting, EU)
+  - **Variable Object Assignment / statichost.eu** (Hosting, Schweden — EU)
   - **bunny.net / BunnyWay d.o.o.** (CDN, Slowenien — EU)
   - **Cloudflare, Inc.** (Chat-Worker, USA — DPF)
   - **Anthropic PBC** (KI-Antworten, USA — DPF)
