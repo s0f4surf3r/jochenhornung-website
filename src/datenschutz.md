@@ -92,6 +92,12 @@ Für die Verwaltung der Website-Inhalte wird **Decap CMS** im Bereich `/admin/` 
 
 **Datenübermittlung in Drittländer:** GitHub ist in den USA ansässig und nach dem EU-US DPF zertifiziert.
 
+**Lokale Speicherung beim Admin-Zugriff:** Beim Login in `/admin/` legt Decap CMS folgende Einträge im `localStorage` Ihres Browsers ab:
+- `decap-cms-user` — verschlüsselter Login-Token (GitHub OAuth)
+- `decap-cms.entries.viewStyle` — UI-Präferenz für die Eintrags-Ansicht
+
+Diese Daten werden ausschließlich lokal in Ihrem Browser gespeichert und nicht an Server übertragen. Sie sind nur für Administratoren relevant.
+
 ## 7. Kontaktaufnahme
 
 Bei Kontaktaufnahme per E-Mail werden Ihre Angaben (E-Mail-Adresse, ggf. Name und weitere übermittelte Informationen) zur Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.
