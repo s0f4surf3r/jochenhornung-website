@@ -756,7 +756,8 @@ body {
 }
 
 /* iPad Portrait Override — Hero noch höher als auf iPhone (mehr Platz zum Brand-Stack) */
-@media (min-width: 481px) and (max-width: 900px) and (orientation: portrait) {
+/* Nur ab 700px (echte iPads), darunter würde das Bild den Brand-Stack abschneiden */
+@media (min-width: 700px) and (max-width: 900px) and (orientation: portrait) {
   .hero-image { margin-top: -35px; }
 }
 
