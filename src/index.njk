@@ -1107,16 +1107,16 @@ body {
 <canvas id="pixel-rain"></canvas>
 
 <div class="hero-home">
-  <nav class="hero-nav" role="navigation" aria-label="Hauptnavigation">
+  <nav class="hero-nav" role="navigation" aria-label="Hauptnavigation" data-i18n-aria="Hauptnavigation|Main navigation">
     <a href="/" class="nav-home" aria-label="Startseite">
       <img src="/images/nav-avatar.png" alt="" class="nav-logo" width="32" height="32">
       <span style="font-weight:400;"><span style="color:var(--text)">@</span><span style="color:var(--text)">s</span><span style="color:var(--amber)">0</span><span style="color:var(--text)">f</span><span style="color:var(--cyan)">4</span><span style="color:var(--text)">s</span><span style="color:var(--text)">u</span><span style="color:var(--text)">r</span><span style="color:var(--text)">f</span><span style="color:var(--magenta)">3</span><span style="color:var(--text)">r</span></span> <span class="nav-blitz" style="color:var(--text);margin:0 0.2rem;">⌁</span> <span class="nav-name"><span>Jochen</span> <span>Hornung</span></span>
     </a>
-    <button class="nav-burger" id="navBurger" aria-label="Menü" aria-expanded="false">
+    <button class="nav-burger" id="navBurger" aria-label="Menü" aria-expanded="false" data-i18n-aria="Menü|Menu">
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links" id="navLinks">
-      <a href="/texte/">Texte</a>
+      <a href="/texte/" data-i18n="Texte|Writings">Texte</a>
       <span class="nav-sep" aria-hidden="true">/</span>
       <a href="/apps/">Apps</a>
       <span class="nav-sep" aria-hidden="true">/</span>
@@ -1124,7 +1124,7 @@ body {
       <span class="nav-sep" aria-hidden="true">/</span>
       <a href="/kaktus/">Streaming</a>
       <span class="nav-sep" aria-hidden="true">/</span>
-      <a href="/ueber/">Über mich</a>
+      <a href="/ueber/" data-i18n="Über mich|About">Über mich</a>
     </div>
   </nav>
 
@@ -1139,7 +1139,7 @@ body {
     </div>
 
   <div class="sr-only">
-    <p>Jochen Hornung – Builder, Autor, Mensch. Berlin. Texte über das Menschsein, digitale Werkzeuge für emotionale Selbsterkenntnis.</p>
+    <p data-i18n="Jochen Hornung – Builder, Autor, Mensch. Berlin. Texte über das Menschsein, digitale Werkzeuge für emotionale Selbsterkenntnis.|Jochen Hornung — builder, writer, human. Berlin. Writing on being human, digital tools for emotional self-awareness.">Jochen Hornung – Builder, Autor, Mensch. Berlin. Texte über das Menschsein, digitale Werkzeuge für emotionale Selbsterkenntnis.</p>
   </div>
 
   <div class="hero-claim-wrap" data-glow="AI · APPS · DESIGN · CONSCIOUSNESS">
@@ -1153,10 +1153,10 @@ body {
 </div>
 
 <section class="section" id="texte">
-  <p class="section-label">// texte</p>
-  <p class="terminal-quote">"Was bleibt, wenn man den Lärm weglässt?"</p>
-  <p class="section-text">Gedichte, Essays und persönliche Texte über das Menschsein in einer Zeit, die uns zu Maschinen machen will.</p>
-  <a href="/texte/" class="terminal-link">> alle texte lesen</a>
+  <p class="section-label" data-i18n="// texte|// writings">// texte</p>
+  <p class="terminal-quote" data-i18n="&quot;Was bleibt, wenn man den Lärm weglässt?&quot;|&quot;What remains when you strip away the noise?&quot;">"Was bleibt, wenn man den Lärm weglässt?"</p>
+  <p class="section-text" data-i18n="Gedichte, Essays und persönliche Texte über das Menschsein in einer Zeit, die uns zu Maschinen machen will.|Poems, essays and personal writing on being human in a time that wants to turn us into machines.">Gedichte, Essays und persönliche Texte über das Menschsein in einer Zeit, die uns zu Maschinen machen will.</p>
+  <a href="/texte/" class="terminal-link" data-i18n="&gt; alle texte lesen|&gt; read all writings">> alle texte lesen</a>
 </section>
 
 <nav class="social-row" aria-label="Social Media">
@@ -1206,10 +1206,10 @@ body {
   </div>
   <div class="chat-body" id="chatBody">
     <div class="chat-messages" id="chatMessages">
-      <div class="chat-msg assistant">Was willst du wissen?</div>
+      <div class="chat-msg assistant" data-i18n="Was willst du wissen?|What do you want to know?">Was willst du wissen?</div>
     </div>
     <form class="chat-input-wrap" id="chatForm">
-      <input type="text" class="chat-input" id="chatInput" placeholder="Frag mich was..." maxlength="1000" autocomplete="off">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Frag mich was..." data-i18n-placeholder="Frag mich was...|Ask me anything..." maxlength="1000" autocomplete="off">
       <button type="submit" class="chat-send">→</button>
     </form>
   </div>
@@ -1217,7 +1217,7 @@ body {
 
 <!-- Floating Controls -->
 <div class="floating-controls">
-  <button class="ctrl-btn" id="soundToggle" aria-label="Sound an/aus" title="Sound">
+  <button class="ctrl-btn" id="soundToggle" aria-label="Sound an/aus" title="Sound" data-i18n-aria="Sound an/aus|Sound on/off">
     <svg class="sound-off" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
     <div class="sound-bars">
       <span></span><span></span><span></span><span></span>
@@ -1225,16 +1225,16 @@ body {
   </button>
   <audio id="heartbeatAudio" src="/sounds/heartbeat.mp3" loop preload="auto"></audio>
   <div id="headphoneHint" class="headphone-hint" aria-hidden="true">🎧 best with headphones</div>
-  <button class="ctrl-btn" id="langToggle" aria-label="Sprache wechseln" title="Sprache">DE</button>
-  <button class="ctrl-btn" id="chatBtn" aria-label="Chat öffnen" title="Ask me anything">?</button>
+  <button class="ctrl-btn" id="langToggle" aria-label="Sprache wechseln" title="Sprache" data-i18n-aria="Sprache wechseln|Switch language">DE</button>
+  <button class="ctrl-btn" id="chatBtn" aria-label="Chat öffnen" title="Ask me anything" data-i18n-aria="Chat öffnen|Open chat">?</button>
 </div>
 
 <footer class="home-footer">
   <span>© 2026 Jochen Hornung</span>
   <div class="footer-links">
-    <a href="/impressum/">Impressum</a>
-    <a href="/datenschutz/">Datenschutz</a>
-    <a href="mailto:kontakt@jochenhornung.de">Kontakt</a>
+    <a href="/impressum/" data-i18n="Impressum|Imprint">Impressum</a>
+    <a href="/datenschutz/" data-i18n="Datenschutz|Privacy">Datenschutz</a>
+    <a href="mailto:kontakt@jochenhornung.de" data-i18n="Kontakt|Contact">Kontakt</a>
   </div>
 </footer>
 
@@ -1750,17 +1750,23 @@ body {
       chatMessages.scrollTop = chatMessages.scrollHeight;
 
       /* Send to backend */
+      var currentLang = window.__getLang ? window.__getLang() : 'de';
+      var fallbackErr = currentLang === 'en'
+        ? 'Connection error. Email Jochen directly: kontakt@jochenhornung.de'
+        : 'Verbindungsfehler. Schreib mir direkt: kontakt@jochenhornung.de';
+      var apiErr = currentLang === 'en' ? 'Connection error.' : 'Fehler bei der Verbindung.';
+
       fetch('https://jochenhornung-chat.jthrust.workers.dev', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: msg, history: chatHistory })
+        body: JSON.stringify({ message: msg, history: chatHistory, lang: currentLang })
       })
       .then(function(r) { return r.json(); })
       .then(function(data) {
         typingDiv.remove();
         var ansDiv = document.createElement('div');
         ansDiv.className = 'chat-msg assistant';
-        ansDiv.textContent = data.answer || 'Fehler bei der Verbindung.';
+        ansDiv.textContent = data.answer || apiErr;
         chatMessages.appendChild(ansDiv);
         chatMessages.scrollTop = chatMessages.scrollHeight;
 
@@ -1771,7 +1777,7 @@ body {
         typingDiv.remove();
         var errDiv = document.createElement('div');
         errDiv.className = 'chat-msg assistant';
-        errDiv.textContent = 'Verbindungsfehler. Schreib mir direkt: kontakt@jochenhornung.de';
+        errDiv.textContent = fallbackErr;
         chatMessages.appendChild(errDiv);
       });
     });
@@ -1783,18 +1789,57 @@ body {
   var lang = _saved || ((navigator.language || 'de').toLowerCase().startsWith('de') ? 'de' : 'en');
 
   function updateLangBtn() {
-    langBtn.textContent = lang.toUpperCase();
+    if (langBtn) langBtn.textContent = lang.toUpperCase();
   }
 
+  function pickTranslation(value) {
+    if (!value) return null;
+    var parts = value.split('|');
+    return lang === 'en' && parts.length > 1 ? parts[1] : parts[0];
+  }
+
+  function applyLang() {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var t = pickTranslation(el.getAttribute('data-i18n'));
+      if (t !== null) el.textContent = t;
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(function(el) {
+      var t = pickTranslation(el.getAttribute('data-i18n-aria'));
+      if (t !== null) el.setAttribute('aria-label', t);
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+      var t = pickTranslation(el.getAttribute('data-i18n-placeholder'));
+      if (t !== null) el.setAttribute('placeholder', t);
+    });
+    /* document.title + meta description */
+    var titleMap = {
+      de: 'Design · Consciousness Apps · AI - Jochen Hornung',
+      en: 'AI · Apps · Design · Consciousness — Jochen Hornung'
+    };
+    var descMap = {
+      de: 'Jochen Hornung – Builder, Autor, Mensch. Berlin. Texte über das Menschsein, digitale Werkzeuge für emotionale Selbsterkenntnis.',
+      en: 'Jochen Hornung — builder, writer, human. Berlin. Writing on being human, digital tools for emotional self-awareness.'
+    };
+    document.title = titleMap[lang];
+    var metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', descMap[lang]);
+  }
+
+  applyLang();
+  updateLangBtn();
+
   if (langBtn) {
-    updateLangBtn();
     langBtn.addEventListener('click', function() {
       lang = lang === 'de' ? 'en' : 'de';
       localStorage.setItem('jochenhornung-lang', lang);
       updateLangBtn();
-      /* i18n swap kommt später — für jetzt nur den State speichern */
+      applyLang();
     });
   }
+
+  /* expose for chat */
+  window.__getLang = function() { return lang; };
 
   /* ═══ LIVE COLOR PICKER (Dev Tool) ═══ */
   /* Aktivieren mit ?picker in der URL */
