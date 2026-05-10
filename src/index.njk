@@ -1081,7 +1081,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 0.25rem 0.75rem;
-  padding: 3rem 1.5rem 1rem;
+  padding: 3rem 1.5rem 2rem;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -1097,6 +1097,14 @@ body {
   user-select: none;
   font-family: 'Courier New', monospace;
   font-size: 0.9rem;
+}
+@media (max-width: 600px) {
+  .social-row {
+    justify-content: space-evenly;
+    gap: 0;
+    padding: 2.5rem 0.5rem 2rem;
+  }
+  .social-row .nav-sep { display: none; }
 }
 </style>
 
@@ -1178,7 +1186,7 @@ body {
 <!-- ═══════════════════════════════ -->
 <div class="pixel-divider"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
 
-<section class="section" id="streaming">
+<section class="section" id="streaming" style="padding-top: 2rem;">
   <p class="section-label">Streaming</p>
   <a href="/kaktus/" class="streaming-teaser">
     <img src="/images/streaming-avatar.png"
@@ -1190,7 +1198,8 @@ body {
       <span class="streaming-badge" style="color: var(--amber); border-color: var(--amber);">coming soon</span>
     </div>
   </a>
-  <div style="margin-top: 2.5rem; width: 100%; max-width: 600px; margin-left: auto; margin-right: auto; border-radius: 12px; overflow: hidden;">
+  <p class="section-label" style="margin-top: 5rem;" data-i18n="// der sound meines lebens|// sound of my life">// der sound meines lebens</p>
+  <div style="margin-top: 1.5rem; width: 100%; max-width: 600px; margin-left: auto; margin-right: auto; border-radius: 12px; overflow: hidden;">
     <iframe src="https://embed.tidal.com/albums/311566555?layout=gridify&theme=dark" width="100%" height="300" frameborder="0" allow="encrypted-media" style="border-radius: 12px;"></iframe>
   </div>
 </section>
