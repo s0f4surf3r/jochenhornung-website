@@ -10,7 +10,7 @@ excerpt: 'Perfektionismus steigt um 33%, Burnout verzehnfacht sich, wir
   uns trainiert, Maschinen zu werden. Und jetzt, wo echte Maschinen kommen, die
   alles besser können, steht die Frage im Raum: Was bleibt von uns übrig? Teil 1
   über die Wurzeln unserer Maschinenwerdung – und warum selbst Weltstars wie
-  Robbie Williams trotz 80.000 Fans dachten: "Gleich fliegen sie mich auf."'
+  Robbie Williams trotz 80.000 Fans dachten: „Gleich entlarven sie mich."'
 quellen: >-
   ### Wissenschaftliche Studien
 
