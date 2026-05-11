@@ -93,9 +93,14 @@
             text-decoration: none;
         }
 
-        .site-nav a:hover {
-            color: #d97706;
+        .site-nav a {
+            transition: color 0.2s, font-weight 0.2s, text-shadow 0.2s;
         }
+        .site-nav a[data-nav="texte"]:hover { color: #0891b2; }
+        .site-nav a[data-nav="apps"]:hover { font-weight: 700; text-shadow: 0 0 12px rgba(8, 145, 178, 0.4); }
+        .site-nav a[data-nav="jthrust"]:hover { color: #be185d; }
+        .site-nav a[data-nav="streaming"]:hover { color: #d97706; }
+        .site-nav a[data-nav="ueber"]:hover { color: #999; }
 
         .site-nav a.active {
             color: #999;
@@ -206,15 +211,15 @@
         <h1><a href="/">Jochen Hornung</a></h1>
         <p class="site-tagline">Design · Consciousness · Apps · AI · Berlin</p>
         <nav class="site-nav">
-            <a href="/texte/"{% if page.url.includes("/texte") %} class="active"{% endif %}>Texte</a>
+            <a href="/texte/" data-nav="texte"{% if page.url.includes("/texte") %} class="active"{% endif %}>Texte</a>
             <span>/</span>
-            <a href="/apps/"{% if page.url.includes("/apps") or page.url.includes("/werkzeuge") %} class="active"{% endif %}>Apps</a>
+            <a href="/apps/" data-nav="apps"{% if page.url.includes("/apps") or page.url.includes("/werkzeuge") %} class="active"{% endif %}>Apps</a>
             <span>/</span>
-            <a href="/j-thrust/"{% if page.url.includes("/j-thrust") %} class="active"{% endif %}>J-THRUST</a>
+            <a href="/j-thrust/" data-nav="jthrust"{% if page.url.includes("/j-thrust") %} class="active"{% endif %}>J-THRUST</a>
             <span>/</span>
-            <a href="/kaktus/"{% if page.url.includes("/kaktus") %} class="active"{% endif %}>Streaming</a>
+            <a href="/kaktus/" data-nav="streaming"{% if page.url.includes("/kaktus") %} class="active"{% endif %}>Streaming</a>
             <span>/</span>
-            <a href="/ueber/"{% if page.url.includes("/ueber") or page.url.includes("/coaching") %} class="active"{% endif %}>Über mich</a>
+            <a href="/ueber/" data-nav="ueber"{% if page.url.includes("/ueber") or page.url.includes("/coaching") %} class="active"{% endif %}>Über mich</a>
         </nav>
     </header>
     {% endif %}
