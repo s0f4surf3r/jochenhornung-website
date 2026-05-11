@@ -68,6 +68,16 @@ solo: true
         margin: 5rem auto 0;
         max-width: 720px;
     }
+    .solo-image-caption {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-style: italic;
+        font-size: 0.95rem;
+        line-height: 1.55;
+        color: #666;
+        max-width: 640px;
+        margin: 1.5rem auto 0;
+        text-align: center;
+    }
     .solo-image {
         display: block;
         width: 100%;
@@ -187,5 +197,14 @@ solo: true
         }
     })();
     </script>
+    {% endif %}
+
+    {% if secondaryImage %}
+    <div class="solo-image-wrap">
+        <img src="{{ secondaryImage }}" alt="Zweites Bild zum Text: {{ title }}" loading="lazy" class="solo-image">
+    </div>
+    {% if secondaryCaption %}
+    <p class="solo-image-caption">{{ secondaryCaption }}</p>
+    {% endif %}
     {% endif %}
 </article>
