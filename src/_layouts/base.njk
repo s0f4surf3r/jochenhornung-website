@@ -94,56 +94,98 @@
         }
 
         .site-nav a {
+            position: relative;
             display: inline-block;
-            transition: color 0.25s, transform 0.25s, font-style 0.25s, letter-spacing 0.25s, text-shadow 0.25s, font-family 0.1s;
+            transition: color 0.3s, transform 0.3s, font-weight 0.3s, letter-spacing 0.3s, text-shadow 0.3s, font-family 0.1s;
             transform-origin: center;
         }
 
-        /* Texte — Lyrik. Italic, Cyan, subtiler Glow */
+        /* Texte — Holographic Rainbow Shine */
         .site-nav a[data-nav="texte"]:hover {
-            color: #0891b2;
-            font-style: italic;
-            text-shadow: 0 0 14px rgba(8, 145, 178, 0.45);
+            background: linear-gradient(90deg, #06b6d4 0%, #d946ef 35%, #f59e0b 70%, #06b6d4 100%);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shine-flow 2s linear infinite;
+            filter: drop-shadow(0 0 8px rgba(217, 70, 239, 0.5));
+        }
+        @keyframes shine-flow {
+            0% { background-position: 200% 0; }
+            100% { background-position: -100% 0; }
         }
 
-        /* Apps — Tech. Monospace, weite Letter, sat. Cyan */
+        /* Apps — Glitch (RGB-Split) */
         .site-nav a[data-nav="apps"]:hover {
             color: #06b6d4;
-            font-family: 'Courier New', monospace;
-            letter-spacing: 0.15em;
-            text-shadow: 0 0 10px rgba(6, 182, 212, 0.6);
+            animation: glitch 0.3s steps(2) infinite;
+            text-shadow:
+                2px 0 0 rgba(236, 72, 153, 0.8),
+                -2px 0 0 rgba(6, 182, 212, 0.8),
+                0 0 12px rgba(6, 182, 212, 0.5);
+            letter-spacing: 0.05em;
+        }
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            25% { transform: translate(-1px, 1px); }
+            50% { transform: translate(1px, -1px); }
+            75% { transform: translate(-1px, -1px); }
+            100% { transform: translate(1px, 1px); }
         }
 
-        /* J-THRUST — Manifesto. Knall-Magenta, skew, Schatten */
+        /* J-THRUST — Mega Neon-Magenta */
         .site-nav a[data-nav="jthrust"]:hover {
-            color: #ec4899;
-            transform: skew(-8deg) scale(1.08);
-            text-shadow: 2px 2px 0 #1a1a1a, 0 0 16px rgba(236, 72, 153, 0.7);
-            letter-spacing: 0.04em;
+            color: #fff;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            transform: scale(1.15);
+            text-shadow:
+                0 0 4px #ec4899,
+                0 0 10px #ec4899,
+                0 0 24px #ec4899,
+                0 0 48px rgba(236, 72, 153, 0.6);
         }
 
-        /* Streaming — Live, Pulse, Amber-Glow */
+        /* Streaming — Live Pulse (Amber-Gelb) */
         .site-nav a[data-nav="streaming"]:hover {
-            color: #f59e0b;
-            animation: nav-pulse 0.9s ease-in-out infinite;
-            text-shadow: 0 0 18px rgba(245, 158, 11, 0.7);
+            color: #fbbf24;
+            animation: live-pulse 1.2s ease-in-out infinite;
+            text-shadow:
+                0 0 8px rgba(251, 191, 36, 0.9),
+                0 0 20px rgba(251, 191, 36, 0.5),
+                0 0 40px rgba(245, 158, 11, 0.3);
         }
-        @keyframes nav-pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.08); }
+        @keyframes live-pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.1); }
         }
 
-        /* Über mich — Persönlich, Sand-warm, Bounce mit Underline */
+        /* Über mich — Ember (glühende Kohle) */
         .site-nav a[data-nav="ueber"]:hover {
-            color: #92400e;
-            text-decoration: underline wavy;
-            text-underline-offset: 5px;
-            text-decoration-thickness: 1.5px;
-            transform: translateY(-2px);
+            color: #ef4444;
+            animation: ember 1.4s ease-in-out infinite;
+        }
+        @keyframes ember {
+            0%, 100% {
+                text-shadow:
+                    0 0 6px rgba(239, 68, 68, 0.7),
+                    0 0 14px rgba(239, 68, 68, 0.3);
+                color: #ef4444;
+            }
+            50% {
+                text-shadow:
+                    0 0 12px rgba(251, 146, 60, 0.9),
+                    0 0 24px rgba(239, 68, 68, 0.5);
+                color: #f97316;
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .site-nav a, .site-nav a:hover { animation: none !important; transform: none !important; transition: color 0.2s !important; }
+            .site-nav a, .site-nav a:hover {
+                animation: none !important;
+                transform: none !important;
+                transition: color 0.2s !important;
+            }
         }
 
         .site-nav a.active {
