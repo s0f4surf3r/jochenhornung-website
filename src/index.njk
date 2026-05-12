@@ -763,8 +763,11 @@ body {
 
 /* Desktop-Browser im schmalen Portrait-Fenster — Hero-Bild deckeln damit Pyramide noch sichtbar bleibt */
 @media (max-width: 900px) and (orientation: portrait) and (pointer: fine) {
-  .hero-image { max-height: 32svh; }
-  .hero-image img { max-height: 32svh; }
+  .hero-image { max-height: 32svh; margin-top: 24px; }
+  .hero-image img { max-height: 32svh; object-fit: contain; object-position: center; }
+  .hero-claim-wrap { margin-top: 8px; padding-top: 30px; padding-bottom: 30px; }
+  #soundToggle { top: calc(env(safe-area-inset-top, 0px) + 140px) !important; }
+  #chatBtn { top: calc(env(safe-area-inset-top, 0px) + 140px) !important; }
 }
 
 @media (max-width: 480px) {
@@ -1145,7 +1148,7 @@ body {
 
     <div class="hero-image">
       <picture>
-        <source media="(orientation: portrait) and (max-width: 900px)" srcset="/images/hero-banner-mobile.png" width="864" height="1152">
+        <source media="(orientation: portrait) and (max-width: 900px) and (pointer: coarse)" srcset="/images/hero-banner-mobile.png" width="864" height="1152">
         <img src="/images/hero-banner.png"
              alt="s0f4surf3r — Vektor-Figur im Sessel, digitale Energie"
              width="1200" height="480"
