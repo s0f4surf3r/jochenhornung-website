@@ -1171,6 +1171,7 @@ body {
 }
 .jt-stargate-logo .ship      { transform-box: fill-box; transform-origin: center; animation: jt-thrust 3.4s ease-in-out infinite; }
 .jt-stargate-logo .flame     { transform-box: fill-box; transform-origin: top center; animation: jt-flame 0.55s ease-in-out infinite alternate; }
+.jt-stargate-logo .hook-swing { transform-box: view-box; transform-origin: 256px 190px; animation: jt-hook-swing 3.6s ease-in-out infinite; }
 .jt-stargate-logo .tether    { stroke-dasharray: 8 5; animation: jt-tether 1.6s linear infinite; }
 .jt-stargate-logo .pod       { transform-box: fill-box; transform-origin: center; animation: jt-pod 2.4s ease-in-out infinite; }
 .jt-stargate-logo .pod-core  { transform-box: fill-box; transform-origin: center; animation: jt-pod-core 2.4s ease-in-out infinite; }
@@ -1179,6 +1180,7 @@ body {
 @keyframes jt-tether   { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -26; } }
 @keyframes jt-pod      { 0%,100% { transform: scale(1); } 50% { transform: scale(1.12); } }
 @keyframes jt-pod-core { 0%,100% { opacity: 0.45; } 50% { opacity: 0.85; } }
+@keyframes jt-hook-swing { 0%,100% { transform: rotate(-7deg); } 50% { transform: rotate(7deg); } }
 
 .jt-stargate-wordmark {
   margin: 3rem 0 0;
@@ -1371,21 +1373,23 @@ body {
         <path d="M245 155 L256 190 L267 155" fill="#DE9C36" opacity="0.8"/>
         <path d="M249 155 L256 180 L263 155" fill="#FDBF55" opacity="0.6"/>
       </g>
-      <path class="tether" d="M256 190 Q260 240 254 290 Q252 330 256 360"
-            fill="none" stroke="url(#jtsTetherG)" stroke-width="3.5" stroke-linecap="round"/>
-      <path d="M244 360 L268 360 L268 410
-               Q268 460 240 478
-               Q218 492 192 486
-               Q166 480 156 458
-               Q148 438 156 418
-               L184 418
-               Q178 438 192 454
-               Q208 466 226 450
-               Q238 440 238 420
-               L238 360 Z"
-            fill="url(#jtsHookG)"/>
-      <circle class="pod" cx="196" cy="450" r="14" fill="url(#jtsPodGlow)"/>
-      <circle class="pod-core" cx="196" cy="450" r="7" fill="#FDBF55"/>
+      <g class="hook-swing">
+        <path class="tether" d="M256 190 Q260 240 254 290 Q252 330 256 360"
+              fill="none" stroke="url(#jtsTetherG)" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M244 360 L268 360 L268 410
+                 Q268 460 240 478
+                 Q218 492 192 486
+                 Q166 480 156 458
+                 Q148 438 156 418
+                 L184 418
+                 Q178 438 192 454
+                 Q208 466 226 450
+                 Q238 440 238 420
+                 L238 360 Z"
+              fill="url(#jtsHookG)"/>
+        <circle class="pod" cx="196" cy="450" r="14" fill="url(#jtsPodGlow)"/>
+        <circle class="pod-core" cx="196" cy="450" r="7" fill="#FDBF55"/>
+      </g>
     </svg>
   </div>
 

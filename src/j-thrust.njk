@@ -55,6 +55,11 @@ permalink: /j-thrust/index.html
         stroke-dasharray: 8 5;
         animation: jt-tether 1.6s linear infinite;
     }
+    .jt-logo .hook-swing {
+        transform-box: view-box;
+        transform-origin: 256px 190px;
+        animation: jt-hook-swing 3.6s ease-in-out infinite;
+    }
     .jt-logo .pod {
         transform-box: fill-box;
         transform-origin: center;
@@ -85,10 +90,15 @@ permalink: /j-thrust/index.html
         0%, 100% { opacity: 0.45; }
         50%      { opacity: 0.85; }
     }
+    @keyframes jt-hook-swing {
+        0%, 100% { transform: rotate(-7deg); }
+        50%      { transform: rotate(7deg); }
+    }
     @media (prefers-reduced-motion: reduce) {
         .jt-logo .ship,
         .jt-logo .flame,
         .jt-logo .tether,
+        .jt-logo .hook-swing,
         .jt-logo .pod,
         .jt-logo .pod-core { animation: none; }
     }
@@ -313,6 +323,7 @@ permalink: /j-thrust/index.html
                 <path d="M245 155 L256 190 L267 155" fill="#DE9C36" opacity="0.8"/>
                 <path d="M249 155 L256 180 L263 155" fill="#FDBF55" opacity="0.6"/>
             </g>
+            <g class="hook-swing">
             <path class="tether" d="M256 190 Q260 240 254 290 Q252 330 256 360"
                   fill="none" stroke="url(#jtTetherG)" stroke-width="3.5" stroke-linecap="round"/>
             <path d="M244 360 L268 360 L268 410
@@ -328,6 +339,7 @@ permalink: /j-thrust/index.html
                   fill="url(#jtHookG)"/>
             <circle class="pod" cx="196" cy="450" r="14" fill="url(#jtPodGlow)"/>
             <circle class="pod-core" cx="196" cy="450" r="7" fill="#FDBF55"/>
+            </g>
         </svg>
         <h1 class="jt-wordmark">J-THRUST</h1>
         <p class="jt-sub">Digital Studio · Berlin</p>
