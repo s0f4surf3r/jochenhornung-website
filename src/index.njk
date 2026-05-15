@@ -1084,6 +1084,130 @@ body {
 
 /* floating-controls Mobile → im iPhone-Block oben definiert */
 
+/* ── J-THRUST STARGATE SECTION ── */
+.jt-stargate {
+  position: relative;
+  text-align: center;
+  padding: 6rem 2rem 7rem;
+  overflow: hidden;
+}
+.jt-stargate .section-label {
+  color: var(--magenta);
+}
+.jt-portal-wrap {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  margin: 2.5rem auto 0;
+}
+.jt-portal-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220px;
+  height: 220px;
+  margin: -110px 0 0 -110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(236,72,153,0.4) 0%, rgba(168,85,247,0.18) 40%, transparent 70%);
+  animation: jt-portal-breath 4s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes jt-portal-breath {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.12); opacity: 1; }
+}
+.jt-portal-wrap .ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-style: solid;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.jt-portal-wrap .ring-outer {
+  width: 320px;
+  height: 320px;
+  border-width: 1px;
+  border-color: rgba(236, 72, 153, 0.25);
+  animation: jt-ring-cw 50s linear infinite;
+}
+.jt-portal-wrap .ring-mid {
+  width: 240px;
+  height: 240px;
+  border-width: 1px;
+  border-color: rgba(168, 85, 247, 0.35);
+  border-style: dashed;
+  animation: jt-ring-ccw 32s linear infinite;
+}
+.jt-portal-wrap .ring-inner {
+  width: 180px;
+  height: 180px;
+  border-width: 1.5px;
+  border-color: rgba(6, 182, 212, 0.35);
+  animation: jt-ring-cw 18s linear infinite;
+}
+@keyframes jt-ring-cw  { to { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes jt-ring-ccw { to { transform: translate(-50%, -50%) rotate(-360deg); } }
+
+.jt-stargate-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  z-index: 5;
+  filter: drop-shadow(0 0 20px rgba(15, 170, 182, 0.55));
+}
+.jt-stargate-logo .ship      { transform-box: fill-box; transform-origin: center; animation: jt-thrust 3.4s ease-in-out infinite; }
+.jt-stargate-logo .flame     { transform-box: fill-box; transform-origin: top center; animation: jt-flame 0.55s ease-in-out infinite alternate; }
+.jt-stargate-logo .tether    { stroke-dasharray: 8 5; animation: jt-tether 1.6s linear infinite; }
+.jt-stargate-logo .pod       { transform-box: fill-box; transform-origin: center; animation: jt-pod 2.4s ease-in-out infinite; }
+.jt-stargate-logo .pod-core  { transform-box: fill-box; transform-origin: center; animation: jt-pod-core 2.4s ease-in-out infinite; }
+@keyframes jt-thrust   { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@keyframes jt-flame    { 0% { transform: scaleY(0.85); opacity: 0.7; } 100% { transform: scaleY(1.15); opacity: 1; } }
+@keyframes jt-tether   { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -26; } }
+@keyframes jt-pod      { 0%,100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+@keyframes jt-pod-core { 0%,100% { opacity: 0.45; } 50% { opacity: 0.85; } }
+
+.jt-stargate-wordmark {
+  margin: 3rem 0 0;
+  font-family: 'Courier New', monospace;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: #fff;
+  text-shadow:
+    0 0 8px #ec4899,
+    0 0 22px #ec4899,
+    0 0 48px rgba(236, 72, 153, 0.5);
+}
+.jt-stargate-tagline {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: #aaa;
+  max-width: 480px;
+  margin: 1.4rem auto 0;
+}
+.jt-stargate-tagline strong { color: var(--magenta); font-style: normal; }
+.jt-stargate-cta {
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jt-portal-glow,
+  .jt-portal-wrap .ring,
+  .jt-stargate-logo .ship,
+  .jt-stargate-logo .flame,
+  .jt-stargate-logo .tether,
+  .jt-stargate-logo .pod,
+  .jt-stargate-logo .pod-core { animation: none; }
+}
+
 /* ── SOCIAL-ROW (Slashes wie Hero-Nav) ── */
 .social-row {
   display: flex;
@@ -1175,6 +1299,69 @@ body {
   <p class="terminal-quote" data-i18n="&quot;Was bleibt, wenn man den Lärm weglässt?&quot;|&quot;What remains when you strip away the noise?&quot;">"Was bleibt, wenn man den Lärm weglässt?"</p>
   <p class="section-text" data-i18n="Gedichte, Essays und persönliche Texte über das Menschsein in einer Zeit, die uns zu Maschinen machen will.|Poems, essays and personal writing on being human in a time that wants to turn us into machines.">Gedichte, Essays und persönliche Texte über das Menschsein in einer Zeit, die uns zu Maschinen machen will.</p>
   <a href="/texte/" class="terminal-link" data-i18n="&gt; alle texte lesen|&gt; read all writings">> alle texte lesen</a>
+</section>
+
+<!-- ═══════════════════════════════ -->
+<!--  J-THRUST STARGATE              -->
+<!-- ═══════════════════════════════ -->
+<section class="section jt-stargate" id="j-thrust">
+  <p class="section-label">// j-thrust digital studio</p>
+
+  <div class="jt-portal-wrap" aria-hidden="true">
+    <div class="jt-portal-glow"></div>
+    <div class="ring ring-outer"></div>
+    <div class="ring ring-mid"></div>
+    <div class="ring ring-inner"></div>
+
+    <svg class="jt-stargate-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="J-THRUST Logo" role="img">
+      <defs>
+        <linearGradient id="jtsHookG" x1="0.5" y1="0" x2="0.2" y2="1">
+          <stop offset="0%" stop-color="#0FAAB6"/>
+          <stop offset="100%" stop-color="#DE9C36"/>
+        </linearGradient>
+        <linearGradient id="jtsTetherG" x1="0.5" y1="0" x2="0.4" y2="1">
+          <stop offset="0%" stop-color="#0FAAB6" stop-opacity="0.6"/>
+          <stop offset="100%" stop-color="#0FAAB6" stop-opacity="0.15"/>
+        </linearGradient>
+        <radialGradient id="jtsPodGlow" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0%" stop-color="#FDBF55" stop-opacity="0.5"/>
+          <stop offset="100%" stop-color="#DE9C36" stop-opacity="0.7"/>
+        </radialGradient>
+      </defs>
+      <g class="ship">
+        <path d="M256 60 L230 130 L242 122 L242 148 L270 148 L270 122 L282 130 Z" fill="#0FAAB6"/>
+        <ellipse cx="256" cy="95" rx="7" ry="9" fill="#0D8A94"/>
+        <ellipse cx="256" cy="93" rx="5" ry="6" fill="#0FAAB6" opacity="0.5"/>
+        <rect x="236" y="148" width="40" height="7" rx="3" fill="#0FAAB6" opacity="0.5"/>
+      </g>
+      <g class="flame">
+        <path d="M245 155 L256 190 L267 155" fill="#DE9C36" opacity="0.8"/>
+        <path d="M249 155 L256 180 L263 155" fill="#FDBF55" opacity="0.6"/>
+      </g>
+      <path class="tether" d="M256 190 Q260 240 254 290 Q252 330 256 360"
+            fill="none" stroke="url(#jtsTetherG)" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M244 360 L268 360 L268 410
+               Q268 460 240 478
+               Q218 492 192 486
+               Q166 480 156 458
+               Q148 438 156 418
+               L184 418
+               Q178 438 192 454
+               Q208 466 226 450
+               Q238 440 238 420
+               L238 360 Z"
+            fill="url(#jtsHookG)"/>
+      <circle class="pod" cx="196" cy="450" r="14" fill="url(#jtsPodGlow)"/>
+      <circle class="pod-core" cx="196" cy="450" r="7" fill="#FDBF55"/>
+    </svg>
+  </div>
+
+  <h2 class="jt-stargate-wordmark">J-THRUST</h2>
+  <p class="jt-stargate-tagline">
+    <span data-i18n="Wir nehmen nicht einfach Aufträge an.|We don't just take on projects.">Wir nehmen nicht einfach Aufträge an.</span>
+    <strong data-i18n="Wir bergen.|We salvage.">Wir bergen.</strong>
+  </p>
+  <a href="/j-thrust/" class="terminal-link jt-stargate-cta" data-i18n="&gt; zum manifesto|&gt; to the manifesto">> zum manifesto</a>
 </section>
 
 <p class="section-label" data-i18n="// jochen anderswo|// jochen elsewhere" style="text-align: center; padding: 0 1.5rem;">// jochen anderswo</p>
