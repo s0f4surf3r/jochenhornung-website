@@ -713,7 +713,7 @@ body {
   .claim-word { display: block; text-align: center; letter-spacing: 8px; margin-bottom: 3px; }
   .claim-sep { display: none; }
   .claim-ai { font-size: 45px; }
-  .claim-tools { font-size: 34px; }
+  .claim-tools { font-size: 42px; }
   .claim-design { font-size: 50px; }
   .claim-consciousness { font-size: 28px; }
 
@@ -1199,8 +1199,15 @@ body {
   color: #aaa;
   max-width: 480px;
   margin: 1.4rem auto 0;
+  text-wrap: balance;
 }
-.jt-stargate-tagline strong { color: var(--magenta); font-style: normal; }
+.jt-stargate-tagline strong { color: var(--magenta); font-style: normal; white-space: nowrap; }
+@media (max-width: 600px) {
+  .jt-stargate-tagline { font-size: 0.92rem; max-width: 95%; }
+}
+@media (max-width: 430px) {
+  .jt-stargate-tagline { font-size: 0.85rem; }
+}
 .jt-stargate-cta {
   display: inline-block;
   margin-top: 2rem;
