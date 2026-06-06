@@ -15,9 +15,9 @@ E-Mail: kontakt@jochenhornung.de
 **Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:**  
 Jochen Hornung (Anschrift wie oben)
 
-## EU-Streitschlichtung
+## Verbraucherstreitbeilegung
 
-Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: [https://ec.europa.eu/consumers/odr/](https://ec.europa.eu/consumers/odr/). Ich bin nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+Ich bin nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
 
 ## Haftung für Inhalte
 
